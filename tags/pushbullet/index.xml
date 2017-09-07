@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pushbullet on Leow Kah Man - Tech Blog</title>
+    <link>https://www.leowkahman.com/tags/pushbullet/</link>
+    <description>Recent content in Pushbullet on Leow Kah Man - Tech Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License, code samples are licensed under the MIT License.</copyright>
+    <lastBuildDate>Sun, 31 Jul 2016 14:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.leowkahman.com/tags/pushbullet/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Get notified via IFTTT or Pushbullet when OpenWRT router has started</title>
+      <link>https://www.leowkahman.com/2016/07/31/get-notified-via-ifttt-pushbullet-when-openwrt-router-has-started/</link>
+      <pubDate>Sun, 31 Jul 2016 14:00:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2016/07/31/get-notified-via-ifttt-pushbullet-when-openwrt-router-has-started/</guid>
+      <description>&lt;p&gt;Using IFTTT&amp;rsquo;s Maker channel, I could setup a Web Request receiver or if you prefer a simpler method, you could use Pushbullet.
+Then I configured my OpenWRT router to post to the receiver on startup.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

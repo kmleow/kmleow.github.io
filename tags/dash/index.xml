@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dash on Leow Kah Man - Tech Blog</title>
+    <link>https://www.leowkahman.com/tags/dash/</link>
+    <description>Recent content in Dash on Leow Kah Man - Tech Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License, code samples are licensed under the MIT License.</copyright>
+    <lastBuildDate>Wed, 28 Dec 2016 23:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.leowkahman.com/tags/dash/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Using Dash IFTTT to notify others upon reaching a location</title>
+      <link>https://www.leowkahman.com/2016/12/28/using-dash-ifttt-to-notify-others-upon-reaching-a-location/</link>
+      <pubDate>Wed, 28 Dec 2016 23:00:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2016/12/28/using-dash-ifttt-to-notify-others-upon-reaching-a-location/</guid>
+      <description>&lt;p&gt;I have been using a mobile app called Dash (smart driving app) for a week and decided to write a review about it as well as
+sharing how I am making use of it to notify others (in my case, family members) as soon as I have reached an area, i.e. home, office, etc.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

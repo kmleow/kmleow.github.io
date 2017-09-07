@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mobile on Leow Kah Man - Tech Blog</title>
+    <link>https://www.leowkahman.com/categories/mobile/</link>
+    <description>Recent content in Mobile on Leow Kah Man - Tech Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License, code samples are licensed under the MIT License.</copyright>
+    <lastBuildDate>Sat, 22 Apr 2017 18:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.leowkahman.com/categories/mobile/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Remotely reset your Android device</title>
+      <link>https://www.leowkahman.com/2017/04/22/remotely-reset-your-android-device/</link>
+      <pubDate>Sat, 22 Apr 2017 18:00:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2017/04/22/remotely-reset-your-android-device/</guid>
+      <description>&lt;p&gt;You have the phone or tablet with you and you have attempted to factory reset it to no avail.
+Fret not! If the device has Play Store and you are signed in, you may still be able to reset it.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Antivirus for Android</title>
+      <link>https://www.leowkahman.com/2017/04/16/antivirus-for-android/</link>
+      <pubDate>Sun, 16 Apr 2017 23:00:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2017/04/16/antivirus-for-android/</guid>
+      <description>&lt;p&gt;I believe most people have antivirus running on their PC/notebook especially if they are on Windows.
+Somehow most people do not seem to have the same urge to have one on their mobile.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

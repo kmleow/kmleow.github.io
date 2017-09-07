@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pages on Leow Kah Man - Tech Blog</title>
+    <link>https://www.leowkahman.com/page/</link>
+    <description>Recent content in Pages on Leow Kah Man - Tech Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License, code samples are licensed under the MIT License.</copyright>
+    <lastBuildDate>Sun, 14 Feb 2016 18:54:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.leowkahman.com/page/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About</title>
+      <link>https://www.leowkahman.com/about/</link>
+      <pubDate>Sun, 14 Feb 2016 18:54:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/about/</guid>
+      <description>I am Leow Kah Man, a Software Architect and Full Stack Software Developer, lives in Malaysia, likes just about anything that has to do with technology.</description>
+    </item>
+    
+    <item>
+      <title>Contact</title>
+      <link>https://www.leowkahman.com/contact/</link>
+      <pubDate>Sun, 14 Feb 2016 18:54:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/contact/</guid>
+      <description>Please comment on posts if you have questions regarding a specific post.
+For general matters, you may contact me preferably by sending a private message via Facebook. Otherwise you could also drop me a message via contact form.</description>
+    </item>
+    
+  </channel>
+</rss>

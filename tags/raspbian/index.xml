@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Raspbian on Leow Kah Man - Tech Blog</title>
+    <link>https://www.leowkahman.com/tags/raspbian/</link>
+    <description>Recent content in Raspbian on Leow Kah Man - Tech Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License, code samples are licensed under the MIT License.</copyright>
+    <lastBuildDate>Sun, 16 Jul 2017 16:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.leowkahman.com/tags/raspbian/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Running .NET Core on Raspberry Pi Raspbian</title>
+      <link>https://www.leowkahman.com/2017/07/16/running-dotnet-core-on-raspberry-pi-raspbian/</link>
+      <pubDate>Sun, 16 Jul 2017 16:00:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2017/07/16/running-dotnet-core-on-raspberry-pi-raspbian/</guid>
+      <description>&lt;p&gt;Easy guide to running .NET Core 2.0 applications on Raspberry Pi 2 and 3 with Raspbian.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Apache 2 Event MPM and PHP 5 FastCGI on Raspberry Pi</title>
+      <link>https://www.leowkahman.com/2016/04/22/apache-2-event-mpm-and-php-5-fastcgi-on-raspberry-pi/</link>
+      <pubDate>Fri, 22 Apr 2016 00:35:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2016/04/22/apache-2-event-mpm-and-php-5-fastcgi-on-raspberry-pi/</guid>
+      <description>&lt;p&gt;I have been running my blog on Apache 2 with Event MPM for a while and thought I should share my setup on Raspberry Pi 2 Model B with Raspbian for the benefit of others.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>LAMP stack on Raspberry Pi with Kodi running at startup</title>
+      <link>https://www.leowkahman.com/2016/03/05/lamp-stack-on-raspberry-pi-with-kodi-running-at-startup/</link>
+      <pubDate>Sat, 05 Mar 2016 01:30:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2016/03/05/lamp-stack-on-raspberry-pi-with-kodi-running-at-startup/</guid>
+      <description>&lt;p&gt;For most people, if they wanted to run LAMP stack on Raspberry Pi, they would probably install Raspbian via NOOBS. However, if they wanted a HTPC with Kodi, they would likely opt for OSMC or OpenELEC. I needed Kodi to run at startup with LAMP stack running behind and chose the NOOBS Raspbian route.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

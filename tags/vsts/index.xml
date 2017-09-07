@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vsts on Leow Kah Man - Tech Blog</title>
+    <link>https://www.leowkahman.com/tags/vsts/</link>
+    <description>Recent content in Vsts on Leow Kah Man - Tech Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License, code samples are licensed under the MIT License.</copyright>
+    <lastBuildDate>Sun, 02 Jul 2017 16:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.leowkahman.com/tags/vsts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>GitHub, VSTS, Google Cloud folder icons</title>
+      <link>https://www.leowkahman.com/2017/07/02/github-vsts-google-cloud-folder-icons/</link>
+      <pubDate>Sun, 02 Jul 2017 16:00:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2017/07/02/github-vsts-google-cloud-folder-icons/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://www.leowkahman.com/images/2017/07/github-vsts-google-cloud-folder-icons.png&#34; alt=&#34;GitHub, VSTS, Google Cloud - folder icons&#34; /&gt;
+Set folder icons for your favourite source control repositories.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

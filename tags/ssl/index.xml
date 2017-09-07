@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ssl on Leow Kah Man - Tech Blog</title>
+    <link>https://www.leowkahman.com/tags/ssl/</link>
+    <description>Recent content in Ssl on Leow Kah Man - Tech Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License, code samples are licensed under the MIT License.</copyright>
+    <lastBuildDate>Sun, 08 May 2016 22:37:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.leowkahman.com/tags/ssl/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Setup HAProxy with CloudFlare SSL termination on OpenWRT</title>
+      <link>https://www.leowkahman.com/2016/05/08/setup-haproxy-cloudflare-ssl-termination-openwrt/</link>
+      <pubDate>Sun, 08 May 2016 22:37:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2016/05/08/setup-haproxy-cloudflare-ssl-termination-openwrt/</guid>
+      <description>&lt;p&gt;Setup instructions for HAProxy with HTTP SSL termination on OpenWRT with CloudFlare Origin CA and Authenticated Origin Pulls.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Certificate error on blocked domains when using OpenDNS</title>
+      <link>https://www.leowkahman.com/2016/03/22/certificate-error-on-blocked-domains-when-using-opendns/</link>
+      <pubDate>Tue, 22 Mar 2016 01:11:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2016/03/22/certificate-error-on-blocked-domains-when-using-opendns/</guid>
+      <description>&lt;p&gt;OpenDNS helps in blocking malware sites by not resolving malware domains to the actual IP address hosting the malware.
+Instead they resolve to an OpenDNS page indicating &amp;ldquo;This domain is blocked due to &amp;hellip;&amp;rdquo;.
+If you are opening a non-SSL page, this would work as described.
+However, when attempting to browse a malware page via HTTPS, the web browser will show a certificate error instead.
+Read on to know the reason and solution.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Apache CloudFlare Authenticated Origin Pulls configuration</title>
+      <link>https://www.leowkahman.com/2016/03/10/apache-cloudflare-authenticated-origin-pulls-configuration/</link>
+      <pubDate>Thu, 10 Mar 2016 00:51:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2016/03/10/apache-cloudflare-authenticated-origin-pulls-configuration/</guid>
+      <description>&lt;p&gt;With Strict SSL enabled, CloudFlare is able to tell that my website is indeed the real one. Furthermore, I have &lt;a href=&#34;https://www.leowkahman.com/2016/02/14/using-iptables-port-forward-to-web-server-only-if-source-is-cloudflare/&#34;&gt;restricted incoming IP addresses to CloudFlare ones&lt;/a&gt;. This should be reasonably secure but an attacker could potentially spoof its origin IP (man-in-the-middle attack) as one of theirs. To mitigate this potential problem, it is necessary for the client (CloudFlare) to present a certificate which is then verified by (my) web server.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>OpenSSL benchmark - RPi2B vs NAS vs Archer C7</title>
+      <link>https://www.leowkahman.com/2016/02/21/openssl-benchmark-raspberry-vs-nas-vs-archer-c7/</link>
+      <pubDate>Sun, 21 Feb 2016 17:56:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2016/02/21/openssl-benchmark-raspberry-vs-nas-vs-archer-c7/</guid>
+      <description>&lt;p&gt;I am not short of options when it comes to spreading tasks over several System-on-Chip (SoC) based low-powered micro computers. 4 devices were tested; OpenWRT running on TP-Link Archer C7 v2, QNAP TS-220 and Asustor AS-304T and Raspberry Pi 2 Model B.&lt;/p&gt;
+
+&lt;p&gt;In deciding which to be used for hosting a HTTPS-only web server, I was interested in the cryptography (namely RSA and AES) performance thus the motivation for running benchmarks.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Port forward using iptables to web server only if source is CloudFlare</title>
+      <link>https://www.leowkahman.com/2016/02/14/using-iptables-port-forward-to-web-server-only-if-source-is-cloudflare/</link>
+      <pubDate>Sun, 14 Feb 2016 23:56:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2016/02/14/using-iptables-port-forward-to-web-server-only-if-source-is-cloudflare/</guid>
+      <description>&lt;p&gt;Looking at my web server&amp;rsquo;s access logs, not surprisingly I discovered traffic originating from IP addresses not belonging to CloudFlare. Initially, I was using Apache .htaccess to allow incoming traffic only if they originated from CloudFlare. This was somewhat sufficient but some hackers continued attempting to find loopholes instead of giving up so I needed to up the level of security and decided to look at ways to drop unwelcome traffic using OpenWRT firewall.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
