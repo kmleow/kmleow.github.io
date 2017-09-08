@@ -36,8 +36,9 @@ Their SSIDs were hidden but hiding SSID is not a form of security!&lt;/p&gt;
       <pubDate>Tue, 04 Jul 2017 23:30:00 +0800</pubDate>
       
       <guid>https://www.leowkahman.com/2017/07/04/how-to-disable-tls-1-0-on-an-azure-app-service/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://www.leowkahman.com/images/2017/07/tls-1-2-yes.png&#34; alt=&#34;TLS 1.2 - yes&#34; /&gt;
-Yes it is possible to disable TLS 1.0 and even 1.1 without using App Service Environment (ASE).
+      <description>&lt;p&gt;&lt;img src=&#34;https://www.leowkahman.com/images/2017/07/tls-1-2-yes.png&#34; alt=&#34;TLS 1.2 - yes&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Yes it is possible to disable TLS 1.0 and even 1.1 without using App Service Environment (ASE).
 The solution is to use Azure Application Gateway and a custom hostname.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
