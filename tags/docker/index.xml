@@ -7,10 +7,24 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License, code samples are licensed under the MIT License.</copyright>
-    <lastBuildDate>Sat, 09 Sep 2017 11:30:00 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 10 Sep 2017 01:00:00 +0800</lastBuildDate>
     
 	<atom:link href="https://www.leowkahman.com/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>GitLab CI remove priority zero from Hugo sitemap</title>
+      <link>https://www.leowkahman.com/2017/09/10/gitlab-ci-remove-priority-zero-from-hugo-sitemap/</link>
+      <pubDate>Sun, 10 Sep 2017 01:00:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2017/09/10/gitlab-ci-remove-priority-zero-from-hugo-sitemap/</guid>
+      <description>&lt;p&gt;Hugo static site generator generates sitemap.xml that include priority zero URLs.
+These are the taxanomies, tags and categories.
+To prevent these from appearing in Google Search results,
+GitLab CI can be configured to remove unwanted XML nodes (priority 0) from sitemap.xml.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>GitLab CI push output to GitHub</title>

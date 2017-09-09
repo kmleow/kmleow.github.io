@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://www.leowkahman.com/2017/09/10/gitlab-ci-remove-priority-zero-from-hugo-sitemap/</loc>
+    <lastmod>2017-09-10T01:00:00+08:00</lastmod>
+  </url>
+  <url>
     <loc>https://www.leowkahman.com/2017/09/09/gitlab-ci-push-output-to-github/</loc>
     <lastmod>2017-09-09T11:30:00+08:00</lastmod>
   </url>
