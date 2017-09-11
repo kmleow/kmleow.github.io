@@ -7,10 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License, code samples are licensed under the MIT License.</copyright>
-    <lastBuildDate>Tue, 15 Aug 2017 01:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 11 Sep 2017 17:30:00 +0800</lastBuildDate>
     
 	<atom:link href="https://www.leowkahman.com/tags/google/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Enforce Safe Search on Google, YouTube, Bing</title>
+      <link>https://www.leowkahman.com/2017/09/11/enforce-safe-search-on-google-youtube-bing/</link>
+      <pubDate>Mon, 11 Sep 2017 17:30:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2017/09/11/enforce-safe-search-on-google-youtube-bing/</guid>
+      <description>&lt;p&gt;Enforce safe search on Google, YouTube, and Bing without a HTTP proxy.
+Instead, override DNS lookups, resolving to strict search server IP addresses.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Hugo Static Site Generator with CI Deployment using GitLab</title>

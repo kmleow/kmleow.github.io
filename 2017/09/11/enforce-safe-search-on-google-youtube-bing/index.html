@@ -1,0 +1,410 @@
+<!DOCTYPE html><html lang="en-us"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-eval' 'unsafe-inline' data: https:; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https:; font-src 'self' https:; object-src 'self'"/><meta name="viewport" content="width=device-width,initial-scale=1"><title>Enforce Safe Search on Google, YouTube, Bing</title><meta name="msvalidate.01" content="009F12474AB330989749B979B5868A7F"/><meta name="google-site-verification" content="in8GfCIv-CYlwD5AxO0jVMlrUy1s42a_-cxlOWdv4U0"/><meta name="yandex-verification" content="c29e9c1084b24e1d"/><meta name="description" content="Enforce Safe Search on Google, YouTube, Bing via router DNS lookup override using Dnsmasq cname, hosts file, OpenWRT."/><meta name="author" content="Leow Kah Man"/><link rel="icon" type="image/png" href="/favicon-192x192.png" sizes="192x192"/><link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32"/><link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16"/><link rel="canonical" href="https://www.leowkahman.com/2017/09/11/enforce-safe-search-on-google-youtube-bing/"><link href="" rel="alternate" type="application/rss+xml" title="Leow Kah Man - Tech Blog"/><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous"/><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous"/><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css" integrity="sha256-Zd1icfZ72UBmsId/mUcagrmN7IN5Qkrvh75ICHIQVTk=" crossorigin="anonymous"/><link rel="stylesheet" href="/css/custom.css"/><style id="antiClickjack">body{display:none!important}</style><script>if(self===top){var antiClickjack=document.getElementById("antiClickjack");antiClickjack.parentNode.removeChild(antiClickjack)}else top.location=self.location</script><script>function redirectToCorrectDomainIfRequired(){for(var o=["www.leowkahman.com","localhost"],e=0;e<o.length;e++)if(window.location.hostname==o[e])return;window.location="https://www.leowkahman.com"+window.location.pathname}redirectToCorrectDomainIfRequired()</script></head><body><nav class="navbar navbar-default navbar-static-top"><div class="container"><div class="navbar-header"><button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button> <a class="navbar-brand" href="/">Leow Kah Man - Tech Blog</a></div><div id="navbar" class="navbar-collapse collapse"><ul class="nav navbar-nav"></ul><ul class="nav navbar-nav navbar-right"><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul></div></div></nav><div class="container"><div class="row"><div class="col-sm-12"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8585963436723502" data-ad-slot="7600784826" data-ad-format="auto"></ins></div></div><div class="row"><div class="col-sm-8 blog-main"><div class="row"><div class="blog-main blog-post"><h1 class="blog-post-title">Enforce Safe Search on Google, YouTube, Bing</h1><p class="blog-post-meta"><i class="fa fa-calendar"></i> Last updated on 11 September 2017 &nbsp; <i class="fa fa-folder"></i> <a href="https://www.leowkahman.com/categories/web">Web</a></p><ul class="list-inline share" style="margin-top:15px;margin-left:0"><li class="facebook-share"><a target="_blank" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fwww.leowkahman.com%2f2017%2f09%2f11%2fenforce-safe-search-on-google-youtube-bing%2f"><i class="fa fa-facebook fa-lg"></i> Facebook</a></li><li class="googleplus-share"><a target="_blank" href="https://plus.google.com/share?url=https%3a%2f%2fwww.leowkahman.com%2f2017%2f09%2f11%2fenforce-safe-search-on-google-youtube-bing%2f"><i class="fa fa-google-plus fa-lg"></i> Google+</a></li><li class="twitter-share"><a target="_blank" href="https://twitter.com/share?url=https%3a%2f%2fwww.leowkahman.com%2f2017%2f09%2f11%2fenforce-safe-search-on-google-youtube-bing%2f&amp;text=Enforce%20Safe%20Search%20on%20Google%2c%20YouTube%2c%20Bing"><i class="fa fa-twitter fa-lg"></i> Twitter</a></li><li class="reddit-share"><a target="_blank" href="http://reddit.com/submit?url=https%3a%2f%2fwww.leowkahman.com%2f2017%2f09%2f11%2fenforce-safe-search-on-google-youtube-bing%2f&amp;title=Enforce%20Safe%20Search%20on%20Google%2c%20YouTube%2c%20Bing"><i class="fa fa-reddit fa-lg"></i> Reddit</a></li><li class="linkedin-share"><a target="_blank" href="http://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwww.leowkahman.com%2f2017%2f09%2f11%2fenforce-safe-search-on-google-youtube-bing%2f"><i class="fa fa-linkedin fa-lg"></i> LinkedIn</a></li></ul><p>Enforce safe search on Google, YouTube, and Bing without a HTTP proxy. Instead, override DNS lookups, resolving to strict search server IP addresses.</p><p></p><h2 id="motivation">Motivation</h2><p>I wanted to enforce safe search on my home network. OpenDNS offers FamilyShield which blocks adult sites but they do not block explicit search results from Google, YouTube or Bing. Instead, <a href="https://support.opendns.com/hc/en-us/articles/227986807-How-to-Enforcing-Google-SafeSearch-YouTube-and-Bing">OpenDNS support page details how to enforce safe search on Google, YouTube, and Bing</a>. Therefore, I needed to figure a workaround.</p><h2 id="the-solution-for-google-youtube-and-bing">The solution for Google, YouTube, and Bing</h2><h3 id="the-concept">The concept</h3><p>When performing lookup on <code>www.google.com</code> or any of its <a href="https://www.google.com/supported_domains">supported domains</a>, DNS server resolves to the regular non-safe search version.</p><p>Instead of sending lookup requests to DNS servers, resolve to safe search IP addresses as below. Note that these are subject to change, correct as at 11th September 2017:</p><table><thead><tr><th align="left">Safe Search Service</th><th align="left">CNAME</th><th align="right">IP</th></tr></thead><tbody><tr><td align="left">Google</td><td align="left"><code>forcesafesearch.google.com</code></td><td align="right"><code>216.239.38.120</code></td></tr><tr><td align="left">YouTube Strict</td><td align="left"><code>restrict.youtube.com</code></td><td align="right"><code>216.239.38.120</code></td></tr><tr><td align="left">YouTube Moderate</td><td align="left"><code>restrictmoderate.youtube.com</code></td><td align="right"><code>216.239.38.119</code></td></tr><tr><td align="left">Bing</td><td align="left"><code>strict.bing.com</code></td><td align="right"><code>204.79.197.220</code></td></tr></tbody></table><p>Do <strong>not</strong> use these domains in web browsers directly. They are to be used only in DNS records. If you browse to <code>forcesafesearch.google.com</code>, you will land on a 404 page.</p><p>Service providers generally recommend referring to CNAME instead of IP as the latter may change. If you do not have an option, just refer to the IP address. When it breaks, you will know about it eventually.</p><p>For OpenWRT users, jump to <a href="#using-openwrt">Using OpenWRT</a> section below.<br/>Alternatively, to use <a href="#using-hosts-file">hosts file option</a>, the solution is right below.</p><h3 id="using-hosts-file">Using hosts file</h3><p>The <a href="https://en.wikipedia.org/wiki/Hosts_(file)">hosts file</a> should be available on most (if not all) operating systems. Administrator rights are required to edit this, which is a good thing as non-admins cannot tamper with it. i.e. parents with admin rights can pre-configure these for their kids where the latter do not have admin rights.</p><p>On Windows, it can be found at <code>C:\Windows\System32\drivers\etc\hosts</code>.<br/>On Unix, Linux, Raspberry Pi Raspbian, it can be found at <code>/etc/hosts</code>.</p><p>The format of the file is <code>&lt;IP address&gt; &lt;host name&gt;</code>.<br/>Note that the two fields are separated by space(s) or tab(s).</p><p>To capture domain names from <a href="https://www.google.com/supported_domains">Google supported domains</a>, I used regular expression:</p><pre><code class="language-text">([\w\.]+)(?:\s)?
+</code></pre><p>Then substitute with:</p><pre><code class="language-text">204.79.197.220 www$1\n
+</code></pre><p><code>$1</code> denotes capture group 1.<br/>Prefix it with <code>www</code> because that is absent in the capture.</p><p>If you are not into RegEx, that is fine. Here is the result:</p><pre><code class="language-text">204.79.197.220 www.google.com
+204.79.197.220 www.google.ad
+204.79.197.220 www.google.ae
+204.79.197.220 www.google.com.af
+204.79.197.220 www.google.com.ag
+204.79.197.220 www.google.com.ai
+204.79.197.220 www.google.al
+204.79.197.220 www.google.am
+204.79.197.220 www.google.co.ao
+204.79.197.220 www.google.com.ar
+204.79.197.220 www.google.as
+204.79.197.220 www.google.at
+204.79.197.220 www.google.com.au
+204.79.197.220 www.google.az
+204.79.197.220 www.google.ba
+204.79.197.220 www.google.com.bd
+204.79.197.220 www.google.be
+204.79.197.220 www.google.bf
+204.79.197.220 www.google.bg
+204.79.197.220 www.google.com.bh
+204.79.197.220 www.google.bi
+204.79.197.220 www.google.bj
+204.79.197.220 www.google.com.bn
+204.79.197.220 www.google.com.bo
+204.79.197.220 www.google.com.br
+204.79.197.220 www.google.bs
+204.79.197.220 www.google.bt
+204.79.197.220 www.google.co.bw
+204.79.197.220 www.google.by
+204.79.197.220 www.google.com.bz
+204.79.197.220 www.google.ca
+204.79.197.220 www.google.cd
+204.79.197.220 www.google.cf
+204.79.197.220 www.google.cg
+204.79.197.220 www.google.ch
+204.79.197.220 www.google.ci
+204.79.197.220 www.google.co.ck
+204.79.197.220 www.google.cl
+204.79.197.220 www.google.cm
+204.79.197.220 www.google.cn
+204.79.197.220 www.google.com.co
+204.79.197.220 www.google.co.cr
+204.79.197.220 www.google.com.cu
+204.79.197.220 www.google.cv
+204.79.197.220 www.google.com.cy
+204.79.197.220 www.google.cz
+204.79.197.220 www.google.de
+204.79.197.220 www.google.dj
+204.79.197.220 www.google.dk
+204.79.197.220 www.google.dm
+204.79.197.220 www.google.com.do
+204.79.197.220 www.google.dz
+204.79.197.220 www.google.com.ec
+204.79.197.220 www.google.ee
+204.79.197.220 www.google.com.eg
+204.79.197.220 www.google.es
+204.79.197.220 www.google.com.et
+204.79.197.220 www.google.fi
+204.79.197.220 www.google.com.fj
+204.79.197.220 www.google.fm
+204.79.197.220 www.google.fr
+204.79.197.220 www.google.ga
+204.79.197.220 www.google.ge
+204.79.197.220 www.google.gg
+204.79.197.220 www.google.com.gh
+204.79.197.220 www.google.com.gi
+204.79.197.220 www.google.gl
+204.79.197.220 www.google.gm
+204.79.197.220 www.google.gp
+204.79.197.220 www.google.gr
+204.79.197.220 www.google.com.gt
+204.79.197.220 www.google.gy
+204.79.197.220 www.google.com.hk
+204.79.197.220 www.google.hn
+204.79.197.220 www.google.hr
+204.79.197.220 www.google.ht
+204.79.197.220 www.google.hu
+204.79.197.220 www.google.co.id
+204.79.197.220 www.google.ie
+204.79.197.220 www.google.co.il
+204.79.197.220 www.google.im
+204.79.197.220 www.google.co.in
+204.79.197.220 www.google.iq
+204.79.197.220 www.google.is
+204.79.197.220 www.google.it
+204.79.197.220 www.google.je
+204.79.197.220 www.google.com.jm
+204.79.197.220 www.google.jo
+204.79.197.220 www.google.co.jp
+204.79.197.220 www.google.co.ke
+204.79.197.220 www.google.com.kh
+204.79.197.220 www.google.ki
+204.79.197.220 www.google.kg
+204.79.197.220 www.google.co.kr
+204.79.197.220 www.google.com.kw
+204.79.197.220 www.google.kz
+204.79.197.220 www.google.la
+204.79.197.220 www.google.com.lb
+204.79.197.220 www.google.li
+204.79.197.220 www.google.lk
+204.79.197.220 www.google.co.ls
+204.79.197.220 www.google.lt
+204.79.197.220 www.google.lu
+204.79.197.220 www.google.lv
+204.79.197.220 www.google.com.ly
+204.79.197.220 www.google.co.ma
+204.79.197.220 www.google.md
+204.79.197.220 www.google.me
+204.79.197.220 www.google.mg
+204.79.197.220 www.google.mk
+204.79.197.220 www.google.ml
+204.79.197.220 www.google.com.mm
+204.79.197.220 www.google.mn
+204.79.197.220 www.google.ms
+204.79.197.220 www.google.com.mt
+204.79.197.220 www.google.mu
+204.79.197.220 www.google.mv
+204.79.197.220 www.google.mw
+204.79.197.220 www.google.com.mx
+204.79.197.220 www.google.com.my
+204.79.197.220 www.google.co.mz
+204.79.197.220 www.google.com.na
+204.79.197.220 www.google.com.nf
+204.79.197.220 www.google.com.ng
+204.79.197.220 www.google.com.ni
+204.79.197.220 www.google.ne
+204.79.197.220 www.google.nl
+204.79.197.220 www.google.no
+204.79.197.220 www.google.com.np
+204.79.197.220 www.google.nr
+204.79.197.220 www.google.nu
+204.79.197.220 www.google.co.nz
+204.79.197.220 www.google.com.om
+204.79.197.220 www.google.com.pa
+204.79.197.220 www.google.com.pe
+204.79.197.220 www.google.com.pg
+204.79.197.220 www.google.com.ph
+204.79.197.220 www.google.com.pk
+204.79.197.220 www.google.pl
+204.79.197.220 www.google.pn
+204.79.197.220 www.google.com.pr
+204.79.197.220 www.google.ps
+204.79.197.220 www.google.pt
+204.79.197.220 www.google.com.py
+204.79.197.220 www.google.com.qa
+204.79.197.220 www.google.ro
+204.79.197.220 www.google.ru
+204.79.197.220 www.google.rw
+204.79.197.220 www.google.com.sa
+204.79.197.220 www.google.com.sb
+204.79.197.220 www.google.sc
+204.79.197.220 www.google.se
+204.79.197.220 www.google.com.sg
+204.79.197.220 www.google.sh
+204.79.197.220 www.google.si
+204.79.197.220 www.google.sk
+204.79.197.220 www.google.com.sl
+204.79.197.220 www.google.sn
+204.79.197.220 www.google.so
+204.79.197.220 www.google.sm
+204.79.197.220 www.google.sr
+204.79.197.220 www.google.st
+204.79.197.220 www.google.com.sv
+204.79.197.220 www.google.td
+204.79.197.220 www.google.tg
+204.79.197.220 www.google.co.th
+204.79.197.220 www.google.com.tj
+204.79.197.220 www.google.tk
+204.79.197.220 www.google.tl
+204.79.197.220 www.google.tm
+204.79.197.220 www.google.tn
+204.79.197.220 www.google.to
+204.79.197.220 www.google.com.tr
+204.79.197.220 www.google.tt
+204.79.197.220 www.google.com.tw
+204.79.197.220 www.google.co.tz
+204.79.197.220 www.google.com.ua
+204.79.197.220 www.google.co.ug
+204.79.197.220 www.google.co.uk
+204.79.197.220 www.google.com.uy
+204.79.197.220 www.google.co.uz
+204.79.197.220 www.google.com.vc
+204.79.197.220 www.google.co.ve
+204.79.197.220 www.google.vg
+204.79.197.220 www.google.co.vi
+204.79.197.220 www.google.com.vn
+204.79.197.220 www.google.vu
+204.79.197.220 www.google.ws
+204.79.197.220 www.google.rs
+204.79.197.220 www.google.co.za
+204.79.197.220 www.google.co.zm
+204.79.197.220 www.google.co.zw
+204.79.197.220 www.google.cat
+</code></pre><p>Copy the the above into your hosts file. Then flush your DNS cache.<br/>On Windows, <code>ipconfig /flushdns</code>.<br/>Your browser may have its own DNS cache, restart it.</p><p>To test it, simply browse to Google and type in explicit words to see if adult content appears.</p><p>For YouTube, append the following into your hosts file:</p><pre><code class="language-text">216.239.38.120 www.youtube.com
+216.239.38.120 m.youtube.com
+216.239.38.120 youtubei.googleapis.com
+216.239.38.120 youtube.googleapis.com
+216.239.38.120 www.youtube-nocookie.com
+</code></pre><p>Use <code>216.239.38.119</code> if you prefer moderate restrictions.</p><p>For Bing, append the following into your hosts file:</p><pre><code class="language-text">204.79.197.220 www.bing.com
+</code></pre><h3 id="using-openwrt">Using OpenWRT</h3><p>I am using <code>dnsmasq-full</code> version <code>2.73-1</code> on OpenWRT Chaos Calmer 15.05.1 instead of the default <code>dnsmasq</code>. The solution described below should also work with the latter. Otherwise, please install the full version.</p><p>Edit <code>/etc/dnsmasq.conf</code> and add lines formatted as <code>cname=&lt;target&gt;,&lt;cname&gt;</code>.<br/>To produce that format using Regex:</p><pre><code class="language-text">cname=www$1,forcesafesearch.google.com\n
+</code></pre><p>If you want just the output, here it is:</p><pre><code class="language-text"># Google safe search
+cname=www.google.com,forcesafesearch.google.com
+cname=www.google.ad,forcesafesearch.google.com
+cname=www.google.ae,forcesafesearch.google.com
+cname=www.google.com.af,forcesafesearch.google.com
+cname=www.google.com.ag,forcesafesearch.google.com
+cname=www.google.com.ai,forcesafesearch.google.com
+cname=www.google.al,forcesafesearch.google.com
+cname=www.google.am,forcesafesearch.google.com
+cname=www.google.co.ao,forcesafesearch.google.com
+cname=www.google.com.ar,forcesafesearch.google.com
+cname=www.google.as,forcesafesearch.google.com
+cname=www.google.at,forcesafesearch.google.com
+cname=www.google.com.au,forcesafesearch.google.com
+cname=www.google.az,forcesafesearch.google.com
+cname=www.google.ba,forcesafesearch.google.com
+cname=www.google.com.bd,forcesafesearch.google.com
+cname=www.google.be,forcesafesearch.google.com
+cname=www.google.bf,forcesafesearch.google.com
+cname=www.google.bg,forcesafesearch.google.com
+cname=www.google.com.bh,forcesafesearch.google.com
+cname=www.google.bi,forcesafesearch.google.com
+cname=www.google.bj,forcesafesearch.google.com
+cname=www.google.com.bn,forcesafesearch.google.com
+cname=www.google.com.bo,forcesafesearch.google.com
+cname=www.google.com.br,forcesafesearch.google.com
+cname=www.google.bs,forcesafesearch.google.com
+cname=www.google.bt,forcesafesearch.google.com
+cname=www.google.co.bw,forcesafesearch.google.com
+cname=www.google.by,forcesafesearch.google.com
+cname=www.google.com.bz,forcesafesearch.google.com
+cname=www.google.ca,forcesafesearch.google.com
+cname=www.google.cd,forcesafesearch.google.com
+cname=www.google.cf,forcesafesearch.google.com
+cname=www.google.cg,forcesafesearch.google.com
+cname=www.google.ch,forcesafesearch.google.com
+cname=www.google.ci,forcesafesearch.google.com
+cname=www.google.co.ck,forcesafesearch.google.com
+cname=www.google.cl,forcesafesearch.google.com
+cname=www.google.cm,forcesafesearch.google.com
+cname=www.google.cn,forcesafesearch.google.com
+cname=www.google.com.co,forcesafesearch.google.com
+cname=www.google.co.cr,forcesafesearch.google.com
+cname=www.google.com.cu,forcesafesearch.google.com
+cname=www.google.cv,forcesafesearch.google.com
+cname=www.google.com.cy,forcesafesearch.google.com
+cname=www.google.cz,forcesafesearch.google.com
+cname=www.google.de,forcesafesearch.google.com
+cname=www.google.dj,forcesafesearch.google.com
+cname=www.google.dk,forcesafesearch.google.com
+cname=www.google.dm,forcesafesearch.google.com
+cname=www.google.com.do,forcesafesearch.google.com
+cname=www.google.dz,forcesafesearch.google.com
+cname=www.google.com.ec,forcesafesearch.google.com
+cname=www.google.ee,forcesafesearch.google.com
+cname=www.google.com.eg,forcesafesearch.google.com
+cname=www.google.es,forcesafesearch.google.com
+cname=www.google.com.et,forcesafesearch.google.com
+cname=www.google.fi,forcesafesearch.google.com
+cname=www.google.com.fj,forcesafesearch.google.com
+cname=www.google.fm,forcesafesearch.google.com
+cname=www.google.fr,forcesafesearch.google.com
+cname=www.google.ga,forcesafesearch.google.com
+cname=www.google.ge,forcesafesearch.google.com
+cname=www.google.gg,forcesafesearch.google.com
+cname=www.google.com.gh,forcesafesearch.google.com
+cname=www.google.com.gi,forcesafesearch.google.com
+cname=www.google.gl,forcesafesearch.google.com
+cname=www.google.gm,forcesafesearch.google.com
+cname=www.google.gp,forcesafesearch.google.com
+cname=www.google.gr,forcesafesearch.google.com
+cname=www.google.com.gt,forcesafesearch.google.com
+cname=www.google.gy,forcesafesearch.google.com
+cname=www.google.com.hk,forcesafesearch.google.com
+cname=www.google.hn,forcesafesearch.google.com
+cname=www.google.hr,forcesafesearch.google.com
+cname=www.google.ht,forcesafesearch.google.com
+cname=www.google.hu,forcesafesearch.google.com
+cname=www.google.co.id,forcesafesearch.google.com
+cname=www.google.ie,forcesafesearch.google.com
+cname=www.google.co.il,forcesafesearch.google.com
+cname=www.google.im,forcesafesearch.google.com
+cname=www.google.co.in,forcesafesearch.google.com
+cname=www.google.iq,forcesafesearch.google.com
+cname=www.google.is,forcesafesearch.google.com
+cname=www.google.it,forcesafesearch.google.com
+cname=www.google.je,forcesafesearch.google.com
+cname=www.google.com.jm,forcesafesearch.google.com
+cname=www.google.jo,forcesafesearch.google.com
+cname=www.google.co.jp,forcesafesearch.google.com
+cname=www.google.co.ke,forcesafesearch.google.com
+cname=www.google.com.kh,forcesafesearch.google.com
+cname=www.google.ki,forcesafesearch.google.com
+cname=www.google.kg,forcesafesearch.google.com
+cname=www.google.co.kr,forcesafesearch.google.com
+cname=www.google.com.kw,forcesafesearch.google.com
+cname=www.google.kz,forcesafesearch.google.com
+cname=www.google.la,forcesafesearch.google.com
+cname=www.google.com.lb,forcesafesearch.google.com
+cname=www.google.li,forcesafesearch.google.com
+cname=www.google.lk,forcesafesearch.google.com
+cname=www.google.co.ls,forcesafesearch.google.com
+cname=www.google.lt,forcesafesearch.google.com
+cname=www.google.lu,forcesafesearch.google.com
+cname=www.google.lv,forcesafesearch.google.com
+cname=www.google.com.ly,forcesafesearch.google.com
+cname=www.google.co.ma,forcesafesearch.google.com
+cname=www.google.md,forcesafesearch.google.com
+cname=www.google.me,forcesafesearch.google.com
+cname=www.google.mg,forcesafesearch.google.com
+cname=www.google.mk,forcesafesearch.google.com
+cname=www.google.ml,forcesafesearch.google.com
+cname=www.google.com.mm,forcesafesearch.google.com
+cname=www.google.mn,forcesafesearch.google.com
+cname=www.google.ms,forcesafesearch.google.com
+cname=www.google.com.mt,forcesafesearch.google.com
+cname=www.google.mu,forcesafesearch.google.com
+cname=www.google.mv,forcesafesearch.google.com
+cname=www.google.mw,forcesafesearch.google.com
+cname=www.google.com.mx,forcesafesearch.google.com
+cname=www.google.com.my,forcesafesearch.google.com
+cname=www.google.co.mz,forcesafesearch.google.com
+cname=www.google.com.na,forcesafesearch.google.com
+cname=www.google.com.nf,forcesafesearch.google.com
+cname=www.google.com.ng,forcesafesearch.google.com
+cname=www.google.com.ni,forcesafesearch.google.com
+cname=www.google.ne,forcesafesearch.google.com
+cname=www.google.nl,forcesafesearch.google.com
+cname=www.google.no,forcesafesearch.google.com
+cname=www.google.com.np,forcesafesearch.google.com
+cname=www.google.nr,forcesafesearch.google.com
+cname=www.google.nu,forcesafesearch.google.com
+cname=www.google.co.nz,forcesafesearch.google.com
+cname=www.google.com.om,forcesafesearch.google.com
+cname=www.google.com.pa,forcesafesearch.google.com
+cname=www.google.com.pe,forcesafesearch.google.com
+cname=www.google.com.pg,forcesafesearch.google.com
+cname=www.google.com.ph,forcesafesearch.google.com
+cname=www.google.com.pk,forcesafesearch.google.com
+cname=www.google.pl,forcesafesearch.google.com
+cname=www.google.pn,forcesafesearch.google.com
+cname=www.google.com.pr,forcesafesearch.google.com
+cname=www.google.ps,forcesafesearch.google.com
+cname=www.google.pt,forcesafesearch.google.com
+cname=www.google.com.py,forcesafesearch.google.com
+cname=www.google.com.qa,forcesafesearch.google.com
+cname=www.google.ro,forcesafesearch.google.com
+cname=www.google.ru,forcesafesearch.google.com
+cname=www.google.rw,forcesafesearch.google.com
+cname=www.google.com.sa,forcesafesearch.google.com
+cname=www.google.com.sb,forcesafesearch.google.com
+cname=www.google.sc,forcesafesearch.google.com
+cname=www.google.se,forcesafesearch.google.com
+cname=www.google.com.sg,forcesafesearch.google.com
+cname=www.google.sh,forcesafesearch.google.com
+cname=www.google.si,forcesafesearch.google.com
+cname=www.google.sk,forcesafesearch.google.com
+cname=www.google.com.sl,forcesafesearch.google.com
+cname=www.google.sn,forcesafesearch.google.com
+cname=www.google.so,forcesafesearch.google.com
+cname=www.google.sm,forcesafesearch.google.com
+cname=www.google.sr,forcesafesearch.google.com
+cname=www.google.st,forcesafesearch.google.com
+cname=www.google.com.sv,forcesafesearch.google.com
+cname=www.google.td,forcesafesearch.google.com
+cname=www.google.tg,forcesafesearch.google.com
+cname=www.google.co.th,forcesafesearch.google.com
+cname=www.google.com.tj,forcesafesearch.google.com
+cname=www.google.tk,forcesafesearch.google.com
+cname=www.google.tl,forcesafesearch.google.com
+cname=www.google.tm,forcesafesearch.google.com
+cname=www.google.tn,forcesafesearch.google.com
+cname=www.google.to,forcesafesearch.google.com
+cname=www.google.com.tr,forcesafesearch.google.com
+cname=www.google.tt,forcesafesearch.google.com
+cname=www.google.com.tw,forcesafesearch.google.com
+cname=www.google.co.tz,forcesafesearch.google.com
+cname=www.google.com.ua,forcesafesearch.google.com
+cname=www.google.co.ug,forcesafesearch.google.com
+cname=www.google.co.uk,forcesafesearch.google.com
+cname=www.google.com.uy,forcesafesearch.google.com
+cname=www.google.co.uz,forcesafesearch.google.com
+cname=www.google.com.vc,forcesafesearch.google.com
+cname=www.google.co.ve,forcesafesearch.google.com
+cname=www.google.vg,forcesafesearch.google.com
+cname=www.google.co.vi,forcesafesearch.google.com
+cname=www.google.com.vn,forcesafesearch.google.com
+cname=www.google.vu,forcesafesearch.google.com
+cname=www.google.ws,forcesafesearch.google.com
+cname=www.google.rs,forcesafesearch.google.com
+cname=www.google.co.za,forcesafesearch.google.com
+cname=www.google.co.zm,forcesafesearch.google.com
+cname=www.google.co.zw,forcesafesearch.google.com
+cname=www.google.cat,forcesafesearch.google.com
+
+# YouTube restricted
+cname=www.youtube.com,restrict.youtube.com
+cname=m.youtube.com,restrict.youtube.com
+cname=youtubei.googleapis.com,restrict.youtube.com
+cname=youtube.googleapis.com,restrict.youtube.com
+cname=www.youtube-nocookie.com,restrict.youtube.com
+
+# Bing safe search
+cname=www.bing.com,strict.bing.com
+</code></pre><p>Dnsmasq CNAMEs must reference a domain that exists in the hosts file.<br/>As such, the following lines need to be added into <code>/etc/hosts</code> file:</p><pre><code class="language-text">216.239.38.120 forcesafesearch.google.com
+216.239.38.120 restrict.youtube.com
+204.79.197.220 strict.bing.com
+</code></pre><h2 id="the-solution-for-other-search-engines">The solution for other search engines</h2><h3 id="duckduckgo">DuckDuckGo</h3><p>DuckDuckGo implemented their safe search differently whereby the safe search domain <code>safe.duckduckgo.com</code> resolves to the same IP as <code>duckduckgo.com</code>. Therefore, the solution concept described in this article cannot be applied to DuckDuckGo. Users would need to explicitly enter <a href="https://safe.duckduckgo.com">https://safe.duckduckgo.com</a>.</p><ul class="list-inline tags" style="margin-left:0"><li class="btn btn-primary"><a href="https://www.leowkahman.com/tags/bing">Bing</a></li><li class="btn btn-primary"><a href="https://www.leowkahman.com/tags/google">Google</a></li><li class="btn btn-primary"><a href="https://www.leowkahman.com/tags/openwrt">OpenWRT</a></li><li class="btn btn-primary"><a href="https://www.leowkahman.com/tags/youtube">YouTube</a></li></ul></div></div><div class="blog-post"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8585963436723502" data-ad-slot="8937917223" data-ad-format="auto"></ins></div><div class="row"><div class="blog-post"><div id="disqus_thread"></div><script>!function(){if("localhost"!=window.location.hostname){var e=document.createElement("script");e.type="text/javascript",e.async=!0;e.src="https://leowkahman.disqus.com/embed.js",(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(e)}else document.write("Disqus comments are unavailable while serving on localhost or 127.0.0.1")}()</script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript></div></div></div><div class="col-sm-4 blog-sidebar"><div class="sidebar-module"><script>!function(){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src="https://cse.google.com/cse.js?cx=partner-pub-8585963436723502:5716828028";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}()</script><gcse:search></gcse:search></div><div class="sidebar-module"><h4>Recent Posts</h4><ul class="list-unstyled posts-recent"><li><a href="https://www.leowkahman.com/2017/09/11/enforce-safe-search-on-google-youtube-bing/">Enforce Safe Search on Google, YouTube, Bing</a></li><li><a href="https://www.leowkahman.com/2017/09/10/gitlab-ci-remove-priority-zero-from-hugo-sitemap/">GitLab CI remove priority zero from Hugo sitemap</a></li><li><a href="https://www.leowkahman.com/2017/09/09/gitlab-ci-push-output-to-github/">GitLab CI push output to GitHub</a></li><li><a href="https://www.leowkahman.com/2017/09/05/tm-streamyx-router-wifi-security/">TM Streamyx Router Wi-Fi Security</a></li><li><a href="https://www.leowkahman.com/2017/08/15/hugo-static-site-generator-with-ci-deployment-using-gitlab/">Hugo Static Site Generator with CI Deployment using GitLab</a></li></ul></div><div class="sidebar-module"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8585963436723502" data-ad-slot="6069940020" data-ad-format="auto"></ins></div><div class="sidebar-module"><h4>Categories</h4><ul class="list-unstyled posts-recent"><li><a href="https://www.leowkahman.com/categories/web/">web</a></li><li><a href="https://www.leowkahman.com/categories/network/">network</a></li><li><a href="https://www.leowkahman.com/categories/software/">software</a></li><li><a href="https://www.leowkahman.com/categories/hardware/">hardware</a></li><li><a href="https://www.leowkahman.com/categories/cloud/">cloud</a></li></ul></div></div></div></div><footer class="blog-footer"><div class="container"><div class="row"><div class="col-sm-8 col-xs-6"><ul class="list-inline links"><li><a href="https://status.leowkahman.com/">Uptime</a></li></ul></div><div class="col-sm-4 col-xs-6"><ul class="list-inline"><li><a target="_blank" href="/index.xml"><i class="fa fa-rss fa-lg"></i></a></li><li><a target="_blank" href="https://stackexchange.com/users/6729082/leow-kah-man"><i class="fa fa-stack-exchange fa-lg"></i></a></li><li><a target="_blank" href="https://github.com/kmleow"><i class="fa fa-github fa-lg"></i></a></li><li><a target="_blank" href="https://www.linkedin.com/in/kmleow"><i class="fa fa-linkedin fa-lg"></i></a></li><li><a target="_blank" href="https://www.facebook.com/LeowKahMan"><i class="fa fa-facebook fa-lg"></i></a></li></ul></div></div></div><div class="container"><div class="col-sm-12 row"><p>Except as otherwise noted, the content of this page is licensed under the <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License </a>,<br/>code samples are licensed under the <a href="https://tldrlegal.com/license/mit-license">MIT License</a>.</p></div></div></footer><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script><script>hljs.initHighlightingOnLoad()</script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>"localhost"==window.location.hostname?($(".adsbygoogle").css("text-decoration","none"),$(".adsbygoogle").text("Adsense is unavailable while serving on localhost or 127.0.0.1")):[].forEach.call(document.querySelectorAll(".adsbygoogle"),function(){(adsbygoogle=window.adsbygoogle||[]).push({})})</script><script>!function(e,a,t,n,c,o,s){e.GoogleAnalyticsObject=c,e[c]=e[c]||function(){(e[c].q=e[c].q||[]).push(arguments)},e[c].l=1*new Date,o=a.createElement(t),s=a.getElementsByTagName(t)[0],o.async=1,o.src="//www.google-analytics.com/analytics.js",s.parentNode.insertBefore(o,s)}(window,document,"script",0,"ga"),ga("create","UA-61838818-1","auto"),ga("send","pageview"),ga("set","forceSSL",!0)</script></body></html>
