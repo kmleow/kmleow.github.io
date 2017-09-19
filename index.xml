@@ -571,7 +571,9 @@ Read on to know the reason and solution.&lt;/p&gt;
       <pubDate>Sun, 14 Feb 2016 18:54:00 +0800</pubDate>
       
       <guid>https://www.leowkahman.com/about/</guid>
-      <description>I am Leow Kah Man, a Software Architect and Full Stack Software Developer, lives in Malaysia, likes just about anything that has to do with technology.</description>
+      <description>I am Leow Kah Man, a Software Architect and Full Stack Software Developer, lives in Malaysia, likes just about anything that has to do with technology. I am extremely passionate about designing cloud architectures that drive new innovations, raise scalability and reduce time to deploy.
+During my spare time, I like tinkering with OpenWRT and Raspberry Pi, and trying out new cloud services.
+This blog was built using Hugo with CI deployment using GitLab.</description>
     </item>
     
     <item>
