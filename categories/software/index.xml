@@ -7,10 +7,26 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License, code samples are licensed under the MIT License.</copyright>
-    <lastBuildDate>Sun, 23 Jul 2017 22:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 23 Sep 2017 01:30:00 +0800</lastBuildDate>
     
 	<atom:link href="https://www.leowkahman.com/categories/software/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Checklist for switching from Windows to Linux</title>
+      <link>https://www.leowkahman.com/2017/09/23/checklist-for-switching-from-windows-to-linux/</link>
+      <pubDate>Sat, 23 Sep 2017 01:30:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2017/09/23/checklist-for-switching-from-windows-to-linux/</guid>
+      <description>&lt;p&gt;Every year, the reasons to switch from Windows to Linux grows more and more.
+Linux distros are more user friendly than they used to be.
+In terms of difficulty, it is probably like switching between iOS and Android
+except that you need to setup the Operating System yourself.&lt;/p&gt;
+
+&lt;p&gt;Here are things to consider when switching from Windows to Linux.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Block ads with OpenWRT dnsmasq</title>
