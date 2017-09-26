@@ -30,7 +30,8 @@ Instead, override DNS lookups, resolving to strict search server IP addresses.&l
       <pubDate>Sun, 23 Jul 2017 22:00:00 +0800</pubDate>
       
       <guid>https://www.leowkahman.com/2017/07/23/block-ads-with-openwrt-dnsmasq/</guid>
-      <description>&lt;p&gt;Block ads with OpenWRT dnsmasq and automate downloading of the latest list once a week.&lt;/p&gt;
+      <description>&lt;p&gt;Block ads with OpenWRT dnsmasq and automate downloading of the latest list once
+a week. This solution can also be applied to blocking crytocoin miner domains.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -42,7 +43,8 @@ Instead, override DNS lookups, resolving to strict search server IP addresses.&l
       
       <guid>https://www.leowkahman.com/2017/04/02/tor-proxy-on-openwrt/</guid>
       <description>&lt;p&gt;The best way to use Tor network is by browsing using the official Tor Browser.
-However, if you have specific need to connect to Tor without their official browser, you can setup SOCKS5 or HTTP proxy.&lt;/p&gt;
+However, if you have specific need to connect to Tor without their official
+browser, you can setup SOCKS5 or HTTP proxy.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -53,7 +55,8 @@ However, if you have specific need to connect to Tor without their official brow
       <pubDate>Sat, 27 Aug 2016 04:00:00 +0800</pubDate>
       
       <guid>https://www.leowkahman.com/2016/08/27/track-users-connectivity-to-wifi-using-openwrt/</guid>
-      <description>&lt;p&gt;How to know what time a person reached or was at home? One of the simplest method is to track when the user was connected to Wi-Fi.
+      <description>&lt;p&gt;How to know what time a person reached or was at home? One of the simplest
+method is to track when the user was connected to Wi-Fi.
 This could be accomplished easily if you have OpenWRT firmware on your router.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -65,8 +68,9 @@ This could be accomplished easily if you have OpenWRT firmware on your router.&l
       <pubDate>Sun, 31 Jul 2016 14:00:00 +0800</pubDate>
       
       <guid>https://www.leowkahman.com/2016/07/31/get-notified-via-ifttt-pushbullet-when-openwrt-router-has-started/</guid>
-      <description>&lt;p&gt;Using IFTTT&amp;rsquo;s Maker channel, I could setup a Web Request receiver or if you prefer a simpler method, you could use Pushbullet.
-Then I configured my OpenWRT router to post to the receiver on startup.&lt;/p&gt;
+      <description>&lt;p&gt;Using IFTTT&amp;rsquo;s Maker channel, I could setup a Web Request receiver or if you
+prefer a simpler method, you could use Pushbullet. Then I configured my OpenWRT
+router to post to the receiver on startup.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -77,7 +81,9 @@ Then I configured my OpenWRT router to post to the receiver on startup.&lt;/p&gt
       <pubDate>Sun, 19 Jun 2016 12:54:00 +0800</pubDate>
       
       <guid>https://www.leowkahman.com/2016/06/19/conditional-multiple-openvpn-routing-hostname-ip/</guid>
-      <description>&lt;p&gt;Using OpenWRT, connect to multiple OpenVPN instances and conditionally divert one or more outgoing traffic to specific VPN route by destination host names or IP addresses.&lt;/p&gt;
+      <description>&lt;p&gt;Using OpenWRT, connect to multiple OpenVPN instances and conditionally divert
+one or more outgoing traffic to specific VPN route by destination host names or
+IP addresses.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -88,7 +94,8 @@ Then I configured my OpenWRT router to post to the receiver on startup.&lt;/p&gt
       <pubDate>Mon, 23 May 2016 00:27:00 +0800</pubDate>
       
       <guid>https://www.leowkahman.com/2016/05/23/openwrt-encrypted-dns-lookup-using-multiple-dnscrypt-servers/</guid>
-      <description>&lt;p&gt;Want to setup OpenWRT to query specific DNSCrypt server depending on domain name to resolve? Read on.&lt;/p&gt;
+      <description>&lt;p&gt;Want to setup OpenWRT to query specific DNSCrypt server depending on domain name
+to resolve? Read on.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -99,7 +106,8 @@ Then I configured my OpenWRT router to post to the receiver on startup.&lt;/p&gt
       <pubDate>Sun, 08 May 2016 22:37:00 +0800</pubDate>
       
       <guid>https://www.leowkahman.com/2016/05/08/setup-haproxy-cloudflare-ssl-termination-openwrt/</guid>
-      <description>&lt;p&gt;Setup instructions for HAProxy with HTTP SSL termination on OpenWRT with CloudFlare Origin CA and Authenticated Origin Pulls.&lt;/p&gt;
+      <description>&lt;p&gt;Setup instructions for HAProxy with HTTP SSL termination on OpenWRT with
+CloudFlare Origin CA and Authenticated Origin Pulls.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -110,7 +118,8 @@ Then I configured my OpenWRT router to post to the receiver on startup.&lt;/p&gt
       <pubDate>Mon, 02 May 2016 15:47:00 +0800</pubDate>
       
       <guid>https://www.leowkahman.com/2016/05/02/openwrt-ipv6-dynamic-dns-client/</guid>
-      <description>&lt;p&gt;This should be rather straightforward but I encountered problems setting up with a solution worth sharing and I will throw in a tip that you may find useful.&lt;/p&gt;
+      <description>&lt;p&gt;This should be rather straightforward but I encountered problems setting up with
+a solution worth sharing and I will throw in a tip that you may find useful.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -121,9 +130,9 @@ Then I configured my OpenWRT router to post to the receiver on startup.&lt;/p&gt
       <pubDate>Sun, 10 Apr 2016 18:19:00 +0800</pubDate>
       
       <guid>https://www.leowkahman.com/2016/04/10/use-ssl-openwrt-opkg/</guid>
-      <description>&lt;p&gt;After installing OpenWRT Chaos Calmer, I noticed that OPKG calls are performed via HTTP without SSL.
-Changing to HTTPS was not as simple as adding just one letter &amp;rsquo;s&amp;rsquo;.
-Read on for the steps.&lt;/p&gt;
+      <description>&lt;p&gt;After installing OpenWRT Chaos Calmer, I noticed that OPKG calls are performed
+via HTTP without SSL. Changing to HTTPS was not as simple as adding just one
+letter &amp;rsquo;s&amp;rsquo;. Read on for the steps.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -134,7 +143,8 @@ Read on for the steps.&lt;/p&gt;
       <pubDate>Mon, 14 Mar 2016 22:39:00 +0800</pubDate>
       
       <guid>https://www.leowkahman.com/2016/03/14/setup-4096-bit-openvpn-openwrt/</guid>
-      <description>&lt;p&gt;If you want to setup OpenVPN with 4096-bit key on OpenWRT, with a few tips and tricks in addition, read on.&lt;/p&gt;
+      <description>&lt;p&gt;If you want to setup OpenVPN with 4096-bit key on OpenWRT, with a few tips and
+tricks in addition, read on.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -145,9 +155,14 @@ Read on for the steps.&lt;/p&gt;
       <pubDate>Sun, 21 Feb 2016 17:56:00 +0800</pubDate>
       
       <guid>https://www.leowkahman.com/2016/02/21/openssl-benchmark-raspberry-vs-nas-vs-archer-c7/</guid>
-      <description>&lt;p&gt;I am not short of options when it comes to spreading tasks over several System-on-Chip (SoC) based low-powered micro computers. 4 devices were tested; OpenWRT running on TP-Link Archer C7 v2, QNAP TS-220 and Asustor AS-304T and Raspberry Pi 2 Model B.&lt;/p&gt;
+      <description>&lt;p&gt;I am not short of options when it comes to spreading tasks over several
+System-on-Chip (SoC) based low-powered micro computers. 4 devices were tested;
+OpenWRT running on TP-Link Archer C7 v2, QNAP TS-220 and Asustor AS-304T and
+Raspberry Pi 2 Model B.&lt;/p&gt;
 
-&lt;p&gt;In deciding which to be used for hosting a HTTPS-only web server, I was interested in the cryptography (namely RSA and AES) performance thus the motivation for running benchmarks.&lt;/p&gt;
+&lt;p&gt;In deciding which to be used for hosting a HTTPS-only web server, I was
+interested in the cryptography (namely RSA and AES) performance thus the
+motivation for running benchmarks.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -158,7 +173,10 @@ Read on for the steps.&lt;/p&gt;
       <pubDate>Mon, 01 Feb 2016 17:22:00 +0000</pubDate>
       
       <guid>https://www.leowkahman.com/2016/02/01/openwrt-dynamic-dns-cloudflare-orange-cloud/</guid>
-      <description>&lt;p&gt;Installing &lt;code&gt;ddns-scripts&lt;/code&gt; and &lt;code&gt;ddns-scripts_cloudflare&lt;/code&gt; version 2.4.3-1 from OpenWRT package repository allows you to configure dynamic DNS that points directly to your IP address without orange cloud. If you want the orange cloud however, you need to make a small change.&lt;/p&gt;
+      <description>&lt;p&gt;Installing &lt;code&gt;ddns-scripts&lt;/code&gt; and &lt;code&gt;ddns-scripts_cloudflare&lt;/code&gt; version 2.4.3-1 from
+OpenWRT package repository allows you to configure dynamic DNS that points
+directly to your IP address without orange cloud. If you want the orange cloud
+however, you need to make a small change.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -185,7 +203,9 @@ Read on for the steps.&lt;/p&gt;
       <pubDate>Wed, 20 Jan 2016 22:38:00 +0800</pubDate>
       
       <guid>https://www.leowkahman.com/2016/01/20/configuring-openwrt-to-block-skype-ads/</guid>
-      <description>&lt;p&gt;This is very likely the easiest way to block Skype advertisements using OpenWRT. Blocking at router means you do not have to apply the block on every computer that goes out via this router.&lt;/p&gt;
+      <description>&lt;p&gt;This is very likely the easiest way to block Skype advertisements using OpenWRT.
+Blocking at router means you do not have to apply the block on every computer
+that goes out via this router.&lt;/p&gt;
 
 &lt;p&gt;Works for: Skype for Windows as at version 7.17&lt;/p&gt;
 
@@ -198,9 +218,12 @@ Read on for the steps.&lt;/p&gt;
       <pubDate>Wed, 06 Jan 2016 00:21:00 +0800</pubDate>
       
       <guid>https://www.leowkahman.com/2016/01/06/openwrt-redirect-all-ntp-queries-to-specific-servers/</guid>
-      <description>&lt;p&gt;Most devices allow you to set the &lt;a href=&#34;https://en.wikipedia.org/wiki/Network_Time_Protocol&#34;&gt;Network Time Protocol (NTP)&lt;/a&gt; server to one that you prefer but there are some devices that have hardcoded NTP server hostname.
-This is mostly fine if all devices in your local network are synchronised to the same second but this is not always true.
-I have seen NTP servers that drift over 30 seconds. Not good&amp;hellip;&lt;/p&gt;
+      <description>&lt;p&gt;Most devices allow you to set the
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Network_Time_Protocol&#34;&gt;Network Time Protocol (NTP)&lt;/a&gt;
+server to one that you prefer but there are some devices that have hardcoded NTP
+server hostname. This is mostly fine if all devices in your local network are
+synchronised to the same second but this is not always true. I have seen NTP
+servers that drift over 30 seconds. Not good&amp;hellip;&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -211,8 +234,11 @@ I have seen NTP servers that drift over 30 seconds. Not good&amp;hellip;&lt;/p&g
       <pubDate>Sun, 03 Jan 2016 01:12:00 +0800</pubDate>
       
       <guid>https://www.leowkahman.com/2016/01/03/tp-link-archer-c7-v2-openwrt-vlan-unifi-hypptv/</guid>
-      <description>&lt;p&gt;There are many tutorials available on Internet on how to setup VLAN on OpenWRT Chaos Calmer 15.05 but finding one specifically for Archer C7 v2 with the right VLAN settings for Malaysia&amp;rsquo;s UniFi HyppTV was a little challenging.
-In the process of trial and error, I had to recover my router from failsafe mode so please be careful.&lt;/p&gt;
+      <description>&lt;p&gt;There are many tutorials available on Internet on how to setup VLAN on OpenWRT
+Chaos Calmer 15.05 but finding one specifically for Archer C7 v2 with the right
+VLAN settings for Malaysia&amp;rsquo;s UniFi HyppTV was a little challenging. In the
+process of trial and error, I had to recover my router from failsafe mode so
+please be careful.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -223,7 +249,9 @@ In the process of trial and error, I had to recover my router from failsafe mode
       <pubDate>Sun, 03 Jan 2016 00:22:00 +0800</pubDate>
       
       <guid>https://www.leowkahman.com/2016/01/03/tp-link-archer-c7-with-openwrt-firmware/</guid>
-      <description>&lt;p&gt;I was running stock firmware for a couple of months but I needed the router to do more. I was reluctant to spend a lot of money on a high end router thus opted to install OpenWRT Chaos Calmer 15.05 into my TP-Link Archer C7 v2.&lt;/p&gt;
+      <description>&lt;p&gt;I was running stock firmware for a couple of months but I needed the router to
+do more. I was reluctant to spend a lot of money on a high end router thus opted
+to install OpenWRT Chaos Calmer 15.05 into my TP-Link Archer C7 v2.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

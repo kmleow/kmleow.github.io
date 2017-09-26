@@ -18,7 +18,9 @@
       <pubDate>Sun, 19 Jun 2016 12:54:00 +0800</pubDate>
       
       <guid>https://www.leowkahman.com/2016/06/19/conditional-multiple-openvpn-routing-hostname-ip/</guid>
-      <description>&lt;p&gt;Using OpenWRT, connect to multiple OpenVPN instances and conditionally divert one or more outgoing traffic to specific VPN route by destination host names or IP addresses.&lt;/p&gt;
+      <description>&lt;p&gt;Using OpenWRT, connect to multiple OpenVPN instances and conditionally divert
+one or more outgoing traffic to specific VPN route by destination host names or
+IP addresses.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -29,7 +31,8 @@
       <pubDate>Sun, 08 May 2016 22:37:00 +0800</pubDate>
       
       <guid>https://www.leowkahman.com/2016/05/08/setup-haproxy-cloudflare-ssl-termination-openwrt/</guid>
-      <description>&lt;p&gt;Setup instructions for HAProxy with HTTP SSL termination on OpenWRT with CloudFlare Origin CA and Authenticated Origin Pulls.&lt;/p&gt;
+      <description>&lt;p&gt;Setup instructions for HAProxy with HTTP SSL termination on OpenWRT with
+CloudFlare Origin CA and Authenticated Origin Pulls.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

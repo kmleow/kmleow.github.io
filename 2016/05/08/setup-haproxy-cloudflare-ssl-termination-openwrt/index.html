@@ -54,7 +54,7 @@
 
     # Close the backend connection
     option http-server-close
-</code></pre><p>Do not start/restart the HAProxy yet.</p><h2 id="apache-on-raspberry-pi-as-my-backend-http-server">Apache on Raspberry Pi as my backend HTTP server</h2><p>You may want to refer to my post on how to setup <a href="/2016/04/22/apache-2-event-mpm-and-php-5-fastcgi-on-raspberry-pi/">HTTP server on Pi</a>. Note that you do not need to setup SSL on it since SSL is terminated at the load balancer.</p><p>To configure the Pi firewall to allow inbound traffic from LAN subnet only, follow these steps:</p><p>UFW must be installed:</p><pre><code class="language-bash">sudo apt-get install ufw
+</code></pre><p>Do not start/restart the HAProxy yet.</p><h2 id="apache-on-raspberry-pi-as-my-backend-http-server">Apache on Raspberry Pi as my backend HTTP server</h2><p>You may want to refer to my post on how to setup <a href="/2016/04/22/apache-2-event-mpm-and-php-5-fastcgi-on-raspberry-pi/">HTTP server on Pi</a>. Note that you do not need to setup SSL on it since SSL is terminated at the load balancer.</p><p>To configure the Pi firewall to allow inbound traffic from LAN subnet only, follow these steps:</p><p>UFW must be installed:</p><pre><code class="language-bash">sudo apt-get install ufw
 </code></pre><p>Ensure that IPv6 is enabled in <code>/etc/default/ufw</code>, you should see <code>IPV6=yes</code>.</p><p>Configure default rules; deny incoming, allow outgoing:</p><pre><code class="language-bash">sudo ufw default deny incoming
 sudo ufw default allow outgoing
 </code></pre><p>Allow all incoming traffic from your LAN (change the subnet accordingly):</p><pre><code class="language-bash">sudo ufw allow from 192.168.0.0/24

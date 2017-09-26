@@ -19,8 +19,8 @@
       
       <guid>https://www.leowkahman.com/2017/04/04/dotnet-core-on-google-cloud-f1-micro-instance/</guid>
       <description>&lt;p&gt;Given that .NET Core is capable of running on Linux,
-I decided to try running a simple Hello World test on Google Cloud Platform f1-micro instance
-and also ran OpenSSL speed tests.&lt;/p&gt;
+I decided to try running a simple Hello World test on Google Cloud Platform
+f1-micro instance and also ran OpenSSL speed tests.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

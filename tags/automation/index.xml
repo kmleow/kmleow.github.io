@@ -18,8 +18,9 @@
       <pubDate>Sat, 24 Dec 2016 13:00:00 +0800</pubDate>
       
       <guid>https://www.leowkahman.com/2016/12/24/automate-downloading-of-historical-data-from-sunny-explorer/</guid>
-      <description>&lt;p&gt;If you have SMA solar power inverters and would be interested in automating download of historical data, read on.
-I have written a PowerShell script that downloads data as CSV format and places them into folders by year and month.&lt;/p&gt;
+      <description>&lt;p&gt;If you have SMA solar power inverters and would be interested in automating
+download of historical data, read on. I have written a PowerShell script that
+downloads data as CSV format and places them into folders by year and month.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

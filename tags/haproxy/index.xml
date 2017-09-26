@@ -18,7 +18,8 @@
       <pubDate>Sun, 08 May 2016 22:37:00 +0800</pubDate>
       
       <guid>https://www.leowkahman.com/2016/05/08/setup-haproxy-cloudflare-ssl-termination-openwrt/</guid>
-      <description>&lt;p&gt;Setup instructions for HAProxy with HTTP SSL termination on OpenWRT with CloudFlare Origin CA and Authenticated Origin Pulls.&lt;/p&gt;
+      <description>&lt;p&gt;Setup instructions for HAProxy with HTTP SSL termination on OpenWRT with
+CloudFlare Origin CA and Authenticated Origin Pulls.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

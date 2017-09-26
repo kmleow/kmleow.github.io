@@ -18,7 +18,9 @@
       <pubDate>Sun, 19 Jun 2016 12:54:00 +0800</pubDate>
       
       <guid>https://www.leowkahman.com/2016/06/19/conditional-multiple-openvpn-routing-hostname-ip/</guid>
-      <description>&lt;p&gt;Using OpenWRT, connect to multiple OpenVPN instances and conditionally divert one or more outgoing traffic to specific VPN route by destination host names or IP addresses.&lt;/p&gt;
+      <description>&lt;p&gt;Using OpenWRT, connect to multiple OpenVPN instances and conditionally divert
+one or more outgoing traffic to specific VPN route by destination host names or
+IP addresses.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -29,7 +31,8 @@
       <pubDate>Mon, 14 Mar 2016 22:39:00 +0800</pubDate>
       
       <guid>https://www.leowkahman.com/2016/03/14/setup-4096-bit-openvpn-openwrt/</guid>
-      <description>&lt;p&gt;If you want to setup OpenVPN with 4096-bit key on OpenWRT, with a few tips and tricks in addition, read on.&lt;/p&gt;
+      <description>&lt;p&gt;If you want to setup OpenVPN with 4096-bit key on OpenWRT, with a few tips and
+tricks in addition, read on.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

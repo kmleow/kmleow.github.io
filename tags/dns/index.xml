@@ -18,7 +18,8 @@
       <pubDate>Mon, 23 May 2016 00:27:00 +0800</pubDate>
       
       <guid>https://www.leowkahman.com/2016/05/23/openwrt-encrypted-dns-lookup-using-multiple-dnscrypt-servers/</guid>
-      <description>&lt;p&gt;Want to setup OpenWRT to query specific DNSCrypt server depending on domain name to resolve? Read on.&lt;/p&gt;
+      <description>&lt;p&gt;Want to setup OpenWRT to query specific DNSCrypt server depending on domain name
+to resolve? Read on.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -29,7 +30,8 @@
       <pubDate>Sun, 08 May 2016 22:37:00 +0800</pubDate>
       
       <guid>https://www.leowkahman.com/2016/05/08/setup-haproxy-cloudflare-ssl-termination-openwrt/</guid>
-      <description>&lt;p&gt;Setup instructions for HAProxy with HTTP SSL termination on OpenWRT with CloudFlare Origin CA and Authenticated Origin Pulls.&lt;/p&gt;
+      <description>&lt;p&gt;Setup instructions for HAProxy with HTTP SSL termination on OpenWRT with
+CloudFlare Origin CA and Authenticated Origin Pulls.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -40,7 +42,8 @@
       <pubDate>Mon, 02 May 2016 15:47:00 +0800</pubDate>
       
       <guid>https://www.leowkahman.com/2016/05/02/openwrt-ipv6-dynamic-dns-client/</guid>
-      <description>&lt;p&gt;This should be rather straightforward but I encountered problems setting up with a solution worth sharing and I will throw in a tip that you may find useful.&lt;/p&gt;
+      <description>&lt;p&gt;This should be rather straightforward but I encountered problems setting up with
+a solution worth sharing and I will throw in a tip that you may find useful.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -51,7 +54,10 @@
       <pubDate>Mon, 01 Feb 2016 17:22:00 +0000</pubDate>
       
       <guid>https://www.leowkahman.com/2016/02/01/openwrt-dynamic-dns-cloudflare-orange-cloud/</guid>
-      <description>&lt;p&gt;Installing &lt;code&gt;ddns-scripts&lt;/code&gt; and &lt;code&gt;ddns-scripts_cloudflare&lt;/code&gt; version 2.4.3-1 from OpenWRT package repository allows you to configure dynamic DNS that points directly to your IP address without orange cloud. If you want the orange cloud however, you need to make a small change.&lt;/p&gt;
+      <description>&lt;p&gt;Installing &lt;code&gt;ddns-scripts&lt;/code&gt; and &lt;code&gt;ddns-scripts_cloudflare&lt;/code&gt; version 2.4.3-1 from
+OpenWRT package repository allows you to configure dynamic DNS that points
+directly to your IP address without orange cloud. If you want the orange cloud
+however, you need to make a small change.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

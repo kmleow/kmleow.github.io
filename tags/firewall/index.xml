@@ -18,7 +18,8 @@
       <pubDate>Sun, 08 May 2016 22:37:00 +0800</pubDate>
       
       <guid>https://www.leowkahman.com/2016/05/08/setup-haproxy-cloudflare-ssl-termination-openwrt/</guid>
-      <description>&lt;p&gt;Setup instructions for HAProxy with HTTP SSL termination on OpenWRT with CloudFlare Origin CA and Authenticated Origin Pulls.&lt;/p&gt;
+      <description>&lt;p&gt;Setup instructions for HAProxy with HTTP SSL termination on OpenWRT with
+CloudFlare Origin CA and Authenticated Origin Pulls.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -29,9 +30,9 @@
       <pubDate>Mon, 02 May 2016 17:03:00 +0800</pubDate>
       
       <guid>https://www.leowkahman.com/2016/05/02/automate-raspberry-pi-ufw-allow-cloudflare-inbound/</guid>
-      <description>&lt;p&gt;As IPv6 restores the ability to have end-to-end connectivity unlike IPv4 shielded by NAT,
-I needed to configure my Raspberry Pi firewall to allow only CloudFlare traffic inbound on port 443.
-Read on for the solution.&lt;/p&gt;
+      <description>&lt;p&gt;As IPv6 restores the ability to have end-to-end connectivity unlike IPv4
+shielded by NAT, I needed to configure my Raspberry Pi firewall to allow only
+CloudFlare traffic inbound on port 443. Read on for the solution.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -42,7 +43,10 @@ Read on for the solution.&lt;/p&gt;
       <pubDate>Wed, 27 Apr 2016 22:36:00 +0800</pubDate>
       
       <guid>https://www.leowkahman.com/2016/04/27/using-jump-server/</guid>
-      <description>&lt;p&gt;I logged into my home&amp;rsquo;s VPN from my mobile device and I needed to access my Pi but then I realised I could not because my Pi allowed incoming SSH traffic only from machines on a specific /24 subnet. At times like this, a jump server/host can act as a bridge.&lt;/p&gt;
+      <description>&lt;p&gt;I logged into my home&amp;rsquo;s VPN from my mobile device and I needed to access my Pi
+but then I realised I could not because my Pi allowed incoming SSH traffic only
+from machines on a specific /24 subnet. At times like this, a jump server/host
+can act as a bridge.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -53,7 +57,10 @@ Read on for the solution.&lt;/p&gt;
       <pubDate>Sat, 05 Mar 2016 01:30:00 +0800</pubDate>
       
       <guid>https://www.leowkahman.com/2016/03/05/lamp-stack-on-raspberry-pi-with-kodi-running-at-startup/</guid>
-      <description>&lt;p&gt;For most people, if they wanted to run LAMP stack on Raspberry Pi, they would probably install Raspbian via NOOBS. However, if they wanted a HTPC with Kodi, they would likely opt for OSMC or OpenELEC. I needed Kodi to run at startup with LAMP stack running behind and chose the NOOBS Raspbian route.&lt;/p&gt;
+      <description>&lt;p&gt;For most people, if they wanted to run LAMP stack on Raspberry Pi, they would
+probably install Raspbian via NOOBS. However, if they wanted a HTPC with Kodi,
+they would likely opt for OSMC or OpenELEC. I needed Kodi to run at startup with
+LAMP stack running behind and chose the NOOBS Raspbian route.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -64,7 +71,12 @@ Read on for the solution.&lt;/p&gt;
       <pubDate>Sun, 14 Feb 2016 23:56:00 +0800</pubDate>
       
       <guid>https://www.leowkahman.com/2016/02/14/using-iptables-port-forward-to-web-server-only-if-source-is-cloudflare/</guid>
-      <description>&lt;p&gt;Looking at my web server&amp;rsquo;s access logs, not surprisingly I discovered traffic originating from IP addresses not belonging to CloudFlare. Initially, I was using Apache .htaccess to allow incoming traffic only if they originated from CloudFlare. This was somewhat sufficient but some hackers continued attempting to find loopholes instead of giving up so I needed to up the level of security and decided to look at ways to drop unwelcome traffic using OpenWRT firewall.&lt;/p&gt;
+      <description>&lt;p&gt;Looking at my web server&amp;rsquo;s access logs, not surprisingly I discovered traffic
+originating from IP addresses not belonging to CloudFlare. Initially, I was
+using Apache .htaccess to allow incoming traffic only if they originated from
+CloudFlare. This was somewhat sufficient but some hackers continued attempting
+to find loopholes instead of giving up so I needed to up the level of security
+and decided to look at ways to drop unwelcome traffic using OpenWRT firewall.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

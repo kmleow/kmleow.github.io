@@ -59,7 +59,10 @@ and finally publishes to GitLab Pages on every Git merge to master.&lt;/p&gt;
       <pubDate>Sun, 03 Apr 2016 22:33:00 +0800</pubDate>
       
       <guid>https://www.leowkahman.com/2016/04/03/installing-nodejs-5-x-raspberry-pi/</guid>
-      <description>&lt;p&gt;You are reading this page because you have tried installing NodeJS from the repository only to realise that the version available is 0.10 (as at 2016-04-03) but you wanted the latest stable version 5.x. Read on for the solution, tested on Pi 2.&lt;/p&gt;
+      <description>&lt;p&gt;You are reading this page because you have tried installing NodeJS from the
+repository only to realise that the version available is 0.10 (as at 2016-04-03)
+but you wanted the latest stable version 5.x. Read on for the solution, tested
+on Pi 2.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

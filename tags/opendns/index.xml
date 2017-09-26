@@ -18,10 +18,11 @@
       <pubDate>Tue, 22 Mar 2016 01:11:00 +0800</pubDate>
       
       <guid>https://www.leowkahman.com/2016/03/22/certificate-error-on-blocked-domains-when-using-opendns/</guid>
-      <description>&lt;p&gt;OpenDNS helps in blocking malware sites by not resolving malware domains to the actual IP address hosting the malware.
-Instead they resolve to an OpenDNS page indicating &amp;ldquo;This domain is blocked due to &amp;hellip;&amp;rdquo;.
-If you are opening a non-SSL page, this would work as described.
-However, when attempting to browse a malware page via HTTPS, the web browser will show a certificate error instead.
+      <description>&lt;p&gt;OpenDNS helps in blocking malware sites by not resolving malware domains to the
+actual IP address hosting the malware. Instead they resolve to an OpenDNS page
+indicating &amp;ldquo;This domain is blocked due to &amp;hellip;&amp;rdquo;. If you are opening a non-SSL
+page, this would work as described. However, when attempting to browse a malware
+page via HTTPS, the web browser will show a certificate error instead.
 Read on to know the reason and solution.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>

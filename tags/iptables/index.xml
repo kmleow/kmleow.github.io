@@ -18,7 +18,12 @@
       <pubDate>Sun, 14 Feb 2016 23:56:00 +0800</pubDate>
       
       <guid>https://www.leowkahman.com/2016/02/14/using-iptables-port-forward-to-web-server-only-if-source-is-cloudflare/</guid>
-      <description>&lt;p&gt;Looking at my web server&amp;rsquo;s access logs, not surprisingly I discovered traffic originating from IP addresses not belonging to CloudFlare. Initially, I was using Apache .htaccess to allow incoming traffic only if they originated from CloudFlare. This was somewhat sufficient but some hackers continued attempting to find loopholes instead of giving up so I needed to up the level of security and decided to look at ways to drop unwelcome traffic using OpenWRT firewall.&lt;/p&gt;
+      <description>&lt;p&gt;Looking at my web server&amp;rsquo;s access logs, not surprisingly I discovered traffic
+originating from IP addresses not belonging to CloudFlare. Initially, I was
+using Apache .htaccess to allow incoming traffic only if they originated from
+CloudFlare. This was somewhat sufficient but some hackers continued attempting
+to find loopholes instead of giving up so I needed to up the level of security
+and decided to look at ways to drop unwelcome traffic using OpenWRT firewall.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

@@ -34,7 +34,8 @@ except that you need to setup the Operating System yourself.&lt;/p&gt;
       <pubDate>Sun, 23 Jul 2017 22:00:00 +0800</pubDate>
       
       <guid>https://www.leowkahman.com/2017/07/23/block-ads-with-openwrt-dnsmasq/</guid>
-      <description>&lt;p&gt;Block ads with OpenWRT dnsmasq and automate downloading of the latest list once a week.&lt;/p&gt;
+      <description>&lt;p&gt;Block ads with OpenWRT dnsmasq and automate downloading of the latest list once
+a week. This solution can also be applied to blocking crytocoin miner domains.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -56,10 +57,11 @@ except that you need to setup the Operating System yourself.&lt;/p&gt;
       <pubDate>Tue, 04 Jul 2017 23:30:00 +0800</pubDate>
       
       <guid>https://www.leowkahman.com/2017/07/04/how-to-disable-tls-1-0-on-an-azure-app-service/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://www.leowkahman.com/images/2017/07/tls-1-2-yes.png&#34; alt=&#34;TLS 1.2 - yes&#34; /&gt;&lt;/p&gt;
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.leowkahman.com/images/2017/07/tls-1-2-yes.png&#34;&gt;&lt;img src=&#34;https://www.leowkahman.com/images/2017/07/tls-1-2-yes.png&#34; alt=&#34;TLS 1.2 - yes&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;Yes it is possible to disable TLS 1.0 and even 1.1 without using App Service Environment (ASE).
-The solution is to use Azure Application Gateway and a custom hostname.&lt;/p&gt;
+&lt;p&gt;Yes it is possible to disable TLS 1.0 and even 1.1 without using App Service
+Environment (ASE). The solution is to use Azure Application Gateway and a custom
+hostname.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -70,7 +72,7 @@ The solution is to use Azure Application Gateway and a custom hostname.&lt;/p&gt
       <pubDate>Sun, 02 Jul 2017 16:00:00 +0800</pubDate>
       
       <guid>https://www.leowkahman.com/2017/07/02/github-vsts-google-cloud-folder-icons/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://www.leowkahman.com/images/2017/07/github-vsts-google-cloud-folder-icons.png&#34; alt=&#34;GitHub, VSTS, Google Cloud - folder icons&#34; /&gt;&lt;/p&gt;
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.leowkahman.com/images/2017/07/github-vsts-google-cloud-folder-icons.png&#34;&gt;&lt;img src=&#34;https://www.leowkahman.com/images/2017/07/github-vsts-google-cloud-folder-icons.png&#34; alt=&#34;GitHub, VSTS, Google Cloud - folder icons&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Set folder icons for your favourite source control repositories.&lt;/p&gt;
 
@@ -83,7 +85,8 @@ The solution is to use Azure Application Gateway and a custom hostname.&lt;/p&gt
       <pubDate>Mon, 12 Jun 2017 16:00:00 +0800</pubDate>
       
       <guid>https://www.leowkahman.com/2017/06/12/github-new-release-notifications/</guid>
-      <description>&lt;p&gt;If you want to find out how to watch a GitHub repository for new releases and just that, here is a very simple guide.&lt;/p&gt;
+      <description>&lt;p&gt;If you want to find out how to watch a GitHub repository for new releases and
+just that, here is a very simple guide.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -94,8 +97,10 @@ The solution is to use Azure Application Gateway and a custom hostname.&lt;/p&gt
       <pubDate>Wed, 28 Dec 2016 23:00:00 +0800</pubDate>
       
       <guid>https://www.leowkahman.com/2016/12/28/using-dash-ifttt-to-notify-others-upon-reaching-a-location/</guid>
-      <description>&lt;p&gt;I have been using a mobile app called Dash (smart driving app) for a week and decided to write a review about it as well as
-sharing how I am making use of it to notify others (in my case, family members) as soon as I have reached an area, i.e. home, office, etc.&lt;/p&gt;
+      <description>&lt;p&gt;I have been using a mobile app called Dash (smart driving app) for a week and
+decided to write a review about it as well as sharing how I am making use of it
+to notify others (in my case, family members) as soon as I have reached an area,
+i.e. home, office, etc.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -106,7 +111,8 @@ sharing how I am making use of it to notify others (in my case, family members) 
       <pubDate>Sat, 24 Dec 2016 17:00:00 +0800</pubDate>
       
       <guid>https://www.leowkahman.com/2016/12/24/build-online-radio-player-using-raspberry-pi/</guid>
-      <description>&lt;p&gt;Simple guide to building an online radio player using Raspberry Pi with Android/iOS device as remote control.&lt;/p&gt;
+      <description>&lt;p&gt;Simple guide to building an online radio player using Raspberry Pi with
+Android/iOS device as remote control.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -117,8 +123,9 @@ sharing how I am making use of it to notify others (in my case, family members) 
       <pubDate>Sat, 24 Dec 2016 13:00:00 +0800</pubDate>
       
       <guid>https://www.leowkahman.com/2016/12/24/automate-downloading-of-historical-data-from-sunny-explorer/</guid>
-      <description>&lt;p&gt;If you have SMA solar power inverters and would be interested in automating download of historical data, read on.
-I have written a PowerShell script that downloads data as CSV format and places them into folders by year and month.&lt;/p&gt;
+      <description>&lt;p&gt;If you have SMA solar power inverters and would be interested in automating
+download of historical data, read on. I have written a PowerShell script that
+downloads data as CSV format and places them into folders by year and month.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -129,7 +136,8 @@ I have written a PowerShell script that downloads data as CSV format and places 
       <pubDate>Sun, 03 Apr 2016 17:23:00 +0800</pubDate>
       
       <guid>https://www.leowkahman.com/2016/04/03/create-git-repository-google-drive/</guid>
-      <description>&lt;p&gt;Setting up a single-user Git repository on private cloud storage is not difficult and incurs no cost to you.&lt;/p&gt;
+      <description>&lt;p&gt;Setting up a single-user Git repository on private cloud storage is not
+difficult and incurs no cost to you.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

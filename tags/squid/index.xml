@@ -18,7 +18,11 @@
       <pubDate>Sun, 14 Feb 2016 01:25:00 +0800</pubDate>
       
       <guid>https://www.leowkahman.com/2016/02/14/how-to-setup-non-logging-squid-proxy/</guid>
-      <description>&lt;p&gt;To setup a non-logging/zero-logging Squid proxy, there are just a couple of lines to be added/commented/updated. This simple tutorial is for Squid version 2.7 and very likely still work for version 3.x. The default configuration in Squid exposes the origin IP address which is fine if you intended for that but that is usually not the case.&lt;/p&gt;
+      <description>&lt;p&gt;To setup a non-logging/zero-logging Squid proxy, there are just a couple of
+lines to be added/commented/updated. This simple tutorial is for Squid version
+2.7 and very likely still work for version 3.x. The default configuration in
+Squid exposes the origin IP address which is fine if you intended for that but
+that is usually not the case.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

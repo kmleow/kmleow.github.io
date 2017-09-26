@@ -5,9 +5,11 @@ EXPOSE 8080/tcp
 ENV ASPNETCORE_URLS http://*:8080
 ENTRYPOINT [&quot;dotnet&quot;, &quot;HelloWorldAspNetCore.dll&quot;]
 </code></pre><p>The DLL filename is case sensitive on Linux.</p><h2 id="error-while-generating-app-yaml">Error while generating app.yaml</h2><p>When I attempted to run the following command:</p><pre><code class="language-bash">gcloud beta app gen-config --custom
-</code></pre><p>It spewed errors:</p><pre><code class="language-text">ERROR: gcloud failed to load (gcloud.beta.app.gen_config): Problem loading gcloud.beta.app.gen_config: cannot import name DependencyWarning.
+</code></pre><p>It spewed errors:</p><pre><code class="language-text">ERROR: gcloud failed to load (gcloud.beta.app.gen_config): Problem loading
+gcloud.beta.app.gen_config: cannot import name DependencyWarning.
 
-This usually indicates corruption in your gcloud installation or problems with your Python interpreter.
+This usually indicates corruption in your gcloud installation or problems with
+your Python interpreter.
 </code></pre><p>Had to do the following to fix it:</p><pre><code class="language-bash">gcloud components reinstall
 </code></pre><p>The <code>app.yaml</code> generated does not specify the underlying virtual machine specification required. The defaults are:</p><ul><li>1 core; not possible to have 0.2 or 0.5 unlike Compute Engine</li><li>0.6GB RAM</li><li>10GB disk, the minimum allowed</li><li>Health checks are enabled so you will see a lot of <code>/_an/health</code> accesses in Stackdriver logging</li><li>Auto scaling is enabled with minimum instances set to 2 which you probably do not need for development purposes</li></ul><h2 id="set-project-before-deploying">Set project before deploying</h2><p>Be sure to set the current project to the desired one or else the app will be deployed to the wrong project!</p><pre><code class="language-bash">gcloud config set project &lt;project name&gt;
 gcloud app deploy
