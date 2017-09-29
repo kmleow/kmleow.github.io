@@ -648,8 +648,7 @@ and decided to look at ways to drop unwelcome traffic using OpenWRT firewall.&l
       
       <guid>https://www.leowkahman.com/about/</guid>
       <description>I am Leow Kah Man, a Software Architect and Full Stack Software Developer, lives in Malaysia, likes just about anything that has to do with technology. I am extremely passionate about designing cloud architectures that drive new innovations, raise scalability and reduce time to deploy.
-During my spare time, I like tinkering with OpenWRT and Raspberry Pi, and trying out new cloud services.
-This blog was built using Hugo with CI deployment using GitLab.</description>
+During my spare time, I like tinkering with OpenWRT and Raspberry Pi, and trying out new cloud services. Primarily code in Visual Studio Code on an Ubuntu GNOME laptop.</description>
     </item>
     
     <item>
