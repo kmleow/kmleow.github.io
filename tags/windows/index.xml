@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License, code samples are licensed under the MIT License.</copyright>
-    <lastBuildDate>Mon, 02 Oct 2017 22:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 02 Oct 2017 23:30:00 +0800</lastBuildDate>
     
 	<atom:link href="https://www.leowkahman.com/tags/windows/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
     <item>
       <title>BYOD CI/CD build machine to run pipelines using Docker</title>
       <link>https://www.leowkahman.com/2017/10/02/byod-ci-cd-build-machine-to-run-pipelines-using-docker/</link>
-      <pubDate>Mon, 02 Oct 2017 22:00:00 +0800</pubDate>
+      <pubDate>Mon, 02 Oct 2017 23:30:00 +0800</pubDate>
       
       <guid>https://www.leowkahman.com/2017/10/02/byod-ci-cd-build-machine-to-run-pipelines-using-docker/</guid>
       <description>&lt;p&gt;Skip the build queue and save money by reducing (if not eliminating) dedicated
