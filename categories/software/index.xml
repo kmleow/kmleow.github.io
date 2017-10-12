@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License, code samples are licensed under the MIT License.</copyright>
-    <lastBuildDate>Mon, 02 Oct 2017 23:30:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 12 Oct 2017 22:30:00 +0800</lastBuildDate>
     
 	<atom:link href="https://www.leowkahman.com/categories/software/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>CWE-316 storing secure strings in .NET SecureString</title>
+      <link>https://www.leowkahman.com/2017/10/12/cwe-316-storing-secure-strings-in-dotnet-securestring/</link>
+      <pubDate>Thu, 12 Oct 2017 22:30:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2017/10/12/cwe-316-storing-secure-strings-in-dotnet-securestring/</guid>
+      <description>&lt;p&gt;How to resolve CWE-316 in .NET using SecureString in a neat and easy way.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>BYOD CI/CD build machine to run pipelines using Docker</title>
