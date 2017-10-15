@@ -19,7 +19,8 @@
       
       <guid>https://www.leowkahman.com/2017/09/11/enforce-safe-search-on-google-youtube-bing/</guid>
       <description>&lt;p&gt;Enforce safe search on Google, YouTube, and Bing without a HTTP proxy.
-Instead, override DNS lookups, resolving to strict search server IP addresses.&lt;/p&gt;
+Instead, override DNS lookups, resolving to strict search server IP addresses.
+Works on IPv4 and IPv6 networks.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
