@@ -41,10 +41,11 @@ upgraded my Ubuntu to 17.10.&lt;/p&gt;
       <pubDate>Fri, 29 Dec 2017 22:30:00 +0800</pubDate>
       
       <guid>https://www.leowkahman.com/2017/12/29/cloud-storage-solutions-for-linux/</guid>
-      <description>&lt;p&gt;Here are recommendations for cloud storage options that can be used on Linux.
-This includes Dropbox, Box, Yandex, and Google Drive.
-However, I used a workaround for Google Drive which may not necessarily be feasible
-for you.&lt;/p&gt;
+      <description>&lt;p&gt;Here are recommendations for cloud storage options that can be used on Linux
+including a way on how to synchronise them.
+This includes Dropbox, Box, Yandex, Google Drive, and OneDrive.
+However, I used a workaround for Google Drive and OneDrive which may not necessarily
+be feasible for you.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
