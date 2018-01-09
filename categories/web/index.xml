@@ -7,10 +7,23 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License, code samples are licensed under the MIT License.</copyright>
-    <lastBuildDate>Mon, 11 Sep 2017 17:30:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 09 Jan 2018 22:30:00 +0800</lastBuildDate>
     
 	<atom:link href="https://www.leowkahman.com/categories/web/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Setup NodeJS with Apache ProxyPass on Raspberry Pi</title>
+      <link>https://www.leowkahman.com/2018/01/09/setup-nodejs-with-apache-proxypass-on-raspberry-pi/</link>
+      <pubDate>Tue, 09 Jan 2018 22:30:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2018/01/09/setup-nodejs-with-apache-proxypass-on-raspberry-pi/</guid>
+      <description>&lt;p&gt;Setup NodeJS with Apache ProxyPass on Raspberry Pi 2 and 3.
+This allows multiple NodeJS apps to run in the backend but under a single
+hostname/domain with different virtual subfolder path for each of them.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Enforce Safe Search on Google, YouTube, Bing</title>
@@ -177,20 +190,6 @@ Raspberry Pi. I later found out the problem was just a small configuration mista
       <description>&lt;p&gt;I have been running my blog on Apache 2 with Event MPM for a while and thought I
 should share my setup on Raspberry Pi 2 Model B with Raspbian for the benefit of
 others.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Installing NodeJS 5.x on Raspberry Pi</title>
-      <link>https://www.leowkahman.com/2016/04/03/installing-nodejs-5-x-raspberry-pi/</link>
-      <pubDate>Sun, 03 Apr 2016 22:33:00 +0800</pubDate>
-      
-      <guid>https://www.leowkahman.com/2016/04/03/installing-nodejs-5-x-raspberry-pi/</guid>
-      <description>&lt;p&gt;You are reading this page because you have tried installing NodeJS from the
-repository only to realise that the version available is 0.10 (as at 2016-04-03)
-but you wanted the latest stable version 5.x. Read on for the solution, tested
-on Pi 2.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
