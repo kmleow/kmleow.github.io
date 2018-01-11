@@ -114,7 +114,7 @@
     <item>
       <title>Cloud</title>
       <link>https://www.leowkahman.com/tags/cloud/</link>
-      <pubDate>Tue, 04 Apr 2017 00:30:00 +0800</pubDate>
+      <pubDate>Fri, 29 Dec 2017 22:30:00 +0800</pubDate>
       
       <guid>https://www.leowkahman.com/tags/cloud/</guid>
       <description></description>
@@ -240,7 +240,7 @@
     <item>
       <title>Google</title>
       <link>https://www.leowkahman.com/tags/google/</link>
-      <pubDate>Mon, 11 Sep 2017 17:30:00 +0800</pubDate>
+      <pubDate>Fri, 12 Jan 2018 01:15:00 +0800</pubDate>
       
       <guid>https://www.leowkahman.com/tags/google/</guid>
       <description></description>
@@ -258,7 +258,7 @@
     <item>
       <title>Hugo</title>
       <link>https://www.leowkahman.com/tags/hugo/</link>
-      <pubDate>Sun, 10 Sep 2017 01:00:00 +0800</pubDate>
+      <pubDate>Fri, 12 Jan 2018 01:15:00 +0800</pubDate>
       
       <guid>https://www.leowkahman.com/tags/hugo/</guid>
       <description></description>
@@ -321,7 +321,7 @@
     <item>
       <title>Linux</title>
       <link>https://www.leowkahman.com/tags/linux/</link>
-      <pubDate>Mon, 02 Oct 2017 23:30:00 +0800</pubDate>
+      <pubDate>Fri, 29 Dec 2017 22:30:00 +0800</pubDate>
       
       <guid>https://www.leowkahman.com/tags/linux/</guid>
       <description></description>
@@ -454,15 +454,6 @@
     </item>
     
     <item>
-      <title>Software</title>
-      <link>https://www.leowkahman.com/tags/software/</link>
-      <pubDate>Tue, 02 Jan 2018 23:50:00 +0800</pubDate>
-      
-      <guid>https://www.leowkahman.com/tags/software/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Squid</title>
       <link>https://www.leowkahman.com/tags/squid/</link>
       <pubDate>Sun, 14 Feb 2016 01:25:00 +0800</pubDate>
@@ -504,6 +495,15 @@
       <pubDate>Fri, 22 Dec 2017 23:30:00 +0800</pubDate>
       
       <guid>https://www.leowkahman.com/tags/travel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ubuntu</title>
+      <link>https://www.leowkahman.com/tags/ubuntu/</link>
+      <pubDate>Tue, 02 Jan 2018 23:50:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/tags/ubuntu/</guid>
       <description></description>
     </item>
     
