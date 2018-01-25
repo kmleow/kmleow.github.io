@@ -19,8 +19,8 @@
       
       <guid>https://www.leowkahman.com/2016/06/19/conditional-multiple-openvpn-routing-hostname-ip/</guid>
       <description>&lt;p&gt;Using OpenWRT, connect to multiple OpenVPN instances and conditionally divert
-one or more outgoing traffic to specific VPN route by destination host names or
-IP addresses.&lt;/p&gt;
+(split tunneling) one or more outgoing traffic to specific VPN route by
+destination host names or IP addresses.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
