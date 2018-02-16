@@ -39,6 +39,20 @@ machine to run pipelines using Docker.&lt;/p&gt;
     </item>
     
     <item>
+      <title>GitLab CI remove priority zero from Hugo sitemap</title>
+      <link>https://www.leowkahman.com/2017/09/10/gitlab-ci-remove-priority-zero-from-hugo-sitemap/</link>
+      <pubDate>Sun, 10 Sep 2017 01:00:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2017/09/10/gitlab-ci-remove-priority-zero-from-hugo-sitemap/</guid>
+      <description>&lt;p&gt;Hugo static site generator generates sitemap.xml that include priority zero URLs.
+These are the taxanomies, tags and categories.
+To prevent these from appearing in Google Search results,
+GitLab CI can be configured to remove unwanted XML nodes (priority 0) from sitemap.xml.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Running .NET Core on Raspberry Pi Raspbian</title>
       <link>https://www.leowkahman.com/2017/07/16/running-dotnet-core-on-raspberry-pi-raspbian/</link>
       <pubDate>Sun, 16 Jul 2017 16:00:00 +0800</pubDate>
