@@ -31,7 +31,8 @@ machine to run pipelines using Docker.&lt;/p&gt;
       <pubDate>Sun, 16 Jul 2017 16:00:00 +0800</pubDate>
       
       <guid>https://www.leowkahman.com/2017/07/16/running-dotnet-core-on-raspberry-pi-raspbian/</guid>
-      <description>&lt;p&gt;Easy guide to running .NET Core 2.0 applications on Raspberry Pi 2 and 3 with Raspbian.&lt;/p&gt;
+      <description>&lt;p&gt;Easy guide to running .NET Core 2.0 applications on Raspberry Pi 2 and 3 with
+Raspbian Stretch.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
