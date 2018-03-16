@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License, code samples are licensed under the MIT License.</copyright>
-    <lastBuildDate>Tue, 13 Mar 2018 23:15:00 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 17 Mar 2018 03:00:00 +0800</lastBuildDate>
     
 	<atom:link href="https://www.leowkahman.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Privacy Policy</title>
+      <link>https://www.leowkahman.com/privacy-policy/</link>
+      <pubDate>Sat, 17 Mar 2018 03:00:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/privacy-policy/</guid>
+      <description>This Privacy Policy informs you of our privacy practices and of the choices you can make about the way information about you, including from your online activity is collected and how that information is used by our site. This privacy policy link is readily available at the bottom of every web page on this website.
+At www.leowkahman.com, we recognize that privacy of your personal information is important. Here is information on what types of personal information we receive and collect when you use and visit our siteu, and how we safeguard your information.</description>
+    </item>
     
     <item>
       <title>Using Raspbian on 2GB Micro SD Card</title>
