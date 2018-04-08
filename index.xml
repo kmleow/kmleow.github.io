@@ -7,10 +7,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License, code samples are licensed under the MIT License. Third-party product names and logos may be the trademarks of their respective owners.</copyright>
-    <lastBuildDate>Sat, 31 Mar 2018 23:45:00 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 08 Apr 2018 17:00:00 +0800</lastBuildDate>
     
 	<atom:link href="https://www.leowkahman.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Prevent overheating by disabling turbo boost</title>
+      <link>https://www.leowkahman.com/2018/04/08/prevent-overheating-by-disabling-turbo-boost/</link>
+      <pubDate>Sun, 08 Apr 2018 17:00:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2018/04/08/prevent-overheating-by-disabling-turbo-boost/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://www.leowkahman.com/images/2018/04/psensor-edit-sensor-preferences.png&#34; alt=&#34;psensor - edit sensor preferences&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;CPU throttling, PC shutting down abruptly, etc. These may be signs of overheating.
+Disabling Intel turbo boost may help. Screenshot above is the temperature range after
+disabling turbo boost.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>How to fix choppy YouTube videos on Firefox and Chrome on an old laptop</title>
