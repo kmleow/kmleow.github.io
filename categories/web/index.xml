@@ -13,12 +13,12 @@
     
     
     <item>
-      <title>Solution to images not showing on InnoReader</title>
-      <link>https://www.leowkahman.com/2018/04/13/solution-to-images-not-showing-on-innoreader/</link>
+      <title>Solution to images not showing on InoReader</title>
+      <link>https://www.leowkahman.com/2018/04/13/solution-to-images-not-showing-on-inoreader/</link>
       <pubDate>Fri, 13 Apr 2018 22:00:00 +0800</pubDate>
       
-      <guid>https://www.leowkahman.com/2018/04/13/solution-to-images-not-showing-on-innoreader/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://www.leowkahman.com/images/2018/04/innoreader.png&#34; alt=&#34;InnoReader&#34; /&gt;&lt;/p&gt;
+      <guid>https://www.leowkahman.com/2018/04/13/solution-to-images-not-showing-on-inoreader/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://www.leowkahman.com/images/2018/04/inoreader.png&#34; alt=&#34;InoReader&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;I noticed thumbnails for my blog&amp;rsquo;s RSS feed were not showing up.
 After investigation, I found the root cause and solution and it was a simple one.&lt;/p&gt;
