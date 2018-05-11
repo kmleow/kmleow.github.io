@@ -977,8 +977,8 @@ servers that drift over 30 seconds. Not good&amp;hellip;&lt;/p&gt;
       <pubDate>Sun, 03 Jan 2016 01:12:00 +0800</pubDate>
       
       <guid>https://www.leowkahman.com/2016/01/03/tp-link-archer-c7-v2-openwrt-vlan-unifi-hypptv/</guid>
-      <description>&lt;p&gt;There are many tutorials available on Internet on how to setup VLAN on OpenWRT
-Chaos Calmer 15.05 but finding one specifically for Archer C7 v2 with the right
+      <description>&lt;p&gt;There are many tutorials available on Internet on how to setup VLAN on OpenWRT/LEDE
+but finding one specifically for Archer C7 v2 with the right
 VLAN settings for Malaysia&amp;rsquo;s UniFi HyppTV was a little challenging. In the
 process of trial and error, I had to recover my router from failsafe mode so
 please be careful.&lt;/p&gt;
