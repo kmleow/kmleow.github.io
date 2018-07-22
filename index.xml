@@ -633,7 +633,7 @@ Here is why.&lt;/p&gt;
       <pubDate>Sun, 19 Jun 2016 12:54:00 +0800</pubDate>
       
       <guid>https://www.leowkahman.com/2016/06/19/conditional-multiple-openvpn-routing-hostname-ip/</guid>
-      <description>&lt;p&gt;Using OpenWRT, connect to one or more OpenVPN instances and conditionally divert
+      <description>&lt;p&gt;Using OpenWRT/LEDE, connect to one or more OpenVPN instances and conditionally divert
 (split tunneling) one or more outgoing traffic to specific VPN route by
 destination host names or IP addresses.&lt;/p&gt;
 
