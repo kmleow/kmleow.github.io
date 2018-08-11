@@ -7,10 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License, code samples are licensed under the MIT License. Third-party product names and logos may be the trademarks of their respective owners.</copyright>
-    <lastBuildDate>Tue, 29 May 2018 13:15:00 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 11 Aug 2018 23:00:00 +0800</lastBuildDate>
     
 	<atom:link href="https://www.leowkahman.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Reduce internet lag on OpenWRT</title>
+      <link>https://www.leowkahman.com/2018/08/11/reduce-internet-lag-on-openwrt/</link>
+      <pubDate>Sat, 11 Aug 2018 23:00:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2018/08/11/reduce-internet-lag-on-openwrt/</guid>
+      <description>&lt;p&gt;How to reduce internet lag on OpenWRT when there is heavy download/upload activity
+on the same internet connection.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Workaround to Wi-Fi issues on OpenWRT LEDE</title>
