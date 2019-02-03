@@ -7,10 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License, code samples are licensed under the MIT License. Third-party product names and logos may be the trademarks of their respective owners.</copyright>
-    <lastBuildDate>Sat, 11 Aug 2018 23:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 03 Feb 2019 23:15:00 +0800</lastBuildDate>
     
 	<atom:link href="https://www.leowkahman.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Switched from Ubuntu to Linux Mint</title>
+      <link>https://www.leowkahman.com/2019/02/03/switched-from-ubuntu-to-linux-mint/</link>
+      <pubDate>Sun, 03 Feb 2019 23:15:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2019/02/03/switched-from-ubuntu-to-linux-mint/</guid>
+      <description>&lt;p&gt;Having switched to Linux Mint from Ubuntu in December 2018,
+here are my first impressions.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Reduce internet lag on OpenWRT</title>
