@@ -25,17 +25,6 @@ hooked to a LG 29WK600 21:9 UltraWide Monitor.&lt;/p&gt;
     </item>
     
     <item>
-      <title>HomePlug, Wi-Fi, or both</title>
-      <link>https://www.leowkahman.com/2019/02/05/homeplug-wi-fi-or-both/</link>
-      <pubDate>Tue, 05 Feb 2019 23:30:00 +0800</pubDate>
-      
-      <guid>https://www.leowkahman.com/2019/02/05/homeplug-wi-fi-or-both/</guid>
-      <description>&lt;p&gt;I will cut to the chase, I am using both and here is why.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>Switched from Ubuntu to Linux Mint</title>
       <link>https://www.leowkahman.com/2019/02/03/switched-from-ubuntu-to-linux-mint/</link>
       <pubDate>Sun, 03 Feb 2019 23:15:00 +0800</pubDate>
@@ -939,7 +928,7 @@ and decided to look at ways to drop unwelcome traffic using OpenWRT firewall.&l
       <guid>https://www.leowkahman.com/about/</guid>
       <description>I am Leow Kah Man, a Software Architect and Full Stack Software Developer, lives in Malaysia, likes just about anything that has to do with technology.
 Designing cloud architectures that drive new innovations, raise scalability and reduce time to deploy is what I am passionate about. I believe microservice infrastructure is the most efficient way to scale, have high availability and ease of maintenance.
-During my spare time, I like tinkering with OpenWRT and Raspberry Pi, and trying out new cloud services.</description>
+This blog was built using Hugo with CI deployment using GitLab.</description>
     </item>
     
     <item>
