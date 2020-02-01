@@ -7,10 +7,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License, code samples are licensed under the MIT License. Third-party product names and logos may be the trademarks of their respective owners.</copyright>
-    <lastBuildDate>Sun, 08 Apr 2018 17:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 01 Feb 2020 17:10:00 +0800</lastBuildDate>
     
 	<atom:link href="https://www.leowkahman.com/categories/hardware/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Speedtest OpenWRT with flow offloading</title>
+      <link>https://www.leowkahman.com/2020/02/01/speedtest-openwrt-with-flow-offloading/</link>
+      <pubDate>Sat, 01 Feb 2020 17:10:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2020/02/01/speedtest-openwrt-with-flow-offloading/</guid>
+      <description>&lt;p&gt;I have upgraded to TM Unifi Turbo 800Mbps for quite some time but yet to realise
+the speed promised by ISP. In my case, it is not fair to blame the ISP because the
+bottleneck was not at their end, rather due to my router. When OpenWRT announced
+the release of version 19.07, I took it for a spin and enabled the new flow offloading
+feature. The performance increase was significant.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Prevent overheating by disabling turbo boost</title>
