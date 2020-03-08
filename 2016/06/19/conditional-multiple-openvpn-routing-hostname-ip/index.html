@@ -1,208 +1,208 @@
-<!DOCTYPE html><html lang="en-us"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Conditional multiple OpenVPN routing by hostname or IP</title><meta name="msvalidate.01" content="009F12474AB330989749B979B5868A7F"/><meta name="google-site-verification" content="in8GfCIv-CYlwD5AxO0jVMlrUy1s42a_-cxlOWdv4U0"/><meta name="yandex-verification" content="c29e9c1084b24e1d"/><meta name="description" content="Using OpenWRT, connect to multiple OpenVPN instances and conditionally divert outgoing traffic to specific VPN route by destination host names or IP addresses"/><meta name="author" content="Leow Kah Man"/><link rel="icon" type="image/png" href="/favicon-192x192.png" sizes="192x192"/><link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32"/><link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16"/><link rel="canonical" href="https://www.leowkahman.com/2016/06/19/conditional-multiple-openvpn-routing-hostname-ip/"><link href="" rel="alternate" type="application/rss+xml" title="Leow Kah Man - Tech Blog"/><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous"/><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous"/><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css" integrity="sha256-Zd1icfZ72UBmsId/mUcagrmN7IN5Qkrvh75ICHIQVTk=" crossorigin="anonymous"/><link rel="stylesheet" href="/css/custom.css?v=1.0.0"/><style id="antiClickjack">body{display:none!important}</style><script>if(self===top){var antiClickjack=document.getElementById("antiClickjack");antiClickjack.parentNode.removeChild(antiClickjack)}else top.location=self.location</script><script>function redirectToCorrectDomainIfRequired(){for(var o=["www.leowkahman.com","localhost"],e=0;e<o.length;e++)if(window.location.hostname==o[e])return;window.location="https://www.leowkahman.com"+window.location.pathname}redirectToCorrectDomainIfRequired()</script></head><body><nav class="navbar navbar-default navbar-static-top"><div class="container"><div class="navbar-header"><button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button> <a class="navbar-brand" href="/">Leow Kah Man - Tech Blog</a></div><div id="navbar" class="navbar-collapse collapse"><ul class="nav navbar-nav"></ul><ul class="nav navbar-nav navbar-right"><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul></div></div></nav><div class="container"><div class="row"><div class="col-sm-8 blog-main"><div class="row"><div class="blog-main blog-post"><h1 class="blog-post-title">Conditional multiple OpenVPN routing by hostname or IP</h1><p class="blog-post-meta"><i class="fa fa-calendar"></i> Published: 19 June 2016 &nbsp;|&nbsp; <i class="fa fa-calendar-check-o"></i> Last updated: 29 January 2020 &nbsp;|&nbsp; <i class="fa fa-folder"></i> <a href="https://www.leowkahman.com/categories/network">Network</a></p><ul class="list-inline share" style="margin-top:15px;margin-left:0"><li class="facebook-share"><a target="_blank" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fwww.leowkahman.com%2f2016%2f06%2f19%2fconditional-multiple-openvpn-routing-hostname-ip%2f"><i class="fa fa-facebook fa-lg"></i> Facebook</a></li><li class="twitter-share"><a target="_blank" href="https://twitter.com/share?url=https%3a%2f%2fwww.leowkahman.com%2f2016%2f06%2f19%2fconditional-multiple-openvpn-routing-hostname-ip%2f&amp;text=Conditional%20multiple%20OpenVPN%20routing%20by%20hostname%20or%20IP"><i class="fa fa-twitter fa-lg"></i> Twitter</a></li><li class="reddit-share"><a target="_blank" href="http://reddit.com/submit?url=https%3a%2f%2fwww.leowkahman.com%2f2016%2f06%2f19%2fconditional-multiple-openvpn-routing-hostname-ip%2f&amp;title=Conditional%20multiple%20OpenVPN%20routing%20by%20hostname%20or%20IP"><i class="fa fa-reddit fa-lg"></i> Reddit</a></li><li class="linkedin-share"><a target="_blank" href="http://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwww.leowkahman.com%2f2016%2f06%2f19%2fconditional-multiple-openvpn-routing-hostname-ip%2f"><i class="fa fa-linkedin fa-lg"></i> LinkedIn</a></li></ul><p>Using OpenWRT/LEDE, connect to one or more OpenVPN instances and conditionally divert (split tunneling) one or more outgoing traffic to specific VPN route by destination host names or IP addresses.</p><p></p><h2 id="updates">Updates</h2><ul><li>2020-01-29: With mwan3 2.8.1-1 on OpenWRT 19.07, it seems that tracking must be set in order for it to work.</li></ul><h2 id="motivation">Motivation</h2><p>If you connect to VPN from your computer, the VPN server usually pushes routes that makes your computer go through it for all outgoing connections. This is fine if this is what you really want. For most people, VPN is required only for visiting one or more websites. This computer networking concept is also known as <a href="https://en.wikipedia.org/wiki/Split_tunneling">split tunneling</a>.</p><p>Taking it one step further, we may want to connect to multiple OpenVPN servers at the same time with different VPN server being used to serve specific outgoing traffic.</p><p>I have a working solution utilising OpenWRT and sharing the setup in this post.</p><h2 id="requirements">Requirements</h2><p>You should be familiar with OpenWRT before attempting this as the complexity of this setup can be rather daunting.</p><p>The following are required:</p><ol><li><code>openvpn-easy</code> and <code>openvpn-openssl</code> for establishing OpenVPN client connections</li><li><code>luci-app-openvpn</code> for GUI in LuCI which can be handy for starting/stopping VPN connections but I dislike using it for configuring</li><li><code>dnsmasq-full</code> for IPset tagging so that we can route by host names, not just IP addresses</li><li><code>mwan3</code> and <code>luci-app-mwan3</code> for creating multiple virtual WAN adapters, one for each OpenVPN connection</li></ol><p>Install the required packages using the following commands (or LuCI GUI if you prefer):</p><pre><code class="language-bash">opkg update
+<!DOCTYPE html><html lang="en-us"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Conditional multiple OpenVPN routing by hostname or IP</title><meta name="msvalidate.01" content="009F12474AB330989749B979B5868A7F"/><meta name="google-site-verification" content="in8GfCIv-CYlwD5AxO0jVMlrUy1s42a_-cxlOWdv4U0"/><meta name="yandex-verification" content="c29e9c1084b24e1d"/><meta name="description" content="Using OpenWRT, connect to multiple OpenVPN instances and conditionally divert outgoing traffic to specific VPN route by destination host names or IP addresses"/><meta name="author" content="Leow Kah Man"/><link rel="icon" type="image/png" href="/favicon-192x192.png" sizes="192x192"/><link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32"/><link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16"/><link rel="canonical" href="https://www.leowkahman.com/2016/06/19/conditional-multiple-openvpn-routing-hostname-ip/"><link href="" rel="alternate" type="application/rss+xml" title="Leow Kah Man - Tech Blog"/><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous"/><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous"/><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/vs.min.css" integrity="sha256-iGs2TpBtdfGr1FIgzGyO4CKAD1+2QaDswtMmJwDtHAs=" crossorigin="anonymous"/><link rel="stylesheet" href="/css/custom.css?v=1.0.0"/><style id="antiClickjack">body{display:none!important}</style><script>if(self===top){var antiClickjack=document.getElementById("antiClickjack");antiClickjack.parentNode.removeChild(antiClickjack)}else top.location=self.location</script><script>function redirectToCorrectDomainIfRequired(){for(var o=["www.leowkahman.com","localhost"],e=0;e<o.length;e++)if(window.location.hostname==o[e])return;window.location="https://www.leowkahman.com"+window.location.pathname}redirectToCorrectDomainIfRequired()</script></head><body><nav class="navbar navbar-default navbar-static-top"><div class="container"><div class="navbar-header"><button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button> <a class="navbar-brand" href="/">Leow Kah Man - Tech Blog</a></div><div id="navbar" class="navbar-collapse collapse"><ul class="nav navbar-nav"></ul><ul class="nav navbar-nav navbar-right"><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li></ul></div></div></nav><div class="container"><div class="row"><div class="col-sm-8 blog-main"><div class="row"><div class="blog-main blog-post"><h1 class="blog-post-title">Conditional multiple OpenVPN routing by hostname or IP</h1><p class="blog-post-meta"><i class="fa fa-calendar"></i> Published: 19 June 2016 &nbsp;|&nbsp; <i class="fa fa-calendar-check-o"></i> Last updated: 29 January 2020 &nbsp;|&nbsp; <i class="fa fa-folder"></i> <a href="https://www.leowkahman.com/categories/network">Network</a></p><ul class="list-inline share" style="margin-top:15px;margin-left:0"><li class="facebook-share"><a target="_blank" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fwww.leowkahman.com%2f2016%2f06%2f19%2fconditional-multiple-openvpn-routing-hostname-ip%2f"><i class="fa fa-facebook fa-lg"></i> Facebook</a></li><li class="twitter-share"><a target="_blank" href="https://twitter.com/share?url=https%3a%2f%2fwww.leowkahman.com%2f2016%2f06%2f19%2fconditional-multiple-openvpn-routing-hostname-ip%2f&amp;text=Conditional%20multiple%20OpenVPN%20routing%20by%20hostname%20or%20IP"><i class="fa fa-twitter fa-lg"></i> Twitter</a></li><li class="reddit-share"><a target="_blank" href="http://reddit.com/submit?url=https%3a%2f%2fwww.leowkahman.com%2f2016%2f06%2f19%2fconditional-multiple-openvpn-routing-hostname-ip%2f&amp;title=Conditional%20multiple%20OpenVPN%20routing%20by%20hostname%20or%20IP"><i class="fa fa-reddit fa-lg"></i> Reddit</a></li><li class="linkedin-share"><a target="_blank" href="http://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwww.leowkahman.com%2f2016%2f06%2f19%2fconditional-multiple-openvpn-routing-hostname-ip%2f"><i class="fa fa-linkedin fa-lg"></i> LinkedIn</a></li></ul><p>Using OpenWRT/LEDE, connect to one or more OpenVPN instances and conditionally divert (split tunneling) one or more outgoing traffic to specific VPN route by destination host names or IP addresses.</p><h2 id="updates">Updates</h2><ul><li>2020-01-29: With mwan3 2.8.1-1 on OpenWRT 19.07, it seems that tracking must be set in order for it to work.</li></ul><h2 id="motivation">Motivation</h2><p>If you connect to VPN from your computer, the VPN server usually pushes routes that makes your computer go through it for all outgoing connections. This is fine if this is what you really want. For most people, VPN is required only for visiting one or more websites. This computer networking concept is also known as <a href="https://en.wikipedia.org/wiki/Split_tunneling">split tunneling</a>.</p><p>Taking it one step further, we may want to connect to multiple OpenVPN servers at the same time with different VPN server being used to serve specific outgoing traffic.</p><p>I have a working solution utilising OpenWRT and sharing the setup in this post.</p><h2 id="requirements">Requirements</h2><p>You should be familiar with OpenWRT before attempting this as the complexity of this setup can be rather daunting.</p><p>The following are required:</p><ol><li><code>openvpn-easy</code> and <code>openvpn-openssl</code> for establishing OpenVPN client connections</li><li><code>luci-app-openvpn</code> for GUI in LuCI which can be handy for starting/stopping VPN connections but I dislike using it for configuring</li><li><code>dnsmasq-full</code> for IPset tagging so that we can route by host names, not just IP addresses</li><li><code>mwan3</code> and <code>luci-app-mwan3</code> for creating multiple virtual WAN adapters, one for each OpenVPN connection</li></ol><p>Install the required packages using the following commands (or LuCI GUI if you prefer):</p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">opkg update
 opkg install openvpn-easyrsa
 opkg install openvpn-openssl
 opkg install luci-app-openvpn
 opkg install dnsmasq-full
 opkg install mwan3
 opkg install luci-app-mwan3
-</code></pre><h2 id="setting-gateway-metric-for-default-wan">Setting gateway metric for default WAN</h2><p>A gateway metric must be assigned for the default WAN, edit <code>/etc/config/network</code>:</p><pre><code class="language-text">config interface 'wan'
+</code></pre></div><h2 id="setting-gateway-metric-for-default-wan">Setting gateway metric for default WAN</h2><p>A gateway metric must be assigned for the default WAN, edit <code>/etc/config/network</code>:</p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">config interface &#39;wan&#39;
     ...
-    option metric '10'
+    option metric &#39;10&#39;
     ...
-</code></pre><p>The metric of this must be smaller than metrics assigned to VPN connections configured later below.</p><h2 id="configuring-ipset-rules">Configuring IPset rules</h2><p>When a DNS lookup is performed and that the host name matches specific names that we have defined, it will be tagged with an IPset. A load balancer can then be configured to route specific IPset tags to go through specific VPN route.</p><h2 id="configuring-openvpn-client">Configuring OpenVPN client</h2><p>Even if you already have this configured, please read this section especially routing related details.</p><h3 id="example-private-internet-access">Example: Private Internet Access</h3><p>Below is an example of OpenVPN client configuration for PIA, I have setup two client instances. Edit <code>/etc/config/openvpn</code>:</p><pre><code class="language-text">config openvpn 'usvpn'
-    option nobind '1'
-    option float '1'
-    option client '1'
-    option reneg_sec '0'
-    option verb '1'
-    option persist_tun '1'
-    option persist_key '1'
-    option remote_cert_tls 'server'
-    option dev 'tun-usvpn'
-    option proto 'udp'
-    option crl_verify '/etc/openvpn/crl.rsa.4096.pem'
-    option ca '/etc/openvpn/ca.rsa.4096.crt'
-    option tls_client '1'
-    option resolv_retry 'infinite'
-    option auth 'SHA256'
-    option auth_user_pass '/etc/openvpn/privateinternetaccess-userpass.txt'
-    option route_metric '20'
-    option route_nopull '1'
-    option route '0.0.0.0 0.0.0.0 vpn_gateway 20'
-    option remote 'xxx.privateinternetaccess.com'
-    option enabled '1'
-    option port '1197'
-    option cipher 'AES-256-CBC'
-    option comp_lzo 'yes'
+</code></pre></div><p>The metric of this must be smaller than metrics assigned to VPN connections configured later below.</p><h2 id="configuring-ipset-rules">Configuring IPset rules</h2><p>When a DNS lookup is performed and that the host name matches specific names that we have defined, it will be tagged with an IPset. A load balancer can then be configured to route specific IPset tags to go through specific VPN route.</p><h2 id="configuringopenvpn-client">Configuring OpenVPN client</h2><p>Even if you already have this configured, please read this section especially routing related details.</p><h3 id="example-private-internet-access">Example: Private Internet Access</h3><p>Below is an example of OpenVPN client configuration for PIA, I have setup two client instances. Edit <code>/etc/config/openvpn</code>:</p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">config openvpn &#39;usvpn&#39;
+    option nobind &#39;1&#39;
+    option float &#39;1&#39;
+    option client &#39;1&#39;
+    option reneg_sec &#39;0&#39;
+    option verb &#39;1&#39;
+    option persist_tun &#39;1&#39;
+    option persist_key &#39;1&#39;
+    option remote_cert_tls &#39;server&#39;
+    option dev &#39;tun-usvpn&#39;
+    option proto &#39;udp&#39;
+    option crl_verify &#39;/etc/openvpn/crl.rsa.4096.pem&#39;
+    option ca &#39;/etc/openvpn/ca.rsa.4096.crt&#39;
+    option tls_client &#39;1&#39;
+    option resolv_retry &#39;infinite&#39;
+    option auth &#39;SHA256&#39;
+    option auth_user_pass &#39;/etc/openvpn/privateinternetaccess-userpass.txt&#39;
+    option route_metric &#39;20&#39;
+    option route_nopull &#39;1&#39;
+    option route &#39;0.0.0.0 0.0.0.0 vpn_gateway 20&#39;
+    option remote &#39;xxx.privateinternetaccess.com&#39;
+    option enabled &#39;1&#39;
+    option port &#39;1197&#39;
+    option cipher &#39;AES-256-CBC&#39;
+    option comp_lzo &#39;yes&#39;
 
-config openvpn 'ukvpn'
-    option nobind '1'
-    option float '1'
-    option client '1'
-    option reneg_sec '0'
-    option verb '1'
-    option persist_tun '1'
-    option persist_key '1'
-    option remote_cert_tls 'server'
-    option dev 'tun-ukvpn'
-    option proto 'udp'
-    option crl_verify '/etc/openvpn/crl.rsa.4096.pem'
-    option ca '/etc/openvpn/ca.rsa.4096.crt'
-    option tls_client '1'
-    option resolv_retry 'infinite'
-    option auth 'SHA256'
-    option auth_user_pass '/etc/openvpn/privateinternetaccess-userpass.txt'
-    option route_metric '21'
-    option route_nopull '1'
-    option route '0.0.0.0 0.0.0.0 vpn_gateway 21'
-    option remote 'xxx.privateinternetaccess.com'
-    option enabled '1'
-    option port '1197'
-    option cipher 'AES-256-CBC'
-    option comp_lzo 'yes'
-</code></pre><p>Several configuration details that you must note:</p><ol><li>The <a href="https://www.privateinternetaccess.com/pages/client-support/">PEM and CA files of Private Internet Access</a> have been copied into <code>/etc/openvpn</code>.</li><li>A text file needs to be created <code>/etc/openvpn/privateinternetaccess-userpass.txt</code> where the first line contains the username and the second line contains the password.</li><li><code>route_metric</code> must not be zero and they must be unique for each OpenVPN instance. I suggest giving a number from 20 onwards.</li><li><code>route_nopull</code> must be <code>'1'</code> as we do not want the server to tell us what routes to use.</li><li><code>route</code> must then be set to <code>'0.0.0.0 0.0.0.0 vpn_gateway [metric]'</code> where <code>[metric]</code> must match the value set for <code>route_metric</code>.</li><li><code>remote</code> must be set to <a href="https://www.privateinternetaccess.com/pages/network/">servers</a> of your choice.</li><li>The other parameters should be configured as described by your VPN provider.</li></ol><h3 id="ensure-that-multiple-concurrent-vpn-networks-do-not-share-the-same-gateway-ip-subnet">Ensure that multiple concurrent VPN networks do not share the same gateway IP subnet</h3><p>After connecting to an OpenVPN server, the VPN network will have a gateway that you will be sending traffic to. This gateway is usually in the IP of <code>10.x.y.z</code>. It is very important that multiple concurrent VPN networks do not share the same gateway IP subnet.</p><h2 id="starting-vpn-connections">Starting VPN connections</h2><p>This is where OpenVPN LuCI GUI comes in handy. Start all instances of the OpenVPN clients.</p><p>For command line geeks:</p><pre><code class="language-bash">/etc/init.d/openvpn restart
-</code></pre><p>Check the System Log to verify that VPN connections established successfully. Otherwise some errors will show up.</p><h2 id="creating-virtual-network-adapter-for-each-openvpn-client">Creating virtual network adapter for each OpenVPN client</h2><p>Edit <code>/etc/config/network</code>. Add the following:</p><pre><code class="language-text">config interface 'usvpn'
-    option proto 'none'
-    option ifname 'tun-usvpn'
-    option delegate '0'
+config openvpn &#39;ukvpn&#39;
+    option nobind &#39;1&#39;
+    option float &#39;1&#39;
+    option client &#39;1&#39;
+    option reneg_sec &#39;0&#39;
+    option verb &#39;1&#39;
+    option persist_tun &#39;1&#39;
+    option persist_key &#39;1&#39;
+    option remote_cert_tls &#39;server&#39;
+    option dev &#39;tun-ukvpn&#39;
+    option proto &#39;udp&#39;
+    option crl_verify &#39;/etc/openvpn/crl.rsa.4096.pem&#39;
+    option ca &#39;/etc/openvpn/ca.rsa.4096.crt&#39;
+    option tls_client &#39;1&#39;
+    option resolv_retry &#39;infinite&#39;
+    option auth &#39;SHA256&#39;
+    option auth_user_pass &#39;/etc/openvpn/privateinternetaccess-userpass.txt&#39;
+    option route_metric &#39;21&#39;
+    option route_nopull &#39;1&#39;
+    option route &#39;0.0.0.0 0.0.0.0 vpn_gateway 21&#39;
+    option remote &#39;xxx.privateinternetaccess.com&#39;
+    option enabled &#39;1&#39;
+    option port &#39;1197&#39;
+    option cipher &#39;AES-256-CBC&#39;
+    option comp_lzo &#39;yes&#39;
+</code></pre></div><p>Several configuration details that you must note:</p><ol><li>The <a href="https://www.privateinternetaccess.com/pages/client-support/">PEM and CA files of Private Internet Access</a> have been copied into <code>/etc/openvpn</code>.</li><li>A text file needs to be created <code>/etc/openvpn/privateinternetaccess-userpass.txt</code> where the first line contains the username and the second line contains the password.</li><li><code>route_metric</code> must not be zero and they must be unique for each OpenVPN instance. I suggest giving a number from 20 onwards.</li><li><code>route_nopull</code> must be <code>'1'</code> as we do not want the server to tell us what routes to use.</li><li><code>route</code> must then be set to <code>'0.0.0.0 0.0.0.0 vpn_gateway [metric]'</code> where <code>[metric]</code> must match the value set for <code>route_metric</code>.</li><li><code>remote</code> must be set to <a href="https://www.privateinternetaccess.com/pages/network/">servers</a> of your choice.</li><li>The other parameters should be configured as described by your VPN provider.</li></ol><h3 id="ensure-that-multiple-concurrent-vpn-networks-do-not-share-the-same-gateway-ip-subnet">Ensure that multiple concurrent VPN networks do not share the same gateway IP subnet</h3><p>After connecting to an OpenVPN server, the VPN network will have a gateway that you will be sending traffic to. This gateway is usually in the IP of <code>10.x.y.z</code>. It is very important that multiple concurrent VPN networks do not share the same gateway IP subnet.</p><h2 id="starting-vpn-connections">Starting VPN connections</h2><p>This is where OpenVPN LuCI GUI comes in handy. Start all instances of the OpenVPN clients.</p><p>For command line geeks:</p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/etc/init.d/openvpn restart
+</code></pre></div><p>Check the System Log to verify that VPN connections established successfully. Otherwise some errors will show up.</p><h2 id="creating-virtual-network-adapter-for-each-openvpn-client">Creating virtual network adapter for each OpenVPN client</h2><p>Edit <code>/etc/config/network</code>. Add the following:</p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">config interface &#39;usvpn&#39;
+    option proto &#39;none&#39;
+    option ifname &#39;tun-usvpn&#39;
+    option delegate &#39;0&#39;
 
-config interface 'ukvpn'
-    option proto 'none'
-    option ifname 'tun-ukvpn'
-    option delegate '0'
-</code></pre><h2 id="allowing-vpn-traffic-to-go-through-the-firewall">Allowing VPN traffic to go through the firewall</h2><p>Edit <code>/etc/config/firewall</code>. Add the following:</p><pre><code class="language-text">config zone
-    option input 'ACCEPT'
-    option forward 'REJECT'
-    option output 'ACCEPT'
-    option name 'usvpn'
-    option masq '1'
-    option network 'usvpn'
+config interface &#39;ukvpn&#39;
+    option proto &#39;none&#39;
+    option ifname &#39;tun-ukvpn&#39;
+    option delegate &#39;0&#39;
+</code></pre></div><h2 id="allowing-vpn-traffic-to-go-through-the-firewall">Allowing VPN traffic to go through the firewall</h2><p>Edit <code>/etc/config/firewall</code>. Add the following:</p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">config zone
+    option input &#39;ACCEPT&#39;
+    option forward &#39;REJECT&#39;
+    option output &#39;ACCEPT&#39;
+    option name &#39;usvpn&#39;
+    option masq &#39;1&#39;
+    option network &#39;usvpn&#39;
 
 config zone
-    option input 'ACCEPT'
-    option forward 'REJECT'
-    option output 'ACCEPT'
-    option name 'ukvpn'
-    option masq '1'
-    option network 'ukvpn'
+    option input &#39;ACCEPT&#39;
+    option forward &#39;REJECT&#39;
+    option output &#39;ACCEPT&#39;
+    option name &#39;ukvpn&#39;
+    option masq &#39;1&#39;
+    option network &#39;ukvpn&#39;
 
 config forwarding
-    option dest 'usvpn'
-    option src 'lan'
+    option dest &#39;usvpn&#39;
+    option src &#39;lan&#39;
 
 config forwarding
-    option dest 'ukvpn'
-    option src 'lan'
-</code></pre><h2 id="configuring-multiple-wan-connections">Configuring multiple WAN connections</h2><p>For this purpose, we need to utilise <code>mwan3</code> load balancer as installed earlier. Edit <code>/etc/config/mwan3</code> and delete all lines then add the following:</p><pre><code class="language-text">config rule 'default_rule'
-    option dest_ip '0.0.0.0/0'
-    option proto 'all'
-    option sticky '0'
-    option use_policy 'wan_only'
+    option dest &#39;ukvpn&#39;
+    option src &#39;lan&#39;
+</code></pre></div><h2 id="configuring-multiple-wan-connections">Configuring multiple WAN connections</h2><p>For this purpose, we need to utilise <code>mwan3</code> load balancer as installed earlier. Edit <code>/etc/config/mwan3</code> and delete all lines then add the following:</p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">config rule &#39;default_rule&#39;
+    option dest_ip &#39;0.0.0.0/0&#39;
+    option proto &#39;all&#39;
+    option sticky &#39;0&#39;
+    option use_policy &#39;wan_only&#39;
 
-config policy 'wan_only'
-    option last_resort 'unreachable'
-    list use_member 'wan1'
+config policy &#39;wan_only&#39;
+    option last_resort &#39;unreachable&#39;
+    list use_member &#39;wan1&#39;
 
-config policy 'usvpn_only'
-    list use_member 'usvpn1'
-    option last_resort 'unreachable'
+config policy &#39;usvpn_only&#39;
+    list use_member &#39;usvpn1&#39;
+    option last_resort &#39;unreachable&#39;
 
-config policy 'ukvpn_only'
-    list use_member 'ukvpn1'
-    option last_resort 'unreachable'
+config policy &#39;ukvpn_only&#39;
+    list use_member &#39;ukvpn1&#39;
+    option last_resort &#39;unreachable&#39;
 
-config member 'wan1'
-    option interface 'wan'
+config member &#39;wan1&#39;
+    option interface &#39;wan&#39;
 
-config member 'usvpn1'
-    option interface 'usvpn'
+config member &#39;usvpn1&#39;
+    option interface &#39;usvpn&#39;
 
-config member 'ukvpn1'
-    option interface 'ukvpn'
+config member &#39;ukvpn1&#39;
+    option interface &#39;ukvpn&#39;
 
-config interface 'wan'
-    option enabled '1'
-    option count '1'
-    option timeout '2'
-    option down '3'
-    option up '8'
-    option reliability '1'
-    option initial_state 'online'
-    option family 'ipv4'
-    option track_method 'ping'
-    list track_ip '8.8.8.8'
-    list track_ip '8.8.4.4'
-    option max_ttl '60'
-    option check_quality '0'
-    option interval '300'
+config interface &#39;wan&#39;
+    option enabled &#39;1&#39;
+    option count &#39;1&#39;
+    option timeout &#39;2&#39;
+    option down &#39;3&#39;
+    option up &#39;8&#39;
+    option reliability &#39;1&#39;
+    option initial_state &#39;online&#39;
+    option family &#39;ipv4&#39;
+    option track_method &#39;ping&#39;
+    list track_ip &#39;8.8.8.8&#39;
+    list track_ip &#39;8.8.4.4&#39;
+    option max_ttl &#39;60&#39;
+    option check_quality &#39;0&#39;
+    option interval &#39;300&#39;
 
-config interface 'usvpn'
-    option enabled '1'
-    option count '1'
-    option timeout '2'
-    option down '3'
-    option up '8'
-    option reliability '1'
-    option initial_state 'online'
-    option family 'ipv4'
-    option track_method 'ping'
-    list track_ip '8.8.8.8'
-    list track_ip '8.8.4.4'
-    option max_ttl '60'
-    option check_quality '0'
-    option interval '300'
+config interface &#39;usvpn&#39;
+    option enabled &#39;1&#39;
+    option count &#39;1&#39;
+    option timeout &#39;2&#39;
+    option down &#39;3&#39;
+    option up &#39;8&#39;
+    option reliability &#39;1&#39;
+    option initial_state &#39;online&#39;
+    option family &#39;ipv4&#39;
+    option track_method &#39;ping&#39;
+    list track_ip &#39;8.8.8.8&#39;
+    list track_ip &#39;8.8.4.4&#39;
+    option max_ttl &#39;60&#39;
+    option check_quality &#39;0&#39;
+    option interval &#39;300&#39;
 
-config interface 'ukvpn'
-    option enabled '1'
-    option count '1'
-    option timeout '2'
-    option down '3'
-    option up '8'
-    option reliability '1'
-    option initial_state 'online'
-    option family 'ipv4'
-    option track_method 'ping'
-    list track_ip '8.8.8.8'
-    list track_ip '8.8.4.4'
-    option max_ttl '60'
-    option check_quality '0'
-    option interval '300'
+config interface &#39;ukvpn&#39;
+    option enabled &#39;1&#39;
+    option count &#39;1&#39;
+    option timeout &#39;2&#39;
+    option down &#39;3&#39;
+    option up &#39;8&#39;
+    option reliability &#39;1&#39;
+    option initial_state &#39;online&#39;
+    option family &#39;ipv4&#39;
+    option track_method &#39;ping&#39;
+    list track_ip &#39;8.8.8.8&#39;
+    list track_ip &#39;8.8.4.4&#39;
+    option max_ttl &#39;60&#39;
+    option check_quality &#39;0&#39;
+    option interval &#39;300&#39;
 
-config globals 'globals'
-    option local_source 'none'
-    option mmx_mask '0xff00'
-    option rtmon_interval '5'
-</code></pre><p>This serves as a base template having 1 WAN and 2 VPN interfaces. Redundant routes can be configured, i.e. load balancing between two or more OpenVPN routes but I will not be demonstrating that.</p><p>Go to MWAN Rule Configuration in LuCI. You should see one rule defined there named <code>default_rule</code>. Rules placed below this will never be parsed. Useful for disabling rules without deleting them. Rules placed above will be parsed top-down.</p><p>Restart <code>mwan3</code> and ensure internet still works as usual:</p><pre><code class="language-bash">/usr/sbin/mwan3 restart
-</code></pre><h2 id="multiple-wan-rule-configuration">Multiple WAN rule configuration</h2><p>I recommend using <code>luci-app-mwan3</code> for configuring. If you prefer editing the rules on file directly, it is at <code>/etc/config/mwan3</code>.</p><p>Note that rule name must not be longer than 15 characters. Rules are matched top-down. Rule processing stops after the first match is found.</p><h3 id="connections-coming-from-a-source-ip-to-be-routed-through-specific-vpn">Connections coming from a source IP to be routed through specific VPN</h3><p>Usage: When you want to enforce all-time VPN for a particular LAN machine.</p><pre><code class="language-text">config rule 'machine1_usvpn'
-    option src_ip '192.168.x.x/32'
-    option proto 'all'
-    option sticky '0'
-    option use_policy 'usvpn_only'
-</code></pre><p>As added protection, you should add a firewall rule to deny this particular machine by MAC address from ever going out via direct WAN. Edit <code>/etc/config/firewall</code> and add the following:</p><pre><code class="language-text">config rule
-    option src 'lan'
-    option dest 'wan'
-    option name 'Deny-machine1-WAN'
-    option proto 'all'
-    option src_mac 'xx:xx:xx:xx:xx:xx'
-    option target 'REJECT'
-</code></pre><h3 id="connections-to-a-destination-ip-to-be-routed-through-specific-vpn">Connections to a destination IP to be routed through specific VPN</h3><p>Usage: When you know the destination IP and that never changes such as DNS server. An Anycast DNS server responds to lookup request with IP address of a server closest to it so performing lookup on a host name via default WAN or via a VPN may yield different results.</p><p>Do not use this on IP addresses that may change! There are better ways to handle that.</p><pre><code class="language-text">config rule 'pia_dns1'
-    option dest_ip '199.85.126.10/32'
-    option dest_port '53'
-    option proto 'udp'
-    option sticky '0'
-    option use_policy 'usvpn_only'
-</code></pre><h3 id="connections-tagged-with-specific-ipset-tag-to-route-through-specific-vpn">Connections tagged with specific IPset tag to route through specific VPN</h3><p>Usage: When the domain name is known but the IP address may change over time. You are likely to use this a lot.</p><p>Firstly, ensure that your VPN provider is not blocked by the service; setup a direct VPN to verify this.</p><p>After verifying, we can now proceed to setting up the IPset rules. Starting with something simple, I will detail how to setup for Pandora Internet Radio.</p><p>Edit <code>/etc/dnsmasq.conf</code>, add the following line:</p><pre><code class="language-text">ipset=/pandora.com/usvpn
-</code></pre><p>This tags lookups made for pandora.com and its subdomains with <code>usvpn</code>.</p><p>Note: You need to install <code>dnsmasq-full</code>. The standard <code>dnsmasq</code> package will not start with the presence of <code>ipset</code> line. This also means you must have the pre-requisite packages installed before restoring backup (if you ever need to).</p><p>Edit <code>/etc/config/dhcp</code>, add the following line above the entry where your preferred DNS servers are set. Example:</p><pre><code class="language-text">config dnsmasq
+config globals &#39;globals&#39;
+    option local_source &#39;none&#39;
+    option mmx_mask &#39;0xff00&#39;
+    option rtmon_interval &#39;5&#39;
+</code></pre></div><p>This serves as a base template having 1 WAN and 2 VPN interfaces. Redundant routes can be configured, i.e. load balancing between two or more OpenVPN routes but I will not be demonstrating that.</p><p>Go to MWAN Rule Configuration in LuCI. You should see one rule defined there named <code>default_rule</code>. Rules placed below this will never be parsed. Useful for disabling rules without deleting them. Rules placed above will be parsed top-down.</p><p>Restart <code>mwan3</code> and ensure internet still works as usual:</p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/usr/sbin/mwan3 restart
+</code></pre></div><h2 id="multiple-wan-rule-configuration">Multiple WAN rule configuration</h2><p>I recommend using <code>luci-app-mwan3</code> for configuring. If you prefer editing the rules on file directly, it is at <code>/etc/config/mwan3</code>.</p><p>Note that rule name must not be longer than 15 characters. Rules are matched top-down. Rule processing stops after the first match is found.</p><h3 id="connections-coming-from-a-sourceip-to-be-routed-through-specific-vpn">Connections coming from a source IP to be routed through specific VPN</h3><p>Usage: When you want to enforce all-time VPN for a particular LAN machine.</p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">config rule &#39;machine1_usvpn&#39;
+    option src_ip &#39;192.168.x.x/32&#39;
+    option proto &#39;all&#39;
+    option sticky &#39;0&#39;
+    option use_policy &#39;usvpn_only&#39;
+</code></pre></div><p>As added protection, you should add a firewall rule to deny this particular machine by MAC address from ever going out via direct WAN. Edit <code>/etc/config/firewall</code> and add the following:</p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">config rule
+    option src &#39;lan&#39;
+    option dest &#39;wan&#39;
+    option name &#39;Deny-machine1-WAN&#39;
+    option proto &#39;all&#39;
+    option src_mac &#39;xx:xx:xx:xx:xx:xx&#39;
+    option target &#39;REJECT&#39;
+</code></pre></div><h3 id="connections-to-a-destinationip-to-be-routed-through-specific-vpn">Connections to a destination IP to be routed through specific VPN</h3><p>Usage: When you know the destination IP and that never changes such as DNS server. An Anycast DNS server responds to lookup request with IP address of a server closest to it so performing lookup on a host name via default WAN or via a VPN may yield different results.</p><p>Do not use this on IP addresses that may change! There are better ways to handle that.</p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">config rule &#39;pia_dns1&#39;
+    option dest_ip &#39;199.85.126.10/32&#39;
+    option dest_port &#39;53&#39;
+    option proto &#39;udp&#39;
+    option sticky &#39;0&#39;
+    option use_policy &#39;usvpn_only&#39;
+</code></pre></div><h3 id="connections-tagged-with-specific-ipset-tag-to-route-through-specific-vpn">Connections tagged with specific IPset tag to route through specific VPN</h3><p>Usage: When the domain name is known but the IP address may change over time. You are likely to use this a lot.</p><p>Firstly, ensure that your VPN provider is not blocked by the service; setup a direct VPN to verify this.</p><p>After verifying, we can now proceed to setting up the IPset rules. Starting with something simple, I will detail how to setup for Pandora Internet Radio.</p><p>Edit <code>/etc/dnsmasq.conf</code>, add the following line:</p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">ipset=/pandora.com/usvpn
+</code></pre></div><p>This tags lookups made for pandora.com and its subdomains with <code>usvpn</code>.</p><p>Note: You need to install <code>dnsmasq-full</code>. The standard <code>dnsmasq</code> package will not start with the presence of <code>ipset</code> line. This also means you must have the pre-requisite packages installed before restoring backup (if you ever need to).</p><p>Edit <code>/etc/config/dhcp</code>, add the following line above the entry where your preferred DNS servers are set. Example:</p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">config dnsmasq
     ...
-    list server '/pandora.com/199.85.126.10'
-    list server '8.8.8.8'
-</code></pre><p>In the example above, <code>8.8.8.8</code> is Google&rsquo;s DNS server. <code>199.85.126.10</code> is <a href="https://dns.norton.com/configureRouter.html">Norton ConnectSafe</a> DNS Server. What this setup means is if we are performing a lookup on pandora.com (including its subdomains), the lookup will be performed by Norton&rsquo;s while other domains will be resolved using Google&rsquo;s.</p><p>In the previous section, I have detailed how to send traffic to VPN by a specific IP address and destination port number. You will likely need to setup that as a pre-requisite for this technique to work as an AnyCast DNS server will likely provide you an IP address closer to you instead of your VPN server.</p><p>Restart dnsmasq:</p><pre><code class="language-bash">/etc/init.d/dnsmasq restart
-</code></pre><p>Finally, configure <code>mwan3</code> with the following rule to send all traffic with IPset of <code>usvpn</code> via the <code>usvpn_only</code> link.:</p><pre><code class="language-text">config rule 'ipset_usvpn'
-    option proto 'all'
-    option sticky '0'
-    option ipset 'usvpn'
-    option use_policy 'usvpn_only'
-</code></pre><h3 id="identifying-dependencies-so-that-rules-can-be-setup-for-them-too">Identifying dependencies so that rules can be setup for them too</h3><p>Usage: When a website links to third party domains for content.</p><p>Firstly, we need to use tools to help us capture all domain names that are implicitly contacted when we browse a website; it may then be loading content from server 1, server 2, etc. The list of these servers must be identified for this IPset method to work.</p><p>Using Chrome, navigate to chrome://net-internals/#dns. Clear the DNS cache. Some plugins are continuously pinging servers in the background. These should be disabled temporarily to prevent interference.</p><p>Navigate to the website using Chrome incognito mode and the list of DNS lookups made will begin to show up. You now need to setup IPset rules for these domains.</p><h3 id="allow-ipv6-routing">Allow IPv6 routing</h3><p>Usage: If you want IPv6 to work while being able to use <code>mwan3</code>.</p><p>Under MWAN Policy Configuration, set the WAN policy&rsquo;s &ldquo;Last resort&rdquo; to default (use main routing table).</p><pre><code class="language-text">config policy 'wan_only'
-    list use_member 'wan_member'
-    option last_resort 'default'
-</code></pre><p>You should <strong>not</strong> set this for your VPN policies unless you intentionally want it to fallback to default routing if the VPN becomes unreachable.</p><h2 id="troubleshooting">Troubleshooting</h2><h3 id="tweaking-and-restarting-openvpn-configuration-or-firewall-settings-sometimes-causes-outgoing-internet-connections-to-fail">Tweaking and restarting OpenVPN configuration or Firewall settings sometimes causes outgoing internet connections to fail</h3><p>Try restarting mwan3, <code>/usr/sbin/mwan3 restart</code>. If this fails to restore connectivity, reboot the router.</p><h2 id="known-issues">Known issues</h2><h3 id="this-solution-does-not-work-on-lede-mwan3-2-0">This solution does not work on LEDE mwan3 2.0</h3><p><a href="https://github.com/openwrt/packages/issues/3486">MWAN3 doesn&rsquo;t support correctly WAN based on OpenVPN tun</a>. As per suggestion by Kevin David in comments, please install <code>mwan3</code> version 2.6.8 instead.</p><ul class="list-inline tags" style="margin-left:0"><li class="btn btn-primary"><a href="https://www.leowkahman.com/tags/load-balancer">Load Balancer</a></li><li class="btn btn-primary"><a href="https://www.leowkahman.com/tags/openvpn">OpenVPN</a></li><li class="btn btn-primary"><a href="https://www.leowkahman.com/tags/openwrt">OpenWRT</a></li><li class="btn btn-primary"><a href="https://www.leowkahman.com/tags/vpn">VPN</a></li></ul></div></div><div class="row"><div id="disqus_thread"></div><script>!function(){if("localhost"!=window.location.hostname){var e=document.createElement("script");e.type="text/javascript",e.async=!0;e.src="https://leowkahman.disqus.com/embed.js",(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(e)}}()</script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript></div></div><div class="col-sm-4 blog-sidebar"><div class="sidebar-module"><script>!function(){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src="https://cse.google.com/cse.js?cx=partner-pub-8585963436723502:5716828028";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}()</script><gcse:search></gcse:search></div><div class="sidebar-module"><h4>Recent Posts</h4><ul class="list-unstyled posts-recent"><li><a href="https://www.leowkahman.com/2020/02/01/speedtest-openwrt-with-flow-offloading/">Speedtest OpenWRT with flow offloading</a></li><li><a href="https://www.leowkahman.com/2019/02/06/ultrawide-monitor-on-linux/">Ultrawide monitor on Linux</a></li><li><a href="https://www.leowkahman.com/2019/02/03/switched-from-ubuntu-to-linux-mint/">Switched from Ubuntu to Linux Mint</a></li><li><a href="https://www.leowkahman.com/2018/08/11/reduce-internet-lag-on-openwrt/">Reduce internet lag on OpenWRT</a></li><li><a href="https://www.leowkahman.com/2018/05/29/workaround-to-wifi-issues-on-openwrt-lede/">Workaround to Wi-Fi issues on OpenWRT LEDE</a></li></ul></div><div class="sidebar-module"><h4>Categories</h4><ul class="list-unstyled posts-recent"><li><a href="https://www.leowkahman.com/categories/software/">software</a></li><li><a href="https://www.leowkahman.com/categories/web/">web</a></li><li><a href="https://www.leowkahman.com/categories/network/">network</a></li><li><a href="https://www.leowkahman.com/categories/hardware/">hardware</a></li><li><a href="https://www.leowkahman.com/categories/cloud/">cloud</a></li></ul></div></div></div></div><footer class="blog-footer"><div class="container"><div class="row"><div class="col-sm-8 col-xs-6"><ul class="list-inline links"><li><a href="/privacy-policy/">Privacy Policy</a></li><li><a href="https://status.leowkahman.com/">Uptime</a></li></ul></div><div class="col-sm-4 col-xs-6"><ul class="list-inline"><li><a target="_blank" href="/index.xml"><i class="fa fa-rss fa-lg"></i></a></li><li><a target="_blank" href="https://stackexchange.com/users/6729082/leow-kah-man"><i class="fa fa-stack-exchange fa-lg"></i></a></li><li><a target="_blank" href="https://github.com/kmleow"><i class="fa fa-github fa-lg"></i></a></li><li><a target="_blank" href="https://twitter.com/kmleow"><i class="fa fa-twitter fa-lg"></i></a></li><li><a target="_blank" href="https://www.linkedin.com/in/kmleow"><i class="fa fa-linkedin fa-lg"></i></a></li><li><a target="_blank" href="https://www.facebook.com/LeowKahMan"><i class="fa fa-facebook fa-lg"></i></a></li><li><a target="_blank" href="https://www.paypal.me/leowkahman/5usd"><i class="fa fa-paypal fa-lg"></i></a></li></ul></div></div></div><div class="container"><div class="col-sm-12 row"><p>Except as otherwise noted, the content of this page is licensed under the <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>,<br/>code samples are licensed under the <a href="https://tldrlegal.com/license/mit-license">MIT License</a>. Third-party product names and logos may be the trademarks of their respective owners.</p></div></div></footer><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha256-Daf8GuI2eLKHJlOWLRR/zRy9Clqcj4TUSumbxYH9kGI=" crossorigin="anonymous"></script><script src="/js/custom.js?v=1.0.1"></script><script data-ad-client="ca-pub-8585963436723502" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>!function(e,a,t,n,g,c,o){e.GoogleAnalyticsObject=g,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=1*new Date,c=a.createElement(t),o=a.getElementsByTagName(t)[0],c.async=1,c.src="//www.google-analytics.com/analytics.js",o.parentNode.insertBefore(c,o)}(window,document,"script",0,"ga"),ga("create","UA-61838818-1","auto"),ga("send","pageview"),ga("set","forceSSL",!0)</script></body></html>
+    list server &#39;/pandora.com/199.85.126.10&#39;
+    list server &#39;8.8.8.8&#39;
+</code></pre></div><p>In the example above, <code>8.8.8.8</code> is Google&rsquo;s DNS server. <code>199.85.126.10</code> is <a href="https://dns.norton.com/configureRouter.html">Norton ConnectSafe</a> DNS Server. What this setup means is if we are performing a lookup on pandora.com (including its subdomains), the lookup will be performed by Norton&rsquo;s while other domains will be resolved using Google&rsquo;s.</p><p>In the previous section, I have detailed how to send traffic to VPN by a specific IP address and destination port number. You will likely need to setup that as a pre-requisite for this technique to work as an AnyCast DNS server will likely provide you an IP address closer to you instead of your VPN server.</p><p>Restart dnsmasq:</p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/etc/init.d/dnsmasq restart
+</code></pre></div><p>Finally, configure <code>mwan3</code> with the following rule to send all traffic with IPset of <code>usvpn</code> via the <code>usvpn_only</code> link.:</p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">config rule &#39;ipset_usvpn&#39;
+    option proto &#39;all&#39;
+    option sticky &#39;0&#39;
+    option ipset &#39;usvpn&#39;
+    option use_policy &#39;usvpn_only&#39;
+</code></pre></div><h3 id="identifying-dependencies-so-that-rules-can-be-setup-for-them-too">Identifying dependencies so that rules can be setup for them too</h3><p>Usage: When a website links to third party domains for content.</p><p>Firstly, we need to use tools to help us capture all domain names that are implicitly contacted when we browse a website; it may then be loading content from server 1, server 2, etc. The list of these servers must be identified for this IPset method to work.</p><p>Using Chrome, navigate to chrome://net-internals/#dns. Clear the DNS cache. Some plugins are continuously pinging servers in the background. These should be disabled temporarily to prevent interference.</p><p>Navigate to the website using Chrome incognito mode and the list of DNS lookups made will begin to show up. You now need to setup IPset rules for these domains.</p><h3 id="allow-ipv6-routing">Allow IPv6 routing</h3><p>Usage: If you want IPv6 to work while being able to use <code>mwan3</code>.</p><p>Under MWAN Policy Configuration, set the WAN policy&rsquo;s &ldquo;Last resort&rdquo; to default (use main routing table).</p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">config policy &#39;wan_only&#39;
+    list use_member &#39;wan_member&#39;
+    option last_resort &#39;default&#39;
+</code></pre></div><p>You should <strong>not</strong> set this for your VPN policies unless you intentionally want it to fallback to default routing if the VPN becomes unreachable.</p><h2 id="troubleshooting">Troubleshooting</h2><h3 id="tweaking-and-restarting-openvpn-configurationor-firewall-settings-sometimes-causes-outgoing-internet-connections-to-fail">Tweaking and restarting OpenVPN configuration or Firewall settings sometimes causes outgoing internet connections to fail</h3><p>Try restarting mwan3, <code>/usr/sbin/mwan3 restart</code>. If this fails to restore connectivity, reboot the router.</p><h2 id="known-issues">Known issues</h2><h3 id="this-solution-does-not-work-on-lede-mwan3-20">This solution does not work on LEDE mwan3 2.0</h3><p><a href="https://github.com/openwrt/packages/issues/3486">MWAN3 doesn&rsquo;t support correctly WAN based on OpenVPN tun</a>. As per suggestion by Kevin David in comments, please install <code>mwan3</code> version 2.6.8 instead.</p><ul class="list-inline tags" style="margin-left:0"><li class="btn btn-primary"><a href="https://www.leowkahman.com/tags/load-balancer">Load Balancer</a></li><li class="btn btn-primary"><a href="https://www.leowkahman.com/tags/openvpn">OpenVPN</a></li><li class="btn btn-primary"><a href="https://www.leowkahman.com/tags/openwrt">OpenWRT</a></li><li class="btn btn-primary"><a href="https://www.leowkahman.com/tags/vpn">VPN</a></li></ul></div></div><div class="row"><div id="disqus_thread"></div><script>!function(){if("localhost"!=window.location.hostname){var e=document.createElement("script");e.type="text/javascript",e.async=!0;e.src="https://leowkahman.disqus.com/embed.js",(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(e)}}()</script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript></div></div><div class="col-sm-4 blog-sidebar"><div class="sidebar-module"><script>!function(){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src="https://cse.google.com/cse.js?cx=partner-pub-8585963436723502:5716828028";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}()</script><gcse:search></gcse:search></div><div class="sidebar-module"><h4>Recent Posts</h4><ul class="list-unstyled posts-recent"><li><a href="https://www.leowkahman.com/2020/02/01/speedtest-openwrt-with-flow-offloading/">Speedtest OpenWRT with flow offloading</a></li><li><a href="https://www.leowkahman.com/2019/02/06/ultrawide-monitor-on-linux/">Ultrawide monitor on Linux</a></li><li><a href="https://www.leowkahman.com/2019/02/03/switched-from-ubuntu-to-linux-mint/">Switched from Ubuntu to Linux Mint</a></li><li><a href="https://www.leowkahman.com/2018/08/11/reduce-internet-lag-on-openwrt/">Reduce internet lag on OpenWRT</a></li><li><a href="https://www.leowkahman.com/2018/05/29/workaround-to-wifi-issues-on-openwrt-lede/">Workaround to Wi-Fi issues on OpenWRT LEDE</a></li></ul></div><div class="sidebar-module"><h4>Categories</h4><ul class="list-unstyled posts-recent"><li><a href="https://www.leowkahman.com/categories/software/">software</a></li><li><a href="https://www.leowkahman.com/categories/web/">web</a></li><li><a href="https://www.leowkahman.com/categories/network/">network</a></li><li><a href="https://www.leowkahman.com/categories/hardware/">hardware</a></li><li><a href="https://www.leowkahman.com/categories/programming/">programming</a></li></ul></div></div></div></div><footer class="blog-footer"><div class="container"><div class="row"><div class="col-sm-8 col-xs-6"><ul class="list-inline links"><li><a href="/privacy-policy/">Privacy Policy</a></li><li><a href="https://status.leowkahman.com/">Uptime</a></li></ul></div><div class="col-sm-4 col-xs-6"><ul class="list-inline"><li><a target="_blank" href="/index.xml"><i class="fa fa-rss fa-lg"></i></a></li><li><a target="_blank" href="https://stackexchange.com/users/6729082/leow-kah-man"><i class="fa fa-stack-exchange fa-lg"></i></a></li><li><a target="_blank" href="https://github.com/kmleow"><i class="fa fa-github fa-lg"></i></a></li><li><a target="_blank" href="https://twitter.com/kmleow"><i class="fa fa-twitter fa-lg"></i></a></li><li><a target="_blank" href="https://www.linkedin.com/in/kmleow"><i class="fa fa-linkedin fa-lg"></i></a></li><li><a target="_blank" href="https://www.facebook.com/LeowKahMan"><i class="fa fa-facebook fa-lg"></i></a></li><li><a target="_blank" href="https://www.paypal.me/leowkahman/5usd"><i class="fa fa-paypal fa-lg"></i></a></li></ul></div></div></div><div class="container"><div class="col-sm-12 row"><p>Except as otherwise noted, the content of this page is licensed under the <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>,<br/>code samples are licensed under the <a href="https://tldrlegal.com/license/mit-license">MIT License</a>. Third-party product names and logos may be the trademarks of their respective owners.</p></div></div></footer><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js" integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js" integrity="sha256-eOgo0OtLL4cdq7RdwRUiGKLX9XsIJ7nGhWEKbohmVAQ=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha256-Daf8GuI2eLKHJlOWLRR/zRy9Clqcj4TUSumbxYH9kGI=" crossorigin="anonymous"></script><script src="/js/custom.js?v=1.0.1"></script><script data-ad-client="ca-pub-8585963436723502" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>!function(e,a,t,n,g,c){e.GoogleAnalyticsObject=n,e.ga=e.ga||function(){(e.ga.q=e.ga.q||[]).push(arguments)},e.ga.l=+new Date,g=a.createElement(t),c=a.getElementsByTagName(t)[0],g.async=1,g.src="//www.google-analytics.com/analytics.js",c.parentNode.insertBefore(g,c)}(window,document,"script","ga"),ga("create","UA-61838818-1","auto"),ga("send","pageview"),ga("set","forceSSL",!0)</script></body></html>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tor on Leow Kah Man - Tech Blog</title>
@@ -20,9 +20,7 @@
       <guid>https://www.leowkahman.com/2017/04/02/tor-proxy-on-openwrt/</guid>
       <description>&lt;p&gt;The best way to use Tor network is by browsing using the official Tor Browser.
 However, if you have specific need to connect to Tor without their official
-browser, you can setup SOCKS5 or HTTP proxy.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+browser, you can setup SOCKS5 or HTTP proxy.&lt;/p&gt;</description>
     </item>
     
   </channel>

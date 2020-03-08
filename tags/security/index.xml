@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Security on Leow Kah Man - Tech Blog</title>
@@ -20,14 +20,11 @@
       <guid>https://www.leowkahman.com/2017/09/05/tm-streamyx-router-wifi-security/</guid>
       <description>&lt;p&gt;If you are using the router that came with your telco provider,
 please take immediate action to verify its security settings, in particular Wi-Fi.&lt;/p&gt;
-
 &lt;p&gt;Last week while at someone else&amp;rsquo;s house,
 I discovered that default settings of the router provided by telco had not one but
 4 Wi-Fi SSIDs. One of them was already secured with a long WPA2 password, good.
 However, the remaining 3 were without security.
-Their SSIDs were hidden but hiding SSID is not a form of security!&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+Their SSIDs were hidden but hiding SSID is not a form of security!&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -36,13 +33,10 @@ Their SSIDs were hidden but hiding SSID is not a form of security!&lt;/p&gt;
       <pubDate>Tue, 04 Jul 2017 23:30:00 +0800</pubDate>
       
       <guid>https://www.leowkahman.com/2017/07/04/how-to-disable-tls-1-0-on-an-azure-app-service/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://www.leowkahman.com/images/2017/07/tls-1-2-yes.png&#34; alt=&#34;TLS 1.2 - yes&#34; /&gt;&lt;/p&gt;
-
+      <description>&lt;p&gt;&lt;img src=&#34;https://www.leowkahman.com/images/2017/07/tls-1-2-yes.png&#34; alt=&#34;TLS 1.2 - yes&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Yes it is possible to disable TLS 1.0 and even 1.1 without using App Service
 Environment (ASE). The solution is to use Azure Application Gateway and a custom
-hostname.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+hostname.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -52,9 +46,7 @@ hostname.&lt;/p&gt;
       
       <guid>https://www.leowkahman.com/2016/03/14/setup-4096-bit-openvpn-openwrt/</guid>
       <description>&lt;p&gt;If you want to setup OpenVPN with 4096-bit key on OpenWRT, with a few tips and
-tricks in addition, read on.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+tricks in addition, read on.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -69,9 +61,7 @@ the real one. Furthermore, I have
 This should be reasonably secure but an attacker could potentially spoof its
 origin IP (man-in-the-middle attack) as one of theirs. To mitigate this
 potential problem, it is necessary for the client (CloudFlare) to present a
-certificate which is then verified by (my) web server.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+certificate which is then verified by (my) web server.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -85,9 +75,7 @@ originating from IP addresses not belonging to CloudFlare. Initially, I was
 using Apache .htaccess to allow incoming traffic only if they originated from
 CloudFlare. This was somewhat sufficient but some hackers continued attempting
 to find loopholes instead of giving up so I needed to up the level of security
-and decided to look at ways to drop unwelcome traffic using OpenWRT firewall.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+and decided to look at ways to drop unwelcome traffic using OpenWRT firewall.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -99,9 +87,7 @@ and decided to look at ways to drop unwelcome traffic using OpenWRT firewall.&l
       <description>&lt;p&gt;Installing &lt;code&gt;ddns-scripts&lt;/code&gt; and &lt;code&gt;ddns-scripts_cloudflare&lt;/code&gt; version 2.4.3-1 from
 OpenWRT package repository allows you to configure dynamic DNS that points
 directly to your IP address without orange cloud. If you want the orange cloud
-however, you need to make a small change.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+however, you need to make a small change.&lt;/p&gt;</description>
     </item>
     
   </channel>

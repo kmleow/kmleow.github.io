@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Echo on Leow Kah Man - Tech Blog</title>
@@ -18,12 +18,9 @@
       <pubDate>Sun, 12 Nov 2017 23:45:00 +0800</pubDate>
       
       <guid>https://www.leowkahman.com/2017/11/12/using-amazon-echo-outside-us/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://www.leowkahman.com/images/2017/11/amazon-echo.jpg&#34;&gt;&lt;img src=&#34;https://www.leowkahman.com/images/2017/11/amazon-echo.jpg&#34; alt=&#34;Amazon Echo&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
-
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.leowkahman.com/images/2017/11/amazon-echo.jpg&#34;&gt;&lt;img src=&#34;https://www.leowkahman.com/images/2017/11/amazon-echo.jpg&#34; alt=&#34;Amazon Echo&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;It is possible to use Amazon Echo outside US but there are some challenges in
-setting it up. Specifically, I was trying to setup for use in Malaysia.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+setting it up. Specifically, I was trying to setup for use in Malaysia.&lt;/p&gt;</description>
     </item>
     
   </channel>

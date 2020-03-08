@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Vpn on Leow Kah Man - Tech Blog</title>
+    <title>VPN on Leow Kah Man - Tech Blog</title>
     <link>https://www.leowkahman.com/tags/vpn/</link>
-    <description>Recent content in Vpn on Leow Kah Man - Tech Blog</description>
+    <description>Recent content in VPN on Leow Kah Man - Tech Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License, code samples are licensed under the MIT License. Third-party product names and logos may be the trademarks of their respective owners.</copyright>
@@ -20,9 +20,7 @@
       <guid>https://www.leowkahman.com/2016/06/19/conditional-multiple-openvpn-routing-hostname-ip/</guid>
       <description>&lt;p&gt;Using OpenWRT/LEDE, connect to one or more OpenVPN instances and conditionally divert
 (split tunneling) one or more outgoing traffic to specific VPN route by
-destination host names or IP addresses.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+destination host names or IP addresses.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -34,9 +32,7 @@ destination host names or IP addresses.&lt;/p&gt;
       <description>&lt;p&gt;If you are reading this post, it is assumed that you have setup VPN server and
 able to connect into it remotely. You are now able to access the Internet but
 not any LAN computers. The cause is very likely due to use of the same LAN IP
-subnet on both the source (connecting from) and destination (connecting to).&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+subnet on both the source (connecting from) and destination (connecting to).&lt;/p&gt;</description>
     </item>
     
   </channel>

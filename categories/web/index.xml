@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Web on Leow Kah Man - Tech Blog</title>
@@ -18,12 +18,9 @@
       <pubDate>Fri, 13 Apr 2018 22:00:00 +0800</pubDate>
       
       <guid>https://www.leowkahman.com/2018/04/13/solution-to-images-not-showing-on-inoreader/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://www.leowkahman.com/images/2018/04/inoreader.png&#34; alt=&#34;InoReader&#34; /&gt;&lt;/p&gt;
-
+      <description>&lt;p&gt;&lt;img src=&#34;https://www.leowkahman.com/images/2018/04/inoreader.png&#34; alt=&#34;InoReader&#34;&gt;&lt;/p&gt;
 &lt;p&gt;I noticed thumbnails for my blog&amp;rsquo;s RSS feed were not showing up.
-After investigation, I found the root cause and solution and it was a simple one.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+After investigation, I found the root cause and solution and it was a simple one.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -33,9 +30,7 @@ After investigation, I found the root cause and solution and it was a simple one
       
       <guid>https://www.leowkahman.com/2018/01/12/exclude-adsense-ads-from-specific-posts-on-hugo/</guid>
       <description>&lt;p&gt;How to manually or automatically exclude Google Adsense ads from specific posts
-or pages on Hugo static site generator.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+or pages on Hugo static site generator.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -46,9 +41,7 @@ or pages on Hugo static site generator.&lt;/p&gt;
       <guid>https://www.leowkahman.com/2018/01/09/setup-nodejs-with-apache-proxypass-on-raspberry-pi/</guid>
       <description>&lt;p&gt;Setup NodeJS with Apache ProxyPass on Raspberry Pi 2 and 3.
 This allows multiple NodeJS apps to run in the backend but under a single
-hostname/domain with different virtual subfolder path for each of them.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+hostname/domain with different virtual subfolder path for each of them.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -59,9 +52,7 @@ hostname/domain with different virtual subfolder path for each of them.&lt;/p&gt
       <guid>https://www.leowkahman.com/2017/09/11/enforce-safe-search-on-google-youtube-bing/</guid>
       <description>&lt;p&gt;Enforce safe search on Google, YouTube, Bing, and DuckDuckGo without a HTTP proxy.
 Instead, override DNS lookups, resolving to strict search server IP addresses.
-Works on IPv4 and IPv6 networks.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+Works on IPv4 and IPv6 networks.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -73,9 +64,7 @@ Works on IPv4 and IPv6 networks.&lt;/p&gt;
       <description>&lt;p&gt;Hugo static site generator generates sitemap.xml that include priority zero URLs.
 These are the taxanomies, tags and categories.
 To prevent these from appearing in Google Search results,
-GitLab CI can be configured to remove unwanted XML nodes (priority 0) from sitemap.xml.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+GitLab CI can be configured to remove unwanted XML nodes (priority 0) from sitemap.xml.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -86,9 +75,7 @@ GitLab CI can be configured to remove unwanted XML nodes (priority 0) from sitem
       <guid>https://www.leowkahman.com/2017/09/09/gitlab-ci-push-output-to-github/</guid>
       <description>&lt;p&gt;Utilise GitLab CI runner to build and publish static website to GitLab and GitHub
 pages. By having mirrored copies, it is possible to switch DNS records to point
-to either for high availability reasons.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+to either for high availability reasons.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -101,9 +88,7 @@ to either for high availability reasons.&lt;/p&gt;
 I now have a fully automated CI build on GitLab that grabs a NodeJS Docker image,
 downloads Hugo, UglifyCSS and HTMLMinifier via NPM,
 build and minify pages,
-and finally publishes to GitLab Pages on every Git merge to master.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+and finally publishes to GitLab Pages on every Git merge to master.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -114,9 +99,7 @@ and finally publishes to GitLab Pages on every Git merge to master.&lt;/p&gt;
       <guid>https://www.leowkahman.com/2017/04/02/tor-proxy-on-openwrt/</guid>
       <description>&lt;p&gt;The best way to use Tor network is by browsing using the official Tor Browser.
 However, if you have specific need to connect to Tor without their official
-browser, you can setup SOCKS5 or HTTP proxy.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+browser, you can setup SOCKS5 or HTTP proxy.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -127,9 +110,7 @@ browser, you can setup SOCKS5 or HTTP proxy.&lt;/p&gt;
       <guid>https://www.leowkahman.com/2017/03/20/remove-taxanomies-from-hugo-sitemap/</guid>
       <description>&lt;p&gt;Most blogging systems offer a way to create user-defined groupings of content
 called taxanomies. While I like the feature, I do not want them showing in
-search engines.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+search engines.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -142,9 +123,7 @@ search engines.&lt;/p&gt;
 This is nothing more than script kiddie level of protection for those that think
 every visitor out there is a noob. You want to re-enable your rights to
 right-click but before you jump into adding yet another addon or extension into
-your web browser, it is good to find out if you really need to.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+your web browser, it is good to find out if you really need to.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -154,9 +133,7 @@ your web browser, it is good to find out if you really need to.&lt;/p&gt;
       
       <guid>https://www.leowkahman.com/2016/07/14/static-blog-generated-by-hugo-hosted-on-google-firebase/</guid>
       <description>&lt;p&gt;I have migrated my blog from WordPress to static website generated by Hugo.
-Here is why.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+Here is why.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -166,9 +143,7 @@ Here is why.&lt;/p&gt;
       
       <guid>https://www.leowkahman.com/2016/05/08/setup-haproxy-cloudflare-ssl-termination-openwrt/</guid>
       <description>&lt;p&gt;Setup instructions for HAProxy with HTTP SSL termination on OpenWRT with
-CloudFlare Origin CA and Authenticated Origin Pulls.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+CloudFlare Origin CA and Authenticated Origin Pulls.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -178,9 +153,7 @@ CloudFlare Origin CA and Authenticated Origin Pulls.&lt;/p&gt;
       
       <guid>https://www.leowkahman.com/2016/05/04/cloudflare-origin-ca-raspberry-pi-apache/</guid>
       <description>&lt;p&gt;Immediately after reading CloudFlare&amp;rsquo;s blog post on the introduction of Origin
-CA, I tried it on my Raspberry Pi Apache. Read on for the details.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+CA, I tried it on my Raspberry Pi Apache. Read on for the details.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -191,9 +164,7 @@ CA, I tried it on my Raspberry Pi Apache. Read on for the details.&lt;/p&gt;
       <guid>https://www.leowkahman.com/2016/05/02/automate-raspberry-pi-ufw-allow-cloudflare-inbound/</guid>
       <description>&lt;p&gt;As IPv6 restores the ability to have end-to-end connectivity unlike IPv4
 shielded by NAT, I needed to configure my Raspberry Pi firewall to allow only
-CloudFlare traffic inbound on port 443. Read on for the solution.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+CloudFlare traffic inbound on port 443. Read on for the solution.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -203,9 +174,7 @@ CloudFlare traffic inbound on port 443. Read on for the solution.&lt;/p&gt;
       
       <guid>https://www.leowkahman.com/2016/04/24/configuring-apache-virtual-host-log-rotation/</guid>
       <description>&lt;p&gt;Log rotation was not applied to my Apache Virtual Host access.log on my
-Raspberry Pi. I later found out the problem was just a small configuration mistake.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+Raspberry Pi. I later found out the problem was just a small configuration mistake.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -216,9 +185,7 @@ Raspberry Pi. I later found out the problem was just a small configuration mista
       <guid>https://www.leowkahman.com/2016/04/22/apache-2-event-mpm-and-php-5-fastcgi-on-raspberry-pi/</guid>
       <description>&lt;p&gt;I have been running my blog on Apache 2 with Event MPM for a while and thought I
 should share my setup on Raspberry Pi 2 Model B with Raspbian for the benefit of
-others.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+others.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -233,9 +200,7 @@ the real one. Furthermore, I have
 This should be reasonably secure but an attacker could potentially spoof its
 origin IP (man-in-the-middle attack) as one of theirs. To mitigate this
 potential problem, it is necessary for the client (CloudFlare) to present a
-certificate which is then verified by (my) web server.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+certificate which is then verified by (my) web server.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -247,9 +212,7 @@ certificate which is then verified by (my) web server.&lt;/p&gt;
       <description>&lt;p&gt;For most people, if they wanted to run LAMP stack on Raspberry Pi, they would
 probably install Raspbian via NOOBS. However, if they wanted a HTPC with Kodi,
 they would likely opt for OSMC or OpenELEC. I needed Kodi to run at startup with
-LAMP stack running behind and chose the NOOBS Raspbian route.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+LAMP stack running behind and chose the NOOBS Raspbian route.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -262,12 +225,9 @@ LAMP stack running behind and chose the NOOBS Raspbian route.&lt;/p&gt;
 System-on-Chip (SoC) based low-powered micro computers. 4 devices were tested;
 OpenWRT running on TP-Link Archer C7 v2, QNAP TS-220 and Asustor AS-304T and
 Raspberry Pi 2 Model B.&lt;/p&gt;
-
 &lt;p&gt;In deciding which to be used for hosting a HTTPS-only web server, I was
 interested in the cryptography (namely RSA and AES) performance thus the
-motivation for running benchmarks.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+motivation for running benchmarks.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -279,9 +239,7 @@ motivation for running benchmarks.&lt;/p&gt;
       <description>&lt;p&gt;Installing &lt;code&gt;ddns-scripts&lt;/code&gt; and &lt;code&gt;ddns-scripts_cloudflare&lt;/code&gt; version 2.4.3-1 from
 OpenWRT package repository allows you to configure dynamic DNS that points
 directly to your IP address without orange cloud. If you want the orange cloud
-however, you need to make a small change.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+however, you need to make a small change.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -290,9 +248,7 @@ however, you need to make a small change.&lt;/p&gt;
       <pubDate>Sat, 02 Jan 2016 15:26:21 +0800</pubDate>
       
       <guid>https://www.leowkahman.com/2016/01/02/hello-world/</guid>
-      <description>&lt;p&gt;Today marks the first day of my new Tech Blog.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Today marks the first day of my new Tech Blog.&lt;/p&gt;</description>
     </item>
     
   </channel>

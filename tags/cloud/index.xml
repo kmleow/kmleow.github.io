@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Cloud on Leow Kah Man - Tech Blog</title>
@@ -22,9 +22,7 @@
 including a way on how to synchronise them.
 This includes Dropbox, Box, Yandex, Google Drive, and OneDrive.
 However, I used a workaround for Google Drive and OneDrive which may not necessarily
-be feasible for you.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+be feasible for you.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -35,9 +33,7 @@ be feasible for you.&lt;/p&gt;
       <guid>https://www.leowkahman.com/2017/04/04/dotnet-core-on-google-cloud-f1-micro-instance/</guid>
       <description>&lt;p&gt;Given that .NET Core is capable of running on Linux,
 I decided to try running a simple Hello World test on Google Cloud Platform
-f1-micro instance and also ran OpenSSL speed tests.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+f1-micro instance and also ran OpenSSL speed tests.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -47,9 +43,7 @@ f1-micro instance and also ran OpenSSL speed tests.&lt;/p&gt;
       
       <guid>https://www.leowkahman.com/2017/02/26/dotnet-core-on-google-app-engine/</guid>
       <description>&lt;p&gt;There is an easy tutorial on how to run .NET Core apps on Google Developers Codelabs.
-As a supplement to that I have some bits to share that may be of use to you.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+As a supplement to that I have some bits to share that may be of use to you.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -59,9 +53,7 @@ As a supplement to that I have some bits to share that may be of use to you.&lt;
       
       <guid>https://www.leowkahman.com/2016/04/03/create-git-repository-google-drive/</guid>
       <description>&lt;p&gt;Setting up a single-user Git repository on private cloud storage is not
-difficult and incurs no cost to you.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+difficult and incurs no cost to you.&lt;/p&gt;</description>
     </item>
     
   </channel>

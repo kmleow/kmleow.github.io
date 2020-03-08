@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Network on Leow Kah Man - Tech Blog</title>
@@ -20,9 +20,7 @@
       <guid>https://www.leowkahman.com/2016/08/27/track-users-connectivity-to-wifi-using-openwrt/</guid>
       <description>&lt;p&gt;How to know what time a person reached or was at home? One of the simplest
 method is to track when the user was connected to Wi-Fi.
-This could be accomplished easily if you have OpenWRT firmware on your router.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+This could be accomplished easily if you have OpenWRT firmware on your router.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -33,9 +31,7 @@ This could be accomplished easily if you have OpenWRT firmware on your router.&l
       <guid>https://www.leowkahman.com/2016/07/31/get-notified-via-ifttt-pushbullet-when-openwrt-router-has-started/</guid>
       <description>&lt;p&gt;Using IFTTT&amp;rsquo;s Maker channel, I could setup a Web Request receiver or if you
 prefer a simpler method, you could use Pushbullet. Then I configured my OpenWRT
-router to post to the receiver on startup.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+router to post to the receiver on startup.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -46,9 +42,7 @@ router to post to the receiver on startup.&lt;/p&gt;
       <guid>https://www.leowkahman.com/2016/06/19/conditional-multiple-openvpn-routing-hostname-ip/</guid>
       <description>&lt;p&gt;Using OpenWRT/LEDE, connect to one or more OpenVPN instances and conditionally divert
 (split tunneling) one or more outgoing traffic to specific VPN route by
-destination host names or IP addresses.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+destination host names or IP addresses.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -58,9 +52,7 @@ destination host names or IP addresses.&lt;/p&gt;
       
       <guid>https://www.leowkahman.com/2016/05/23/openwrt-encrypted-dns-lookup-using-multiple-dnscrypt-servers/</guid>
       <description>&lt;p&gt;Want to setup OpenWRT to query specific DNSCrypt server depending on domain name
-to resolve? Read on.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+to resolve? Read on.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -70,9 +62,7 @@ to resolve? Read on.&lt;/p&gt;
       
       <guid>https://www.leowkahman.com/2016/05/02/openwrt-ipv6-dynamic-dns-client/</guid>
       <description>&lt;p&gt;This should be rather straightforward but I encountered problems setting up with
-a solution worth sharing and I will throw in a tip that you may find useful.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+a solution worth sharing and I will throw in a tip that you may find useful.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -84,9 +74,7 @@ a solution worth sharing and I will throw in a tip that you may find useful.&lt;
       <description>&lt;p&gt;I logged into my home&amp;rsquo;s VPN from my mobile device and I needed to access my Pi
 but then I realised I could not because my Pi allowed incoming SSH traffic only
 from machines on a specific /24 subnet. At times like this, a jump server/host
-can act as a bridge.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+can act as a bridge.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -97,9 +85,7 @@ can act as a bridge.&lt;/p&gt;
       <guid>https://www.leowkahman.com/2016/04/10/use-ssl-openwrt-opkg/</guid>
       <description>&lt;p&gt;After installing OpenWRT Chaos Calmer, I noticed that OPKG calls are performed
 via HTTP without SSL. Changing to HTTPS was not as simple as adding just one
-letter &amp;rsquo;s&amp;rsquo;. Read on for the steps.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+letter &amp;lsquo;s&amp;rsquo;. Read on for the steps.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -110,12 +96,10 @@ letter &amp;rsquo;s&amp;rsquo;. Read on for the steps.&lt;/p&gt;
       <guid>https://www.leowkahman.com/2016/03/22/certificate-error-on-blocked-domains-when-using-opendns/</guid>
       <description>&lt;p&gt;OpenDNS helps in blocking malware sites by not resolving malware domains to the
 actual IP address hosting the malware. Instead they resolve to an OpenDNS page
-indicating &amp;ldquo;This domain is blocked due to &amp;hellip;&amp;rdquo;. If you are opening a non-SSL
+indicating &amp;ldquo;This domain is blocked due to &amp;hellip;&amp;quot;. If you are opening a non-SSL
 page, this would work as described. However, when attempting to browse a malware
 page via HTTPS, the web browser will show a certificate error instead.
-Read on to know the reason and solution.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+Read on to know the reason and solution.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -125,9 +109,7 @@ Read on to know the reason and solution.&lt;/p&gt;
       
       <guid>https://www.leowkahman.com/2016/03/19/disable-ipv6-raspberry-raspbian/</guid>
       <description>&lt;p&gt;An easy guide on how to disable IPv6 on Raspbian that anyone can accomplish in
-just a few minutes. Tested on Raspbian Jessie.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+just a few minutes. Tested on Raspbian Jessie.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -137,9 +119,7 @@ just a few minutes. Tested on Raspbian Jessie.&lt;/p&gt;
       
       <guid>https://www.leowkahman.com/2016/03/14/setup-4096-bit-openvpn-openwrt/</guid>
       <description>&lt;p&gt;If you want to setup OpenVPN with 4096-bit key on OpenWRT, with a few tips and
-tricks in addition, read on.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+tricks in addition, read on.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -151,9 +131,7 @@ tricks in addition, read on.&lt;/p&gt;
       <description>&lt;p&gt;If you are reading this post, it is assumed that you have setup VPN server and
 able to connect into it remotely. You are now able to access the Internet but
 not any LAN computers. The cause is very likely due to use of the same LAN IP
-subnet on both the source (connecting from) and destination (connecting to).&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+subnet on both the source (connecting from) and destination (connecting to).&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -167,9 +145,7 @@ originating from IP addresses not belonging to CloudFlare. Initially, I was
 using Apache .htaccess to allow incoming traffic only if they originated from
 CloudFlare. This was somewhat sufficient but some hackers continued attempting
 to find loopholes instead of giving up so I needed to up the level of security
-and decided to look at ways to drop unwelcome traffic using OpenWRT firewall.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+and decided to look at ways to drop unwelcome traffic using OpenWRT firewall.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -182,9 +158,7 @@ and decided to look at ways to drop unwelcome traffic using OpenWRT firewall.&l
 lines to be added/commented/updated. This simple tutorial is for Squid version
 2.7 and very likely still work for version 3.x. The default configuration in
 Squid exposes the origin IP address which is fine if you intended for that but
-that is usually not the case.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+that is usually not the case.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -194,13 +168,10 @@ that is usually not the case.&lt;/p&gt;
       
       <guid>https://www.leowkahman.com/2016/01/21/configuring-openwrt-and-opendns-to-log-all-dns-lookups/</guid>
       <description>&lt;p&gt;Why log all DNS lookups?&lt;/p&gt;
-
 &lt;ol&gt;
 &lt;li&gt;To list websites visited by you or any computer served by your router&lt;/li&gt;
 &lt;li&gt;To assist in identifying presence of malware&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/ol&gt;</description>
     </item>
     
     <item>
@@ -212,10 +183,7 @@ that is usually not the case.&lt;/p&gt;
       <description>&lt;p&gt;This is very likely the easiest way to block Skype advertisements using OpenWRT.
 Blocking at router means you do not have to apply the block on every computer
 that goes out via this router.&lt;/p&gt;
-
-&lt;p&gt;Works for: Skype for Windows as at version 7.17&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;Works for: Skype for Windows as at version 7.17&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -229,9 +197,7 @@ that goes out via this router.&lt;/p&gt;
 server to one that you prefer but there are some devices that have hardcoded NTP
 server hostname. This is mostly fine if all devices in your local network are
 synchronised to the same second but this is not always true. I have seen NTP
-servers that drift over 30 seconds. Not good&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+servers that drift over 30 seconds. Not good&amp;hellip;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -244,9 +210,7 @@ servers that drift over 30 seconds. Not good&amp;hellip;&lt;/p&gt;
 but finding one specifically for Archer C7 v2 with the right
 VLAN settings for Malaysia&amp;rsquo;s UniFi HyppTV was a little challenging. In the
 process of trial and error, I had to recover my router from failsafe mode so
-please be careful.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+please be careful.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -257,9 +221,7 @@ please be careful.&lt;/p&gt;
       <guid>https://www.leowkahman.com/2016/01/03/tp-link-archer-c7-with-openwrt-firmware/</guid>
       <description>&lt;p&gt;I was running stock firmware for a couple of months but I needed the router to
 do more. I was reluctant to spend a lot of money on a high end router thus opted
-to install OpenWRT Chaos Calmer 15.05 into my TP-Link Archer C7 v2.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+to install OpenWRT Chaos Calmer 15.05 into my TP-Link Archer C7 v2.&lt;/p&gt;</description>
     </item>
     
   </channel>

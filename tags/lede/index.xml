@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Lede on Leow Kah Man - Tech Blog</title>
+    <title>lede on Leow Kah Man - Tech Blog</title>
     <link>https://www.leowkahman.com/tags/lede/</link>
-    <description>Recent content in Lede on Leow Kah Man - Tech Blog</description>
+    <description>Recent content in lede on Leow Kah Man - Tech Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License, code samples are licensed under the MIT License. Third-party product names and logos may be the trademarks of their respective owners.</copyright>
@@ -18,9 +18,7 @@
       <pubDate>Tue, 29 May 2018 13:15:00 +0800</pubDate>
       
       <guid>https://www.leowkahman.com/2018/05/29/workaround-to-wifi-issues-on-openwrt-lede/</guid>
-      <description>&lt;p&gt;Automatically restart Wi-Fi when there are no clients connected.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Automatically restart Wi-Fi when there are no clients connected.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -29,14 +27,11 @@
       <pubDate>Fri, 09 Mar 2018 23:30:00 +0800</pubDate>
       
       <guid>https://www.leowkahman.com/2018/03/09/lede-on-unifi-d-link-dir-615-g2/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://www.leowkahman.com/images/2018/03/d-link-dir-615-g2-front.jpg&#34; alt=&#34;D-Link DIR-615 G2 - Front&#34; /&gt;&lt;/p&gt;
-
+      <description>&lt;p&gt;&lt;img src=&#34;https://www.leowkahman.com/images/2018/03/d-link-dir-615-g2-front.jpg&#34; alt=&#34;D-Link DIR-615 G2 - Front&#34;&gt;&lt;/p&gt;
 &lt;p&gt;My ISP provided D-Link DIR-615 G2 many years ago. Could not even remember how long
 ago that was. After using for a short period of time, it was chucked away until
 I found it yesterday while cleaning up my store room. I decided to flash it with
-LEDE (also known as OpenWRT) to see how it goes.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+LEDE (also known as OpenWRT) to see how it goes.&lt;/p&gt;</description>
     </item>
     
   </channel>

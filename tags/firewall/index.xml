@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Firewall on Leow Kah Man - Tech Blog</title>
@@ -19,9 +19,7 @@
       
       <guid>https://www.leowkahman.com/2016/05/08/setup-haproxy-cloudflare-ssl-termination-openwrt/</guid>
       <description>&lt;p&gt;Setup instructions for HAProxy with HTTP SSL termination on OpenWRT with
-CloudFlare Origin CA and Authenticated Origin Pulls.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+CloudFlare Origin CA and Authenticated Origin Pulls.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -32,9 +30,7 @@ CloudFlare Origin CA and Authenticated Origin Pulls.&lt;/p&gt;
       <guid>https://www.leowkahman.com/2016/05/02/automate-raspberry-pi-ufw-allow-cloudflare-inbound/</guid>
       <description>&lt;p&gt;As IPv6 restores the ability to have end-to-end connectivity unlike IPv4
 shielded by NAT, I needed to configure my Raspberry Pi firewall to allow only
-CloudFlare traffic inbound on port 443. Read on for the solution.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+CloudFlare traffic inbound on port 443. Read on for the solution.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -46,9 +42,7 @@ CloudFlare traffic inbound on port 443. Read on for the solution.&lt;/p&gt;
       <description>&lt;p&gt;I logged into my home&amp;rsquo;s VPN from my mobile device and I needed to access my Pi
 but then I realised I could not because my Pi allowed incoming SSH traffic only
 from machines on a specific /24 subnet. At times like this, a jump server/host
-can act as a bridge.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+can act as a bridge.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -60,9 +54,7 @@ can act as a bridge.&lt;/p&gt;
       <description>&lt;p&gt;For most people, if they wanted to run LAMP stack on Raspberry Pi, they would
 probably install Raspbian via NOOBS. However, if they wanted a HTPC with Kodi,
 they would likely opt for OSMC or OpenELEC. I needed Kodi to run at startup with
-LAMP stack running behind and chose the NOOBS Raspbian route.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+LAMP stack running behind and chose the NOOBS Raspbian route.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -76,9 +68,7 @@ originating from IP addresses not belonging to CloudFlare. Initially, I was
 using Apache .htaccess to allow incoming traffic only if they originated from
 CloudFlare. This was somewhat sufficient but some hackers continued attempting
 to find loopholes instead of giving up so I needed to up the level of security
-and decided to look at ways to drop unwelcome traffic using OpenWRT firewall.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+and decided to look at ways to drop unwelcome traffic using OpenWRT firewall.&lt;/p&gt;</description>
     </item>
     
   </channel>

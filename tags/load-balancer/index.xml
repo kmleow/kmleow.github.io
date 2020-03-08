@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Load Balancer on Leow Kah Man - Tech Blog</title>
@@ -20,9 +20,7 @@
       <guid>https://www.leowkahman.com/2016/06/19/conditional-multiple-openvpn-routing-hostname-ip/</guid>
       <description>&lt;p&gt;Using OpenWRT/LEDE, connect to one or more OpenVPN instances and conditionally divert
 (split tunneling) one or more outgoing traffic to specific VPN route by
-destination host names or IP addresses.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+destination host names or IP addresses.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -32,9 +30,7 @@ destination host names or IP addresses.&lt;/p&gt;
       
       <guid>https://www.leowkahman.com/2016/05/08/setup-haproxy-cloudflare-ssl-termination-openwrt/</guid>
       <description>&lt;p&gt;Setup instructions for HAProxy with HTTP SSL termination on OpenWRT with
-CloudFlare Origin CA and Authenticated Origin Pulls.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+CloudFlare Origin CA and Authenticated Origin Pulls.&lt;/p&gt;</description>
     </item>
     
   </channel>

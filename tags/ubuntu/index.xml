@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ubuntu on Leow Kah Man - Tech Blog</title>
@@ -18,13 +18,10 @@
       <pubDate>Thu, 22 Mar 2018 00:00:00 +0800</pubDate>
       
       <guid>https://www.leowkahman.com/2018/03/22/running-whatsapp-allo-todoist-onenote-on-ubuntu/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://www.leowkahman.com/images/2018/03/nativefier-desktop-launchers.png&#34; alt=&#34;nativefier - desktop launchers&#34; /&gt;&lt;/p&gt;
-
+      <description>&lt;p&gt;&lt;img src=&#34;https://www.leowkahman.com/images/2018/03/nativefier-desktop-launchers.png&#34; alt=&#34;nativefier - desktop launchers&#34;&gt;&lt;/p&gt;
 &lt;p&gt;In the absence of native desktop apps for Linux from WhatsApp, Allo, Todoist, OneNote
 and many others, the next best alternative is to simply run the web app via web browser.
-To make the experience of launching it closer to a native app, read on.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+To make the experience of launching it closer to a native app, read on.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -33,9 +30,7 @@ To make the experience of launching it closer to a native app, read on.&lt;/p&gt
       <pubDate>Tue, 02 Jan 2018 23:50:00 +0800</pubDate>
       
       <guid>https://www.leowkahman.com/2018/01/02/workaround-to-failure-to-download-extra-files-ttf-mscorefonts-installer/</guid>
-      <description>&lt;p&gt;Workaround tested and working on Ubuntu 17.10.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Workaround tested and working on Ubuntu 17.10.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -45,9 +40,7 @@ To make the experience of launching it closer to a native app, read on.&lt;/p&gt
       
       <guid>https://www.leowkahman.com/2017/12/31/solution-to-lag-during-dota-2-alchemist-acid-spray-on-ubuntu-17-10/</guid>
       <description>&lt;p&gt;This lag has been driving me nuts and I swear it did not lag like that before I
-upgraded my Ubuntu to 17.10.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+upgraded my Ubuntu to 17.10.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -60,9 +53,7 @@ upgraded my Ubuntu to 17.10.&lt;/p&gt;
 including a way on how to synchronise them.
 This includes Dropbox, Box, Yandex, Google Drive, and OneDrive.
 However, I used a workaround for Google Drive and OneDrive which may not necessarily
-be feasible for you.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+be feasible for you.&lt;/p&gt;</description>
     </item>
     
   </channel>

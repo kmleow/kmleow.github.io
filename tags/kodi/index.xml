@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Kodi on Leow Kah Man - Tech Blog</title>
@@ -19,9 +19,7 @@
       
       <guid>https://www.leowkahman.com/2016/12/24/build-online-radio-player-using-raspberry-pi/</guid>
       <description>&lt;p&gt;Simple guide to building an online radio player using Raspberry Pi with
-Android/iOS device as remote control.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+Android/iOS device as remote control.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -33,9 +31,7 @@ Android/iOS device as remote control.&lt;/p&gt;
       <description>&lt;p&gt;For most people, if they wanted to run LAMP stack on Raspberry Pi, they would
 probably install Raspbian via NOOBS. However, if they wanted a HTPC with Kodi,
 they would likely opt for OSMC or OpenELEC. I needed Kodi to run at startup with
-LAMP stack running behind and chose the NOOBS Raspbian route.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+LAMP stack running behind and chose the NOOBS Raspbian route.&lt;/p&gt;</description>
     </item>
     
   </channel>

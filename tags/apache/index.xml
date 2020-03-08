@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Apache on Leow Kah Man - Tech Blog</title>
@@ -20,9 +20,7 @@
       <guid>https://www.leowkahman.com/2018/01/09/setup-nodejs-with-apache-proxypass-on-raspberry-pi/</guid>
       <description>&lt;p&gt;Setup NodeJS with Apache ProxyPass on Raspberry Pi 2 and 3.
 This allows multiple NodeJS apps to run in the backend but under a single
-hostname/domain with different virtual subfolder path for each of them.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+hostname/domain with different virtual subfolder path for each of them.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -32,9 +30,7 @@ hostname/domain with different virtual subfolder path for each of them.&lt;/p&gt
       
       <guid>https://www.leowkahman.com/2016/05/08/setup-haproxy-cloudflare-ssl-termination-openwrt/</guid>
       <description>&lt;p&gt;Setup instructions for HAProxy with HTTP SSL termination on OpenWRT with
-CloudFlare Origin CA and Authenticated Origin Pulls.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+CloudFlare Origin CA and Authenticated Origin Pulls.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -44,9 +40,7 @@ CloudFlare Origin CA and Authenticated Origin Pulls.&lt;/p&gt;
       
       <guid>https://www.leowkahman.com/2016/05/04/cloudflare-origin-ca-raspberry-pi-apache/</guid>
       <description>&lt;p&gt;Immediately after reading CloudFlare&amp;rsquo;s blog post on the introduction of Origin
-CA, I tried it on my Raspberry Pi Apache. Read on for the details.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+CA, I tried it on my Raspberry Pi Apache. Read on for the details.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -56,9 +50,7 @@ CA, I tried it on my Raspberry Pi Apache. Read on for the details.&lt;/p&gt;
       
       <guid>https://www.leowkahman.com/2016/04/24/configuring-apache-virtual-host-log-rotation/</guid>
       <description>&lt;p&gt;Log rotation was not applied to my Apache Virtual Host access.log on my
-Raspberry Pi. I later found out the problem was just a small configuration mistake.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+Raspberry Pi. I later found out the problem was just a small configuration mistake.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -69,9 +61,7 @@ Raspberry Pi. I later found out the problem was just a small configuration mista
       <guid>https://www.leowkahman.com/2016/04/22/apache-2-event-mpm-and-php-5-fastcgi-on-raspberry-pi/</guid>
       <description>&lt;p&gt;I have been running my blog on Apache 2 with Event MPM for a while and thought I
 should share my setup on Raspberry Pi 2 Model B with Raspbian for the benefit of
-others.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+others.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -86,9 +76,7 @@ the real one. Furthermore, I have
 This should be reasonably secure but an attacker could potentially spoof its
 origin IP (man-in-the-middle attack) as one of theirs. To mitigate this
 potential problem, it is necessary for the client (CloudFlare) to present a
-certificate which is then verified by (my) web server.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+certificate which is then verified by (my) web server.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -100,9 +88,7 @@ certificate which is then verified by (my) web server.&lt;/p&gt;
       <description>&lt;p&gt;For most people, if they wanted to run LAMP stack on Raspberry Pi, they would
 probably install Raspbian via NOOBS. However, if they wanted a HTPC with Kodi,
 they would likely opt for OSMC or OpenELEC. I needed Kodi to run at startup with
-LAMP stack running behind and chose the NOOBS Raspbian route.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+LAMP stack running behind and chose the NOOBS Raspbian route.&lt;/p&gt;</description>
     </item>
     
   </channel>

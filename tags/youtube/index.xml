@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Youtube on Leow Kah Man - Tech Blog</title>
+    <title>YouTube on Leow Kah Man - Tech Blog</title>
     <link>https://www.leowkahman.com/tags/youtube/</link>
-    <description>Recent content in Youtube on Leow Kah Man - Tech Blog</description>
+    <description>Recent content in YouTube on Leow Kah Man - Tech Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License, code samples are licensed under the MIT License. Third-party product names and logos may be the trademarks of their respective owners.</copyright>
@@ -18,11 +18,8 @@
       <pubDate>Sat, 31 Mar 2018 23:45:00 +0800</pubDate>
       
       <guid>https://www.leowkahman.com/2018/03/31/how-to-fix-choppy-youtube-videos-on-old-laptop/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://www.leowkahman.com/images/2018/03/dell-inspiron-6000-lubuntu-smtube.jpg&#34; alt=&#34;Dell Inspiron 6000 - Lubuntu SMTube&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;How to fix choppy YouTube videos on Firefox and Chrome on an old laptop.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;img src=&#34;https://www.leowkahman.com/images/2018/03/dell-inspiron-6000-lubuntu-smtube.jpg&#34; alt=&#34;Dell Inspiron 6000 - Lubuntu SMTube&#34;&gt;&lt;/p&gt;
+&lt;p&gt;How to fix choppy YouTube videos on Firefox and Chrome on an old laptop.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -33,9 +30,7 @@
       <guid>https://www.leowkahman.com/2017/09/11/enforce-safe-search-on-google-youtube-bing/</guid>
       <description>&lt;p&gt;Enforce safe search on Google, YouTube, Bing, and DuckDuckGo without a HTTP proxy.
 Instead, override DNS lookups, resolving to strict search server IP addresses.
-Works on IPv4 and IPv6 networks.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+Works on IPv4 and IPv6 networks.&lt;/p&gt;</description>
     </item>
     
   </channel>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Raspberry Pi on Leow Kah Man - Tech Blog</title>
@@ -18,12 +18,9 @@
       <pubDate>Tue, 13 Mar 2018 23:15:00 +0800</pubDate>
       
       <guid>https://www.leowkahman.com/2018/03/13/using-raspbian-on-2gb-micro-sd-card/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://www.leowkahman.com/images/2018/03/nokia-2gb-micro-sd.jpg&#34; alt=&#34;Nokia - 2GB micro SD&#34; /&gt;&lt;/p&gt;
-
+      <description>&lt;p&gt;&lt;img src=&#34;https://www.leowkahman.com/images/2018/03/nokia-2gb-micro-sd.jpg&#34; alt=&#34;Nokia - 2GB micro SD&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Raspberry Pi 2 with Raspbian on a 2GB micro SD card? Feasible.
-If you need additional space for storing data, you can always attach thumb drives.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+If you need additional space for storing data, you can always attach thumb drives.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -34,9 +31,7 @@ If you need additional space for storing data, you can always attach thumb drive
       <guid>https://www.leowkahman.com/2018/01/09/setup-nodejs-with-apache-proxypass-on-raspberry-pi/</guid>
       <description>&lt;p&gt;Setup NodeJS with Apache ProxyPass on Raspberry Pi 2 and 3.
 This allows multiple NodeJS apps to run in the backend but under a single
-hostname/domain with different virtual subfolder path for each of them.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+hostname/domain with different virtual subfolder path for each of them.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -47,9 +42,7 @@ hostname/domain with different virtual subfolder path for each of them.&lt;/p&gt
       <guid>https://www.leowkahman.com/2017/10/02/byod-ci-cd-build-machine-to-run-pipelines-using-docker/</guid>
       <description>&lt;p&gt;Skip the build queue and save money by reducing (if not eliminating) dedicated
 build machines by Bringing Your Own Device (BYOD) as CI/CD build
-machine to run pipelines using Docker.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+machine to run pipelines using Docker.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -61,9 +54,7 @@ machine to run pipelines using Docker.&lt;/p&gt;
       <description>&lt;p&gt;Hugo static site generator generates sitemap.xml that include priority zero URLs.
 These are the taxanomies, tags and categories.
 To prevent these from appearing in Google Search results,
-GitLab CI can be configured to remove unwanted XML nodes (priority 0) from sitemap.xml.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+GitLab CI can be configured to remove unwanted XML nodes (priority 0) from sitemap.xml.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -73,9 +64,7 @@ GitLab CI can be configured to remove unwanted XML nodes (priority 0) from sitem
       
       <guid>https://www.leowkahman.com/2017/07/16/running-dotnet-core-on-raspberry-pi-raspbian/</guid>
       <description>&lt;p&gt;Easy guide to building and running .NET Core 2.1 applications on Raspberry Pi 2
-and 3 with Raspbian Stretch.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+and 3 with Raspbian Stretch.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -85,9 +74,7 @@ and 3 with Raspbian Stretch.&lt;/p&gt;
       
       <guid>https://www.leowkahman.com/2016/12/24/build-online-radio-player-using-raspberry-pi/</guid>
       <description>&lt;p&gt;Simple guide to building an online radio player using Raspberry Pi with
-Android/iOS device as remote control.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+Android/iOS device as remote control.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -97,9 +84,7 @@ Android/iOS device as remote control.&lt;/p&gt;
       
       <guid>https://www.leowkahman.com/2016/05/08/setup-haproxy-cloudflare-ssl-termination-openwrt/</guid>
       <description>&lt;p&gt;Setup instructions for HAProxy with HTTP SSL termination on OpenWRT with
-CloudFlare Origin CA and Authenticated Origin Pulls.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+CloudFlare Origin CA and Authenticated Origin Pulls.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -109,9 +94,7 @@ CloudFlare Origin CA and Authenticated Origin Pulls.&lt;/p&gt;
       
       <guid>https://www.leowkahman.com/2016/05/04/cloudflare-origin-ca-raspberry-pi-apache/</guid>
       <description>&lt;p&gt;Immediately after reading CloudFlare&amp;rsquo;s blog post on the introduction of Origin
-CA, I tried it on my Raspberry Pi Apache. Read on for the details.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+CA, I tried it on my Raspberry Pi Apache. Read on for the details.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -122,9 +105,7 @@ CA, I tried it on my Raspberry Pi Apache. Read on for the details.&lt;/p&gt;
       <guid>https://www.leowkahman.com/2016/05/02/automate-raspberry-pi-ufw-allow-cloudflare-inbound/</guid>
       <description>&lt;p&gt;As IPv6 restores the ability to have end-to-end connectivity unlike IPv4
 shielded by NAT, I needed to configure my Raspberry Pi firewall to allow only
-CloudFlare traffic inbound on port 443. Read on for the solution.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+CloudFlare traffic inbound on port 443. Read on for the solution.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -135,9 +116,7 @@ CloudFlare traffic inbound on port 443. Read on for the solution.&lt;/p&gt;
       <guid>https://www.leowkahman.com/2016/04/22/apache-2-event-mpm-and-php-5-fastcgi-on-raspberry-pi/</guid>
       <description>&lt;p&gt;I have been running my blog on Apache 2 with Event MPM for a while and thought I
 should share my setup on Raspberry Pi 2 Model B with Raspbian for the benefit of
-others.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+others.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -147,9 +126,7 @@ others.&lt;/p&gt;
       
       <guid>https://www.leowkahman.com/2016/03/19/disable-ipv6-raspberry-raspbian/</guid>
       <description>&lt;p&gt;An easy guide on how to disable IPv6 on Raspbian that anyone can accomplish in
-just a few minutes. Tested on Raspbian Jessie.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+just a few minutes. Tested on Raspbian Jessie.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -161,9 +138,7 @@ just a few minutes. Tested on Raspbian Jessie.&lt;/p&gt;
       <description>&lt;p&gt;For most people, if they wanted to run LAMP stack on Raspberry Pi, they would
 probably install Raspbian via NOOBS. However, if they wanted a HTPC with Kodi,
 they would likely opt for OSMC or OpenELEC. I needed Kodi to run at startup with
-LAMP stack running behind and chose the NOOBS Raspbian route.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+LAMP stack running behind and chose the NOOBS Raspbian route.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -176,12 +151,9 @@ LAMP stack running behind and chose the NOOBS Raspbian route.&lt;/p&gt;
 System-on-Chip (SoC) based low-powered micro computers. 4 devices were tested;
 OpenWRT running on TP-Link Archer C7 v2, QNAP TS-220 and Asustor AS-304T and
 Raspberry Pi 2 Model B.&lt;/p&gt;
-
 &lt;p&gt;In deciding which to be used for hosting a HTTPS-only web server, I was
 interested in the cryptography (namely RSA and AES) performance thus the
-motivation for running benchmarks.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+motivation for running benchmarks.&lt;/p&gt;</description>
     </item>
     
   </channel>

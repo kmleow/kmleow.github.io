@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Lubuntu on Leow Kah Man - Tech Blog</title>
@@ -18,11 +18,8 @@
       <pubDate>Sat, 31 Mar 2018 23:45:00 +0800</pubDate>
       
       <guid>https://www.leowkahman.com/2018/03/31/how-to-fix-choppy-youtube-videos-on-old-laptop/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://www.leowkahman.com/images/2018/03/dell-inspiron-6000-lubuntu-smtube.jpg&#34; alt=&#34;Dell Inspiron 6000 - Lubuntu SMTube&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;How to fix choppy YouTube videos on Firefox and Chrome on an old laptop.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;img src=&#34;https://www.leowkahman.com/images/2018/03/dell-inspiron-6000-lubuntu-smtube.jpg&#34; alt=&#34;Dell Inspiron 6000 - Lubuntu SMTube&#34;&gt;&lt;/p&gt;
+&lt;p&gt;How to fix choppy YouTube videos on Firefox and Chrome on an old laptop.&lt;/p&gt;</description>
     </item>
     
   </channel>

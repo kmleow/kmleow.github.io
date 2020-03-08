@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Dash on Leow Kah Man - Tech Blog</title>
@@ -21,9 +21,7 @@
       <description>&lt;p&gt;I have been using a mobile app called Dash (smart driving app) for a week and
 decided to write a review about it as well as sharing how I am making use of it
 to notify others (in my case, family members) as soon as I have reached an area,
-i.e. home, office, etc.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+i.e. home, office, etc.&lt;/p&gt;</description>
     </item>
     
   </channel>

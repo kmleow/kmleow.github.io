@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Dns on Leow Kah Man - Tech Blog</title>
+    <title>DNS on Leow Kah Man - Tech Blog</title>
     <link>https://www.leowkahman.com/tags/dns/</link>
-    <description>Recent content in Dns on Leow Kah Man - Tech Blog</description>
+    <description>Recent content in DNS on Leow Kah Man - Tech Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License, code samples are licensed under the MIT License. Third-party product names and logos may be the trademarks of their respective owners.</copyright>
@@ -19,9 +19,7 @@
       
       <guid>https://www.leowkahman.com/2016/05/23/openwrt-encrypted-dns-lookup-using-multiple-dnscrypt-servers/</guid>
       <description>&lt;p&gt;Want to setup OpenWRT to query specific DNSCrypt server depending on domain name
-to resolve? Read on.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+to resolve? Read on.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -31,9 +29,7 @@ to resolve? Read on.&lt;/p&gt;
       
       <guid>https://www.leowkahman.com/2016/05/08/setup-haproxy-cloudflare-ssl-termination-openwrt/</guid>
       <description>&lt;p&gt;Setup instructions for HAProxy with HTTP SSL termination on OpenWRT with
-CloudFlare Origin CA and Authenticated Origin Pulls.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+CloudFlare Origin CA and Authenticated Origin Pulls.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -43,9 +39,7 @@ CloudFlare Origin CA and Authenticated Origin Pulls.&lt;/p&gt;
       
       <guid>https://www.leowkahman.com/2016/05/02/openwrt-ipv6-dynamic-dns-client/</guid>
       <description>&lt;p&gt;This should be rather straightforward but I encountered problems setting up with
-a solution worth sharing and I will throw in a tip that you may find useful.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+a solution worth sharing and I will throw in a tip that you may find useful.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -57,9 +51,7 @@ a solution worth sharing and I will throw in a tip that you may find useful.&lt;
       <description>&lt;p&gt;Installing &lt;code&gt;ddns-scripts&lt;/code&gt; and &lt;code&gt;ddns-scripts_cloudflare&lt;/code&gt; version 2.4.3-1 from
 OpenWRT package repository allows you to configure dynamic DNS that points
 directly to your IP address without orange cloud. If you want the orange cloud
-however, you need to make a small change.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+however, you need to make a small change.&lt;/p&gt;</description>
     </item>
     
   </channel>

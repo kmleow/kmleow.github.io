@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Authentication on Leow Kah Man - Tech Blog</title>
@@ -24,9 +24,7 @@ the real one. Furthermore, I have
 This should be reasonably secure but an attacker could potentially spoof its
 origin IP (man-in-the-middle attack) as one of theirs. To mitigate this
 potential problem, it is necessary for the client (CloudFlare) to present a
-certificate which is then verified by (my) web server.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+certificate which is then verified by (my) web server.&lt;/p&gt;</description>
     </item>
     
   </channel>

@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Haproxy on Leow Kah Man - Tech Blog</title>
+    <title>HAProxy on Leow Kah Man - Tech Blog</title>
     <link>https://www.leowkahman.com/tags/haproxy/</link>
-    <description>Recent content in Haproxy on Leow Kah Man - Tech Blog</description>
+    <description>Recent content in HAProxy on Leow Kah Man - Tech Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License, code samples are licensed under the MIT License. Third-party product names and logos may be the trademarks of their respective owners.</copyright>
@@ -19,9 +19,7 @@
       
       <guid>https://www.leowkahman.com/2016/05/08/setup-haproxy-cloudflare-ssl-termination-openwrt/</guid>
       <description>&lt;p&gt;Setup instructions for HAProxy with HTTP SSL termination on OpenWRT with
-CloudFlare Origin CA and Authenticated Origin Pulls.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+CloudFlare Origin CA and Authenticated Origin Pulls.&lt;/p&gt;</description>
     </item>
     
   </channel>

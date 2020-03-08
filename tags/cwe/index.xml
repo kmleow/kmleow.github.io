@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Cwe on Leow Kah Man - Tech Blog</title>
+    <title>CWE on Leow Kah Man - Tech Blog</title>
     <link>https://www.leowkahman.com/tags/cwe/</link>
-    <description>Recent content in Cwe on Leow Kah Man - Tech Blog</description>
+    <description>Recent content in CWE on Leow Kah Man - Tech Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License, code samples are licensed under the MIT License. Third-party product names and logos may be the trademarks of their respective owners.</copyright>
@@ -18,9 +18,7 @@
       <pubDate>Thu, 12 Oct 2017 22:30:00 +0800</pubDate>
       
       <guid>https://www.leowkahman.com/2017/10/12/cwe-316-storing-secure-strings-in-dotnet-securestring/</guid>
-      <description>&lt;p&gt;How to resolve CWE-316 in .NET using SecureString in a neat and easy way.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;How to resolve CWE-316 in .NET using SecureString in a neat and easy way.&lt;/p&gt;</description>
     </item>
     
   </channel>

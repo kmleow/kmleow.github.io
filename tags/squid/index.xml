@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Squid on Leow Kah Man - Tech Blog</title>
@@ -22,9 +22,7 @@
 lines to be added/commented/updated. This simple tutorial is for Squid version
 2.7 and very likely still work for version 3.x. The default configuration in
 Squid exposes the origin IP address which is fine if you intended for that but
-that is usually not the case.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+that is usually not the case.&lt;/p&gt;</description>
     </item>
     
   </channel>

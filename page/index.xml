@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Pages on Leow Kah Man - Tech Blog</title>
@@ -30,7 +30,7 @@ At www.leowkahman.com, we recognize that privacy of your personal information is
       <guid>https://www.leowkahman.com/about/</guid>
       <description>I am Leow Kah Man, a Software Architect and Full Stack Software Developer, lives in Malaysia, likes just about anything that has to do with technology.
 Designing cloud architectures that drive new innovations, raise scalability and reduce time to deploy is what I am passionate about. I believe microservice infrastructure is the most efficient way to scale, have high availability and ease of maintenance.
-This blog was built using Hugo with CI deployment using GitLab.</description>
+This blog was built using Hugo If you have not heard of Hugo, it is an open source Static Site Generator that is built for speed.</description>
     </item>
     
     <item>

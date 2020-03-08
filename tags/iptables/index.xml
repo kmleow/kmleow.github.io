@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Iptables on Leow Kah Man - Tech Blog</title>
+    <title>iptables on Leow Kah Man - Tech Blog</title>
     <link>https://www.leowkahman.com/tags/iptables/</link>
-    <description>Recent content in Iptables on Leow Kah Man - Tech Blog</description>
+    <description>Recent content in iptables on Leow Kah Man - Tech Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License, code samples are licensed under the MIT License. Third-party product names and logos may be the trademarks of their respective owners.</copyright>
@@ -23,9 +23,7 @@ originating from IP addresses not belonging to CloudFlare. Initially, I was
 using Apache .htaccess to allow incoming traffic only if they originated from
 CloudFlare. This was somewhat sufficient but some hackers continued attempting
 to find loopholes instead of giving up so I needed to up the level of security
-and decided to look at ways to drop unwelcome traffic using OpenWRT firewall.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+and decided to look at ways to drop unwelcome traffic using OpenWRT firewall.&lt;/p&gt;</description>
     </item>
     
   </channel>

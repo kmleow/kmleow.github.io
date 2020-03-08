@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Browser on Leow Kah Man - Tech Blog</title>
+    <title>browser on Leow Kah Man - Tech Blog</title>
     <link>https://www.leowkahman.com/tags/browser/</link>
-    <description>Recent content in Browser on Leow Kah Man - Tech Blog</description>
+    <description>Recent content in browser on Leow Kah Man - Tech Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License, code samples are licensed under the MIT License. Third-party product names and logos may be the trademarks of their respective owners.</copyright>
@@ -22,9 +22,7 @@
 This is nothing more than script kiddie level of protection for those that think
 every visitor out there is a noob. You want to re-enable your rights to
 right-click but before you jump into adding yet another addon or extension into
-your web browser, it is good to find out if you really need to.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+your web browser, it is good to find out if you really need to.&lt;/p&gt;</description>
     </item>
     
   </channel>

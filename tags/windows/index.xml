@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Windows on Leow Kah Man - Tech Blog</title>
@@ -18,13 +18,10 @@
       <pubDate>Sun, 08 Apr 2018 17:00:00 +0800</pubDate>
       
       <guid>https://www.leowkahman.com/2018/04/08/prevent-overheating-by-disabling-turbo-boost/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://www.leowkahman.com/images/2018/04/psensor-edit-sensor-preferences.png&#34; alt=&#34;psensor - edit sensor preferences&#34; /&gt;&lt;/p&gt;
-
+      <description>&lt;p&gt;&lt;img src=&#34;https://www.leowkahman.com/images/2018/04/psensor-edit-sensor-preferences.png&#34; alt=&#34;psensor - edit sensor preferences&#34;&gt;&lt;/p&gt;
 &lt;p&gt;CPU throttling, PC shutting down abruptly, etc. These may be signs of overheating.
 Disabling Intel turbo boost may help. Screenshot above is the temperature range after
-disabling turbo boost.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+disabling turbo boost.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -35,9 +32,7 @@ disabling turbo boost.&lt;/p&gt;
       <guid>https://www.leowkahman.com/2017/10/02/byod-ci-cd-build-machine-to-run-pipelines-using-docker/</guid>
       <description>&lt;p&gt;Skip the build queue and save money by reducing (if not eliminating) dedicated
 build machines by Bringing Your Own Device (BYOD) as CI/CD build
-machine to run pipelines using Docker.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+machine to run pipelines using Docker.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -50,10 +45,7 @@ machine to run pipelines using Docker.&lt;/p&gt;
 Linux distros are more user friendly than they used to be.
 In terms of difficulty, it is probably like switching between iOS and Android
 except that you need to setup the Operating System yourself.&lt;/p&gt;
-
-&lt;p&gt;Here are things to consider when switching from Windows to Linux.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;Here are things to consider when switching from Windows to Linux.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -62,9 +54,7 @@ except that you need to setup the Operating System yourself.&lt;/p&gt;
       <pubDate>Sun, 23 Apr 2017 01:00:00 +0800</pubDate>
       
       <guid>https://www.leowkahman.com/2017/04/23/running-dotnet-core-on-windows-subsystem-for-linux/</guid>
-      <description>&lt;p&gt;Build .NET Core apps on Windows, run it on Windows Subsystem for Linux.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Build .NET Core apps on Windows, run it on Windows Subsystem for Linux.&lt;/p&gt;</description>
     </item>
     
   </channel>

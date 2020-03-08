@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Raspbian on Leow Kah Man - Tech Blog</title>
@@ -20,9 +20,7 @@
       <guid>https://www.leowkahman.com/2017/10/02/byod-ci-cd-build-machine-to-run-pipelines-using-docker/</guid>
       <description>&lt;p&gt;Skip the build queue and save money by reducing (if not eliminating) dedicated
 build machines by Bringing Your Own Device (BYOD) as CI/CD build
-machine to run pipelines using Docker.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+machine to run pipelines using Docker.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -32,9 +30,7 @@ machine to run pipelines using Docker.&lt;/p&gt;
       
       <guid>https://www.leowkahman.com/2017/07/16/running-dotnet-core-on-raspberry-pi-raspbian/</guid>
       <description>&lt;p&gt;Easy guide to building and running .NET Core 2.1 applications on Raspberry Pi 2
-and 3 with Raspbian Stretch.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+and 3 with Raspbian Stretch.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -45,9 +41,7 @@ and 3 with Raspbian Stretch.&lt;/p&gt;
       <guid>https://www.leowkahman.com/2016/04/22/apache-2-event-mpm-and-php-5-fastcgi-on-raspberry-pi/</guid>
       <description>&lt;p&gt;I have been running my blog on Apache 2 with Event MPM for a while and thought I
 should share my setup on Raspberry Pi 2 Model B with Raspbian for the benefit of
-others.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+others.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -59,9 +53,7 @@ others.&lt;/p&gt;
       <description>&lt;p&gt;For most people, if they wanted to run LAMP stack on Raspberry Pi, they would
 probably install Raspbian via NOOBS. However, if they wanted a HTPC with Kodi,
 they would likely opt for OSMC or OpenELEC. I needed Kodi to run at startup with
-LAMP stack running behind and chose the NOOBS Raspbian route.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+LAMP stack running behind and chose the NOOBS Raspbian route.&lt;/p&gt;</description>
     </item>
     
   </channel>

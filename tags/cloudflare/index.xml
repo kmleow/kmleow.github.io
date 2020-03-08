@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Cloudflare on Leow Kah Man - Tech Blog</title>
+    <title>CloudFlare on Leow Kah Man - Tech Blog</title>
     <link>https://www.leowkahman.com/tags/cloudflare/</link>
-    <description>Recent content in Cloudflare on Leow Kah Man - Tech Blog</description>
+    <description>Recent content in CloudFlare on Leow Kah Man - Tech Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License, code samples are licensed under the MIT License. Third-party product names and logos may be the trademarks of their respective owners.</copyright>
@@ -20,9 +20,7 @@
       <guid>https://www.leowkahman.com/2017/09/09/gitlab-ci-push-output-to-github/</guid>
       <description>&lt;p&gt;Utilise GitLab CI runner to build and publish static website to GitLab and GitHub
 pages. By having mirrored copies, it is possible to switch DNS records to point
-to either for high availability reasons.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+to either for high availability reasons.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -32,9 +30,7 @@ to either for high availability reasons.&lt;/p&gt;
       
       <guid>https://www.leowkahman.com/2016/05/04/cloudflare-origin-ca-raspberry-pi-apache/</guid>
       <description>&lt;p&gt;Immediately after reading CloudFlare&amp;rsquo;s blog post on the introduction of Origin
-CA, I tried it on my Raspberry Pi Apache. Read on for the details.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+CA, I tried it on my Raspberry Pi Apache. Read on for the details.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -45,9 +41,7 @@ CA, I tried it on my Raspberry Pi Apache. Read on for the details.&lt;/p&gt;
       <guid>https://www.leowkahman.com/2016/05/02/automate-raspberry-pi-ufw-allow-cloudflare-inbound/</guid>
       <description>&lt;p&gt;As IPv6 restores the ability to have end-to-end connectivity unlike IPv4
 shielded by NAT, I needed to configure my Raspberry Pi firewall to allow only
-CloudFlare traffic inbound on port 443. Read on for the solution.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+CloudFlare traffic inbound on port 443. Read on for the solution.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -62,9 +56,7 @@ the real one. Furthermore, I have
 This should be reasonably secure but an attacker could potentially spoof its
 origin IP (man-in-the-middle attack) as one of theirs. To mitigate this
 potential problem, it is necessary for the client (CloudFlare) to present a
-certificate which is then verified by (my) web server.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+certificate which is then verified by (my) web server.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -78,9 +70,7 @@ originating from IP addresses not belonging to CloudFlare. Initially, I was
 using Apache .htaccess to allow incoming traffic only if they originated from
 CloudFlare. This was somewhat sufficient but some hackers continued attempting
 to find loopholes instead of giving up so I needed to up the level of security
-and decided to look at ways to drop unwelcome traffic using OpenWRT firewall.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+and decided to look at ways to drop unwelcome traffic using OpenWRT firewall.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -92,9 +82,7 @@ and decided to look at ways to drop unwelcome traffic using OpenWRT firewall.&l
       <description>&lt;p&gt;Installing &lt;code&gt;ddns-scripts&lt;/code&gt; and &lt;code&gt;ddns-scripts_cloudflare&lt;/code&gt; version 2.4.3-1 from
 OpenWRT package repository allows you to configure dynamic DNS that points
 directly to your IP address without orange cloud. If you want the orange cloud
-however, you need to make a small change.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+however, you need to make a small change.&lt;/p&gt;</description>
     </item>
     
   </channel>
