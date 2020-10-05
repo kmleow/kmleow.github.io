@@ -1,0 +1,877 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Leow Kah Man - Tech Blog</title>
+    <link>https://www.leowkahman.com/post/</link>
+    <description>Recent content in Posts on Leow Kah Man - Tech Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License, code samples are licensed under the MIT License. Third-party product names and logos may be the trademarks of their respective owners.</copyright>
+    <lastBuildDate>Sat, 01 Feb 2020 17:10:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.leowkahman.com/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Speedtest OpenWRT with flow offloading</title>
+      <link>https://www.leowkahman.com/2020/02/01/speedtest-openwrt-with-flow-offloading/</link>
+      <pubDate>Sat, 01 Feb 2020 17:10:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2020/02/01/speedtest-openwrt-with-flow-offloading/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://www.leowkahman.com/images/2020/02/speedtest-openwrt-flow-offloading-archer-c7-unifi-turbo-800mbps.png&#34; alt=&#34;Speedtest OpenWRT flow offloading on Archer C7 Unifi Turbo 800Mbps&#34;&gt;&lt;/p&gt;
+&lt;p&gt;I have upgraded to TM Unifi Turbo 800Mbps for quite some time but yet to realise
+the speed promised by ISP. In my case, it is not fair to blame the ISP because the
+bottleneck was not at their end, rather due to my router. When OpenWRT announced
+the release of version 19.07, I took it for a spin and enabled the new flow offloading
+feature. The performance increase was significant.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Ultrawide monitor on Linux</title>
+      <link>https://www.leowkahman.com/2019/02/06/ultrawide-monitor-on-linux/</link>
+      <pubDate>Wed, 06 Feb 2019 10:30:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2019/02/06/ultrawide-monitor-on-linux/</guid>
+      <description>&lt;p&gt;After some fiddling around, I managed to get 2560x1080 output on my Linux laptop
+hooked to a LG 29WK600 21:9 UltraWide Monitor.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Switched from Ubuntu to Linux Mint</title>
+      <link>https://www.leowkahman.com/2019/02/03/switched-from-ubuntu-to-linux-mint/</link>
+      <pubDate>Sun, 03 Feb 2019 23:15:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2019/02/03/switched-from-ubuntu-to-linux-mint/</guid>
+      <description>&lt;p&gt;Having switched to Linux Mint from Ubuntu in December 2018,
+here are my first impressions.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Reduce internet lag on OpenWRT</title>
+      <link>https://www.leowkahman.com/2018/08/11/reduce-internet-lag-on-openwrt/</link>
+      <pubDate>Sat, 11 Aug 2018 23:00:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2018/08/11/reduce-internet-lag-on-openwrt/</guid>
+      <description>&lt;p&gt;How to reduce internet lag on OpenWRT when there is heavy download/upload activity
+on the same internet connection.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Workaround to Wi-Fi issues on OpenWRT LEDE</title>
+      <link>https://www.leowkahman.com/2018/05/29/workaround-to-wifi-issues-on-openwrt-lede/</link>
+      <pubDate>Tue, 29 May 2018 13:15:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2018/05/29/workaround-to-wifi-issues-on-openwrt-lede/</guid>
+      <description>&lt;p&gt;Automatically restart Wi-Fi when there are no clients connected.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Writing readable LINQ code in C#</title>
+      <link>https://www.leowkahman.com/2018/04/23/writing-readable-linq-code-in-csharp/</link>
+      <pubDate>Mon, 23 Apr 2018 23:15:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2018/04/23/writing-readable-linq-code-in-csharp/</guid>
+      <description>&lt;p&gt;As a software developer, writing self-explanatory code is a skill that most agree
+is required but everyone seems to have differing views on the level of code simplicity.
+In this post, I am sharing my views on how I write readable LINQ code.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Solution to images not showing on InoReader</title>
+      <link>https://www.leowkahman.com/2018/04/13/solution-to-images-not-showing-on-inoreader/</link>
+      <pubDate>Fri, 13 Apr 2018 22:00:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2018/04/13/solution-to-images-not-showing-on-inoreader/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://www.leowkahman.com/images/2018/04/inoreader.png&#34; alt=&#34;InoReader&#34;&gt;&lt;/p&gt;
+&lt;p&gt;I noticed thumbnails for my blog&amp;rsquo;s RSS feed were not showing up.
+After investigation, I found the root cause and solution and it was a simple one.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Prevent overheating by disabling turbo boost</title>
+      <link>https://www.leowkahman.com/2018/04/08/prevent-overheating-by-disabling-turbo-boost/</link>
+      <pubDate>Sun, 08 Apr 2018 17:00:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2018/04/08/prevent-overheating-by-disabling-turbo-boost/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://www.leowkahman.com/images/2018/04/psensor-edit-sensor-preferences.png&#34; alt=&#34;psensor - edit sensor preferences&#34;&gt;&lt;/p&gt;
+&lt;p&gt;CPU throttling, PC shutting down abruptly, etc. These may be signs of overheating.
+Disabling Intel turbo boost may help. Screenshot above is the temperature range after
+disabling turbo boost.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>How to fix choppy YouTube videos on Firefox and Chrome on an old laptop</title>
+      <link>https://www.leowkahman.com/2018/03/31/how-to-fix-choppy-youtube-videos-on-old-laptop/</link>
+      <pubDate>Sat, 31 Mar 2018 23:45:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2018/03/31/how-to-fix-choppy-youtube-videos-on-old-laptop/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://www.leowkahman.com/images/2018/03/dell-inspiron-6000-lubuntu-smtube.jpg&#34; alt=&#34;Dell Inspiron 6000 - Lubuntu SMTube&#34;&gt;&lt;/p&gt;
+&lt;p&gt;How to fix choppy YouTube videos on Firefox and Chrome on an old laptop.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Running WhatsApp, Allo, Todoist, and OneNote on Ubuntu</title>
+      <link>https://www.leowkahman.com/2018/03/22/running-whatsapp-allo-todoist-onenote-on-ubuntu/</link>
+      <pubDate>Thu, 22 Mar 2018 00:00:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2018/03/22/running-whatsapp-allo-todoist-onenote-on-ubuntu/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://www.leowkahman.com/images/2018/03/nativefier-desktop-launchers.png&#34; alt=&#34;nativefier - desktop launchers&#34;&gt;&lt;/p&gt;
+&lt;p&gt;In the absence of native desktop apps for Linux from WhatsApp, Allo, Todoist, OneNote
+and many others, the next best alternative is to simply run the web app via web browser.
+To make the experience of launching it closer to a native app, read on.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Using Raspbian on 2GB Micro SD Card</title>
+      <link>https://www.leowkahman.com/2018/03/13/using-raspbian-on-2gb-micro-sd-card/</link>
+      <pubDate>Tue, 13 Mar 2018 23:15:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2018/03/13/using-raspbian-on-2gb-micro-sd-card/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://www.leowkahman.com/images/2018/03/nokia-2gb-micro-sd.jpg&#34; alt=&#34;Nokia - 2GB micro SD&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Raspberry Pi 2 with Raspbian on a 2GB micro SD card? Feasible.
+If you need additional space for storing data, you can always attach thumb drives.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>LEDE on UniFi D-Link DIR-615 G2</title>
+      <link>https://www.leowkahman.com/2018/03/09/lede-on-unifi-d-link-dir-615-g2/</link>
+      <pubDate>Fri, 09 Mar 2018 23:30:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2018/03/09/lede-on-unifi-d-link-dir-615-g2/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://www.leowkahman.com/images/2018/03/d-link-dir-615-g2-front.jpg&#34; alt=&#34;D-Link DIR-615 G2 - Front&#34;&gt;&lt;/p&gt;
+&lt;p&gt;My ISP provided D-Link DIR-615 G2 many years ago. Could not even remember how long
+ago that was. After using for a short period of time, it was chucked away until
+I found it yesterday while cleaning up my store room. I decided to flash it with
+LEDE (also known as OpenWRT) to see how it goes.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Backup disk by cloning using Clonezilla</title>
+      <link>https://www.leowkahman.com/2018/02/10/backup-disk-by-cloning-using-clonezilla/</link>
+      <pubDate>Sat, 10 Feb 2018 23:00:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2018/02/10/backup-disk-by-cloning-using-clonezilla/</guid>
+      <description>&lt;p&gt;Backup hard disk by cloning or imaging it using Clonezilla.
+The disk image can be saved into an external drive, samba share, AWS S3, and several
+other options.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Exclude Adsense ads from specific posts on Hugo</title>
+      <link>https://www.leowkahman.com/2018/01/12/exclude-adsense-ads-from-specific-posts-on-hugo/</link>
+      <pubDate>Fri, 12 Jan 2018 01:15:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2018/01/12/exclude-adsense-ads-from-specific-posts-on-hugo/</guid>
+      <description>&lt;p&gt;How to manually or automatically exclude Google Adsense ads from specific posts
+or pages on Hugo static site generator.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Setup NodeJS with Apache ProxyPass on Raspberry Pi</title>
+      <link>https://www.leowkahman.com/2018/01/09/setup-nodejs-with-apache-proxypass-on-raspberry-pi/</link>
+      <pubDate>Tue, 09 Jan 2018 22:30:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2018/01/09/setup-nodejs-with-apache-proxypass-on-raspberry-pi/</guid>
+      <description>&lt;p&gt;Setup NodeJS with Apache ProxyPass on Raspberry Pi 2 and 3.
+This allows multiple NodeJS apps to run in the backend but under a single
+hostname/domain with different virtual subfolder path for each of them.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Workaround to Failure to download extra files ttf-mscorefonts-installer</title>
+      <link>https://www.leowkahman.com/2018/01/02/workaround-to-failure-to-download-extra-files-ttf-mscorefonts-installer/</link>
+      <pubDate>Tue, 02 Jan 2018 23:50:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2018/01/02/workaround-to-failure-to-download-extra-files-ttf-mscorefonts-installer/</guid>
+      <description>&lt;p&gt;Workaround tested and working on Ubuntu 17.10.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Solution to lag during DOTA 2 Alchemist acid spray on Ubuntu 17.10</title>
+      <link>https://www.leowkahman.com/2017/12/31/solution-to-lag-during-dota-2-alchemist-acid-spray-on-ubuntu-17-10/</link>
+      <pubDate>Sun, 31 Dec 2017 15:00:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2017/12/31/solution-to-lag-during-dota-2-alchemist-acid-spray-on-ubuntu-17-10/</guid>
+      <description>&lt;p&gt;This lag has been driving me nuts and I swear it did not lag like that before I
+upgraded my Ubuntu to 17.10.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Cloud storage solutions for Linux</title>
+      <link>https://www.leowkahman.com/2017/12/29/cloud-storage-solutions-for-linux/</link>
+      <pubDate>Fri, 29 Dec 2017 22:30:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2017/12/29/cloud-storage-solutions-for-linux/</guid>
+      <description>&lt;p&gt;Here are recommendations for cloud storage options that can be used on Linux
+including a way on how to synchronise them.
+This includes Dropbox, Box, Yandex, Google Drive, and OneDrive.
+However, I used a workaround for Google Drive and OneDrive which may not necessarily
+be feasible for you.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Cruising on Quantum of the Seas</title>
+      <link>https://www.leowkahman.com/2017/12/22/cruising-on-quantum-of-the-seas/</link>
+      <pubDate>Fri, 22 Dec 2017 23:30:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2017/12/22/cruising-on-quantum-of-the-seas/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://www.leowkahman.com/images/2017/12/quantum-of-the-seas-night-view.jpg&#34; alt=&#34;Quantum of the Seas - Night view&#34;&gt;&lt;/p&gt;
+&lt;p&gt;I was away for holiday on Royal Caribbean&amp;rsquo;s Quantum of the Seas for a round-trip
+cruise departing from Shanghai and docking at 3 ports in Japan; Kochi, Nagasaki,
+and Fukuoka. I thought I had it all well prepared but still came across challenges
+along the way, and now I am sharing tips with the hope that you may benefit from
+this.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;This is not a tech post but touches a little bit of tech elements.&lt;/em&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Using Amazon Echo outside US</title>
+      <link>https://www.leowkahman.com/2017/11/12/using-amazon-echo-outside-us/</link>
+      <pubDate>Sun, 12 Nov 2017 23:45:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2017/11/12/using-amazon-echo-outside-us/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.leowkahman.com/images/2017/11/amazon-echo.jpg&#34;&gt;&lt;img src=&#34;https://www.leowkahman.com/images/2017/11/amazon-echo.jpg&#34; alt=&#34;Amazon Echo&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;It is possible to use Amazon Echo outside US but there are some challenges in
+setting it up. Specifically, I was trying to setup for use in Malaysia.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>CWE-316 storing secure strings in .NET SecureString</title>
+      <link>https://www.leowkahman.com/2017/10/12/cwe-316-storing-secure-strings-in-dotnet-securestring/</link>
+      <pubDate>Thu, 12 Oct 2017 22:30:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2017/10/12/cwe-316-storing-secure-strings-in-dotnet-securestring/</guid>
+      <description>&lt;p&gt;How to resolve CWE-316 in .NET using SecureString in a neat and easy way.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>BYOD CI/CD build machine to run pipelines using Docker</title>
+      <link>https://www.leowkahman.com/2017/10/02/byod-ci-cd-build-machine-to-run-pipelines-using-docker/</link>
+      <pubDate>Mon, 02 Oct 2017 23:30:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2017/10/02/byod-ci-cd-build-machine-to-run-pipelines-using-docker/</guid>
+      <description>&lt;p&gt;Skip the build queue and save money by reducing (if not eliminating) dedicated
+build machines by Bringing Your Own Device (BYOD) as CI/CD build
+machine to run pipelines using Docker.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Checklist for switching from Windows to Linux</title>
+      <link>https://www.leowkahman.com/2017/09/23/checklist-for-switching-from-windows-to-linux/</link>
+      <pubDate>Sat, 23 Sep 2017 01:30:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2017/09/23/checklist-for-switching-from-windows-to-linux/</guid>
+      <description>&lt;p&gt;Every year, the reasons to switch from Windows to Linux grows more and more.
+Linux distros are more user friendly than they used to be.
+In terms of difficulty, it is probably like switching between iOS and Android
+except that you need to setup the Operating System yourself.&lt;/p&gt;
+&lt;p&gt;Here are things to consider when switching from Windows to Linux.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Enforce Safe Search on Google, YouTube, Bing, DuckDuckGo</title>
+      <link>https://www.leowkahman.com/2017/09/11/enforce-safe-search-on-google-youtube-bing/</link>
+      <pubDate>Mon, 11 Sep 2017 17:30:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2017/09/11/enforce-safe-search-on-google-youtube-bing/</guid>
+      <description>&lt;p&gt;Enforce safe search on Google, YouTube, Bing, and DuckDuckGo without a HTTP proxy.
+Instead, override DNS lookups, resolving to strict search server IP addresses.
+Works on IPv4 and IPv6 networks.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>GitLab CI remove priority zero from Hugo sitemap</title>
+      <link>https://www.leowkahman.com/2017/09/10/gitlab-ci-remove-priority-zero-from-hugo-sitemap/</link>
+      <pubDate>Sun, 10 Sep 2017 01:00:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2017/09/10/gitlab-ci-remove-priority-zero-from-hugo-sitemap/</guid>
+      <description>&lt;p&gt;Hugo static site generator generates sitemap.xml that include priority zero URLs.
+These are the taxanomies, tags and categories.
+To prevent these from appearing in Google Search results,
+GitLab CI can be configured to remove unwanted XML nodes (priority 0) from sitemap.xml.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>GitLab CI push output to GitHub</title>
+      <link>https://www.leowkahman.com/2017/09/09/gitlab-ci-push-output-to-github/</link>
+      <pubDate>Sat, 09 Sep 2017 11:30:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2017/09/09/gitlab-ci-push-output-to-github/</guid>
+      <description>&lt;p&gt;Utilise GitLab CI runner to build and publish static website to GitLab and GitHub
+pages. By having mirrored copies, it is possible to switch DNS records to point
+to either for high availability reasons.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>TM Streamyx Router Wi-Fi Security</title>
+      <link>https://www.leowkahman.com/2017/09/05/tm-streamyx-router-wifi-security/</link>
+      <pubDate>Tue, 05 Sep 2017 23:30:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2017/09/05/tm-streamyx-router-wifi-security/</guid>
+      <description>&lt;p&gt;If you are using the router that came with your telco provider,
+please take immediate action to verify its security settings, in particular Wi-Fi.&lt;/p&gt;
+&lt;p&gt;Last week while at someone else&amp;rsquo;s house,
+I discovered that default settings of the router provided by telco had not one but
+4 Wi-Fi SSIDs. One of them was already secured with a long WPA2 password, good.
+However, the remaining 3 were without security.
+Their SSIDs were hidden but hiding SSID is not a form of security!&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Hugo Static Site Generator with CI Deployment using GitLab</title>
+      <link>https://www.leowkahman.com/2017/08/15/hugo-static-site-generator-with-ci-deployment-using-gitlab/</link>
+      <pubDate>Tue, 15 Aug 2017 01:00:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2017/08/15/hugo-static-site-generator-with-ci-deployment-using-gitlab/</guid>
+      <description>&lt;p&gt;Over the weekend, I moved my blog from GitHub to GitLab.
+I now have a fully automated CI build on GitLab that grabs a NodeJS Docker image,
+downloads Hugo, UglifyCSS and HTMLMinifier via NPM,
+build and minify pages,
+and finally publishes to GitLab Pages on every Git merge to master.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Block ads with OpenWRT dnsmasq</title>
+      <link>https://www.leowkahman.com/2017/07/23/block-ads-with-openwrt-dnsmasq/</link>
+      <pubDate>Sun, 23 Jul 2017 22:00:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2017/07/23/block-ads-with-openwrt-dnsmasq/</guid>
+      <description>&lt;p&gt;Block ads with OpenWRT dnsmasq and automate downloading of the latest list once
+a week. This solution can also be applied to blocking crytocoin miner domains.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Running .NET Core on Raspberry Pi Raspbian</title>
+      <link>https://www.leowkahman.com/2017/07/16/running-dotnet-core-on-raspberry-pi-raspbian/</link>
+      <pubDate>Sun, 16 Jul 2017 16:00:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2017/07/16/running-dotnet-core-on-raspberry-pi-raspbian/</guid>
+      <description>&lt;p&gt;Easy guide to building and running .NET Core 2.1 applications on Raspberry Pi 2
+and 3 with Raspbian Stretch.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>How to disable TLS 1.0 on an Azure App Service</title>
+      <link>https://www.leowkahman.com/2017/07/04/how-to-disable-tls-1-0-on-an-azure-app-service/</link>
+      <pubDate>Tue, 04 Jul 2017 23:30:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2017/07/04/how-to-disable-tls-1-0-on-an-azure-app-service/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://www.leowkahman.com/images/2017/07/tls-1-2-yes.png&#34; alt=&#34;TLS 1.2 - yes&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Yes it is possible to disable TLS 1.0 and even 1.1 without using App Service
+Environment (ASE). The solution is to use Azure Application Gateway and a custom
+hostname.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>GitHub, VSTS, Google Cloud folder icons</title>
+      <link>https://www.leowkahman.com/2017/07/02/github-vsts-google-cloud-folder-icons/</link>
+      <pubDate>Sun, 02 Jul 2017 16:00:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2017/07/02/github-vsts-google-cloud-folder-icons/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://www.leowkahman.com/images/2017/07/github-vsts-google-cloud-folder-icons.png&#34; alt=&#34;GitHub, VSTS, Google Cloud - folder icons&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Set folder icons for your favourite source control repositories.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>GitHub new release notifications</title>
+      <link>https://www.leowkahman.com/2017/06/12/github-new-release-notifications/</link>
+      <pubDate>Mon, 12 Jun 2017 16:00:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2017/06/12/github-new-release-notifications/</guid>
+      <description>&lt;p&gt;If you want to find out how to watch a GitHub repository for new releases and
+just that, here is a very simple guide.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Running .NET Core on Windows Subsystem for Linux</title>
+      <link>https://www.leowkahman.com/2017/04/23/running-dotnet-core-on-windows-subsystem-for-linux/</link>
+      <pubDate>Sun, 23 Apr 2017 01:00:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2017/04/23/running-dotnet-core-on-windows-subsystem-for-linux/</guid>
+      <description>&lt;p&gt;Build .NET Core apps on Windows, run it on Windows Subsystem for Linux.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Remotely reset your Android device</title>
+      <link>https://www.leowkahman.com/2017/04/22/remotely-reset-your-android-device/</link>
+      <pubDate>Sat, 22 Apr 2017 18:00:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2017/04/22/remotely-reset-your-android-device/</guid>
+      <description>&lt;p&gt;You have the phone or tablet with you and you have attempted to factory reset it
+to no avail.
+Fret not! If the device has Play Store and you are signed in, you may still be
+able to reset it.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Antivirus for Android</title>
+      <link>https://www.leowkahman.com/2017/04/16/antivirus-for-android/</link>
+      <pubDate>Sun, 16 Apr 2017 23:00:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2017/04/16/antivirus-for-android/</guid>
+      <description>&lt;p&gt;I believe most people have antivirus running on their PC/notebook especially if
+they are on Windows. Somehow most people do not seem to have the same urge to
+have one on their mobile.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>.NET Core on Google Cloud f1-micro instance</title>
+      <link>https://www.leowkahman.com/2017/04/04/dotnet-core-on-google-cloud-f1-micro-instance/</link>
+      <pubDate>Tue, 04 Apr 2017 00:30:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2017/04/04/dotnet-core-on-google-cloud-f1-micro-instance/</guid>
+      <description>&lt;p&gt;Given that .NET Core is capable of running on Linux,
+I decided to try running a simple Hello World test on Google Cloud Platform
+f1-micro instance and also ran OpenSSL speed tests.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Tor proxy on OpenWRT</title>
+      <link>https://www.leowkahman.com/2017/04/02/tor-proxy-on-openwrt/</link>
+      <pubDate>Sun, 02 Apr 2017 15:00:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2017/04/02/tor-proxy-on-openwrt/</guid>
+      <description>&lt;p&gt;The best way to use Tor network is by browsing using the official Tor Browser.
+However, if you have specific need to connect to Tor without their official
+browser, you can setup SOCKS5 or HTTP proxy.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Remove taxanomies from Hugo sitemap</title>
+      <link>https://www.leowkahman.com/2017/03/20/remove-taxanomies-from-hugo-sitemap/</link>
+      <pubDate>Mon, 20 Mar 2017 22:30:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2017/03/20/remove-taxanomies-from-hugo-sitemap/</guid>
+      <description>&lt;p&gt;Most blogging systems offer a way to create user-defined groupings of content
+called taxanomies. While I like the feature, I do not want them showing in
+search engines.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Allow Right Click on Chrome and Firefox</title>
+      <link>https://www.leowkahman.com/2017/03/19/allow-right-click-on-chrome-and-firefox/</link>
+      <pubDate>Sun, 19 Mar 2017 11:00:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2017/03/19/allow-right-click-on-chrome-and-firefox/</guid>
+      <description>&lt;p&gt;I hate websites that takes away the ability to right-click on the page.
+This is nothing more than script kiddie level of protection for those that think
+every visitor out there is a noob. You want to re-enable your rights to
+right-click but before you jump into adding yet another addon or extension into
+your web browser, it is good to find out if you really need to.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>.NET Core on Google App Engine</title>
+      <link>https://www.leowkahman.com/2017/02/26/dotnet-core-on-google-app-engine/</link>
+      <pubDate>Sun, 26 Feb 2017 15:30:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2017/02/26/dotnet-core-on-google-app-engine/</guid>
+      <description>&lt;p&gt;There is an easy tutorial on how to run .NET Core apps on Google Developers Codelabs.
+As a supplement to that I have some bits to share that may be of use to you.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>HyppTV Set-top box connect to Play Store</title>
+      <link>https://www.leowkahman.com/2017/01/22/hypptv-set-top-box-connect-to-play-store/</link>
+      <pubDate>Sun, 22 Jan 2017 12:00:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2017/01/22/hypptv-set-top-box-connect-to-play-store/</guid>
+      <description>&lt;p&gt;TM provided an Android based set-top box (STB) for customers to watch HyppTV channels.
+When starting up, Play Store icon appears on main screen but when attempting to
+sign in, I kept getting a connection error message.
+After spending a bit of time, I found the solution.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Rechargeable batteries vs non-rechargeable ones</title>
+      <link>https://www.leowkahman.com/2017/01/04/rechargeable-batteries-vs-non-rechargeable-ones/</link>
+      <pubDate>Wed, 04 Jan 2017 01:00:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2017/01/04/rechargeable-batteries-vs-non-rechargeable-ones/</guid>
+      <description>&lt;p&gt;I have been using rechargeable AA and AAA batteries for a few years throughout
+my home and thought of doing a writeup on how it has been working for me and why
+you should consider doing the same.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Using Dash IFTTT to notify others upon reaching a location</title>
+      <link>https://www.leowkahman.com/2016/12/28/using-dash-ifttt-to-notify-others-upon-reaching-a-location/</link>
+      <pubDate>Wed, 28 Dec 2016 23:00:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2016/12/28/using-dash-ifttt-to-notify-others-upon-reaching-a-location/</guid>
+      <description>&lt;p&gt;I have been using a mobile app called Dash (smart driving app) for a week and
+decided to write a review about it as well as sharing how I am making use of it
+to notify others (in my case, family members) as soon as I have reached an area,
+i.e. home, office, etc.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Build online radio player using Raspberry Pi</title>
+      <link>https://www.leowkahman.com/2016/12/24/build-online-radio-player-using-raspberry-pi/</link>
+      <pubDate>Sat, 24 Dec 2016 17:00:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2016/12/24/build-online-radio-player-using-raspberry-pi/</guid>
+      <description>&lt;p&gt;Simple guide to building an online radio player using Raspberry Pi with
+Android/iOS device as remote control.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Automate downloading of historical data from Sunny Explorer</title>
+      <link>https://www.leowkahman.com/2016/12/24/automate-downloading-of-historical-data-from-sunny-explorer/</link>
+      <pubDate>Sat, 24 Dec 2016 13:00:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2016/12/24/automate-downloading-of-historical-data-from-sunny-explorer/</guid>
+      <description>&lt;p&gt;If you have SMA solar power inverters and would be interested in automating
+download of historical data, read on. I have written a PowerShell script that
+downloads data as CSV format and places them into folders by year and month.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Track users connectivity to Wi-Fi using OpenWRT</title>
+      <link>https://www.leowkahman.com/2016/08/27/track-users-connectivity-to-wifi-using-openwrt/</link>
+      <pubDate>Sat, 27 Aug 2016 04:00:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2016/08/27/track-users-connectivity-to-wifi-using-openwrt/</guid>
+      <description>&lt;p&gt;How to know what time a person reached or was at home? One of the simplest
+method is to track when the user was connected to Wi-Fi.
+This could be accomplished easily if you have OpenWRT firmware on your router.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Get notified via IFTTT or Pushbullet when OpenWRT router has started</title>
+      <link>https://www.leowkahman.com/2016/07/31/get-notified-via-ifttt-pushbullet-when-openwrt-router-has-started/</link>
+      <pubDate>Sun, 31 Jul 2016 14:00:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2016/07/31/get-notified-via-ifttt-pushbullet-when-openwrt-router-has-started/</guid>
+      <description>&lt;p&gt;Using IFTTT&amp;rsquo;s Maker channel, I could setup a Web Request receiver or if you
+prefer a simpler method, you could use Pushbullet. Then I configured my OpenWRT
+router to post to the receiver on startup.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Static blog generated by Hugo hosted on Google Firebase</title>
+      <link>https://www.leowkahman.com/2016/07/14/static-blog-generated-by-hugo-hosted-on-google-firebase/</link>
+      <pubDate>Thu, 14 Jul 2016 15:13:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2016/07/14/static-blog-generated-by-hugo-hosted-on-google-firebase/</guid>
+      <description>&lt;p&gt;I have migrated my blog from WordPress to static website generated by Hugo.
+Here is why.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Conditional multiple OpenVPN routing by hostname or IP</title>
+      <link>https://www.leowkahman.com/2016/06/19/conditional-multiple-openvpn-routing-hostname-ip/</link>
+      <pubDate>Sun, 19 Jun 2016 12:54:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2016/06/19/conditional-multiple-openvpn-routing-hostname-ip/</guid>
+      <description>&lt;p&gt;Using OpenWRT/LEDE, connect to one or more OpenVPN instances and conditionally divert
+(split tunneling) one or more outgoing traffic to specific VPN route by
+destination host names or IP addresses.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>OpenWRT encrypted DNS lookup using multiple DNSCrypt servers</title>
+      <link>https://www.leowkahman.com/2016/05/23/openwrt-encrypted-dns-lookup-using-multiple-dnscrypt-servers/</link>
+      <pubDate>Mon, 23 May 2016 00:27:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2016/05/23/openwrt-encrypted-dns-lookup-using-multiple-dnscrypt-servers/</guid>
+      <description>&lt;p&gt;Want to setup OpenWRT to query specific DNSCrypt server depending on domain name
+to resolve? Read on.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Setup HAProxy with CloudFlare SSL termination on OpenWRT</title>
+      <link>https://www.leowkahman.com/2016/05/08/setup-haproxy-cloudflare-ssl-termination-openwrt/</link>
+      <pubDate>Sun, 08 May 2016 22:37:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2016/05/08/setup-haproxy-cloudflare-ssl-termination-openwrt/</guid>
+      <description>&lt;p&gt;Setup instructions for HAProxy with HTTP SSL termination on OpenWRT with
+CloudFlare Origin CA and Authenticated Origin Pulls.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>CloudFlare Origin CA on Raspberry Pi Apache</title>
+      <link>https://www.leowkahman.com/2016/05/04/cloudflare-origin-ca-raspberry-pi-apache/</link>
+      <pubDate>Wed, 04 May 2016 01:13:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2016/05/04/cloudflare-origin-ca-raspberry-pi-apache/</guid>
+      <description>&lt;p&gt;Immediately after reading CloudFlare&amp;rsquo;s blog post on the introduction of Origin
+CA, I tried it on my Raspberry Pi Apache. Read on for the details.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Automate Raspberry Pi UFW to allow CloudFlare inbound</title>
+      <link>https://www.leowkahman.com/2016/05/02/automate-raspberry-pi-ufw-allow-cloudflare-inbound/</link>
+      <pubDate>Mon, 02 May 2016 17:03:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2016/05/02/automate-raspberry-pi-ufw-allow-cloudflare-inbound/</guid>
+      <description>&lt;p&gt;As IPv6 restores the ability to have end-to-end connectivity unlike IPv4
+shielded by NAT, I needed to configure my Raspberry Pi firewall to allow only
+CloudFlare traffic inbound on port 443. Read on for the solution.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>OpenWRT IPv6 Dynamic DNS Client</title>
+      <link>https://www.leowkahman.com/2016/05/02/openwrt-ipv6-dynamic-dns-client/</link>
+      <pubDate>Mon, 02 May 2016 15:47:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2016/05/02/openwrt-ipv6-dynamic-dns-client/</guid>
+      <description>&lt;p&gt;This should be rather straightforward but I encountered problems setting up with
+a solution worth sharing and I will throw in a tip that you may find useful.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Using a Jump server</title>
+      <link>https://www.leowkahman.com/2016/04/27/using-jump-server/</link>
+      <pubDate>Wed, 27 Apr 2016 22:36:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2016/04/27/using-jump-server/</guid>
+      <description>&lt;p&gt;I logged into my home&amp;rsquo;s VPN from my mobile device and I needed to access my Pi
+but then I realised I could not because my Pi allowed incoming SSH traffic only
+from machines on a specific /24 subnet. At times like this, a jump server/host
+can act as a bridge.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Configuring Apache Virtual Host log rotation</title>
+      <link>https://www.leowkahman.com/2016/04/24/configuring-apache-virtual-host-log-rotation/</link>
+      <pubDate>Sun, 24 Apr 2016 17:00:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2016/04/24/configuring-apache-virtual-host-log-rotation/</guid>
+      <description>&lt;p&gt;Log rotation was not applied to my Apache Virtual Host access.log on my
+Raspberry Pi. I later found out the problem was just a small configuration mistake.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Apache 2 Event MPM and PHP 5 FastCGI on Raspberry Pi</title>
+      <link>https://www.leowkahman.com/2016/04/22/apache-2-event-mpm-and-php-5-fastcgi-on-raspberry-pi/</link>
+      <pubDate>Fri, 22 Apr 2016 00:35:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2016/04/22/apache-2-event-mpm-and-php-5-fastcgi-on-raspberry-pi/</guid>
+      <description>&lt;p&gt;I have been running my blog on Apache 2 with Event MPM for a while and thought I
+should share my setup on Raspberry Pi 2 Model B with Raspbian for the benefit of
+others.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Use SSL in OpenWRT OPKG</title>
+      <link>https://www.leowkahman.com/2016/04/10/use-ssl-openwrt-opkg/</link>
+      <pubDate>Sun, 10 Apr 2016 18:19:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2016/04/10/use-ssl-openwrt-opkg/</guid>
+      <description>&lt;p&gt;After installing OpenWRT Chaos Calmer, I noticed that OPKG calls are performed
+via HTTP without SSL. Changing to HTTPS was not as simple as adding just one
+letter &amp;lsquo;s&amp;rsquo;. Read on for the steps.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Create Git repository on Google Drive/Dropbox</title>
+      <link>https://www.leowkahman.com/2016/04/03/create-git-repository-google-drive/</link>
+      <pubDate>Sun, 03 Apr 2016 17:23:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2016/04/03/create-git-repository-google-drive/</guid>
+      <description>&lt;p&gt;Setting up a single-user Git repository on private cloud storage is not
+difficult and incurs no cost to you.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Certificate error on blocked domains when using OpenDNS</title>
+      <link>https://www.leowkahman.com/2016/03/22/certificate-error-on-blocked-domains-when-using-opendns/</link>
+      <pubDate>Tue, 22 Mar 2016 01:11:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2016/03/22/certificate-error-on-blocked-domains-when-using-opendns/</guid>
+      <description>&lt;p&gt;OpenDNS helps in blocking malware sites by not resolving malware domains to the
+actual IP address hosting the malware. Instead they resolve to an OpenDNS page
+indicating &amp;ldquo;This domain is blocked due to &amp;hellip;&amp;quot;. If you are opening a non-SSL
+page, this would work as described. However, when attempting to browse a malware
+page via HTTPS, the web browser will show a certificate error instead.
+Read on to know the reason and solution.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>How to disable IPv6 on Raspberry Raspbian</title>
+      <link>https://www.leowkahman.com/2016/03/19/disable-ipv6-raspberry-raspbian/</link>
+      <pubDate>Sat, 19 Mar 2016 16:14:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2016/03/19/disable-ipv6-raspberry-raspbian/</guid>
+      <description>&lt;p&gt;An easy guide on how to disable IPv6 on Raspbian that anyone can accomplish in
+just a few minutes. Tested on Raspbian Jessie.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Setup 4096-bit OpenVPN on OpenWRT</title>
+      <link>https://www.leowkahman.com/2016/03/14/setup-4096-bit-openvpn-openwrt/</link>
+      <pubDate>Mon, 14 Mar 2016 22:39:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2016/03/14/setup-4096-bit-openvpn-openwrt/</guid>
+      <description>&lt;p&gt;If you want to setup OpenVPN with 4096-bit key on OpenWRT, with a few tips and
+tricks in addition, read on.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Apache CloudFlare Authenticated Origin Pulls configuration</title>
+      <link>https://www.leowkahman.com/2016/03/10/apache-cloudflare-authenticated-origin-pulls-configuration/</link>
+      <pubDate>Thu, 10 Mar 2016 00:51:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2016/03/10/apache-cloudflare-authenticated-origin-pulls-configuration/</guid>
+      <description>&lt;p&gt;With Strict SSL enabled, CloudFlare is able to tell that my website is indeed
+the real one. Furthermore, I have
+&lt;a href=&#34;https://www.leowkahman.com/2016/02/14/using-iptables-port-forward-to-web-server-only-if-source-is-cloudflare/&#34;&gt;restricted incoming IP addresses to CloudFlare ones&lt;/a&gt;.
+This should be reasonably secure but an attacker could potentially spoof its
+origin IP (man-in-the-middle attack) as one of theirs. To mitigate this
+potential problem, it is necessary for the client (CloudFlare) to present a
+certificate which is then verified by (my) web server.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>LAMP stack on Raspberry Pi with Kodi running at startup</title>
+      <link>https://www.leowkahman.com/2016/03/05/lamp-stack-on-raspberry-pi-with-kodi-running-at-startup/</link>
+      <pubDate>Sat, 05 Mar 2016 01:30:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2016/03/05/lamp-stack-on-raspberry-pi-with-kodi-running-at-startup/</guid>
+      <description>&lt;p&gt;For most people, if they wanted to run LAMP stack on Raspberry Pi, they would
+probably install Raspbian via NOOBS. However, if they wanted a HTPC with Kodi,
+they would likely opt for OSMC or OpenELEC. I needed Kodi to run at startup with
+LAMP stack running behind and chose the NOOBS Raspbian route.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>VPN connected but unable to access LAN remotely</title>
+      <link>https://www.leowkahman.com/2016/02/28/vpn-connected-but-unable-to-access-lan-from-outside/</link>
+      <pubDate>Sun, 28 Feb 2016 12:44:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2016/02/28/vpn-connected-but-unable-to-access-lan-from-outside/</guid>
+      <description>&lt;p&gt;If you are reading this post, it is assumed that you have setup VPN server and
+able to connect into it remotely. You are now able to access the Internet but
+not any LAN computers. The cause is very likely due to use of the same LAN IP
+subnet on both the source (connecting from) and destination (connecting to).&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>OpenSSL benchmark - RPi2B vs NAS vs Archer C7</title>
+      <link>https://www.leowkahman.com/2016/02/21/openssl-benchmark-raspberry-vs-nas-vs-archer-c7/</link>
+      <pubDate>Sun, 21 Feb 2016 17:56:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2016/02/21/openssl-benchmark-raspberry-vs-nas-vs-archer-c7/</guid>
+      <description>&lt;p&gt;I am not short of options when it comes to spreading tasks over several
+System-on-Chip (SoC) based low-powered micro computers. 4 devices were tested;
+OpenWRT running on TP-Link Archer C7 v2, QNAP TS-220 and Asustor AS-304T and
+Raspberry Pi 2 Model B.&lt;/p&gt;
+&lt;p&gt;In deciding which to be used for hosting a HTTPS-only web server, I was
+interested in the cryptography (namely RSA and AES) performance thus the
+motivation for running benchmarks.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Port forward using iptables to web server only if source is CloudFlare</title>
+      <link>https://www.leowkahman.com/2016/02/14/using-iptables-port-forward-to-web-server-only-if-source-is-cloudflare/</link>
+      <pubDate>Sun, 14 Feb 2016 23:56:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2016/02/14/using-iptables-port-forward-to-web-server-only-if-source-is-cloudflare/</guid>
+      <description>&lt;p&gt;Looking at my web server&amp;rsquo;s access logs, not surprisingly I discovered traffic
+originating from IP addresses not belonging to CloudFlare. Initially, I was
+using Apache .htaccess to allow incoming traffic only if they originated from
+CloudFlare. This was somewhat sufficient but some hackers continued attempting
+to find loopholes instead of giving up so I needed to up the level of security
+and decided to look at ways to drop unwelcome traffic using OpenWRT firewall.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>How to setup non-logging Squid proxy</title>
+      <link>https://www.leowkahman.com/2016/02/14/how-to-setup-non-logging-squid-proxy/</link>
+      <pubDate>Sun, 14 Feb 2016 01:25:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2016/02/14/how-to-setup-non-logging-squid-proxy/</guid>
+      <description>&lt;p&gt;To setup a non-logging/zero-logging Squid proxy, there are just a couple of
+lines to be added/commented/updated. This simple tutorial is for Squid version
+2.7 and very likely still work for version 3.x. The default configuration in
+Squid exposes the origin IP address which is fine if you intended for that but
+that is usually not the case.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>OpenWRT Dynamic DNS CloudFlare orange cloud</title>
+      <link>https://www.leowkahman.com/2016/02/01/openwrt-dynamic-dns-cloudflare-orange-cloud/</link>
+      <pubDate>Mon, 01 Feb 2016 17:22:00 +0000</pubDate>
+      
+      <guid>https://www.leowkahman.com/2016/02/01/openwrt-dynamic-dns-cloudflare-orange-cloud/</guid>
+      <description>&lt;p&gt;Installing &lt;code&gt;ddns-scripts&lt;/code&gt; and &lt;code&gt;ddns-scripts_cloudflare&lt;/code&gt; version 2.4.3-1 from
+OpenWRT package repository allows you to configure dynamic DNS that points
+directly to your IP address without orange cloud. If you want the orange cloud
+however, you need to make a small change.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Configuring OpenWRT and OpenDNS to log all DNS lookups</title>
+      <link>https://www.leowkahman.com/2016/01/21/configuring-openwrt-and-opendns-to-log-all-dns-lookups/</link>
+      <pubDate>Thu, 21 Jan 2016 00:45:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2016/01/21/configuring-openwrt-and-opendns-to-log-all-dns-lookups/</guid>
+      <description>&lt;p&gt;Why log all DNS lookups?&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;To list websites visited by you or any computer served by your router&lt;/li&gt;
+&lt;li&gt;To assist in identifying presence of malware&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    
+    <item>
+      <title>Configuring OpenWRT to block Skype Ads</title>
+      <link>https://www.leowkahman.com/2016/01/20/configuring-openwrt-to-block-skype-ads/</link>
+      <pubDate>Wed, 20 Jan 2016 22:38:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2016/01/20/configuring-openwrt-to-block-skype-ads/</guid>
+      <description>&lt;p&gt;This is very likely the easiest way to block Skype advertisements using OpenWRT.
+Blocking at router means you do not have to apply the block on every computer
+that goes out via this router.&lt;/p&gt;
+&lt;p&gt;Works for: Skype for Windows as at version 7.17&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>OpenWRT redirect all NTP queries to specific servers</title>
+      <link>https://www.leowkahman.com/2016/01/06/openwrt-redirect-all-ntp-queries-to-specific-servers/</link>
+      <pubDate>Wed, 06 Jan 2016 00:21:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2016/01/06/openwrt-redirect-all-ntp-queries-to-specific-servers/</guid>
+      <description>&lt;p&gt;Most devices allow you to set the
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Network_Time_Protocol&#34;&gt;Network Time Protocol (NTP)&lt;/a&gt;
+server to one that you prefer but there are some devices that have hardcoded NTP
+server hostname. This is mostly fine if all devices in your local network are
+synchronised to the same second but this is not always true. I have seen NTP
+servers that drift over 30 seconds. Not good&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>TP-Link Archer C7 v2 OpenWRT VLAN UniFi HyppTV</title>
+      <link>https://www.leowkahman.com/2016/01/03/tp-link-archer-c7-v2-openwrt-vlan-unifi-hypptv/</link>
+      <pubDate>Sun, 03 Jan 2016 01:12:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2016/01/03/tp-link-archer-c7-v2-openwrt-vlan-unifi-hypptv/</guid>
+      <description>&lt;p&gt;There are many tutorials available on Internet on how to setup VLAN on OpenWRT/LEDE
+but finding one specifically for Archer C7 v2 with the right
+VLAN settings for Malaysia&amp;rsquo;s UniFi HyppTV was a little challenging. In the
+process of trial and error, I had to recover my router from failsafe mode so
+please be careful.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>TP-Link Archer C7 with OpenWRT firmware</title>
+      <link>https://www.leowkahman.com/2016/01/03/tp-link-archer-c7-with-openwrt-firmware/</link>
+      <pubDate>Sun, 03 Jan 2016 00:22:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2016/01/03/tp-link-archer-c7-with-openwrt-firmware/</guid>
+      <description>&lt;p&gt;I was running stock firmware for a couple of months but I needed the router to
+do more. I was reluctant to spend a lot of money on a high end router thus opted
+to install OpenWRT Chaos Calmer 15.05 into my TP-Link Archer C7 v2.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Hello world</title>
+      <link>https://www.leowkahman.com/2016/01/02/hello-world/</link>
+      <pubDate>Sat, 02 Jan 2016 15:26:21 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2016/01/02/hello-world/</guid>
+      <description>&lt;p&gt;Today marks the first day of my new Tech Blog.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

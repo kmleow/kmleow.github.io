@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hardware on Leow Kah Man - Tech Blog</title>
+    <link>https://www.leowkahman.com/categories/hardware/</link>
+    <description>Recent content in Hardware on Leow Kah Man - Tech Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License, code samples are licensed under the MIT License. Third-party product names and logos may be the trademarks of their respective owners.</copyright>
+    <lastBuildDate>Sat, 01 Feb 2020 17:10:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.leowkahman.com/categories/hardware/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Speedtest OpenWRT with flow offloading</title>
+      <link>https://www.leowkahman.com/2020/02/01/speedtest-openwrt-with-flow-offloading/</link>
+      <pubDate>Sat, 01 Feb 2020 17:10:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2020/02/01/speedtest-openwrt-with-flow-offloading/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://www.leowkahman.com/images/2020/02/speedtest-openwrt-flow-offloading-archer-c7-unifi-turbo-800mbps.png&#34; alt=&#34;Speedtest OpenWRT flow offloading on Archer C7 Unifi Turbo 800Mbps&#34;&gt;&lt;/p&gt;
+&lt;p&gt;I have upgraded to TM Unifi Turbo 800Mbps for quite some time but yet to realise
+the speed promised by ISP. In my case, it is not fair to blame the ISP because the
+bottleneck was not at their end, rather due to my router. When OpenWRT announced
+the release of version 19.07, I took it for a spin and enabled the new flow offloading
+feature. The performance increase was significant.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Prevent overheating by disabling turbo boost</title>
+      <link>https://www.leowkahman.com/2018/04/08/prevent-overheating-by-disabling-turbo-boost/</link>
+      <pubDate>Sun, 08 Apr 2018 17:00:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2018/04/08/prevent-overheating-by-disabling-turbo-boost/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://www.leowkahman.com/images/2018/04/psensor-edit-sensor-preferences.png&#34; alt=&#34;psensor - edit sensor preferences&#34;&gt;&lt;/p&gt;
+&lt;p&gt;CPU throttling, PC shutting down abruptly, etc. These may be signs of overheating.
+Disabling Intel turbo boost may help. Screenshot above is the temperature range after
+disabling turbo boost.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>LEDE on UniFi D-Link DIR-615 G2</title>
+      <link>https://www.leowkahman.com/2018/03/09/lede-on-unifi-d-link-dir-615-g2/</link>
+      <pubDate>Fri, 09 Mar 2018 23:30:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2018/03/09/lede-on-unifi-d-link-dir-615-g2/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://www.leowkahman.com/images/2018/03/d-link-dir-615-g2-front.jpg&#34; alt=&#34;D-Link DIR-615 G2 - Front&#34;&gt;&lt;/p&gt;
+&lt;p&gt;My ISP provided D-Link DIR-615 G2 many years ago. Could not even remember how long
+ago that was. After using for a short period of time, it was chucked away until
+I found it yesterday while cleaning up my store room. I decided to flash it with
+LEDE (also known as OpenWRT) to see how it goes.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Using Amazon Echo outside US</title>
+      <link>https://www.leowkahman.com/2017/11/12/using-amazon-echo-outside-us/</link>
+      <pubDate>Sun, 12 Nov 2017 23:45:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2017/11/12/using-amazon-echo-outside-us/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.leowkahman.com/images/2017/11/amazon-echo.jpg&#34;&gt;&lt;img src=&#34;https://www.leowkahman.com/images/2017/11/amazon-echo.jpg&#34; alt=&#34;Amazon Echo&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;It is possible to use Amazon Echo outside US but there are some challenges in
+setting it up. Specifically, I was trying to setup for use in Malaysia.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>TM Streamyx Router Wi-Fi Security</title>
+      <link>https://www.leowkahman.com/2017/09/05/tm-streamyx-router-wifi-security/</link>
+      <pubDate>Tue, 05 Sep 2017 23:30:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2017/09/05/tm-streamyx-router-wifi-security/</guid>
+      <description>&lt;p&gt;If you are using the router that came with your telco provider,
+please take immediate action to verify its security settings, in particular Wi-Fi.&lt;/p&gt;
+&lt;p&gt;Last week while at someone else&amp;rsquo;s house,
+I discovered that default settings of the router provided by telco had not one but
+4 Wi-Fi SSIDs. One of them was already secured with a long WPA2 password, good.
+However, the remaining 3 were without security.
+Their SSIDs were hidden but hiding SSID is not a form of security!&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>HyppTV Set-top box connect to Play Store</title>
+      <link>https://www.leowkahman.com/2017/01/22/hypptv-set-top-box-connect-to-play-store/</link>
+      <pubDate>Sun, 22 Jan 2017 12:00:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2017/01/22/hypptv-set-top-box-connect-to-play-store/</guid>
+      <description>&lt;p&gt;TM provided an Android based set-top box (STB) for customers to watch HyppTV channels.
+When starting up, Play Store icon appears on main screen but when attempting to
+sign in, I kept getting a connection error message.
+After spending a bit of time, I found the solution.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Rechargeable batteries vs non-rechargeable ones</title>
+      <link>https://www.leowkahman.com/2017/01/04/rechargeable-batteries-vs-non-rechargeable-ones/</link>
+      <pubDate>Wed, 04 Jan 2017 01:00:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2017/01/04/rechargeable-batteries-vs-non-rechargeable-ones/</guid>
+      <description>&lt;p&gt;I have been using rechargeable AA and AAA batteries for a few years throughout
+my home and thought of doing a writeup on how it has been working for me and why
+you should consider doing the same.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on Leow Kah Man - Tech Blog</title>
+    <link>https://www.leowkahman.com/tags/linux/</link>
+    <description>Recent content in Linux on Leow Kah Man - Tech Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License, code samples are licensed under the MIT License. Third-party product names and logos may be the trademarks of their respective owners.</copyright>
+    <lastBuildDate>Wed, 06 Feb 2019 10:30:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.leowkahman.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Ultrawide monitor on Linux</title>
+      <link>https://www.leowkahman.com/2019/02/06/ultrawide-monitor-on-linux/</link>
+      <pubDate>Wed, 06 Feb 2019 10:30:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2019/02/06/ultrawide-monitor-on-linux/</guid>
+      <description>&lt;p&gt;After some fiddling around, I managed to get 2560x1080 output on my Linux laptop
+hooked to a LG 29WK600 21:9 UltraWide Monitor.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Switched from Ubuntu to Linux Mint</title>
+      <link>https://www.leowkahman.com/2019/02/03/switched-from-ubuntu-to-linux-mint/</link>
+      <pubDate>Sun, 03 Feb 2019 23:15:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2019/02/03/switched-from-ubuntu-to-linux-mint/</guid>
+      <description>&lt;p&gt;Having switched to Linux Mint from Ubuntu in December 2018,
+here are my first impressions.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Prevent overheating by disabling turbo boost</title>
+      <link>https://www.leowkahman.com/2018/04/08/prevent-overheating-by-disabling-turbo-boost/</link>
+      <pubDate>Sun, 08 Apr 2018 17:00:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2018/04/08/prevent-overheating-by-disabling-turbo-boost/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://www.leowkahman.com/images/2018/04/psensor-edit-sensor-preferences.png&#34; alt=&#34;psensor - edit sensor preferences&#34;&gt;&lt;/p&gt;
+&lt;p&gt;CPU throttling, PC shutting down abruptly, etc. These may be signs of overheating.
+Disabling Intel turbo boost may help. Screenshot above is the temperature range after
+disabling turbo boost.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>How to fix choppy YouTube videos on Firefox and Chrome on an old laptop</title>
+      <link>https://www.leowkahman.com/2018/03/31/how-to-fix-choppy-youtube-videos-on-old-laptop/</link>
+      <pubDate>Sat, 31 Mar 2018 23:45:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2018/03/31/how-to-fix-choppy-youtube-videos-on-old-laptop/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://www.leowkahman.com/images/2018/03/dell-inspiron-6000-lubuntu-smtube.jpg&#34; alt=&#34;Dell Inspiron 6000 - Lubuntu SMTube&#34;&gt;&lt;/p&gt;
+&lt;p&gt;How to fix choppy YouTube videos on Firefox and Chrome on an old laptop.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Running WhatsApp, Allo, Todoist, and OneNote on Ubuntu</title>
+      <link>https://www.leowkahman.com/2018/03/22/running-whatsapp-allo-todoist-onenote-on-ubuntu/</link>
+      <pubDate>Thu, 22 Mar 2018 00:00:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2018/03/22/running-whatsapp-allo-todoist-onenote-on-ubuntu/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://www.leowkahman.com/images/2018/03/nativefier-desktop-launchers.png&#34; alt=&#34;nativefier - desktop launchers&#34;&gt;&lt;/p&gt;
+&lt;p&gt;In the absence of native desktop apps for Linux from WhatsApp, Allo, Todoist, OneNote
+and many others, the next best alternative is to simply run the web app via web browser.
+To make the experience of launching it closer to a native app, read on.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Cloud storage solutions for Linux</title>
+      <link>https://www.leowkahman.com/2017/12/29/cloud-storage-solutions-for-linux/</link>
+      <pubDate>Fri, 29 Dec 2017 22:30:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2017/12/29/cloud-storage-solutions-for-linux/</guid>
+      <description>&lt;p&gt;Here are recommendations for cloud storage options that can be used on Linux
+including a way on how to synchronise them.
+This includes Dropbox, Box, Yandex, Google Drive, and OneDrive.
+However, I used a workaround for Google Drive and OneDrive which may not necessarily
+be feasible for you.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>BYOD CI/CD build machine to run pipelines using Docker</title>
+      <link>https://www.leowkahman.com/2017/10/02/byod-ci-cd-build-machine-to-run-pipelines-using-docker/</link>
+      <pubDate>Mon, 02 Oct 2017 23:30:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2017/10/02/byod-ci-cd-build-machine-to-run-pipelines-using-docker/</guid>
+      <description>&lt;p&gt;Skip the build queue and save money by reducing (if not eliminating) dedicated
+build machines by Bringing Your Own Device (BYOD) as CI/CD build
+machine to run pipelines using Docker.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Checklist for switching from Windows to Linux</title>
+      <link>https://www.leowkahman.com/2017/09/23/checklist-for-switching-from-windows-to-linux/</link>
+      <pubDate>Sat, 23 Sep 2017 01:30:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2017/09/23/checklist-for-switching-from-windows-to-linux/</guid>
+      <description>&lt;p&gt;Every year, the reasons to switch from Windows to Linux grows more and more.
+Linux distros are more user friendly than they used to be.
+In terms of difficulty, it is probably like switching between iOS and Android
+except that you need to setup the Operating System yourself.&lt;/p&gt;
+&lt;p&gt;Here are things to consider when switching from Windows to Linux.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Running .NET Core on Windows Subsystem for Linux</title>
+      <link>https://www.leowkahman.com/2017/04/23/running-dotnet-core-on-windows-subsystem-for-linux/</link>
+      <pubDate>Sun, 23 Apr 2017 01:00:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2017/04/23/running-dotnet-core-on-windows-subsystem-for-linux/</guid>
+      <description>&lt;p&gt;Build .NET Core apps on Windows, run it on Windows Subsystem for Linux.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

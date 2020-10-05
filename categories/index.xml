@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Leow Kah Man - Tech Blog</title>
+    <link>https://www.leowkahman.com/categories/</link>
+    <description>Recent content in Categories on Leow Kah Man - Tech Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License, code samples are licensed under the MIT License. Third-party product names and logos may be the trademarks of their respective owners.</copyright>
+    <lastBuildDate>Sat, 01 Feb 2020 17:10:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.leowkahman.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hardware</title>
+      <link>https://www.leowkahman.com/categories/hardware/</link>
+      <pubDate>Sat, 01 Feb 2020 17:10:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/categories/hardware/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Software</title>
+      <link>https://www.leowkahman.com/categories/software/</link>
+      <pubDate>Wed, 06 Feb 2019 10:30:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/categories/software/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Programming</title>
+      <link>https://www.leowkahman.com/categories/programming/</link>
+      <pubDate>Mon, 23 Apr 2018 23:15:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/categories/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Web</title>
+      <link>https://www.leowkahman.com/categories/web/</link>
+      <pubDate>Fri, 13 Apr 2018 22:00:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/categories/web/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Travel</title>
+      <link>https://www.leowkahman.com/categories/travel/</link>
+      <pubDate>Fri, 22 Dec 2017 23:30:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/categories/travel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mobile</title>
+      <link>https://www.leowkahman.com/categories/mobile/</link>
+      <pubDate>Sat, 22 Apr 2017 18:00:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/categories/mobile/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cloud</title>
+      <link>https://www.leowkahman.com/categories/cloud/</link>
+      <pubDate>Tue, 04 Apr 2017 00:30:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/categories/cloud/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Network</title>
+      <link>https://www.leowkahman.com/categories/network/</link>
+      <pubDate>Sat, 27 Aug 2016 04:00:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/categories/network/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

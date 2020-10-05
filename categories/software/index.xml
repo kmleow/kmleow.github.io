@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Software on Leow Kah Man - Tech Blog</title>
+    <link>https://www.leowkahman.com/categories/software/</link>
+    <description>Recent content in Software on Leow Kah Man - Tech Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License, code samples are licensed under the MIT License. Third-party product names and logos may be the trademarks of their respective owners.</copyright>
+    <lastBuildDate>Wed, 06 Feb 2019 10:30:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.leowkahman.com/categories/software/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Ultrawide monitor on Linux</title>
+      <link>https://www.leowkahman.com/2019/02/06/ultrawide-monitor-on-linux/</link>
+      <pubDate>Wed, 06 Feb 2019 10:30:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2019/02/06/ultrawide-monitor-on-linux/</guid>
+      <description>&lt;p&gt;After some fiddling around, I managed to get 2560x1080 output on my Linux laptop
+hooked to a LG 29WK600 21:9 UltraWide Monitor.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Switched from Ubuntu to Linux Mint</title>
+      <link>https://www.leowkahman.com/2019/02/03/switched-from-ubuntu-to-linux-mint/</link>
+      <pubDate>Sun, 03 Feb 2019 23:15:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2019/02/03/switched-from-ubuntu-to-linux-mint/</guid>
+      <description>&lt;p&gt;Having switched to Linux Mint from Ubuntu in December 2018,
+here are my first impressions.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Reduce internet lag on OpenWRT</title>
+      <link>https://www.leowkahman.com/2018/08/11/reduce-internet-lag-on-openwrt/</link>
+      <pubDate>Sat, 11 Aug 2018 23:00:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2018/08/11/reduce-internet-lag-on-openwrt/</guid>
+      <description>&lt;p&gt;How to reduce internet lag on OpenWRT when there is heavy download/upload activity
+on the same internet connection.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Workaround to Wi-Fi issues on OpenWRT LEDE</title>
+      <link>https://www.leowkahman.com/2018/05/29/workaround-to-wifi-issues-on-openwrt-lede/</link>
+      <pubDate>Tue, 29 May 2018 13:15:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2018/05/29/workaround-to-wifi-issues-on-openwrt-lede/</guid>
+      <description>&lt;p&gt;Automatically restart Wi-Fi when there are no clients connected.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>How to fix choppy YouTube videos on Firefox and Chrome on an old laptop</title>
+      <link>https://www.leowkahman.com/2018/03/31/how-to-fix-choppy-youtube-videos-on-old-laptop/</link>
+      <pubDate>Sat, 31 Mar 2018 23:45:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2018/03/31/how-to-fix-choppy-youtube-videos-on-old-laptop/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://www.leowkahman.com/images/2018/03/dell-inspiron-6000-lubuntu-smtube.jpg&#34; alt=&#34;Dell Inspiron 6000 - Lubuntu SMTube&#34;&gt;&lt;/p&gt;
+&lt;p&gt;How to fix choppy YouTube videos on Firefox and Chrome on an old laptop.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Running WhatsApp, Allo, Todoist, and OneNote on Ubuntu</title>
+      <link>https://www.leowkahman.com/2018/03/22/running-whatsapp-allo-todoist-onenote-on-ubuntu/</link>
+      <pubDate>Thu, 22 Mar 2018 00:00:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2018/03/22/running-whatsapp-allo-todoist-onenote-on-ubuntu/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://www.leowkahman.com/images/2018/03/nativefier-desktop-launchers.png&#34; alt=&#34;nativefier - desktop launchers&#34;&gt;&lt;/p&gt;
+&lt;p&gt;In the absence of native desktop apps for Linux from WhatsApp, Allo, Todoist, OneNote
+and many others, the next best alternative is to simply run the web app via web browser.
+To make the experience of launching it closer to a native app, read on.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Using Raspbian on 2GB Micro SD Card</title>
+      <link>https://www.leowkahman.com/2018/03/13/using-raspbian-on-2gb-micro-sd-card/</link>
+      <pubDate>Tue, 13 Mar 2018 23:15:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2018/03/13/using-raspbian-on-2gb-micro-sd-card/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://www.leowkahman.com/images/2018/03/nokia-2gb-micro-sd.jpg&#34; alt=&#34;Nokia - 2GB micro SD&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Raspberry Pi 2 with Raspbian on a 2GB micro SD card? Feasible.
+If you need additional space for storing data, you can always attach thumb drives.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Backup disk by cloning using Clonezilla</title>
+      <link>https://www.leowkahman.com/2018/02/10/backup-disk-by-cloning-using-clonezilla/</link>
+      <pubDate>Sat, 10 Feb 2018 23:00:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2018/02/10/backup-disk-by-cloning-using-clonezilla/</guid>
+      <description>&lt;p&gt;Backup hard disk by cloning or imaging it using Clonezilla.
+The disk image can be saved into an external drive, samba share, AWS S3, and several
+other options.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Workaround to Failure to download extra files ttf-mscorefonts-installer</title>
+      <link>https://www.leowkahman.com/2018/01/02/workaround-to-failure-to-download-extra-files-ttf-mscorefonts-installer/</link>
+      <pubDate>Tue, 02 Jan 2018 23:50:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2018/01/02/workaround-to-failure-to-download-extra-files-ttf-mscorefonts-installer/</guid>
+      <description>&lt;p&gt;Workaround tested and working on Ubuntu 17.10.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Solution to lag during DOTA 2 Alchemist acid spray on Ubuntu 17.10</title>
+      <link>https://www.leowkahman.com/2017/12/31/solution-to-lag-during-dota-2-alchemist-acid-spray-on-ubuntu-17-10/</link>
+      <pubDate>Sun, 31 Dec 2017 15:00:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2017/12/31/solution-to-lag-during-dota-2-alchemist-acid-spray-on-ubuntu-17-10/</guid>
+      <description>&lt;p&gt;This lag has been driving me nuts and I swear it did not lag like that before I
+upgraded my Ubuntu to 17.10.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Cloud storage solutions for Linux</title>
+      <link>https://www.leowkahman.com/2017/12/29/cloud-storage-solutions-for-linux/</link>
+      <pubDate>Fri, 29 Dec 2017 22:30:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2017/12/29/cloud-storage-solutions-for-linux/</guid>
+      <description>&lt;p&gt;Here are recommendations for cloud storage options that can be used on Linux
+including a way on how to synchronise them.
+This includes Dropbox, Box, Yandex, Google Drive, and OneDrive.
+However, I used a workaround for Google Drive and OneDrive which may not necessarily
+be feasible for you.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>BYOD CI/CD build machine to run pipelines using Docker</title>
+      <link>https://www.leowkahman.com/2017/10/02/byod-ci-cd-build-machine-to-run-pipelines-using-docker/</link>
+      <pubDate>Mon, 02 Oct 2017 23:30:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2017/10/02/byod-ci-cd-build-machine-to-run-pipelines-using-docker/</guid>
+      <description>&lt;p&gt;Skip the build queue and save money by reducing (if not eliminating) dedicated
+build machines by Bringing Your Own Device (BYOD) as CI/CD build
+machine to run pipelines using Docker.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Checklist for switching from Windows to Linux</title>
+      <link>https://www.leowkahman.com/2017/09/23/checklist-for-switching-from-windows-to-linux/</link>
+      <pubDate>Sat, 23 Sep 2017 01:30:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2017/09/23/checklist-for-switching-from-windows-to-linux/</guid>
+      <description>&lt;p&gt;Every year, the reasons to switch from Windows to Linux grows more and more.
+Linux distros are more user friendly than they used to be.
+In terms of difficulty, it is probably like switching between iOS and Android
+except that you need to setup the Operating System yourself.&lt;/p&gt;
+&lt;p&gt;Here are things to consider when switching from Windows to Linux.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Block ads with OpenWRT dnsmasq</title>
+      <link>https://www.leowkahman.com/2017/07/23/block-ads-with-openwrt-dnsmasq/</link>
+      <pubDate>Sun, 23 Jul 2017 22:00:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2017/07/23/block-ads-with-openwrt-dnsmasq/</guid>
+      <description>&lt;p&gt;Block ads with OpenWRT dnsmasq and automate downloading of the latest list once
+a week. This solution can also be applied to blocking crytocoin miner domains.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Running .NET Core on Raspberry Pi Raspbian</title>
+      <link>https://www.leowkahman.com/2017/07/16/running-dotnet-core-on-raspberry-pi-raspbian/</link>
+      <pubDate>Sun, 16 Jul 2017 16:00:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2017/07/16/running-dotnet-core-on-raspberry-pi-raspbian/</guid>
+      <description>&lt;p&gt;Easy guide to building and running .NET Core 2.1 applications on Raspberry Pi 2
+and 3 with Raspbian Stretch.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>How to disable TLS 1.0 on an Azure App Service</title>
+      <link>https://www.leowkahman.com/2017/07/04/how-to-disable-tls-1-0-on-an-azure-app-service/</link>
+      <pubDate>Tue, 04 Jul 2017 23:30:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2017/07/04/how-to-disable-tls-1-0-on-an-azure-app-service/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://www.leowkahman.com/images/2017/07/tls-1-2-yes.png&#34; alt=&#34;TLS 1.2 - yes&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Yes it is possible to disable TLS 1.0 and even 1.1 without using App Service
+Environment (ASE). The solution is to use Azure Application Gateway and a custom
+hostname.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>GitHub, VSTS, Google Cloud folder icons</title>
+      <link>https://www.leowkahman.com/2017/07/02/github-vsts-google-cloud-folder-icons/</link>
+      <pubDate>Sun, 02 Jul 2017 16:00:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2017/07/02/github-vsts-google-cloud-folder-icons/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://www.leowkahman.com/images/2017/07/github-vsts-google-cloud-folder-icons.png&#34; alt=&#34;GitHub, VSTS, Google Cloud - folder icons&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Set folder icons for your favourite source control repositories.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>GitHub new release notifications</title>
+      <link>https://www.leowkahman.com/2017/06/12/github-new-release-notifications/</link>
+      <pubDate>Mon, 12 Jun 2017 16:00:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2017/06/12/github-new-release-notifications/</guid>
+      <description>&lt;p&gt;If you want to find out how to watch a GitHub repository for new releases and
+just that, here is a very simple guide.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Using Dash IFTTT to notify others upon reaching a location</title>
+      <link>https://www.leowkahman.com/2016/12/28/using-dash-ifttt-to-notify-others-upon-reaching-a-location/</link>
+      <pubDate>Wed, 28 Dec 2016 23:00:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2016/12/28/using-dash-ifttt-to-notify-others-upon-reaching-a-location/</guid>
+      <description>&lt;p&gt;I have been using a mobile app called Dash (smart driving app) for a week and
+decided to write a review about it as well as sharing how I am making use of it
+to notify others (in my case, family members) as soon as I have reached an area,
+i.e. home, office, etc.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Build online radio player using Raspberry Pi</title>
+      <link>https://www.leowkahman.com/2016/12/24/build-online-radio-player-using-raspberry-pi/</link>
+      <pubDate>Sat, 24 Dec 2016 17:00:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2016/12/24/build-online-radio-player-using-raspberry-pi/</guid>
+      <description>&lt;p&gt;Simple guide to building an online radio player using Raspberry Pi with
+Android/iOS device as remote control.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Automate downloading of historical data from Sunny Explorer</title>
+      <link>https://www.leowkahman.com/2016/12/24/automate-downloading-of-historical-data-from-sunny-explorer/</link>
+      <pubDate>Sat, 24 Dec 2016 13:00:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2016/12/24/automate-downloading-of-historical-data-from-sunny-explorer/</guid>
+      <description>&lt;p&gt;If you have SMA solar power inverters and would be interested in automating
+download of historical data, read on. I have written a PowerShell script that
+downloads data as CSV format and places them into folders by year and month.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Create Git repository on Google Drive/Dropbox</title>
+      <link>https://www.leowkahman.com/2016/04/03/create-git-repository-google-drive/</link>
+      <pubDate>Sun, 03 Apr 2016 17:23:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2016/04/03/create-git-repository-google-drive/</guid>
+      <description>&lt;p&gt;Setting up a single-user Git repository on private cloud storage is not
+difficult and incurs no cost to you.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

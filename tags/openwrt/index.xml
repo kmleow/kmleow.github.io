@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>OpenWRT on Leow Kah Man - Tech Blog</title>
+    <link>https://www.leowkahman.com/tags/openwrt/</link>
+    <description>Recent content in OpenWRT on Leow Kah Man - Tech Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License, code samples are licensed under the MIT License. Third-party product names and logos may be the trademarks of their respective owners.</copyright>
+    <lastBuildDate>Sat, 01 Feb 2020 17:10:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.leowkahman.com/tags/openwrt/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Speedtest OpenWRT with flow offloading</title>
+      <link>https://www.leowkahman.com/2020/02/01/speedtest-openwrt-with-flow-offloading/</link>
+      <pubDate>Sat, 01 Feb 2020 17:10:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2020/02/01/speedtest-openwrt-with-flow-offloading/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://www.leowkahman.com/images/2020/02/speedtest-openwrt-flow-offloading-archer-c7-unifi-turbo-800mbps.png&#34; alt=&#34;Speedtest OpenWRT flow offloading on Archer C7 Unifi Turbo 800Mbps&#34;&gt;&lt;/p&gt;
+&lt;p&gt;I have upgraded to TM Unifi Turbo 800Mbps for quite some time but yet to realise
+the speed promised by ISP. In my case, it is not fair to blame the ISP because the
+bottleneck was not at their end, rather due to my router. When OpenWRT announced
+the release of version 19.07, I took it for a spin and enabled the new flow offloading
+feature. The performance increase was significant.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Reduce internet lag on OpenWRT</title>
+      <link>https://www.leowkahman.com/2018/08/11/reduce-internet-lag-on-openwrt/</link>
+      <pubDate>Sat, 11 Aug 2018 23:00:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2018/08/11/reduce-internet-lag-on-openwrt/</guid>
+      <description>&lt;p&gt;How to reduce internet lag on OpenWRT when there is heavy download/upload activity
+on the same internet connection.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Workaround to Wi-Fi issues on OpenWRT LEDE</title>
+      <link>https://www.leowkahman.com/2018/05/29/workaround-to-wifi-issues-on-openwrt-lede/</link>
+      <pubDate>Tue, 29 May 2018 13:15:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2018/05/29/workaround-to-wifi-issues-on-openwrt-lede/</guid>
+      <description>&lt;p&gt;Automatically restart Wi-Fi when there are no clients connected.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>LEDE on UniFi D-Link DIR-615 G2</title>
+      <link>https://www.leowkahman.com/2018/03/09/lede-on-unifi-d-link-dir-615-g2/</link>
+      <pubDate>Fri, 09 Mar 2018 23:30:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2018/03/09/lede-on-unifi-d-link-dir-615-g2/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://www.leowkahman.com/images/2018/03/d-link-dir-615-g2-front.jpg&#34; alt=&#34;D-Link DIR-615 G2 - Front&#34;&gt;&lt;/p&gt;
+&lt;p&gt;My ISP provided D-Link DIR-615 G2 many years ago. Could not even remember how long
+ago that was. After using for a short period of time, it was chucked away until
+I found it yesterday while cleaning up my store room. I decided to flash it with
+LEDE (also known as OpenWRT) to see how it goes.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Enforce Safe Search on Google, YouTube, Bing, DuckDuckGo</title>
+      <link>https://www.leowkahman.com/2017/09/11/enforce-safe-search-on-google-youtube-bing/</link>
+      <pubDate>Mon, 11 Sep 2017 17:30:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2017/09/11/enforce-safe-search-on-google-youtube-bing/</guid>
+      <description>&lt;p&gt;Enforce safe search on Google, YouTube, Bing, and DuckDuckGo without a HTTP proxy.
+Instead, override DNS lookups, resolving to strict search server IP addresses.
+Works on IPv4 and IPv6 networks.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Block ads with OpenWRT dnsmasq</title>
+      <link>https://www.leowkahman.com/2017/07/23/block-ads-with-openwrt-dnsmasq/</link>
+      <pubDate>Sun, 23 Jul 2017 22:00:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2017/07/23/block-ads-with-openwrt-dnsmasq/</guid>
+      <description>&lt;p&gt;Block ads with OpenWRT dnsmasq and automate downloading of the latest list once
+a week. This solution can also be applied to blocking crytocoin miner domains.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Tor proxy on OpenWRT</title>
+      <link>https://www.leowkahman.com/2017/04/02/tor-proxy-on-openwrt/</link>
+      <pubDate>Sun, 02 Apr 2017 15:00:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2017/04/02/tor-proxy-on-openwrt/</guid>
+      <description>&lt;p&gt;The best way to use Tor network is by browsing using the official Tor Browser.
+However, if you have specific need to connect to Tor without their official
+browser, you can setup SOCKS5 or HTTP proxy.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Track users connectivity to Wi-Fi using OpenWRT</title>
+      <link>https://www.leowkahman.com/2016/08/27/track-users-connectivity-to-wifi-using-openwrt/</link>
+      <pubDate>Sat, 27 Aug 2016 04:00:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2016/08/27/track-users-connectivity-to-wifi-using-openwrt/</guid>
+      <description>&lt;p&gt;How to know what time a person reached or was at home? One of the simplest
+method is to track when the user was connected to Wi-Fi.
+This could be accomplished easily if you have OpenWRT firmware on your router.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Get notified via IFTTT or Pushbullet when OpenWRT router has started</title>
+      <link>https://www.leowkahman.com/2016/07/31/get-notified-via-ifttt-pushbullet-when-openwrt-router-has-started/</link>
+      <pubDate>Sun, 31 Jul 2016 14:00:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2016/07/31/get-notified-via-ifttt-pushbullet-when-openwrt-router-has-started/</guid>
+      <description>&lt;p&gt;Using IFTTT&amp;rsquo;s Maker channel, I could setup a Web Request receiver or if you
+prefer a simpler method, you could use Pushbullet. Then I configured my OpenWRT
+router to post to the receiver on startup.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Conditional multiple OpenVPN routing by hostname or IP</title>
+      <link>https://www.leowkahman.com/2016/06/19/conditional-multiple-openvpn-routing-hostname-ip/</link>
+      <pubDate>Sun, 19 Jun 2016 12:54:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2016/06/19/conditional-multiple-openvpn-routing-hostname-ip/</guid>
+      <description>&lt;p&gt;Using OpenWRT/LEDE, connect to one or more OpenVPN instances and conditionally divert
+(split tunneling) one or more outgoing traffic to specific VPN route by
+destination host names or IP addresses.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>OpenWRT encrypted DNS lookup using multiple DNSCrypt servers</title>
+      <link>https://www.leowkahman.com/2016/05/23/openwrt-encrypted-dns-lookup-using-multiple-dnscrypt-servers/</link>
+      <pubDate>Mon, 23 May 2016 00:27:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2016/05/23/openwrt-encrypted-dns-lookup-using-multiple-dnscrypt-servers/</guid>
+      <description>&lt;p&gt;Want to setup OpenWRT to query specific DNSCrypt server depending on domain name
+to resolve? Read on.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Setup HAProxy with CloudFlare SSL termination on OpenWRT</title>
+      <link>https://www.leowkahman.com/2016/05/08/setup-haproxy-cloudflare-ssl-termination-openwrt/</link>
+      <pubDate>Sun, 08 May 2016 22:37:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2016/05/08/setup-haproxy-cloudflare-ssl-termination-openwrt/</guid>
+      <description>&lt;p&gt;Setup instructions for HAProxy with HTTP SSL termination on OpenWRT with
+CloudFlare Origin CA and Authenticated Origin Pulls.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>OpenWRT IPv6 Dynamic DNS Client</title>
+      <link>https://www.leowkahman.com/2016/05/02/openwrt-ipv6-dynamic-dns-client/</link>
+      <pubDate>Mon, 02 May 2016 15:47:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2016/05/02/openwrt-ipv6-dynamic-dns-client/</guid>
+      <description>&lt;p&gt;This should be rather straightforward but I encountered problems setting up with
+a solution worth sharing and I will throw in a tip that you may find useful.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Use SSL in OpenWRT OPKG</title>
+      <link>https://www.leowkahman.com/2016/04/10/use-ssl-openwrt-opkg/</link>
+      <pubDate>Sun, 10 Apr 2016 18:19:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2016/04/10/use-ssl-openwrt-opkg/</guid>
+      <description>&lt;p&gt;After installing OpenWRT Chaos Calmer, I noticed that OPKG calls are performed
+via HTTP without SSL. Changing to HTTPS was not as simple as adding just one
+letter &amp;lsquo;s&amp;rsquo;. Read on for the steps.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Setup 4096-bit OpenVPN on OpenWRT</title>
+      <link>https://www.leowkahman.com/2016/03/14/setup-4096-bit-openvpn-openwrt/</link>
+      <pubDate>Mon, 14 Mar 2016 22:39:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2016/03/14/setup-4096-bit-openvpn-openwrt/</guid>
+      <description>&lt;p&gt;If you want to setup OpenVPN with 4096-bit key on OpenWRT, with a few tips and
+tricks in addition, read on.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>OpenSSL benchmark - RPi2B vs NAS vs Archer C7</title>
+      <link>https://www.leowkahman.com/2016/02/21/openssl-benchmark-raspberry-vs-nas-vs-archer-c7/</link>
+      <pubDate>Sun, 21 Feb 2016 17:56:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2016/02/21/openssl-benchmark-raspberry-vs-nas-vs-archer-c7/</guid>
+      <description>&lt;p&gt;I am not short of options when it comes to spreading tasks over several
+System-on-Chip (SoC) based low-powered micro computers. 4 devices were tested;
+OpenWRT running on TP-Link Archer C7 v2, QNAP TS-220 and Asustor AS-304T and
+Raspberry Pi 2 Model B.&lt;/p&gt;
+&lt;p&gt;In deciding which to be used for hosting a HTTPS-only web server, I was
+interested in the cryptography (namely RSA and AES) performance thus the
+motivation for running benchmarks.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>OpenWRT Dynamic DNS CloudFlare orange cloud</title>
+      <link>https://www.leowkahman.com/2016/02/01/openwrt-dynamic-dns-cloudflare-orange-cloud/</link>
+      <pubDate>Mon, 01 Feb 2016 17:22:00 +0000</pubDate>
+      
+      <guid>https://www.leowkahman.com/2016/02/01/openwrt-dynamic-dns-cloudflare-orange-cloud/</guid>
+      <description>&lt;p&gt;Installing &lt;code&gt;ddns-scripts&lt;/code&gt; and &lt;code&gt;ddns-scripts_cloudflare&lt;/code&gt; version 2.4.3-1 from
+OpenWRT package repository allows you to configure dynamic DNS that points
+directly to your IP address without orange cloud. If you want the orange cloud
+however, you need to make a small change.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Configuring OpenWRT and OpenDNS to log all DNS lookups</title>
+      <link>https://www.leowkahman.com/2016/01/21/configuring-openwrt-and-opendns-to-log-all-dns-lookups/</link>
+      <pubDate>Thu, 21 Jan 2016 00:45:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2016/01/21/configuring-openwrt-and-opendns-to-log-all-dns-lookups/</guid>
+      <description>&lt;p&gt;Why log all DNS lookups?&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;To list websites visited by you or any computer served by your router&lt;/li&gt;
+&lt;li&gt;To assist in identifying presence of malware&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    
+    <item>
+      <title>Configuring OpenWRT to block Skype Ads</title>
+      <link>https://www.leowkahman.com/2016/01/20/configuring-openwrt-to-block-skype-ads/</link>
+      <pubDate>Wed, 20 Jan 2016 22:38:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2016/01/20/configuring-openwrt-to-block-skype-ads/</guid>
+      <description>&lt;p&gt;This is very likely the easiest way to block Skype advertisements using OpenWRT.
+Blocking at router means you do not have to apply the block on every computer
+that goes out via this router.&lt;/p&gt;
+&lt;p&gt;Works for: Skype for Windows as at version 7.17&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>OpenWRT redirect all NTP queries to specific servers</title>
+      <link>https://www.leowkahman.com/2016/01/06/openwrt-redirect-all-ntp-queries-to-specific-servers/</link>
+      <pubDate>Wed, 06 Jan 2016 00:21:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2016/01/06/openwrt-redirect-all-ntp-queries-to-specific-servers/</guid>
+      <description>&lt;p&gt;Most devices allow you to set the
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Network_Time_Protocol&#34;&gt;Network Time Protocol (NTP)&lt;/a&gt;
+server to one that you prefer but there are some devices that have hardcoded NTP
+server hostname. This is mostly fine if all devices in your local network are
+synchronised to the same second but this is not always true. I have seen NTP
+servers that drift over 30 seconds. Not good&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>TP-Link Archer C7 v2 OpenWRT VLAN UniFi HyppTV</title>
+      <link>https://www.leowkahman.com/2016/01/03/tp-link-archer-c7-v2-openwrt-vlan-unifi-hypptv/</link>
+      <pubDate>Sun, 03 Jan 2016 01:12:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2016/01/03/tp-link-archer-c7-v2-openwrt-vlan-unifi-hypptv/</guid>
+      <description>&lt;p&gt;There are many tutorials available on Internet on how to setup VLAN on OpenWRT/LEDE
+but finding one specifically for Archer C7 v2 with the right
+VLAN settings for Malaysia&amp;rsquo;s UniFi HyppTV was a little challenging. In the
+process of trial and error, I had to recover my router from failsafe mode so
+please be careful.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>TP-Link Archer C7 with OpenWRT firmware</title>
+      <link>https://www.leowkahman.com/2016/01/03/tp-link-archer-c7-with-openwrt-firmware/</link>
+      <pubDate>Sun, 03 Jan 2016 00:22:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2016/01/03/tp-link-archer-c7-with-openwrt-firmware/</guid>
+      <description>&lt;p&gt;I was running stock firmware for a couple of months but I needed the router to
+do more. I was reluctant to spend a lot of money on a high end router thus opted
+to install OpenWRT Chaos Calmer 15.05 into my TP-Link Archer C7 v2.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

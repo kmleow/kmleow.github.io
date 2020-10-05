@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kodi on Leow Kah Man - Tech Blog</title>
+    <link>https://www.leowkahman.com/tags/kodi/</link>
+    <description>Recent content in Kodi on Leow Kah Man - Tech Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License, code samples are licensed under the MIT License. Third-party product names and logos may be the trademarks of their respective owners.</copyright>
+    <lastBuildDate>Sat, 24 Dec 2016 17:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.leowkahman.com/tags/kodi/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Build online radio player using Raspberry Pi</title>
+      <link>https://www.leowkahman.com/2016/12/24/build-online-radio-player-using-raspberry-pi/</link>
+      <pubDate>Sat, 24 Dec 2016 17:00:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2016/12/24/build-online-radio-player-using-raspberry-pi/</guid>
+      <description>&lt;p&gt;Simple guide to building an online radio player using Raspberry Pi with
+Android/iOS device as remote control.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>LAMP stack on Raspberry Pi with Kodi running at startup</title>
+      <link>https://www.leowkahman.com/2016/03/05/lamp-stack-on-raspberry-pi-with-kodi-running-at-startup/</link>
+      <pubDate>Sat, 05 Mar 2016 01:30:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2016/03/05/lamp-stack-on-raspberry-pi-with-kodi-running-at-startup/</guid>
+      <description>&lt;p&gt;For most people, if they wanted to run LAMP stack on Raspberry Pi, they would
+probably install Raspbian via NOOBS. However, if they wanted a HTPC with Kodi,
+they would likely opt for OSMC or OpenELEC. I needed Kodi to run at startup with
+LAMP stack running behind and chose the NOOBS Raspbian route.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

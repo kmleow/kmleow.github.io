@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bash on Leow Kah Man - Tech Blog</title>
+    <link>https://www.leowkahman.com/tags/bash/</link>
+    <description>Recent content in Bash on Leow Kah Man - Tech Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License, code samples are licensed under the MIT License. Third-party product names and logos may be the trademarks of their respective owners.</copyright>
+    <lastBuildDate>Sun, 23 Apr 2017 01:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.leowkahman.com/tags/bash/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Running .NET Core on Windows Subsystem for Linux</title>
+      <link>https://www.leowkahman.com/2017/04/23/running-dotnet-core-on-windows-subsystem-for-linux/</link>
+      <pubDate>Sun, 23 Apr 2017 01:00:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2017/04/23/running-dotnet-core-on-windows-subsystem-for-linux/</guid>
+      <description>&lt;p&gt;Build .NET Core apps on Windows, run it on Windows Subsystem for Linux.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>antivirus on Leow Kah Man - Tech Blog</title>
+    <link>https://www.leowkahman.com/tags/antivirus/</link>
+    <description>Recent content in antivirus on Leow Kah Man - Tech Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License, code samples are licensed under the MIT License. Third-party product names and logos may be the trademarks of their respective owners.</copyright>
+    <lastBuildDate>Sun, 16 Apr 2017 23:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.leowkahman.com/tags/antivirus/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Antivirus for Android</title>
+      <link>https://www.leowkahman.com/2017/04/16/antivirus-for-android/</link>
+      <pubDate>Sun, 16 Apr 2017 23:00:00 +0800</pubDate>
+      
+      <guid>https://www.leowkahman.com/2017/04/16/antivirus-for-android/</guid>
+      <description>&lt;p&gt;I believe most people have antivirus running on their PC/notebook especially if
+they are on Windows. Somehow most people do not seem to have the same urge to
+have one on their mobile.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
