@@ -73,7 +73,7 @@ Returning to writing is not about chasing pageviews or posting trivial tutorials
 Here are the four key themes I intend to explore:
 
 ### 1. AI-First Engineering & Autonomous SDLC
-Moving beyond simple autocomplete towards orchestrating autonomous development pipelines, agentic testing harnesses, and multi-agent code workflows. How technology leaders can reshape software delivery to amplify engineering leverage safely and pragmatically.
+Moving beyond simple autocomplete towards orchestrating autonomous development pipelines, agentic testing harnesses, and multi-agent code workflows. How engineering leaders can reshape software delivery to amplify engineering leverage safely and pragmatically.
 
 ### 2. Engineering Craftsmanship & Mentorship
 Cultivating engineering discipline across growing teams. Designing readable, composable codebases that reduce cognitive and operational friction, while mentoring technical leads to build with ownership, rigor, and long-term maintainability.
