@@ -101,7 +101,7 @@ pubDate: YYYY-MM-DD
 updatedDate: YYYY-MM-DD # Optional
 heroImage: "/images/heroes/example-slug.svg" # REQUIRED - Must be 16:9 ratio
 heroAlt: "Descriptive alt text for accessibility and SEO"
-category: "Networking & Kernel" # Options: Networking & Kernel, Security Architecture, Platform Engineering, Software Architecture
+category: "Engineering Leadership" # Options: Engineering Leadership, Software Architecture, Platform Engineering, Security Architecture, Networking & Kernel, Infrastructure & Protocols
 tags: ["Linux", "Performance", "Cloud"]
 author: "Leow Kah Man"
 legacyUrls: # Optional: maps old /YYYY/MM/DD/slug/ paths to auto-generate 301 redirect stubs

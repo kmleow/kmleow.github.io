@@ -4,7 +4,7 @@ description: "Why I stepped away from technical blogging, how AI-augmented workf
 pubDate: 2026-11-08
 heroImage: "/images/heroes/rebooting-the-publication.svg"
 heroAlt: "Minimalist architectural diagram showing human architectural ideation flowing into AI synthesis and publishing"
-category: "Software Architecture"
+category: "Engineering Leadership"
 tags: ["Engineering Leadership", "Transformation", "AI-First", "Software Craftsmanship"]
 author: "Leow Kah Man"
 ---
