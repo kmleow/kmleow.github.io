@@ -4,41 +4,113 @@
       <stop offset="0%" stop-color="#FAF7F2" />
       <stop offset="100%" stop-color="#F4EFE6" />
     </linearGradient>
+    <filter id="cardShadow" x="-10%" y="-10%" width="125%" height="125%">
+      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#0f172a" flood-opacity="0.06" />
+    </filter>
   </defs>
   <rect width="1200" height="675" fill="url(#bg-cream4)" />
-  <g opacity="0.04">
-    <pattern id="grid-cicd" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="1" />
-    </pattern>
-    <rect width="1200" height="675" fill="url(#grid-cicd)" />
-  </g>
-  <text x="100" y="145" font-family="system-ui, sans-serif" font-weight="800" font-size="42" fill="#0f172a">Platform Engineering: Ephemeral CI/CD Runners</text>
-  <text x="100" y="195" font-family="system-ui, sans-serif" font-weight="600" font-size="22" fill="#7c3aed">Containerised Sandboxing &amp; Cost-Optimised Build Infrastructure</text>
   
-  <g transform="translate(100, 260)">
-    <!-- Git Trigger -->
-    <rect x="0" y="30" width="250" height="220" rx="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" />
-    <text x="30" y="72" font-family="system-ui, sans-serif" font-weight="700" font-size="18" fill="#0f172a">Git Commit &amp; Webhook</text>
-    <text x="30" y="108" font-family="system-ui, sans-serif" font-size="14" fill="#475569">• Pipeline job queued</text>
-    <text x="30" y="135" font-family="system-ui, sans-serif" font-size="14" fill="#475569">• Ephemeral auth token</text>
-    <text x="30" y="162" font-family="system-ui, sans-serif" font-size="14" fill="#475569">• Zero public queue latency</text>
-    <text x="30" y="200" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#7c3aed">Instant Dispatch</text>
+  <!-- Header Text -->
+  <g transform="translate(80, 50)">
+    <text x="0" y="38" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="44" fill="#0f172a">Platform Engineering: Ephemeral CI/CD Runners</text>
+    <text x="0" y="78" font-family="system-ui, -apple-system, sans-serif" font-weight="600" font-size="24" fill="#7c3aed">Containerised Sandboxing &amp; Cost-Optimised Build Infrastructure</text>
+  </g>
+  
+  <g transform="translate(80, 160)">
+    <!-- Git Trigger Card -->
+    <g transform="translate(0, 0)">
+      <rect x="0" y="0" width="325" height="440" rx="20" fill="#ffffff" stroke="#cbd5e1" stroke-width="2.5" filter="url(#cardShadow)" />
+      
+      <!-- Pill Badge -->
+      <rect x="25" y="25" width="140" height="36" rx="18" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.5" />
+      <text x="95" y="49" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="800" fill="#334155">EVENT HOOK</text>
+
+      <text x="25" y="105" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="28" fill="#0f172a">Git Webhook</text>
+      <text x="25" y="138" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="28" fill="#0f172a">&amp; Dispatch</text>
+      
+      <line x1="25" y1="165" x2="300" y2="165" stroke="#f1f5f9" stroke-width="2" />
+
+      <!-- Bullets -->
+      <g transform="translate(25, 205)">
+        <circle cx="8" cy="8" r="5" fill="#64748b" />
+        <text x="26" y="16" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="700" fill="#0f172a">Immediate Dispatch</text>
+      </g>
+      <g transform="translate(25, 268)">
+        <circle cx="8" cy="8" r="5" fill="#64748b" />
+        <text x="26" y="16" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="700" fill="#0f172a">Ephemeral Auth Token</text>
+      </g>
+      <g transform="translate(25, 331)">
+        <circle cx="8" cy="8" r="5" fill="#64748b" />
+        <text x="26" y="16" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="700" fill="#0f172a">Zero Public Wait Time</text>
+      </g>
+      
+      <!-- Bottom Badge -->
+      <rect x="25" y="375" width="275" height="42" rx="10" fill="#f1f5f9" />
+      <text x="162" y="402" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="19" fill="#334155">PIPELINE QUEUE</text>
+    </g>
     
-    <!-- Runner Daemon -->
-    <rect x="330" y="30" width="320" height="220" rx="16" fill="#ffffff" stroke="#a78bfa" stroke-width="2" />
-    <text x="360" y="72" font-family="system-ui, sans-serif" font-weight="700" font-size="18" fill="#5b21b6">Hybrid Runner Daemon</text>
-    <text x="360" y="108" font-family="system-ui, sans-serif" font-size="14" fill="#475569">• Outbound HTTPS polling (443)</text>
-    <text x="360" y="135" font-family="system-ui, sans-serif" font-size="14" fill="#475569">• Inbound ports: 100% closed</text>
-    <text x="360" y="162" font-family="system-ui, sans-serif" font-size="14" fill="#475569">• Spawns isolated Docker task</text>
-    <text x="360" y="200" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#059669">Zero Ingress Exposure</text>
+    <!-- Hybrid Host Daemon Card -->
+    <g transform="translate(355, 0)">
+      <rect x="0" y="0" width="325" height="440" rx="20" fill="#ffffff" stroke="#a78bfa" stroke-width="2.5" filter="url(#cardShadow)" />
+      
+      <!-- Pill Badge -->
+      <rect x="25" y="25" width="140" height="36" rx="18" fill="#f5f3ff" stroke="#ddd6fe" stroke-width="1.5" />
+      <text x="95" y="49" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="800" fill="#7c3aed">RUNNER</text>
+
+      <text x="25" y="105" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="28" fill="#5b21b6">Hybrid Host</text>
+      <text x="25" y="138" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="28" fill="#5b21b6">Daemon</text>
+      
+      <line x1="25" y1="165" x2="300" y2="165" stroke="#f5f3ff" stroke-width="2" />
+
+      <!-- Bullets -->
+      <g transform="translate(25, 205)">
+        <circle cx="8" cy="8" r="5" fill="#8b5cf6" />
+        <text x="26" y="16" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="700" fill="#0f172a">Outbound HTTPS (443)</text>
+      </g>
+      <g transform="translate(25, 268)">
+        <circle cx="8" cy="8" r="5" fill="#8b5cf6" />
+        <text x="26" y="16" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="700" fill="#0f172a">Zero Open Ports</text>
+      </g>
+      <g transform="translate(25, 331)">
+        <circle cx="8" cy="8" r="5" fill="#8b5cf6" />
+        <text x="26" y="16" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="700" fill="#0f172a">Spawns Docker Task</text>
+      </g>
+      
+      <!-- Bottom Badge -->
+      <rect x="25" y="375" width="275" height="42" rx="10" fill="#ede9fe" />
+      <text x="162" y="402" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="19" fill="#5b21b6">ZERO EXPOSURE</text>
+    </g>
     
-    <!-- Ephemeral Container -->
-    <rect x="730" y="15" width="270" height="250" rx="16" fill="#ffffff" stroke="#c084fc" stroke-width="2" />
-    <text x="755" y="58" font-family="system-ui, sans-serif" font-weight="700" font-size="18" fill="#6b21a8">Ephemeral Container</text>
-    <text x="755" y="95" font-family="system-ui, sans-serif" font-size="14" fill="#475569">• Clean build sandbox</text>
-    <text x="755" y="122" font-family="system-ui, sans-serif" font-size="14" fill="#475569">• Local layer cache reuse</text>
-    <text x="755" y="150" font-family="system-ui, sans-serif" font-size="14" fill="#475569">• Auto-destruct on completion</text>
-    <rect x="755" y="182" width="220" height="50" rx="8" fill="#f3e8ff" />
-    <text x="775" y="213" font-family="system-ui, sans-serif" font-weight="700" font-size="13" fill="#6b21a8">Deterministic Execution</text>
+    <!-- Ephemeral Container Card -->
+    <g transform="translate(710, 0)">
+      <rect x="0" y="0" width="325" height="440" rx="20" fill="#ffffff" stroke="#c084fc" stroke-width="2.5" filter="url(#cardShadow)" />
+      
+      <!-- Pill Badge -->
+      <rect x="25" y="25" width="140" height="36" rx="18" fill="#faf5ff" stroke="#e9d5ff" stroke-width="1.5" />
+      <text x="95" y="49" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="800" fill="#9333ea">SANDBOX</text>
+
+      <text x="25" y="105" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="28" fill="#6b21a8">Ephemeral</text>
+      <text x="25" y="138" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="28" fill="#6b21a8">Container</text>
+      
+      <line x1="25" y1="165" x2="300" y2="165" stroke="#f3e8ff" stroke-width="2" />
+
+      <!-- Bullets -->
+      <g transform="translate(25, 205)">
+        <circle cx="8" cy="8" r="5" fill="#a855f7" />
+        <text x="26" y="16" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="700" fill="#0f172a">Isolated File Sandbox</text>
+      </g>
+      <g transform="translate(25, 268)">
+        <circle cx="8" cy="8" r="5" fill="#a855f7" />
+        <text x="26" y="16" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="700" fill="#0f172a">Docker Layer Caching</text>
+      </g>
+      <g transform="translate(25, 331)">
+        <circle cx="8" cy="8" r="5" fill="#a855f7" />
+        <text x="26" y="16" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="700" fill="#0f172a">Auto-Destruct on Done</text>
+      </g>
+      
+      <!-- Bottom Badge -->
+      <rect x="25" y="375" width="275" height="42" rx="10" fill="#f3e8ff" />
+      <text x="162" y="402" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="19" fill="#6b21a8">DETERMINISTIC BUILD</text>
+    </g>
   </g>
 </svg>

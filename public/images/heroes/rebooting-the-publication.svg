@@ -1,162 +1,137 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
   <defs>
-    <!-- Background Gradient -->
     <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#FAF7F2" />
       <stop offset="100%" stop-color="#F2EBE0" />
     </linearGradient>
 
-    <!-- Drop Shadows -->
     <filter id="cardShadow" x="-10%" y="-10%" width="125%" height="125%">
-      <feDropShadow dx="0" dy="8" stdDeviation="14" flood-color="#0f172a" flood-opacity="0.07" />
-      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.04" />
+      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#0f172a" flood-opacity="0.06" />
     </filter>
 
-    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
       <path d="M 0 1 L 10 5 L 0 9 z" fill="#2563eb" />
     </marker>
-    <marker id="arrowAmber" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M 0 1 L 10 5 L 0 9 z" fill="#d97706" />
+    <marker id="arrowEmerald" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#059669" />
     </marker>
   </defs>
 
-  <!-- Canvas Background -->
+  <!-- Background -->
   <rect width="1200" height="675" fill="url(#bgGrad)" />
 
-  <!-- Architectural Background Grid -->
-  <g opacity="0.3">
-    <line x1="60" y1="50" x2="1140" y2="50" stroke="#d5cbbe" stroke-dasharray="4,6" stroke-width="1.5" />
-    <line x1="60" y1="625" x2="1140" y2="625" stroke="#d5cbbe" stroke-dasharray="4,6" stroke-width="1.5" />
-    <line x1="60" y1="50" x2="60" y2="625" stroke="#d5cbbe" stroke-dasharray="4,6" stroke-width="1.5" />
-    <line x1="1140" y1="50" x2="1140" y2="625" stroke="#d5cbbe" stroke-dasharray="4,6" stroke-width="1.5" />
-    <circle cx="60" cy="50" r="4" fill="#a89985" />
-    <circle cx="1140" cy="50" r="4" fill="#a89985" />
-    <circle cx="60" cy="625" r="4" fill="#a89985" />
-    <circle cx="1140" cy="625" r="4" fill="#a89985" />
+  <!-- Subtle Blueprint Grid -->
+  <g opacity="0.35">
+    <line x1="60" y1="45" x2="1140" y2="45" stroke="#d5cbbe" stroke-dasharray="4,6" stroke-width="1.5" />
+    <line x1="60" y1="630" x2="1140" y2="630" stroke="#d5cbbe" stroke-dasharray="4,6" stroke-width="1.5" />
+    <line x1="60" y1="45" x2="60" y2="630" stroke="#d5cbbe" stroke-dasharray="4,6" stroke-width="1.5" />
+    <line x1="1140" y1="45" x2="1140" y2="630" stroke="#d5cbbe" stroke-dasharray="4,6" stroke-width="1.5" />
   </g>
 
-  <!-- Publication Header Badge -->
-  <g transform="translate(70, 55)">
-    <rect x="0" y="0" width="1060" height="48" rx="10" fill="#FFFFFF" stroke="#e0d6c8" stroke-width="1.5" filter="url(#cardShadow)" />
-    <circle cx="28" cy="24" r="7" fill="#10b981" />
-    <text x="48" y="30" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="800" fill="#0f172a" letter-spacing="1.5">LEOW KAH MAN • EDITORIAL ARCHITECTURE &amp; HARNESS</text>
-    <text x="1030" y="30" text-anchor="end" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="700" fill="#64748b">VOL. 2026.1</text>
+  <!-- Top Publication Header -->
+  <g transform="translate(60, 48)">
+    <text x="0" y="32" font-family="system-ui, -apple-system, sans-serif" font-size="38" font-weight="900" fill="#0f172a" letter-spacing="-0.5">Editorial Architecture &amp; Autonomous Harness</text>
+    <text x="0" y="66" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="600" fill="#64748b">Human engineering stances powered by an agentic delivery pipeline</text>
   </g>
 
-  <!-- MAIN TOPOLOGY DIAGRAM -->
-  <g transform="translate(70, 125)">
+  <!-- 3 Major Pipeline Pillars -->
+  <g transform="translate(60, 150)">
     
-    <!-- CARD 1: Human Architectural Ideation -->
-    <g transform="translate(0, 20)">
-      <rect width="320" height="390" rx="18" fill="#FFFFFF" stroke="#cbd5e1" stroke-width="2" filter="url(#cardShadow)" />
+    <!-- CARD 1: Human Stance -->
+    <g transform="translate(0, 0)">
+      <rect width="335" height="440" rx="20" fill="#FFFFFF" stroke="#cbd5e1" stroke-width="2.5" filter="url(#cardShadow)" />
       
-      <!-- Top Accent Pill -->
-      <rect x="24" y="24" width="150" height="32" rx="16" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.5" />
-      <text x="99" y="45" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="800" fill="#1d4ed8">100% HUMAN</text>
+      <!-- Pill Badge -->
+      <rect x="26" y="26" width="160" height="38" rx="19" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.5" />
+      <text x="106" y="51" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="800" fill="#1d4ed8">100% HUMAN</text>
 
-      <text x="24" y="96" font-family="system-ui, -apple-system, sans-serif" font-size="26" font-weight="900" fill="#0f172a">Engineering</text>
-      <text x="24" y="128" font-family="system-ui, -apple-system, sans-serif" font-size="26" font-weight="900" fill="#0f172a">Experience</text>
+      <text x="26" y="112" font-family="system-ui, -apple-system, sans-serif" font-size="30" font-weight="900" fill="#0f172a">Engineering</text>
+      <text x="26" y="148" font-family="system-ui, -apple-system, sans-serif" font-size="30" font-weight="900" fill="#0f172a">Leadership</text>
 
-      <line x1="24" y1="148" x2="296" y2="148" stroke="#f1ede5" stroke-width="2" />
+      <line x1="26" y1="172" x2="309" y2="172" stroke="#f1ede5" stroke-width="2" />
 
-      <!-- Feature Bullets -->
-      <g transform="translate(24, 178)">
-        <circle cx="7" cy="8" r="4" fill="#2563eb" />
-        <text x="22" y="13" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="700" fill="#1e293b">20 Years War Stories</text>
-        <text x="22" y="34" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="500" fill="#64748b">Real-world production trade-offs</text>
+      <!-- High-impact Points -->
+      <g transform="translate(26, 212)">
+        <circle cx="8" cy="10" r="5" fill="#2563eb" />
+        <text x="26" y="17" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="800" fill="#0f172a">20 Years Experience</text>
+      </g>
+      
+      <g transform="translate(26, 280)">
+        <circle cx="8" cy="10" r="5" fill="#2563eb" />
+        <text x="26" y="17" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="800" fill="#0f172a">Production Stance</text>
       </g>
 
-      <g transform="translate(24, 246)">
-        <circle cx="7" cy="8" r="4" fill="#2563eb" />
-        <text x="22" y="13" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="700" fill="#1e293b">Human Ideation</text>
-        <text x="22" y="34" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="500" fill="#64748b">Core engineering stance</text>
-      </g>
-
-      <g transform="translate(24, 314)">
-        <circle cx="7" cy="8" r="4" fill="#2563eb" />
-        <text x="22" y="13" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="700" fill="#1e293b">Pragmatic Focus</text>
-        <text x="22" y="34" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="500" fill="#64748b">Maintainable primitives over hype</text>
+      <g transform="translate(26, 348)">
+        <circle cx="8" cy="10" r="5" fill="#2563eb" />
+        <text x="26" y="17" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="800" fill="#0f172a">Architectural Opinion</text>
       </g>
     </g>
 
-    <!-- CONNECTOR 1 -->
-    <path d="M 325 215 L 365 215" fill="none" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow)" />
+    <!-- Connector 1 -->
+    <path d="M 345 220 L 368 220" fill="none" stroke="#2563eb" stroke-width="4" marker-end="url(#arrowBlue)" />
 
-    <!-- CARD 2: AI Execution Harness -->
-    <g transform="translate(370, 20)">
-      <rect width="320" height="390" rx="18" fill="#FFFFFF" stroke="#f59e0b" stroke-width="2.5" filter="url(#cardShadow)" />
+    <!-- CARD 2: AI Harness -->
+    <g transform="translate(372, 0)">
+      <rect width="335" height="440" rx="20" fill="#FFFFFF" stroke="#f59e0b" stroke-width="3" filter="url(#cardShadow)" />
       
-      <!-- Top Accent Pill -->
-      <rect x="24" y="24" width="165" height="32" rx="16" fill="#fef3c7" stroke="#fde68a" stroke-width="1.5" />
-      <text x="106" y="45" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="800" fill="#b45309">DRAFTING ENGINE</text>
+      <!-- Pill Badge -->
+      <rect x="26" y="26" width="165" height="38" rx="19" fill="#fef3c7" stroke="#fde68a" stroke-width="1.5" />
+      <text x="108" y="51" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="800" fill="#b45309">AGENTIC HARNESS</text>
 
-      <text x="24" y="96" font-family="system-ui, -apple-system, sans-serif" font-size="26" font-weight="900" fill="#0f172a">Autonomous</text>
-      <text x="24" y="128" font-family="system-ui, -apple-system, sans-serif" font-size="26" font-weight="900" fill="#0f172a">AI Harness</text>
+      <text x="26" y="112" font-family="system-ui, -apple-system, sans-serif" font-size="30" font-weight="900" fill="#0f172a">Autonomous</text>
+      <text x="26" y="148" font-family="system-ui, -apple-system, sans-serif" font-size="30" font-weight="900" fill="#0f172a">Execution</text>
 
-      <line x1="24" y1="148" x2="296" y2="148" stroke="#fef3c7" stroke-width="2" />
+      <line x1="26" y1="172" x2="309" y2="172" stroke="#fef3c7" stroke-width="2" />
 
-      <!-- Feature Bullets -->
-      <g transform="translate(24, 178)">
-        <circle cx="7" cy="8" r="4" fill="#d97706" />
-        <text x="22" y="13" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="700" fill="#1e293b">Drafting Velocity</text>
-        <text x="22" y="34" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="500" fill="#64748b">Eliminating time-sink friction</text>
+      <!-- High-impact Points -->
+      <g transform="translate(26, 212)">
+        <circle cx="8" cy="10" r="5" fill="#d97706" />
+        <text x="26" y="17" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="800" fill="#0f172a">Architectural Interview</text>
+      </g>
+      
+      <g transform="translate(26, 280)">
+        <circle cx="8" cy="10" r="5" fill="#d97706" />
+        <text x="26" y="17" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="800" fill="#0f172a">7-Stage Waterfall</text>
       </g>
 
-      <g transform="translate(24, 246)">
-        <circle cx="7" cy="8" r="4" fill="#d97706" />
-        <text x="22" y="13" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="700" fill="#1e293b">Prose Synthesis</text>
-        <text x="22" y="34" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="500" fill="#64748b">Disciplined technical flow</text>
-      </g>
-
-      <g transform="translate(24, 314)">
-        <circle cx="7" cy="8" r="4" fill="#d97706" />
-        <text x="22" y="13" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="700" fill="#1e293b">Vector Graphics</text>
-        <text x="22" y="34" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="500" fill="#64748b">Responsive SVG schematics</text>
+      <g transform="translate(26, 348)">
+        <circle cx="8" cy="10" r="5" fill="#d97706" />
+        <text x="26" y="17" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="800" fill="#0f172a">Zero Hallucination</text>
       </g>
     </g>
 
-    <!-- CONNECTOR 2 -->
-    <path d="M 695 215 L 735 215" fill="none" stroke="#d97706" stroke-width="3" marker-end="url(#arrowAmber)" />
+    <!-- Connector 2 -->
+    <path d="M 718 220 L 740 220" fill="none" stroke="#059669" stroke-width="4" marker-end="url(#arrowEmerald)" />
 
-    <!-- CARD 3: Modern High-Signal Publication -->
-    <g transform="translate(740, 20)">
-      <rect width="320" height="390" rx="18" fill="#FFFFFF" stroke="#cbd5e1" stroke-width="2" filter="url(#cardShadow)" />
+    <!-- CARD 3: Modern Delivery -->
+    <g transform="translate(745, 0)">
+      <rect width="335" height="440" rx="20" fill="#FFFFFF" stroke="#10b981" stroke-width="2.5" filter="url(#cardShadow)" />
       
-      <!-- Top Accent Pill -->
-      <rect x="24" y="24" width="150" height="32" rx="16" fill="#ecfdf5" stroke="#a7f3d0" stroke-width="1.5" />
-      <text x="99" y="45" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="800" fill="#047857">HIGH SIGNAL</text>
+      <!-- Pill Badge -->
+      <rect x="26" y="26" width="165" height="38" rx="19" fill="#ecfdf5" stroke="#a7f3d0" stroke-width="1.5" />
+      <text x="108" y="51" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="800" fill="#047857">STATIC ENGINE</text>
 
-      <text x="24" y="96" font-family="system-ui, -apple-system, sans-serif" font-size="26" font-weight="900" fill="#0f172a">Minimalist</text>
-      <text x="24" y="128" font-family="system-ui, -apple-system, sans-serif" font-size="26" font-weight="900" fill="#0f172a">Publication</text>
+      <text x="26" y="112" font-family="system-ui, -apple-system, sans-serif" font-size="30" font-weight="900" fill="#0f172a">High-Speed</text>
+      <text x="26" y="148" font-family="system-ui, -apple-system, sans-serif" font-size="30" font-weight="900" fill="#0f172a">Delivery</text>
 
-      <line x1="24" y1="148" x2="296" y2="148" stroke="#f1ede5" stroke-width="2" />
+      <line x1="26" y1="172" x2="309" y2="172" stroke="#e6f4ea" stroke-width="2" />
 
-      <!-- Feature Bullets -->
-      <g transform="translate(24, 178)">
-        <circle cx="7" cy="8" r="4" fill="#10b981" />
-        <text x="22" y="13" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="700" fill="#1e293b">Astro 5 &amp; Tailwind</text>
-        <text x="22" y="34" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="500" fill="#64748b">Instant static delivery</text>
+      <!-- High-impact Points -->
+      <g transform="translate(26, 212)">
+        <circle cx="8" cy="10" r="5" fill="#059669" />
+        <text x="26" y="17" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="800" fill="#0f172a">Astro 5 Architecture</text>
+      </g>
+      
+      <g transform="translate(26, 280)">
+        <circle cx="8" cy="10" r="5" fill="#059669" />
+        <text x="26" y="17" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="800" fill="#0f172a">Zero Client Runtime</text>
       </g>
 
-      <g transform="translate(24, 246)">
-        <circle cx="7" cy="8" r="4" fill="#10b981" />
-        <text x="22" y="13" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="700" fill="#1e293b">Zero Bloat</text>
-        <text x="22" y="34" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="500" fill="#64748b">Purged 49 obsolete posts</text>
-      </g>
-
-      <g transform="translate(24, 314)">
-        <circle cx="7" cy="8" r="4" fill="#10b981" />
-        <text x="22" y="13" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="700" fill="#1e293b">LinkedIn Channels</text>
-        <text x="22" y="34" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="500" fill="#64748b">High-context peer discussions</text>
+      <g transform="translate(26, 348)">
+        <circle cx="8" cy="10" r="5" fill="#059669" />
+        <text x="26" y="17" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="800" fill="#0f172a">Independent Platform</text>
       </g>
     </g>
-  </g>
 
-  <!-- Bottom Subtitle Bar -->
-  <g transform="translate(70, 560)">
-    <rect width="1060" height="52" rx="12" fill="#FFFFFF" stroke="#e0d6c8" stroke-width="1.5" filter="url(#cardShadow)" />
-    <text x="530" y="33" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="17" font-weight="800" fill="#334155" letter-spacing="0.5">
-      HUMAN ARCHITECTURAL OPINION • AI EXECUTION VELOCITY • MINIMALIST STATIC DELIVERY
-    </text>
   </g>
 </svg>

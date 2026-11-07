@@ -4,51 +4,82 @@
       <stop offset="0%" stop-color="#FAF7F2" />
       <stop offset="100%" stop-color="#F4EFE6" />
     </linearGradient>
+    <filter id="cardShadow" x="-10%" y="-10%" width="125%" height="125%">
+      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#0f172a" flood-opacity="0.06" />
+    </filter>
   </defs>
   <rect width="1200" height="675" fill="url(#bg-cream-fo)" />
-  <g opacity="0.04">
-    <pattern id="grid-fo" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="1" />
-    </pattern>
-    <rect width="1200" height="675" fill="url(#grid-fo)" />
-  </g>
   
   <!-- Header Text -->
-  <text x="100" y="145" font-family="system-ui, sans-serif" font-weight="800" font-size="42" fill="#0f172a">Linux Kernel Fastpath: Flow Offloading</text>
-  <text x="100" y="195" font-family="system-ui, sans-serif" font-weight="600" font-size="22" fill="#64748b">Netfilter Kernel Stack vs. Fastpath Packet Forwarding</text>
+  <g transform="translate(80, 50)">
+    <text x="0" y="38" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="44" fill="#0f172a">Linux Kernel Fastpath: Flow Offloading</text>
+    <text x="0" y="78" font-family="system-ui, -apple-system, sans-serif" font-weight="600" font-size="24" fill="#64748b">Netfilter Stack Overhead vs. Cached 5-Tuple Packet Forwarding</text>
+  </g>
   
-  <!-- Diagram Comparison -->
-  <g transform="translate(100, 260)">
+  <!-- Comparison Cards -->
+  <g transform="translate(80, 160)">
     <!-- Standard Netfilter Path -->
-    <rect x="0" y="0" width="475" height="320" rx="16" fill="#ffffff" stroke="#fca5a5" stroke-width="2" filter="drop-shadow(0 4px 6px rgba(0,0,0,0.03))" />
-    <rect x="25" y="25" width="12" height="12" rx="6" fill="#ef4444" />
-    <text x="48" y="37" font-family="system-ui, sans-serif" font-weight="700" font-size="20" fill="#991b1b">Standard Netfilter Forwarding</text>
-    <text x="25" y="72" font-family="system-ui, sans-serif" font-size="14" fill="#64748b">Full IP stack evaluation per packet</text>
-    
-    <!-- Throughput Bar -->
-    <rect x="25" y="98" width="425" height="36" rx="8" fill="#f1f5f9" />
-    <rect x="25" y="98" width="160" height="36" rx="8" fill="#ef4444" />
-    <text x="40" y="122" font-family="system-ui, sans-serif" font-weight="700" font-size="14" fill="#ffffff">~280 Mbps (CPU Saturated)</text>
-    
-    <text x="25" y="175" font-family="system-ui, sans-serif" font-size="14" fill="#334155">• Every packet traverses conntrack, iptables, &amp; routing</text>
-    <text x="25" y="210" font-family="system-ui, sans-serif" font-size="14" fill="#334155">• Single MIPS/ARM core hits 100% CPU utilization</text>
-    <text x="25" y="245" font-family="system-ui, sans-serif" font-size="14" fill="#334155">• Severe software bottleneck on &gt;300 Mbps WAN tiers</text>
-    <text x="25" y="280" font-family="system-ui, sans-serif" font-size="14" fill="#dc2626" font-weight="600">Bottleneck: Software interrupt CPU exhaustion</text>
+    <g transform="translate(0, 0)">
+      <rect x="0" y="0" width="500" height="450" rx="20" fill="#ffffff" stroke="#fca5a5" stroke-width="2.5" filter="url(#cardShadow)" />
+      
+      <!-- Card Title -->
+      <circle cx="40" cy="46" r="10" fill="#ef4444" />
+      <text x="62" y="54" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="28" fill="#991b1b">Standard Netfilter Forwarding</text>
+      <text x="40" y="88" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="500" fill="#64748b">Full IP stack evaluation per packet</text>
+      
+      <!-- Throughput Metric Bar -->
+      <rect x="40" y="115" width="420" height="54" rx="12" fill="#fef2f2" stroke="#fecaca" stroke-width="1.5" />
+      <text x="60" y="150" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="24" fill="#b91c1c">~280 Mbps (100% CPU Saturated)</text>
+      
+      <!-- Bullet Points -->
+      <g transform="translate(40, 215)">
+        <circle cx="8" cy="8" r="5" fill="#ef4444" />
+        <text x="26" y="16" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="700" fill="#0f172a">Full conntrack &amp; iptables rules</text>
+      </g>
+      <g transform="translate(40, 275)">
+        <circle cx="8" cy="8" r="5" fill="#ef4444" />
+        <text x="26" y="16" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="700" fill="#0f172a">Software interrupt bottleneck</text>
+      </g>
+      <g transform="translate(40, 335)">
+        <circle cx="8" cy="8" r="5" fill="#ef4444" />
+        <text x="26" y="16" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="700" fill="#0f172a">Single-core CPU exhaustion</text>
+      </g>
+
+      <!-- Bottom Outcome Pill -->
+      <rect x="40" y="380" width="420" height="42" rx="10" fill="#fee2e2" />
+      <text x="250" y="408" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="800" fill="#991b1b">Bottleneck: Severe CPU Throttling</text>
+    </g>
     
     <!-- Flow Offload Fastpath -->
-    <rect x="525" y="0" width="475" height="320" rx="16" fill="#ffffff" stroke="#86efac" stroke-width="2" filter="drop-shadow(0 4px 6px rgba(0,0,0,0.03))" />
-    <rect x="550" y="25" width="12" height="12" rx="6" fill="#10b981" />
-    <text x="573" y="37" font-family="system-ui, sans-serif" font-weight="700" font-size="20" fill="#065f46">Flow Offloading Fastpath</text>
-    <text x="550" y="72" font-family="system-ui, sans-serif" font-size="14" fill="#64748b">Cached 5-tuple bypass for established flows</text>
-    
-    <!-- Throughput Bar -->
-    <rect x="550" y="98" width="425" height="36" rx="8" fill="#f1f5f9" />
-    <rect x="550" y="98" width="400" height="36" rx="8" fill="#10b981" />
-    <text x="570" y="122" font-family="system-ui, sans-serif" font-weight="700" font-size="14" fill="#ffffff">780+ Mbps Line-Rate (&lt;15% CPU)</text>
-    
-    <text x="550" y="175" font-family="system-ui, sans-serif" font-size="14" fill="#334155">• Ingress packet matches cached bidirectional flow table</text>
-    <text x="550" y="210" font-family="system-ui, sans-serif" font-size="14" fill="#334155">• Bypasses iptables traversal and conntrack lookups</text>
-    <text x="550" y="245" font-family="system-ui, sans-serif" font-size="14" fill="#334155">• Dispatches directly from driver ingress to egress ring</text>
-    <text x="550" y="280" font-family="system-ui, sans-serif" font-size="14" fill="#059669" font-weight="600">Outcome: Line-rate gigabit routing on modest hardware</text>
+    <g transform="translate(540, 0)">
+      <rect x="0" y="0" width="500" height="450" rx="20" fill="#ffffff" stroke="#86efac" stroke-width="2.5" filter="url(#cardShadow)" />
+      
+      <!-- Card Title -->
+      <circle cx="40" cy="46" r="10" fill="#10b981" />
+      <text x="62" y="54" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="28" fill="#065f46">Flow Offload Fastpath</text>
+      <text x="40" y="88" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="500" fill="#64748b">Cached 5-tuple bypass for flows</text>
+      
+      <!-- Throughput Metric Bar -->
+      <rect x="40" y="115" width="420" height="54" rx="12" fill="#ecfdf5" stroke="#a7f3d0" stroke-width="1.5" />
+      <text x="60" y="150" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="24" fill="#047857">940+ Mbps Line-Rate (&lt;15% CPU)</text>
+      
+      <!-- Bullet Points -->
+      <g transform="translate(40, 215)">
+        <circle cx="8" cy="8" r="5" fill="#10b981" />
+        <text x="26" y="16" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="700" fill="#0f172a">Bypasses iptables traversal</text>
+      </g>
+      <g transform="translate(40, 275)">
+        <circle cx="8" cy="8" r="5" fill="#10b981" />
+        <text x="26" y="16" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="700" fill="#0f172a">Direct driver ring forwarding</text>
+      </g>
+      <g transform="translate(40, 335)">
+        <circle cx="8" cy="8" r="5" fill="#10b981" />
+        <text x="26" y="16" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="700" fill="#0f172a">Zero CPU overhead on gigabit</text>
+      </g>
+
+      <!-- Bottom Outcome Pill -->
+      <rect x="40" y="380" width="420" height="42" rx="10" fill="#d1fae5" />
+      <text x="250" y="408" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="800" fill="#065f46">Outcome: Gigabit Routing at Low CPU</text>
+    </g>
   </g>
 </svg>
