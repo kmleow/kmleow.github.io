@@ -40,6 +40,8 @@ const formattedUpdatedDate = updatedDate
 const wordCount = post.body ? post.body.split(/\s+/).length : 600;
 const readingMinutes = Math.max(1, Math.round(wordCount / 200));
 
+const ogImage = heroImage.endsWith('.svg') ? heroImage.replace(/\.svg$/, '.png') : heroImage;
+
 const articleData = {
   headline: title,
   publishedTime: pubDate.toISOString(),
@@ -54,7 +56,7 @@ const articleData = {
 <BaseLayout
   title={`${title} | Leow Kah Man`}
   description={description}
-  image={heroImage}
+  image={ogImage}
   imageAlt={heroAlt}
   pageType="article"
   article={articleData}
