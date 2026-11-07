@@ -111,16 +111,20 @@ legacyUrls: # Optional: maps old /YYYY/MM/DD/slug/ paths to auto-generate 301 re
 
 ---
 
-## 5. Hero Thumbnail Workflow
+## 5. Hero Graphics & In-Article Diagram Standard
 
-Every article **must** feature a hero image (16:9 aspect ratio, minimum 1200x675 resolution):
+Every publication uses a strict separation between **abstract hero graphics** and **in-article technical diagrams**:
 
-1. **Author-Supplied Image**:
-   - If the author provides an image file or URL, crop to 16:9, convert to WebP or SVG, and store in `public/images/heroes/[slug].webp`.
-2. **AI-Generated / Schematic Image**:
-   - If no image is supplied, the agent must either:
-     - Generate an architectural vector graphic (SVG) illustrating the system topology, packet flow, or data pipeline into `public/images/heroes/[slug].svg`.
-     - Or prompt the author with 2-3 visual concepts to approve or generate.
+### 1. Hero Images (`public/images/heroes/[slug].svg` or `.webp`)
+- **Aspect Ratio**: 16:9 (1200x675 canvas).
+- **Strict Zero-Text Policy**: Hero banners must **never contain English text, headlines, subtitles, micro-boxes, or flowcharts**. Because banners shrink to 300px–380px on homepage news cards and mobile screens, embedded text becomes unreadable and conflicts with the native HTML title.
+- **Aesthetic**: Pure **abstract architectural vector art** using the publication's signature soft cream palette (`#FAF7F2` to `#ECE2D0`), slate structural geometry (`#0F172A`), precision blueprint reticles/crosshairs, and chromatic vector beams (cobalt blue, amber, emerald, violet) embodying the engineering theme.
+- **Author-Supplied Image**: If the author supplies a photo or asset, crop to 16:9 and save as WebP or SVG.
+
+### 2. In-Article Diagrams (`public/images/diagrams/[slug].svg`)
+- **Purpose**: Dedicated place for technical schematics, packet flow paths, kernel routing topologies, sequence diagrams, and subsystem architectures.
+- **Typography Scale**: Must be bold, high-contrast slate (`#0F172A`), and sized between **`16px` and `24px`** to maintain parity with article prose (`max-w-4xl` / 896px container).
+- **Performance**: Zero client JavaScript, lightweight SVG markup, responsive viewBox.
 
 ---
 
@@ -169,10 +173,14 @@ The agent interviews author Leow Kah Man with 2–3 targeted questions to extrac
   5. **Architectural Takeaways**: Strategic insights for engineering leadership.
 - **Review Gate**: Present the draft directly to the author for critique. Refine and iterate on prose until the author is completely satisfied. **Do not generate hero images or run git push during this stage.**
 
-### Stage 4: Hero Image Generation & Visual Review
+### Stage 4: Abstract Hero Image Generation & Visual Review
 - Once the post text is approved:
   - If the author provides an image, crop to 16:9, convert to WebP/SVG, and place in `public/images/heroes/[slug].webp`.
-  - If AI-generated, design a clean 16:9 vector schematic (SVG) featuring the standard soft cream background (`#FAF7F2` to `#F4EFE6`) and high-contrast dark text into `public/images/heroes/[slug].svg`.
+  - If AI-generated, create a pure **abstract architectural vector graphic (SVG)** into `public/images/heroes/[slug].svg` with:
+    - 16:9 aspect ratio (1200x675).
+    - Signature cream gradient background (`#FAF7F2` to `#ECE2D0`).
+    - Precision geometric motifs (isometric prisms, vector planes, reticles, coordinate ticks).
+    - **Zero text or labels** inside the hero image.
 - **Review Gate**: Present the generated hero image to the author for visual approval.
 
 ### Stage 5: Local Build & Quality Verification

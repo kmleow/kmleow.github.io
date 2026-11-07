@@ -1,100 +1,111 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
   <defs>
-    <linearGradient id="bg-cream2" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="bgGradPbr" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#FAF7F2" />
-      <stop offset="100%" stop-color="#F4EFE6" />
+      <stop offset="50%" stop-color="#F5EFE6" />
+      <stop offset="100%" stop-color="#ECE2D0" />
     </linearGradient>
-    <filter id="cardShadow" x="-10%" y="-10%" width="125%" height="125%">
+
+    <linearGradient id="ingressBeamGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#2563EB" stop-opacity="0.9" />
+    </linearGradient>
+
+    <linearGradient id="wanBeamGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#059669" stop-opacity="0.2" />
+    </linearGradient>
+
+    <linearGradient id="vpnBeamGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#D97706" stop-opacity="0.2" />
+    </linearGradient>
+
+    <filter id="pbrShadow" x="-20%" y="-20%" width="150%" height="150%">
+      <feDropShadow dx="0" dy="24" stdDeviation="30" flood-color="#0f172a" flood-opacity="0.12" />
       <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#0f172a" flood-opacity="0.06" />
     </filter>
+
+    <filter id="softGlowPbr" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="36" result="blur" />
+    </filter>
   </defs>
-  <rect width="1200" height="675" fill="url(#bg-cream2)" />
-  
-  <!-- Header Text -->
-  <g transform="translate(80, 50)">
-    <text x="0" y="38" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="44" fill="#0f172a">Policy-Based Routing with iproute2 &amp; fwmark</text>
-    <text x="0" y="78" font-family="system-ui, -apple-system, sans-serif" font-weight="600" font-size="24" fill="#0284c7">Multi-Gateway Traffic Steering &amp; Kernel Classification</text>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#bgGradPbr)" />
+
+  <!-- Ambient Blooms -->
+  <circle cx="520" cy="337" r="260" fill="#93C5FD" opacity="0.3" filter="url(#softGlowPbr)" />
+  <circle cx="860" cy="220" r="180" fill="#A7F3D0" opacity="0.25" filter="url(#softGlowPbr)" />
+  <circle cx="860" cy="460" r="180" fill="#FDE68A" opacity="0.25" filter="url(#softGlowPbr)" />
+
+  <!-- Coordinate Drafting Grid & FIB Matrix Guides -->
+  <g opacity="0.45" stroke="#CBD5E1" stroke-width="1">
+    <line x1="80" y1="337" x2="1120" y2="337" stroke-dasharray="4,8" />
+    <line x1="520" y1="60" x2="520" y2="615" stroke-dasharray="4,8" />
+    <circle cx="520" cy="337" r="240" fill="none" stroke-dasharray="3,6" />
+    <circle cx="520" cy="337" r="360" fill="none" stroke-dasharray="2,8" opacity="0.6" />
+
+    <!-- Split Angle Alignment Vectors (30° Egress Channels) -->
+    <line x1="520" y1="337" x2="1080" y2="120" stroke-dasharray="3,8" opacity="0.6" />
+    <line x1="520" y1="337" x2="1080" y2="554" stroke-dasharray="3,8" opacity="0.6" />
   </g>
-  
-  <g transform="translate(80, 160)">
-    <!-- Box 1: Ingress Classifier -->
-    <g transform="translate(0, 0)">
-      <rect x="0" y="0" width="310" height="440" rx="20" fill="#ffffff" stroke="#cbd5e1" stroke-width="2.5" filter="url(#cardShadow)" />
-      
-      <!-- Pill Badge -->
-      <rect x="25" y="25" width="140" height="36" rx="18" fill="#f0f9ff" stroke="#bae6fd" stroke-width="1.5" />
-      <text x="95" y="49" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="800" fill="#0284c7">INGRESS</text>
 
-      <text x="25" y="105" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="28" fill="#0f172a">Traffic</text>
-      <text x="25" y="138" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="28" fill="#0f172a">Classifier</text>
-      
-      <line x1="25" y1="165" x2="285" y2="165" stroke="#f1f5f9" stroke-width="2" />
+  <!-- MULTI-PATH STEERING COMPOSITION MOTIF -->
+  <g filter="url(#pbrShadow)">
 
-      <!-- Bullets -->
-      <g transform="translate(25, 210)">
-        <circle cx="8" cy="8" r="5" fill="#0284c7" />
-        <text x="26" y="16" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="700" fill="#0f172a">LAN Source Subnets</text>
-      </g>
-      <g transform="translate(25, 275)">
-        <circle cx="8" cy="8" r="5" fill="#0284c7" />
-        <text x="26" y="16" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="700" fill="#0f172a">Dynamic IPsets</text>
-      </g>
-      <g transform="translate(25, 340)">
-        <circle cx="8" cy="8" r="5" fill="#0284c7" />
-        <text x="26" y="16" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="700" fill="#0f172a">Domain-Based Tags</text>
-      </g>
-      
-      <!-- Bottom Badge -->
-      <rect x="25" y="380" width="260" height="40" rx="10" fill="#e0f2fe" />
-      <text x="155" y="406" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="18" fill="#0369a1">DYNAMIC TAGGING</text>
+    <!-- INCOMING INGRESS TRAFFIC (Left Plane) -->
+    <polygon points="100,320 500,320 500,354 100,354" fill="url(#ingressBeamGrad)" opacity="0.4" />
+    <line x1="80" y1="337" x2="480" y2="337" stroke="#2563EB" stroke-width="6" stroke-linecap="round" />
+    <line x1="120" y1="315" x2="480" y2="315" stroke="#60A5FA" stroke-width="2.5" stroke-dasharray="8,6" />
+    <line x1="120" y1="359" x2="480" y2="359" stroke="#60A5FA" stroke-width="2.5" stroke-dasharray="8,6" />
+
+    <!-- Ingress Packet Nodes -->
+    <circle cx="160" cy="337" r="7" fill="#2563EB" stroke="#FFFFFF" stroke-width="2" />
+    <circle cx="280" cy="337" r="7" fill="#2563EB" stroke="#FFFFFF" stroke-width="2" />
+    <circle cx="400" cy="337" r="8" fill="#1D4ED8" stroke="#FFFFFF" stroke-width="2.5" />
+
+    <!-- CENTRAL POLICY ROUTING PRISM (Classifier Nucleus) -->
+    <!-- Center (520, 337) -->
+    <g transform="translate(520, 337)">
+      <!-- Top Apex Facet (Sky Blue) -->
+      <polygon points="0,-140 120,-60 0,20 -120,-60" fill="#3B82F6" stroke="#93C5FD" stroke-width="2" />
+
+      <!-- Left Entrance Facet (Midnight Slate Core) -->
+      <polygon points="-120,-60 0,20 0,140 -120,60" fill="#0F172A" stroke="#334155" stroke-width="2" />
+
+      <!-- Right Exit Refraction Facet (Royal Cobalt) -->
+      <polygon points="0,20 120,-60 120,60 0,140" fill="#1D4ED8" stroke="#60A5FA" stroke-width="2" />
+
+      <!-- Inner Holographic Classification Cutout -->
+      <polygon points="0,-70 60,-30 0,10 -60,-30" fill="#FFFFFF" opacity="0.35" />
+      <polygon points="0,10 60,-30 60,30 0,70" fill="#38BDF8" opacity="0.25" />
+
+      <!-- Classifier Pin -->
+      <circle cx="0" cy="0" r="9" fill="#FFFFFF" stroke="#0284C7" stroke-width="3" />
+      <circle cx="0" cy="0" r="20" fill="none" stroke="#BAE6FD" stroke-width="2" stroke-dasharray="4,4" />
     </g>
-    
-    <!-- Box 2: Kernel Classifier & Routing Rule -->
-    <g transform="translate(340, 0)">
-      <rect x="0" y="0" width="410" height="440" rx="20" fill="#ffffff" stroke="#38bdf8" stroke-width="2.5" filter="url(#cardShadow)" />
-      
-      <!-- Pill Badge -->
-      <rect x="25" y="25" width="160" height="36" rx="18" fill="#f0f9ff" stroke="#bae6fd" stroke-width="1.5" />
-      <text x="105" y="49" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="800" fill="#0284c7">KERNEL ROUTING</text>
 
-      <text x="25" y="105" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="28" fill="#0369a1">Netfilter &amp; FIB</text>
-      <text x="25" y="138" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="28" fill="#0369a1">Rule Classifier</text>
-      
-      <line x1="25" y1="165" x2="385" y2="165" stroke="#f0f9ff" stroke-width="2" />
+    <!-- UPPER EGRESS: FIB TABLE MAIN (Direct WAN Path) -->
+    <polygon points="560,320 1080,120 1080,160 560,340" fill="url(#wanBeamGrad)" opacity="0.3" />
+    <path d="M 560 320 Q 700 240 840 200 T 1100 140" fill="none" stroke="#10B981" stroke-width="5" stroke-linecap="round" />
+    <line x1="570" y1="300" x2="1080" y2="120" stroke="#34D399" stroke-width="2.5" stroke-dasharray="8,6" opacity="0.8" />
+    <circle cx="840" cy="200" r="8" fill="#10B981" stroke="#FFFFFF" stroke-width="2.5" />
+    <circle cx="1020" cy="155" r="9" fill="#059669" stroke="#FFFFFF" stroke-width="3" />
 
-      <!-- Code Snippets (Large Monospace) -->
-      <rect x="25" y="190" width="360" height="150" rx="12" fill="#0f172a" />
-      <text x="45" y="235" font-family="ui-monospace, monospace" font-size="18" font-weight="700" fill="#38bdf8">iptables -j MARK 0x100</text>
-      <line x1="45" y1="255" x2="365" y2="255" stroke="#334155" stroke-width="1.5" />
-      <text x="45" y="295" font-family="ui-monospace, monospace" font-size="18" font-weight="700" fill="#fbbf24">ip rule fwmark 0x100</text>
-      <text x="45" y="322" font-family="ui-monospace, monospace" font-size="18" font-weight="700" fill="#fbbf24">   lookup table 100</text>
+    <!-- LOWER EGRESS: FIB TABLE 100 (Encrypted VPN Tunnel) -->
+    <polygon points="560,340 1080,500 1080,540 560,360" fill="url(#vpnBeamGrad)" opacity="0.3" />
+    <path d="M 560 354 Q 700 430 840 470 T 1100 534" fill="none" stroke="#F59E0B" stroke-width="5" stroke-linecap="round" />
+    <line x1="570" y1="374" x2="1080" y2="554" stroke="#FBBF24" stroke-width="2.5" stroke-dasharray="8,6" opacity="0.8" />
+    <circle cx="840" cy="470" r="8" fill="#F59E0B" stroke="#FFFFFF" stroke-width="2.5" />
+    <circle cx="1020" cy="515" r="9" fill="#D97706" stroke="#FFFFFF" stroke-width="3" />
 
-      <!-- Bottom Badge -->
-      <rect x="25" y="380" width="360" height="40" rx="10" fill="#e0f2fe" />
-      <text x="205" y="406" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="18" fill="#0284c7">DETERMINISTIC ROUTING</text>
-    </g>
-    
-    <!-- Box 3: Egress Routing Targets -->
-    <g transform="translate(780, 0)">
-      <!-- Top Target: Fiber WAN -->
-      <g transform="translate(0, 0)">
-        <rect x="0" y="0" width="260" height="205" rx="20" fill="#ffffff" stroke="#86efac" stroke-width="2.5" filter="url(#cardShadow)" />
-        <circle cx="28" cy="36" r="8" fill="#10b981" />
-        <text x="48" y="43" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="24" fill="#065f46">Default WAN</text>
-        <text x="28" y="90" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="700" fill="#0f172a">Direct Fiber Uplink</text>
-        <rect x="25" y="130" width="210" height="45" rx="10" fill="#d1fae5" />
-        <text x="130" y="159" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="20" fill="#065f46">FIB Table: main</text>
-      </g>
-      
-      <!-- Bottom Target: VPN Tunnel -->
-      <g transform="translate(0, 235)">
-        <rect x="0" y="0" width="260" height="205" rx="20" fill="#ffffff" stroke="#fde047" stroke-width="2.5" filter="url(#cardShadow)" />
-        <circle cx="28" cy="36" r="8" fill="#eab308" />
-        <text x="48" y="43" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="24" fill="#854d0e">Secure Tunnel</text>
-        <text x="28" y="90" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="700" fill="#0f172a">Encrypted Transit</text>
-        <rect x="25" y="130" width="210" height="45" rx="10" fill="#fef3c7" />
-        <text x="130" y="159" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="20" fill="#854d0e">FIB Table: 100</text>
-      </g>
+    <!-- Corner Framing Reticles -->
+    <g stroke="#0F172A" stroke-width="2.5" fill="none">
+      <path d="M 140 100 L 120 100 L 120 120" />
+      <path d="M 1060 100 L 1080 100 L 1080 120" />
+      <path d="M 140 575 L 120 575 L 120 555" />
+      <path d="M 1060 575 L 1080 575 L 1080 555" />
     </g>
   </g>
 </svg>

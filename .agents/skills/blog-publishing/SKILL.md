@@ -47,14 +47,14 @@ Draft the article in `src/content/blog/[slug].md` following the 5-part structure
 > [!IMPORTANT]
 > **Stage 3 Review Gate**: Present the draft directly to the author for critique. Iterate on prose until completely approved. Do not generate hero graphics or commit to git during this stage.
 
-### Stage 4: Hero Image Generation & Visual Review
+### Stage 4: Abstract Hero Graphic Generation & Visual Review
 Once text is approved:
 - If author provides an image, crop to 16:9 and save to `public/images/heroes/[slug].webp`.
-- If generated, create a clean 16:9 vector schematic (SVG) into `public/images/heroes/[slug].svg` with:
-  - Soft cream gradient background: `#FAF7F2` to `#F4EFE6`.
-  - Subtle grid pattern.
-  - High-contrast dark slate text: `#0f172a`.
-  - Distinct architectural comparison panels.
+- If generated, create a pure **abstract architectural vector graphic (SVG)** into `public/images/heroes/[slug].svg` with:
+  - 16:9 aspect ratio (1200x675).
+  - Soft cream gradient background: `#FAF7F2` to `#ECE2D0`.
+  - Precision geometric motifs (isometric prisms, vector planes, reticles, coordinate ticks).
+  - **Strict Zero-Text Policy**: Never include English text, titles, subtitles, labels, or flowcharts inside hero graphics. All technical diagrams belong exclusively inside the article body (`public/images/diagrams/`).
 - **Stage 4 Review Gate**: Present the hero graphic to the author for visual approval.
 
 ### Stage 5: Local Build & Quality Verification
