@@ -10,6 +10,8 @@ Central architectural guide, editorial standard, and agent instructions for the 
 Every publication in this repository must project executive technical leadership, deep systems competence, and engineering pragmatism.
 
 - **Tone & Voice**: Authoritative, analytical, disciplined, and concise. Avoid novice tutorial phrasing ("Today I will show you how to..."). Frame problems through architectural trade-offs, performance ceilings, cost implications, and production reliability.
+- **Language Standard**: **International English** (British/Commonwealth spelling: e.g. *optimise*, *prioritise*, *decoupling*, *orchestration*, *fibre*, *defence*, *synchronised*, *behaviour*) for all article prose, headings, and descriptions. **Strict exception**: never alter code syntax, CLI parameters, API schemas, language keywords, or variable names.
+- **Human Opinion, AI-Augmented Authorship**: While post drafting, formatting, diagrams, and prose synthesis are assisted by AI, **all core architectural opinions, engineering stances, problem contexts, and technical decisions originate directly from human author Leow Kah Man**. AI serves as an execution harness to articulate the author's real-world systems engineering experience.
 - **Core Philosophies**:
   - **Pragmatic Technology Choices**: Prioritising boring, high-efficiency, maintainable stacks (Go, Astro, Svelte, robust primitives) over short-lived hype.
   - **Defence in Depth**: Zero Trust ingress, origin cloaking, netfilter packet filtering, and mutual TLS (mTLS).
