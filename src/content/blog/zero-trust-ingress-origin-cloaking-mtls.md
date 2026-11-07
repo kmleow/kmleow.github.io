@@ -1,6 +1,6 @@
 ---
 title: "Zero Trust Ingress: Origin Cloaking with Strict IP Ingress Filtering and Mutual TLS (mTLS)"
-description: "Defense-in-depth architecture before managed tunnels: protecting origin servers against direct-to-IP bypass attacks using netfilter firewall whitelisting and mutual TLS authentication."
+description: "Defence-in-depth architecture before managed tunnels: protecting origin servers against direct-to-IP bypass attacks using netfilter firewall whitelisting and mutual TLS authentication."
 pubDate: 2016-02-14
 updatedDate: 2026-11-07
 heroImage: "/images/heroes/zero-trust-origin-cloaking.svg"

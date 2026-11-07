@@ -42,11 +42,13 @@ const wordCount = post.body ? post.body.split(/\s+/).length : 600;
 const readingMinutes = Math.max(1, Math.round(wordCount / 200));
 
 const articleData = {
+  headline: title,
   publishedTime: pubDate.toISOString(),
   modifiedTime: updatedDate ? updatedDate.toISOString() : undefined,
   author: author,
   tags: tags,
   category: category,
+  wordCount: wordCount,
 };
 ---
 
@@ -54,6 +56,8 @@ const articleData = {
   title={`${title} | Leow Kah Man`}
   description={description}
   image={heroImage}
+  imageAlt={heroAlt}
+  pageType="article"
   article={articleData}
 >
   <article class="max-w-4xl mx-auto">

@@ -8,68 +8,144 @@ interface Props {
   title?: string;
   description?: string;
   image?: string;
+  imageAlt?: string;
+  pageType?: 'website' | 'article' | 'profile';
   article?: {
+    headline?: string;
     publishedTime: string;
     modifiedTime?: string;
     author: string;
     tags: string[];
     category: string;
+    wordCount?: number;
   };
+  breadcrumbs?: Array<{ name: string; url: string }>;
 }
 
 const {
   title = 'Leow Kah Man | Engineering Leadership & Systems Tech Blog',
   description = 'Engineering leadership, scalable distributed systems, resilient cloud infrastructure, and software craftsmanship by Leow Kah Man.',
   image = '/favicon-192x192.png',
+  imageAlt = 'Leow Kah Man Tech Blog',
+  pageType = 'website',
   article,
+  breadcrumbs,
 } = Astro.props;
 
-const canonicalUrl = new URL(Astro.url.pathname, Astro.site).toString();
-const absoluteImageUrl = new URL(image, Astro.site).toString();
+const siteUrl = Astro.site ? Astro.site.toString().replace(/\/$/, '') : 'https://www.leowkahman.com';
+const pathname = Astro.url.pathname.endsWith('/') ? Astro.url.pathname : `${Astro.url.pathname}/`;
+const canonicalUrl = `${siteUrl}${pathname}`;
+const absoluteImageUrl = image.startsWith('http')
+  ? image
+  : `${siteUrl}${image.startsWith('/') ? image : `/${image}`}`;
 
-const jsonLd = article
-  ? {
-      '@context': 'https://schema.org',
-      '@type': 'TechArticle',
-      headline: title,
-      description: description,
-      image: [absoluteImageUrl],
-      datePublished: article.publishedTime,
-      dateModified: article.modifiedTime || article.publishedTime,
-      author: {
+// Clean headline for structured data (without branding suffix)
+const cleanHeadline = article?.headline || title.replace(/\s*\|\s*Leow Kah Man.*$/, '').trim();
+
+// Build JSON-LD structured data graph
+const jsonLdGraph: any[] = [];
+
+if (article) {
+  jsonLdGraph.push({
+    '@context': 'https://schema.org',
+    '@type': ['TechArticle', 'BlogPosting'],
+    headline: cleanHeadline,
+    description: description,
+    image: [absoluteImageUrl],
+    datePublished: article.publishedTime,
+    dateModified: article.modifiedTime || article.publishedTime,
+    inLanguage: 'en',
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': canonicalUrl,
+    },
+    author: [
+      {
         '@type': 'Person',
         name: article.author || 'Leow Kah Man',
-        url: 'https://www.leowkahman.com/about/',
+        url: `${siteUrl}/about/`,
         sameAs: [
           'https://www.linkedin.com/in/kmleow',
           'https://github.com/kmleow',
         ],
       },
-      publisher: {
-        '@type': 'Person',
-        name: 'Leow Kah Man',
-        logo: {
-          '@type': 'ImageObject',
-          url: 'https://www.leowkahman.com/favicon-192x192.png',
-        },
+    ],
+    publisher: {
+      '@type': 'Person',
+      name: 'Leow Kah Man',
+      url: `${siteUrl}/`,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${siteUrl}/favicon-192x192.png`,
+        width: 192,
+        height: 192,
       },
-      mainEntityOfPage: {
-        '@type': 'WebPage',
-        '@id': canonicalUrl,
-      },
-    }
-  : {
-      '@context': 'https://schema.org',
-      '@type': 'WebSite',
-      name: 'Leow Kah Man - Tech Blog',
-      url: 'https://www.leowkahman.com/',
+    },
+    articleSection: article.category,
+    keywords: article.tags?.join(', '),
+    ...(article.wordCount ? { wordCount: article.wordCount } : {}),
+  });
+
+  // Breadcrumbs schema for Google Search rich navigation trails
+  const breadcrumbElements = [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: `${siteUrl}/`,
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: article.category,
+      item: `${siteUrl}/`,
+    },
+    {
+      '@type': 'ListItem',
+      position: 3,
+      name: cleanHeadline,
+      item: canonicalUrl,
+    },
+  ];
+
+  jsonLdGraph.push({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: breadcrumbElements,
+  });
+} else if (pageType === 'profile') {
+  jsonLdGraph.push({
+    '@context': 'https://schema.org',
+    '@type': 'ProfilePage',
+    mainEntity: {
+      '@type': 'Person',
+      name: 'Leow Kah Man',
+      alternateName: 'KM Leow',
+      url: canonicalUrl,
+      image: `${siteUrl}/favicon-512x512.png`,
       description: description,
-      author: {
-        '@type': 'Person',
-        name: 'Leow Kah Man',
-        url: 'https://www.leowkahman.com/about/',
-      },
-    };
+      jobTitle: 'Head of Engineering & Software Architect',
+      sameAs: [
+        'https://www.linkedin.com/in/kmleow',
+        'https://github.com/kmleow',
+      ],
+    },
+  });
+} else {
+  jsonLdGraph.push({
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Leow Kah Man - Tech Blog',
+    url: `${siteUrl}/`,
+    description: description,
+    inLanguage: 'en',
+    author: {
+      '@type': 'Person',
+      name: 'Leow Kah Man',
+      url: `${siteUrl}/about/`,
+    },
+  });
+}
 ---
 
 <!doctype html>
@@ -80,6 +156,10 @@ const jsonLd = article
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Google Search & Crawler Directives (max-image-preview:large enables rich Discover & search cards) -->
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 
     <!-- Security Meta Directives -->
     <meta http-equiv="X-Content-Type-Options" content="nosniff" />
@@ -108,17 +188,33 @@ const jsonLd = article
     <!-- RSS Syndication -->
     <link rel="alternate" type="application/rss+xml" title="Leow Kah Man - Tech Blog" href="/rss.xml" />
 
-    <!-- Open Graph & Twitter Cards -->
-    <meta property="og:site_name" content="Leow Kah Man - Tech Blog" />
+    <!-- Open Graph & Social Cards -->
+    <meta property="og:site_name" content="Leow Kah Man" />
     <meta property="og:type" content={article ? 'article' : 'website'} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:image" content={absoluteImageUrl} />
+    {imageAlt && <meta property="og:image:alt" content={imageAlt} />}
+
+    {article && (
+      <>
+        <meta property="article:published_time" content={article.publishedTime} />
+        {article.modifiedTime && <meta property="article:modified_time" content={article.modifiedTime} />}
+        <meta property="article:author" content={article.author} />
+        <meta property="article:section" content={article.category} />
+        {article.tags?.map((tag) => (
+          <meta property="article:tag" content={tag} />
+        ))}
+      </>
+    )}
+
+    <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={absoluteImageUrl} />
+    {imageAlt && <meta name="twitter:image:alt" content={imageAlt} />}
 
     <!-- Google AdSense (Only loads on production domain to prevent invalid traffic policy strikes) -->
     <script is:inline>
@@ -131,8 +227,10 @@ const jsonLd = article
       }
     </script>
 
-    <!-- Structured Data JSON-LD -->
-    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    <!-- Structured Data JSON-LD (Search Rich Results, TechArticle, ProfilePage, BreadcrumbList) -->
+    {jsonLdGraph.map((schema) => (
+      <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    ))}
 
     <!-- Google Analytics 4 -->
     <Analytics />

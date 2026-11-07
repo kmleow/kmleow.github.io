@@ -7,7 +7,7 @@ export async function GET(context: any) {
 
   return rss({
     title: 'Leow Kah Man | Systems & Engineering Leadership Tech Blog',
-    description: 'Deep-dives into Linux kernel network fastpaths, edge-to-origin Zero Trust security, distributed systems, and pragmatic software design.',
+    description: 'Architectural deep-dives into scalable cloud systems, resilient infrastructure, edge security, and disciplined software craftsmanship by Leow Kah Man.',
     site: context.site || 'https://www.leowkahman.com',
     items: posts.map((post) => ({
       title: post.data.title,
