@@ -174,7 +174,96 @@ foreach (var student in students.Where(IsEligible))
 }
 ```
 
-This retains streaming deferred execution, minimises Garbage Collector (GC) pressure, and handles large or infinite sequences safely.
+This retains streaming deferred execution, minimises Garbage Collector (GC) pressure, and handles large sequences safely.
+
+---
+
+## The Database Boundary: The IQueryable vs. IEnumerable Trap
+
+There is a critical architectural distinction that every software architect must enforce when designing LINQ standards: **the boundary between in-memory domain pipelines (`IEnumerable<T>`) and database-backed query providers (`IQueryable<T>`)**.
+
+While named predicate methods and method group syntax (`.Where(IsEligible)`) are elegant and zero-allocation for collections already in application memory, blindly applying them to an Object-Relational Mapper (such as Entity Framework Core) can trigger catastrophic production failure modes.
+
+### The Failure Mode: Client Evaluation & Memory Exhaustion
+
+When querying a database via EF Core, your collection is an `IQueryable<T>`. The ORM does not execute C# code; it traverses an **Expression Tree** (`Expression<Func<T, bool>>`) to translate your declarative operations into an optimised SQL query pushed down to the database engine.
+
+If you pass a regular compiled C# method to an `IQueryable`:
+
+```csharp
+// ❌ FAILS ON IQueryable<T> (EF Core / Database)
+var students = await dbContext.Students
+    .Where(IsFromEligibleJurisdiction) // Method group / Func<Student, bool> delegate
+    .ToListAsync();
+```
+
+Because `IsFromEligibleJurisdiction` is a compiled C# delegate rather than an expression tree, the EF Core query provider **cannot deconstruct its internal IL to generate a SQL `WHERE` clause**.
+
+In enterprise production environments, this manifests in two severe failure modes:
+
+1. **Runtime Query Translation Exceptions**: In modern EF Core (3.0+), the runtime immediately throws an `InvalidOperationException`: *"The LINQ expression could not be translated. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly..."*
+2. **The Catastrophic `.AsEnumerable()` Fallback**: Junior engineers frequently attempt to silence this exception by forcing client-side evaluation:
+   ```csharp
+   // ❌ CRITICAL ANTI-PATTERN: Pulls the entire database table into service RAM
+   var students = await dbContext.Students
+       .AsEnumerable() // Materialises database cursor into memory!
+       .Where(IsFromEligibleJurisdiction) // Runs in C# application memory
+       .ToListAsync();
+   ```
+   Calling `.AsEnumerable()` strips the SQL `WHERE` clause entirely. EF Core emits `SELECT * FROM Students`, downloading **hundreds of thousands or millions of database rows over the network into application service RAM**, causing severe network saturation, high garbage collection pauses, and inevitable Out-Of-Memory (OOM) pod crashes.
+
+---
+
+### The Architectural Solution: Composable Queryable Extensions
+
+To achieve clean, self-documenting readability without sacrificing database pushdown, architects should structure database-side filters as **`IQueryable` extension methods** operating directly on expression trees:
+
+```csharp
+// ✓ Production Standard: Composable expressions that translate 100% to SQL
+public static class StudentQueryExtensions
+{
+    public static IQueryable<Student> WhereEligibleJurisdiction(this IQueryable<Student> query)
+    {
+        var eligibleCountries = new[] { "UK", "DE", "JP", "SG" };
+        return query.Where(s => eligibleCountries.Contains(s.Country));
+    }
+
+    public static IQueryable<Student> WhereHonorGrade(this IQueryable<Student> query, int threshold = 85)
+    {
+        return query.Where(s => s.Score >= threshold);
+    }
+
+    public static IQueryable<Student> WhereLegalAdult(this IQueryable<Student> query)
+    {
+        var adultCutoff = DateTime.UtcNow.AddYears(-18);
+        return query.Where(s => s.DateOfBirth <= adultCutoff);
+    }
+}
+```
+
+#### The Result: Business Prose in Code, 100% Database Pushdown
+
+By adopting queryable extension methods, your application code retains the exact same expressive, readable pipeline:
+
+```csharp
+// ✓ Clean, readable, and compiles into a single optimal SQL query:
+var topHonorsCandidates = await dbContext.Classes
+    .SelectMany(c => c.Students)
+    .WhereEligibleJurisdiction()
+    .WhereHonorGrade()
+    .WhereLegalAdult()
+    .OrderByDescending(s => s.Score)
+    .Take(MinistryReportingQuotaLimit)
+    .Select(s => new AnonymizedStudentAuditRecord
+    {
+        Score = s.Score,
+        BirthYear = s.DateOfBirth.Year,
+        JurisdictionCode = s.Country
+    })
+    .ToListAsync();
+```
+
+Because every stage remains an `IQueryable`, EF Core translates the entire chain into a **single, highly-optimised SQL query** featuring indexed `WHERE`, `INNER JOIN`, `ORDER BY`, and `OFFSET / FETCH` clauses executed entirely on the database cluster—leaving your application service lightweight, scalable, and memory-safe.
 
 ---
 
@@ -214,4 +303,5 @@ public sealed record AnonymizedStudentAuditRecord
 
 - **Code is read 10x more often than it is written**: Writing expressive, readable LINQ is an investment in team velocity and defect reduction.
 - **Small functions compose gracefully**: Decomposing monolithic queries into named static predicates yields code that is self-documenting, unit-testable, and easy to maintain.
+- **Enforce the database boundary**: Use named delegates on in-memory `IEnumerable<T>` streams; use composable `IQueryable<T>` extension methods with expression trees for database queries to prevent disastrous in-memory client evaluation.
 - **Respect the runtime**: Understand deferred execution and avoid unnecessary materialisation allocations in high-throughput hot paths.
