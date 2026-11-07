@@ -15,7 +15,7 @@ Every publication in this repository must project executive technical leadership
 - **Core Philosophies**:
   - **Pragmatic Technology Choices**: Prioritising boring, high-efficiency, maintainable stacks (Go, Astro, Svelte, robust primitives) over short-lived hype.
   - **Defence in Depth**: Zero Trust ingress, origin cloaking, netfilter packet filtering, and mutual TLS (mTLS).
-  - **Cognitive Load Reduction**: Designing readable, self-documenting codebases and small composable functions.
+  - **Code Craftsmanship & Composability**: Designing readable, self-documenting codebases and small composable functions.
   - **Hands-On Infrastructure**: Leveraging homelab infrastructure (K3s, custom DNS, edge routers) as an active R&D engine for real-world enterprise architectures.
 
 ---
@@ -109,26 +109,73 @@ Every article **must** feature a hero image (16:9 aspect ratio, minimum 1200x675
 
 ---
 
-## 6. Article Creation & Collaborative Interview Workflow
+## 6. Article Creation Waterfall Workflow
 
-When drafting a new article:
+When authoring a new article, agents must strictly adhere to this sequential waterfall process. **Do not skip ahead** or bundle stages prematurely:
 
-1. **Ideation & Topic Suggestion**:
-   The agent or author proposes an engineering topic (e.g., cloud cost optimization, offline-first architectures, monorepo orchestration, low-latency queues).
-2. **Interactive Author Interview**:
-   The agent asks 2-3 targeted architectural questions:
-   - *"What was the critical failure mode or bottleneck that prompted this architectural choice?"*
-   - *"Why did you reject the mainstream/conventional alternative?"*
-   - *"What were the measured production metrics or latency improvements?"*
-3. **Drafting the Post**:
-   The agent drafts the post following the 5-part structure:
-   - **Executive Summary / Problem Statement**: The engineering stakes and cost/reliability impact.
-   - **Architecture & Topology**: ASCII or Mermaid diagram of the subsystem.
-   - **Deep Technical Implementation**: Exact configuration directives, kernel commands, or code patterns.
-   - **Verification & Telemetry**: Empirical benchmarks, ping logs, or profiling results.
-   - **Architectural Takeaways**: Strategic insights for engineering leadership.
-4. **Build & Verify**:
-   Run `npm run build` locally to verify schema compliance, sitemap integration, and minification.
+```
+[ Stage 1: Ideation & Topic Alignment ]
+                   │
+                   ▼
+[ Stage 2: Collaborative Architectural Interview ]
+                   │
+                   ▼
+[ Stage 3: Post Drafting & Review (Iterate Until Satisfied) ]
+                   │
+                   ▼
+[ Stage 4: Hero Image Generation & Visual Review ]
+                   │
+                   ▼
+[ Stage 5: Local Build & Quality Verification ]
+                   │
+                   ▼
+[ Stage 6: Publishing & Git Push Approval ]
+                   │
+                   ▼
+[ Stage 7: LinkedIn Engagement Workflow ]
+```
+
+### Stage 1: Ideation & Topic Alignment
+- The agent or author proposes an engineering topic (e.g., cloud efficiency, offline-first architectures, monorepo orchestration, low-latency queues).
+- Align on the core thesis and target audience (CTOs, Heads of Engineering, Staff Engineers).
+
+### Stage 2: Collaborative Architectural Interview
+The agent interviews author Leow Kah Man with 2–3 targeted questions to extract authentic human experience and technical opinions:
+- *"What was the critical failure mode or bottleneck that prompted this architectural choice?"*
+- *"Why did you reject the mainstream/conventional alternative?"*
+- *"What were the measured production metrics or latency improvements?"*
+
+### Stage 3: Post Drafting & Textual Review
+- The agent drafts the complete article in `src/content/blog/[slug].md` following the 5-part structure:
+  1. **Executive Summary / Problem Statement**: Engineering stakes and reliability/cost impact.
+  2. **Architecture & Topology**: ASCII or Mermaid diagram of the subsystem.
+  3. **Deep Technical Implementation**: Exact configuration directives, kernel commands, or code patterns.
+  4. **Verification & Telemetry**: Empirical benchmarks, ping logs, or profiling results.
+  5. **Architectural Takeaways**: Strategic insights for engineering leadership.
+- **Review Gate**: Present the draft directly to the author for critique. Refine and iterate on prose until the author is completely satisfied. **Do not generate hero images or run git push during this stage.**
+
+### Stage 4: Hero Image Generation & Visual Review
+- Once the post text is approved:
+  - If the author provides an image, crop to 16:9, convert to WebP/SVG, and place in `public/images/heroes/[slug].webp`.
+  - If AI-generated, design a clean 16:9 vector schematic (SVG) featuring the standard soft cream background (`#FAF7F2` to `#F4EFE6`) and high-contrast dark text into `public/images/heroes/[slug].svg`.
+- **Review Gate**: Present the generated hero image to the author for visual approval.
+
+### Stage 5: Local Build & Quality Verification
+- Run `npm run build` locally to verify:
+  - Frontmatter schema compliance (Zod).
+  - Proper sitemap and RSS 2.0 integration (`/rss.xml`).
+  - Minified HTML/CSS generation without errors.
+- Preview locally on `http://localhost:4321/` to verify layout and typography.
+
+### Stage 6: Publishing & Git Push Approval
+- **Explicit Author Gate**: Present a summary of changes and ask the author for explicit confirmation before pushing commits to the remote repository. Never push automatically.
+
+### Stage 7: LinkedIn Engagement Workflow
+- Upon publishing, the agent must draft an executive-level **LinkedIn post** for the author to share:
+  - Hook highlighting the core architectural paradox or failure mode.
+  - 3–4 bullet points of high-value technical takeaways.
+  - Direct canonical link to the new article on `www.leowkahman.com`.
+  - Purpose: Spark peer discussion with fellow engineering directors, architects, and recruiters on LinkedIn to drive organic professional engagement.
 
 ---
 
