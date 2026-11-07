@@ -38,7 +38,7 @@
     <rect x="720" y="15" width="280" height="260" rx="16" fill="#ffffff" stroke="#86efac" stroke-width="2" />
     <text x="745" y="55" font-family="system-ui, sans-serif" font-weight="700" font-size="18" fill="#065f46">Hardened Origin Server</text>
     <text x="745" y="90" font-family="system-ui, sans-serif" font-size="14" fill="#1e293b" font-weight="600">1. Kernel PREROUTING</text>
-    <text x="765" y="115" font-family="system-ui, sans-serif" font-size="13" fill="#64748b">Whitelisted CDN CIDRs only</text>
+    <text x="765" y="115" font-family="system-ui, sans-serif" font-size="13" fill="#64748b">Allowlisted CDN CIDRs only</text>
     <text x="745" y="150" font-family="system-ui, sans-serif" font-size="14" fill="#1e293b" font-weight="600">2. Transport mTLS</text>
     <text x="765" y="175" font-family="system-ui, sans-serif" font-size="13" fill="#64748b">SSLVerifyClient require</text>
     <text x="745" y="218" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#059669">✓ Fully Cloaked Origin</text>

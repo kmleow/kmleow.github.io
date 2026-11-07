@@ -11,10 +11,10 @@ Every publication in this repository must project executive technical leadership
 
 - **Tone & Voice**: Authoritative, analytical, disciplined, and concise. Avoid novice tutorial phrasing ("Today I will show you how to..."). Frame problems through architectural trade-offs, performance ceilings, cost implications, and production reliability.
 - **Core Philosophies**:
-  - **Pragmatic Technology Choices**: Prioritizing boring, high-efficiency, maintainable stacks (Go, Astro, Svelte, Linux kernel primitives) over short-lived hype.
-  - **Defense in Depth**: Zero Trust ingress, origin cloaking, netfilter packet filtering, and mutual TLS (mTLS).
+  - **Pragmatic Technology Choices**: Prioritising boring, high-efficiency, maintainable stacks (Go, Astro, Svelte, robust primitives) over short-lived hype.
+  - **Defence in Depth**: Zero Trust ingress, origin cloaking, netfilter packet filtering, and mutual TLS (mTLS).
   - **Cognitive Load Reduction**: Designing readable, self-documenting codebases and small composable functions.
-  - **Hands-On Infrastructure**: Leveraging homelab infrastructure (K3s, custom DNS, embedded Linux routers) as an active R&D engine for real-world enterprise architectures.
+  - **Hands-On Infrastructure**: Leveraging homelab infrastructure (K3s, custom DNS, edge routers) as an active R&D engine for real-world enterprise architectures.
 
 ---
 
@@ -24,7 +24,7 @@ Every publication in this repository must project executive technical leadership
 - **Styling**: Tailwind CSS with custom `brand` palette and news-card container queries (`modern-web-guidance`).
 - **Hosting**: GitHub Pages (statically generated to `dist/`, zero server runtime, zero JS execution required for content delivery).
 - **SEO & Feeds**: `@astrojs/sitemap` (filtered), `@astrojs/rss` (Google News-compliant RSS 2.0 at `/rss.xml`), JSON-LD `TechArticle` structured data.
-- **Analytics & Monetization**: Google Analytics 4 (`G-96D364YPM0`) with privacy anonymization, Google AdSense (`ca-pub-8585963436723502`) with fixed containers and strict policy compliance.
+- **Analytics & Monetisation**: Google Analytics 4 (`G-96D364YPM0`) with privacy anonymisation, Google AdSense (`ca-pub-8585963436723502`) with fixed containers and strict policy compliance.
 
 ---
 

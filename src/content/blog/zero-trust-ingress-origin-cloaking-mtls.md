@@ -16,7 +16,7 @@ When placing a public web application behind an edge Content Delivery Network (C
 
 This assumption is flawed. Public IPv4 address space is continuously probed by internet-wide port scanners (such as Shodan, Censys, and automated botnets). If an attacker discovers your origin IP address—whether via historical DNS logs, MX records, outbound webhook leaks, or raw CIDR scanning—they can bypass the CDN entirely, connecting directly to your origin web server and evading all edge rate-limiting and WAF inspections.
 
-To achieve true **Zero Trust Ingress** on self-hosted or cloud origins without paying enterprise transit fees, you must implement a defense-in-depth model combining **Layer 3/4 netfilter ingress whitelisting** with **Layer 7 Mutual TLS (mTLS) Authenticated Origin Pulls**.
+To achieve true **Zero Trust Ingress** on self-hosted or cloud origins without paying enterprise transit fees, you must implement a defence-in-depth model combining **Layer 3/4 netfilter ingress allowlisting** with **Layer 7 Mutual TLS (mTLS) Authenticated Origin Pulls**.
 
 ---
 
@@ -37,13 +37,13 @@ Legitimate Zero Trust Flow:
 
 ---
 
-## Defense Tier 1: Netfilter/iptables Ingress Whitelisting
+## Defence Tier 1: Netfilter/iptables Ingress Allowlisting
 
-The first line of defense must operate at the Linux kernel packet filter layer (`netfilter`). Any packet arriving on the WAN interface targeting port 443 whose source IP does not match the CDN’s published IPv4 prefixes must be discarded before the socket is accepted.
+The first line of defence must operate at the Linux kernel packet filter layer (`netfilter`). Any packet arriving on the WAN interface targeting port 443 whose source IP does not match the CDN’s published IPv4 prefixes must be discarded before the socket is accepted.
 
-### 1. Automated CIDR Prefix Synchronization
+### 1. Automated CIDR Prefix Synchronisation
 
-Cloudflare publishes and periodically updates its authorized edge IP ranges. We implement an atomic fetch and update script to ensure the firewall remains synchronized without risking service disruption:
+Cloudflare publishes and periodically updates its authorised edge IP ranges. We implement an atomic fetch and update script to ensure the firewall remains synchronised without risking service disruption:
 
 Create `/etc/cloudflare/sync-ips.sh`:
 
@@ -77,7 +77,7 @@ fi
 Schedule this via CRON to execute weekly during low-traffic maintenance windows:
 
 ```cron
-# Synchronize CDN edge prefixes every Monday at 03:00 UTC
+# Synchronise CDN edge prefixes every Monday at 03:00 UTC
 0 3 * * 1 /bin/sh /etc/cloudflare/sync-ips.sh
 ```
 
@@ -94,15 +94,15 @@ for cfip in $(cat /etc/cloudflare/ips-v4); do
     iptables -A PREROUTING -t nat -i pppoe-wan -s "$cfip" -p tcp --dport 443 -j DNAT --to 192.168.1.100:443
 done
 
-# Restrict the forward chain to accept only established and DNAT-authorized connections
+# Restrict the forward chain to accept only established and DNAT-authorised connections
 iptables -A FORWARD -p tcp -d 192.168.1.100 --dport 443 -j ACCEPT
 ```
 
-Packets arriving from unauthorized IPs are silently dropped or rejected at the gateway. The web server never allocates socket descriptors for malicious ingress.
+Packets arriving from unauthorised IPs are silently dropped or rejected at the gateway. The web server never allocates socket descriptors for malicious ingress.
 
 ---
 
-## Defense Tier 2: Mutual TLS (mTLS) Authenticated Origin Pulls
+## Defence Tier 2: Mutual TLS (mTLS) Authenticated Origin Pulls
 
 While netfilter IP filtering blocks casual scanners, determined adversaries operating on shared hosting or compromised nodes within the CDN network could theoretically forge requests or leverage misconfigured CDN tenants.
 
@@ -190,6 +190,6 @@ Within seconds, the CDN begins presenting the client certificate on all outbound
 
 ## Architectural Takeaways
 
-- **Perimeter Defense Requires Multi-Layered Enforcement**: Relying solely on DNS or CDN proxying is security by obscurity. True origin protection requires isolating Layer 3/4 transport via netfilter whitelists and Layer 7 verification via client certificates.
+- **Perimeter Defence Requires Multi-Layered Enforcement**: Relying solely on DNS or CDN proxying is security by obscurity. True origin protection requires isolating Layer 3/4 transport via netfilter allowlists and Layer 7 verification via client certificates.
 - **Fail-Closed Verification**: Implementing mTLS ensures that even if origin firewall rules accidentally drop or reset during a host migration, the web server itself will reject any connection lacking the trusted CA signature.
-- **Modern Evolution**: While modern cloud deployments often adopt zero-ingress tunnels (such as Cloudflare Tunnel or AWS Systems Manager Session Manager), understanding and implementing netfilter CIDR whitelisting combined with mTLS remains the gold standard for high-throughput, latency-optimized edge-to-origin architectures.
+- **Modern Evolution**: While modern cloud deployments often adopt zero-ingress tunnels (such as Cloudflare Tunnel or AWS Systems Manager Session Manager), understanding and implementing netfilter CIDR allowlisting combined with mTLS remains the gold standard for high-throughput, latency-optimised edge-to-origin architectures.

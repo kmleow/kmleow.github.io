@@ -21,7 +21,7 @@ Solving this does not require purchasing additional bandwidth. Instead, it requi
 
 ## Measuring Bufferbloat: Baseline Telemetry
 
-To observe the real-world impact of bufferbloat, we ran a continuous ICMP probe against a resilient target (`8.8.8.8`) on an unmanaged 100 Mbps downstream / 50 Mbps upstream fiber link while initiating an unscheduled line-rate saturating transfer:
+To observe the real-world impact of bufferbloat, we ran a continuous ICMP probe against a resilient target (`8.8.8.8`) on an unmanaged 100 Mbps downstream / 50 Mbps upstream fibre link while initiating an unscheduled line-rate saturating transfer:
 
 ```text
 64 bytes from 8.8.8.8: seq=10 ttl=124 time=3.321 ms
@@ -47,7 +47,7 @@ Latency experienced a **16x degradation** (from 3.3 ms to nearly 54 ms). On conn
 
 ## The Solution: Active Queue Management & Fair Queuing
 
-Traditional tail-drop queues allow buffers to fill completely before blindly dropping subsequent packets. By that point, the delay damage is already done, and TCP connections enter synchronized window collapses.
+Traditional tail-drop queues allow buffers to fill completely before blindly dropping subsequent packets. By that point, the delay damage is already done, and TCP connections enter synchronised window collapses.
 
 Modern Smart Queue Management (SQM) solves this through two complementary techniques:
 
@@ -83,7 +83,7 @@ opkg install sqm-scripts luci-app-sqm
 
 ### Step 2: Establish True Bottleneck Control
 
-For SQM to work, the queue **must live on your router**, not upstream in the ISP's black-box modem buffer. Therefore, you must deliberately configure the router's egress and ingress shaper rates to slightly below your link's physical synchronization ceiling—typically **85% to 92%** of your baseline bandwidth:
+For SQM to work, the queue **must live on your router**, not upstream in the ISP's black-box modem buffer. Therefore, you must deliberately configure the router's egress and ingress shaper rates to slightly below your link's physical synchronisation ceiling—typically **85% to 92%** of your baseline bandwidth:
 
 ```uci
 config queue 'eth1'
@@ -99,7 +99,7 @@ config queue 'eth1'
 
 Packet framing overhead (Ethernet preamble, inter-packet gap, ATM/VDSL cell padding) directly affects true wire bandwidth consumption. In OpenWRT's SQM settings:
 
-- **Fiber / Direct Ethernet / Cable**: Select `Ethernet` with `18` bytes per-packet overhead.
+- **Fibre / Direct Ethernet / Cable**: Select `Ethernet` with `18` bytes per-packet overhead.
 - **VDSL / PPPoE**: Select `Ethernet` with `8` to `12` bytes per-packet overhead (depending on VLAN encapsulation).
 - **ADSL**: Select `ATM` with `44` bytes per-packet overhead.
 

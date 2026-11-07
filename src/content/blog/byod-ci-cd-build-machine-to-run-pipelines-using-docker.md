@@ -1,19 +1,19 @@
 ---
-title: "Platform Engineering: Architecting Ephemeral, Containerized CI/CD Runners on Constrained Hardware"
+title: "Platform Engineering: Architecting Ephemeral, Containerised CI/CD Runners on Constrained Hardware"
 description: "Designing cost-effective, secure, and isolated hybrid build infrastructure using Docker daemon sandboxing, local image layer caching, and dynamic job execution."
 pubDate: 2017-10-02
 updatedDate: 2026-11-07
 heroImage: "/images/heroes/containerized-cicd-runners.svg"
-heroAlt: "Architecture diagram of hybrid ephemeral containerized CI/CD runners"
+heroAlt: "Architecture diagram of hybrid ephemeral containerised CI/CD runners"
 category: "Platform Engineering"
 tags: ["DevOps", "Docker", "CI/CD", "Platform Engineering", "Infrastructure"]
 legacyUrls:
   - "/2017/10/02/byod-ci-cd-build-machine-to-run-pipelines-using-docker/"
 ---
 
-In modern software organizations, CI/CD pipeline efficiency directly governs developer velocity. However, engineering leaders frequently grapple with a frustrating trade-off: public shared cloud runners (such as GitLab.com shared runners or GitHub Actions) suffer from shared queue latency, strict monthly minute quotas, and bandwidth transfer caps. Conversely, provisioning 24/7 dedicated cloud virtual machines incurs persistent idle compute costs.
+In modern software organisations, CI/CD pipeline efficiency directly governs developer velocity. However, engineering leaders frequently grapple with a frustrating trade-off: public shared cloud runners (such as GitLab.com shared runners or GitHub Actions) suffer from shared queue latency, strict monthly minute quotas, and bandwidth transfer caps. Conversely, provisioning 24/7 dedicated cloud virtual machines incurs persistent idle compute costs.
 
-An alternative architectural model is **Bring Your Own Device (BYOD) CI/CD**: deploying self-hosted, ephemeral containerized runners on existing private hardware or homelab clusters.
+An alternative architectural model is **Bring Your Own Device (BYOD) CI/CD**: deploying self-hosted, ephemeral containerised runners on existing private hardware or homelab clusters.
 
 By orchestrating the GitLab/GitHub runner daemon with the local Docker engine, teams can achieve zero-wait job dispatch, deterministic build environments, and full control over local caching—even on low-power System-on-Chip (SoC) hardware.
 
@@ -144,7 +144,7 @@ ERROR: Job failed (system failure): Cannot connect to the Docker daemon at unix:
 
 Diagnostic investigation revealed that cheap USB mass storage controllers exhibit severe I/O stall spikes during unbuffered write bursts. When Docker unpacks multiple container layers simultaneously, the Linux kernel entered extended `D-state` (uninterruptible sleep) disk wait. The Docker daemon failed to respond to runner socket heartbeats within the timeout threshold, prompting the orchestrator to mark the job as crashed.
 
-### The Fix: Storage Engine Optimization
+### The Fix: Storage Engine Optimisation
 
 1. **Leverage Native Storage Drivers**:
    Ensure Docker uses the `overlay2` storage driver, which operates with minimal metadata overhead compared to legacy `vfs` or `devicemapper`.
@@ -170,7 +170,7 @@ Restart Docker:
 sudo systemctl restart docker
 ```
 
-Following this storage reorganization, pipeline execution times dropped by **over 55%**, and socket disconnect errors vanished entirely.
+Following this storage reorganisation, pipeline execution times dropped by **over 55%**, and socket disconnect errors vanished entirely.
 
 ---
 
@@ -194,4 +194,4 @@ docker volume prune -f
 
 1. **Hybrid Infrastructure Reduces Cloud Spend**: Running resource-intensive, iterative build/test cycles on self-hosted infrastructure while deploying release artifacts to serverless edge platforms (like GitHub Pages or Cloudflare) provides the ideal balance between zero marginal compute costs and enterprise reliability.
 2. **I/O Latency Matters More Than CPU Frequency**: In CI/CD workloads, disk write throughput and random 4K I/O during layer extraction dominate build duration far more than raw clock speed.
-3. **Consistent Containerized Toolchains**: Enforcing containerized runner executors eliminates the dreaded *"it works on my machine"* syndrome by ensuring production builds run in identical container environments regardless of host topology.
+3. **Consistent Containerised Toolchains**: Enforcing containerised runner executors eliminates the dreaded *"it works on my machine"* syndrome by ensuring production builds run in identical container environments regardless of host topology.

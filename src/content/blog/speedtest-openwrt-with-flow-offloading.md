@@ -13,7 +13,7 @@ legacyUrls:
 
 When transitioning home lab infrastructure or high-bandwidth residential uplinks to gigabit tiers (such as TM UniFi Turbo 800 Mbps), embedded routers frequently encounter a severe bottleneck: CPU saturation during Layer 3 packet forwarding and Network Address Translation (NAT).
 
-Stock vendor firmwares frequently utilize proprietary hardware NAT acceleration shortcuts to sustain gigabit routing on modest System-on-Chip (SoC) architectures. Replacing vendor firmware with OpenWRT yields vast security, auditability, and configuration gains, but traditionally forced every packet through the full Linux kernel `netfilter` stack, collapsing throughput on sub-gigahertz single-core MIPS CPUs to ~250–300 Mbps.
+Stock vendor firmwares frequently utilise proprietary hardware NAT acceleration shortcuts to sustain gigabit routing on modest System-on-Chip (SoC) architectures. Replacing vendor firmware with OpenWRT yields vast security, auditability, and configuration gains, but traditionally forced every packet through the full Linux kernel `netfilter` stack, collapsing throughput on sub-gigahertz single-core MIPS CPUs to ~250–300 Mbps.
 
 The introduction of **Flow Offloading** in OpenWRT 19.07 fundamentally changed this equation by introducing a fastpath that bypasses redundant kernel processing for established flows.
 
@@ -110,7 +110,7 @@ uci commit firewall
 
 ## Benchmark Results: 300 Mbps to 720+ Mbps
 
-Before enabling software flow offloading on the 800 Mbps UniFi fiber connection, line throughput on the Archer C7 plateaued at **290–310 Mbps**, with `htop` reporting 99–100% CPU utilization in `ksoftirqd`.
+Before enabling software flow offloading on the 800 Mbps UniFi fibre connection, line throughput on the Archer C7 plateaued at **290–310 Mbps**, with `htop` reporting 99–100% CPU utilisation in `ksoftirqd`.
 
 Upon activating software flow offloading:
 
@@ -123,11 +123,11 @@ Upon activating software flow offloading:
 
 ## Architectural Trade-offs & Production Considerations
 
-While flow offloading delivers a dramatic performance boost, engineering leaders must recognize its trade-offs:
+While flow offloading delivers a dramatic performance boost, engineering leaders must recognise its trade-offs:
 
 1. **Incompatibility with Smart Queue Management (SQM)**:
-   Because packets bypass the standard kernel queuing disciplines (`qdisc`), advanced Active Queue Management (such as CAKE or `fq_codel`) cannot intercept or schedule offloaded flows. If your uplink experiences significant bufferbloat, you must evaluate whether you prioritize raw gigabit throughput or deterministic latency guarantees under saturation.
+   Because packets bypass the standard kernel queuing disciplines (`qdisc`), advanced Active Queue Management (such as CAKE or `fq_codel`) cannot intercept or schedule offloaded flows. If your uplink experiences significant bufferbloat, you must evaluate whether you prioritise raw gigabit throughput or deterministic latency guarantees under saturation.
 2. **Per-Packet Firewall Logging & Inspection**:
-   Packets traversing the fastpath do not trigger per-packet `iptables` logging rules. Flow accounting and byte counters continue to synchronize periodically back to conntrack, but packet-level DPI or IDS/IPS hooks will not evaluate every intermediate packet.
-3. **Failover Behavior**:
+   Packets traversing the fastpath do not trigger per-packet `iptables` logging rules. Flow accounting and byte counters continue to synchronise periodically back to conntrack, but packet-level DPI or IDS/IPS hooks will not evaluate every intermediate packet.
+3. **Failover Behaviour**:
    If an established flowtable connection drops or terminates (via TCP FIN/RST or timeout), the flow entry is evicted, and any new handshake naturally returns to the slowpath for security policy evaluation.

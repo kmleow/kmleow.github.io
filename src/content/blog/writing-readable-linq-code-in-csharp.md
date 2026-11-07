@@ -15,7 +15,7 @@ Language Integrated Query (LINQ) is one of the most powerful paradigms in modern
 
 However, power without architectural discipline quickly becomes an engineering liability. In production codebases, it is all too common to encounter monolithic LINQ expressions spanning dozens of lines—choked with dense boolean expressions, anonymous types, nested ternary operators, and inconsistent indentation. 
 
-While the original author might find the expression clever when committing it, the code imposes high **cognitive load** on code reviewers and future engineers who must maintain, debug, and optimize it.
+While the original author might find the expression clever when committing it, the code imposes high **cognitive load** on code reviewers and future engineers who must maintain, debug, and optimise it.
 
 As software engineering leaders, our objective is to enforce conventions that make code **self-explanatory, testable, and maintainable**. Here is how to architect expressive, production-grade LINQ.
 
@@ -41,7 +41,7 @@ var results = database.Classes
 
 1. **Untestable Business Rules**: The composite eligibility check combines geographic constraints, score thresholds, age calculations, and disciplinary waivers into a single blob. You cannot write isolated unit tests for individual rules.
 2. **Brittle Debugging**: When an unexpected student record leaks into or is missing from the results, setting breakpoints or inspecting intermediate states in the debugger is impossible.
-3. **Magic Numbers**: Values like `85` and `50` sit inline with no architectural context. Is 85 an honors cutoff? Is 50 a statutory ministry quota?
+3. **Magic Numbers**: Values like `85` and `50` sit inline with no architectural context. Is 85 an honours cutoff? Is 50 a statutory ministry quota?
 
 ---
 
@@ -89,7 +89,7 @@ private static bool HasHonorGradeScore(Student student)
 ```
 
 #### Why This Outperforms Compound Lambdas
-- **Compiler Optimization**: The C# compiler and JIT inline small static predicate methods effortlessly. In memory, sequential `.Where()` calls on `IEnumerable` produce chained enumerator iterators with zero additional memory allocation.
+- **Compiler Optimisation**: The C# compiler and JIT inline small static predicate methods effortlessly. In memory, sequential `.Where()` calls on `IEnumerable` produce chained enumerator iterators with zero additional memory allocation.
 - **Single Responsibility**: Each predicate method does exactly one thing, matches its method name, and can be tested independently.
 - **Living Documentation**: Method names eliminate the need for redundant, rot-prone inline code comments.
 
@@ -125,13 +125,13 @@ private const int MinistryReportingQuotaLimit = 50;
 .Take(MinistryReportingQuotaLimit)
 ```
 
-Assigning an explicit semantic constant explains *why* the parameter exists and allows updating enterprise quotas in a single centralized location.
+Assigning an explicit semantic constant explains *why* the parameter exists and allows updating enterprise quotas in a single centralised location.
 
 ---
 
 ### 4. Separate Projection Logic into Transformation Methods
 
-The `.Select()` projection operator is frequently where queries become convoluted, especially when mapping domain models into Data Transfer Objects (DTOs) or anonymized reporting schemas.
+The `.Select()` projection operator is frequently where queries become convoluted, especially when mapping domain models into Data Transfer Objects (DTOs) or anonymised reporting schemas.
 
 Always extract multi-line object initializers into a dedicated mapping function:
 
@@ -149,9 +149,9 @@ private static AnonymizedStudentAuditRecord AnonymizeForExternalAudit(Student st
 
 ---
 
-### 5. Mind Deferred Execution vs. Materialization Pitfalls
+### 5. Mind Deferred Execution vs. Materialisation Pitfalls
 
-A foundational concept every senior engineer must master is the difference between **deferred execution** (`IEnumerable<T>` / `IQueryable<T>`) and **immediate materialization** (`.ToList()`, `.ToArray()`).
+A foundational concept every senior engineer must master is the difference between **deferred execution** (`IEnumerable<T>` / `IQueryable<T>`) and **immediate materialisation** (`.ToList()`, `.ToArray()`).
 
 #### The Anti-Pattern: `.ToList().ForEach(...)`
 
@@ -174,7 +174,7 @@ foreach (var student in students.Where(IsEligible))
 }
 ```
 
-This retains streaming deferred execution, minimizes Garbage Collector (GC) pressure, and handles large or infinite sequences safely.
+This retains streaming deferred execution, minimises Garbage Collector (GC) pressure, and handles large or infinite sequences safely.
 
 ---
 
@@ -214,4 +214,4 @@ public sealed record AnonymizedStudentAuditRecord
 
 - **Code is read 10x more often than it is written**: Writing expressive, readable LINQ is an investment in team velocity and defect reduction.
 - **Small functions compose gracefully**: Decomposing monolithic queries into named static predicates yields code that is self-documenting, unit-testable, and easy to maintain.
-- **Respect the runtime**: Understand deferred execution and avoid unnecessary materialization allocations in high-throughput hot paths.
+- **Respect the runtime**: Understand deferred execution and avoid unnecessary materialisation allocations in high-throughput hot paths.

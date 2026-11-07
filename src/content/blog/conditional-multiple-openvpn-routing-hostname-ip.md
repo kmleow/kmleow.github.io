@@ -11,7 +11,7 @@ legacyUrls:
   - "/2016/06/19/conditional-multiple-openvpn-routing-hostname-ip/"
 ---
 
-In complex enterprise and edge network architectures, relying on a single monolithic default gateway is fundamentally limiting. Organizations frequently need to route specific subnets, sensitive enterprise services, or third-party cloud integrations through dedicated point-to-point tunnels while allowing latency-sensitive domestic traffic to egress directly through the physical WAN.
+In complex enterprise and edge network architectures, relying on a single monolithic default gateway is fundamentally limiting. Organisations frequently need to route specific subnets, sensitive enterprise services, or third-party cloud integrations through dedicated point-to-point tunnels while allowing latency-sensitive domestic traffic to egress directly through the physical WAN.
 
 Classical routing operates strictly on destination IP lookups within the kernel's primary Forwarding Information Base (FIB table `main`). However, when routing decisions must account for **source IP, egress interface, destination port, or dynamic domain names with rotating Anycast IP pools**, we must transition to **Policy-Based Routing (PBR)**.
 
@@ -123,7 +123,7 @@ config policy 'usvpn_only'
 
 ## Policy Routing Strategies
 
-### Strategy A: Enforcing Host-Level Tunneling by Source IP
+### Strategy A: Enforcing Host-Level Tunnelling by Source IP
 
 To pin an entire internal server or testing device (`192.168.1.150`) to the VPN tunnel:
 
