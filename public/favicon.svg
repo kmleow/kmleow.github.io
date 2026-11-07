@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bg-slate" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+  </defs>
+  <!-- Background rounded squircle -->
+  <rect width="512" height="512" rx="116" fill="url(#bg-slate)" />
+  <rect x="8" y="8" width="496" height="496" rx="108" fill="none" stroke="#38bdf8" stroke-width="8" stroke-opacity="0.35" />
+  
+  <!-- Perfectly Centered Architectural 'L' -->
+  <path d="M 161 116 L 241 116 L 241 324 L 351 324 L 351 396 L 161 396 Z" fill="#ffffff" />
+</svg>
