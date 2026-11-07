@@ -5,7 +5,7 @@
       <stop offset="100%" stop-color="#F5EFE6" />
     </linearGradient>
     <filter id="pbrShadow" x="-5%" y="-5%" width="115%" height="115%">
-      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.06" />
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#0f172a" flood-opacity="0.06" />
     </filter>
     <marker id="pArrowBlue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
       <path d="M 0 1 L 10 5 L 0 9 z" fill="#2563eb" />
@@ -21,76 +21,76 @@
   <rect width="960" height="480" rx="16" fill="url(#pbrGrad)" stroke="#e5ded4" stroke-width="1.5" />
 
   <!-- LEFT: Ingress LAN Traffic -->
-  <g transform="translate(40, 160)">
-    <rect width="180" height="140" rx="12" fill="#FFFFFF" stroke="#cbd5e1" stroke-width="1.5" filter="url(#pbrShadow)" />
-    <rect x="16" y="14" width="75" height="20" rx="10" fill="#f1f5f9" />
-    <text x="53" y="28" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#475569">INGRESS</text>
-    <text x="16" y="58" font-family="system-ui, sans-serif" font-size="15" font-weight="800" fill="#0f172a">LAN Clients</text>
-    <text x="16" y="80" font-family="system-ui, sans-serif" font-size="12" font-weight="500" fill="#64748b">• Desktop / Mobile / IoT</text>
-    <text x="16" y="100" font-family="system-ui, sans-serif" font-size="12" font-weight="500" fill="#64748b">• Standard Gateway Traffic</text>
+  <g transform="translate(35, 150)">
+    <rect width="195" height="160" rx="14" fill="#FFFFFF" stroke="#cbd5e1" stroke-width="2" filter="url(#pbrShadow)" />
+    <rect x="18" y="16" width="90" height="24" rx="12" fill="#f1f5f9" />
+    <text x="63" y="32" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#475569">INGRESS</text>
+    <text x="18" y="68" font-family="system-ui, sans-serif" font-size="18" font-weight="900" fill="#0f172a">LAN Clients</text>
+    <text x="18" y="96" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#475569">• Desktop / Mobile / IoT</text>
+    <text x="18" y="120" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#475569">• Gateway default route</text>
   </g>
 
   <!-- Arrow LAN -> Netfilter -->
-  <path d="M 225 230 L 275 230" fill="none" stroke="#2563eb" stroke-width="2.5" marker-end="url(#pArrowBlue)" />
+  <path d="M 235 230 L 265 230" fill="none" stroke="#2563eb" stroke-width="3" marker-end="url(#pArrowBlue)" />
 
   <!-- CENTER: Linux Kernel Netfilter Decision Box -->
-  <g transform="translate(285, 30)">
-    <rect width="360" height="400" rx="14" fill="#FFFFFF" stroke="#0f172a" stroke-width="2" filter="url(#pbrShadow)" />
-    <rect x="20" y="16" width="180" height="22" rx="11" fill="#f8fafc" stroke="#94a3b8" stroke-width="1" />
-    <text x="110" y="31" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#0f172a">LINUX KERNEL NETFILTER</text>
+  <g transform="translate(275, 25)">
+    <rect width="395" height="430" rx="16" fill="#FFFFFF" stroke="#0f172a" stroke-width="2.5" filter="url(#pbrShadow)" />
+    <rect x="22" y="16" width="220" height="26" rx="13" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5" />
+    <text x="132" y="34" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="900" fill="#0f172a">LINUX KERNEL NETFILTER</text>
 
     <!-- Sub-step 1: DNS Interception -->
-    <g transform="translate(20, 55)">
-      <rect width="320" height="85" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5" />
-      <text x="16" y="24" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#0f172a">1. DNS Interception (dnsmasq-full)</text>
-      <text x="16" y="44" font-family="system-ui, sans-serif" font-size="11" font-weight="500" fill="#475569">Extracts A/AAAA records for target domains</text>
-      <text x="16" y="64" font-family="monospace" font-size="11" font-weight="700" fill="#2563eb">ipset add usvpn &lt;resolved-ip&gt;</text>
+    <g transform="translate(20, 56)">
+      <rect width="355" height="95" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5" />
+      <text x="18" y="26" font-family="system-ui, sans-serif" font-size="15" font-weight="800" fill="#0f172a">1. DNS Interception (dnsmasq)</text>
+      <text x="18" y="48" font-family="system-ui, sans-serif" font-size="13" font-weight="500" fill="#475569">Extracts A/AAAA records for target domains</text>
+      <text x="18" y="74" font-family="monospace" font-size="13" font-weight="800" fill="#2563eb">ipset add usvpn &lt;resolved-ip&gt;</text>
     </g>
 
     <!-- Arrow step 1 -> step 2 -->
-    <path d="M 180 145 L 180 170" fill="none" stroke="#475569" stroke-width="2" marker-end="url(#pArrowBlue)" />
+    <path d="M 197 155 L 197 175" fill="none" stroke="#475569" stroke-width="2.5" marker-end="url(#pArrowBlue)" />
 
     <!-- Sub-step 2: Packet Marking -->
-    <g transform="translate(20, 175)">
-      <rect width="320" height="95" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5" />
-      <text x="16" y="24" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#0f172a">2. iptables MANGLE PREROUTING</text>
-      <text x="16" y="44" font-family="system-ui, sans-serif" font-size="11" font-weight="500" fill="#475569">Evaluates packet destination against IP set</text>
-      <text x="16" y="64" font-family="monospace" font-size="11" font-weight="700" fill="#8b5cf6">-m set --match-set usvpn dst</text>
-      <text x="16" y="82" font-family="monospace" font-size="11" font-weight="700" fill="#8b5cf6">-j MARK --set-mark 0x100</text>
+    <g transform="translate(20, 180)">
+      <rect width="355" height="110" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5" />
+      <text x="18" y="26" font-family="system-ui, sans-serif" font-size="15" font-weight="800" fill="#0f172a">2. iptables MANGLE PREROUTING</text>
+      <text x="18" y="48" font-family="system-ui, sans-serif" font-size="13" font-weight="500" fill="#475569">Matches packet destination against IP set</text>
+      <text x="18" y="72" font-family="monospace" font-size="13" font-weight="800" fill="#8b5cf6">-m set --match-set usvpn dst</text>
+      <text x="18" y="94" font-family="monospace" font-size="13" font-weight="800" fill="#8b5cf6">-j MARK --set-mark 0x100</text>
     </g>
 
     <!-- Arrow step 2 -> step 3 -->
-    <path d="M 180 275 L 180 300" fill="none" stroke="#475569" stroke-width="2" marker-end="url(#pArrowBlue)" />
+    <path d="M 197 295 L 197 315" fill="none" stroke="#475569" stroke-width="2.5" marker-end="url(#pArrowBlue)" />
 
     <!-- Sub-step 3: Routing Policy (ip rule) -->
-    <g transform="translate(20, 305)">
-      <rect width="320" height="75" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.5" />
-      <text x="16" y="24" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#1e40af">3. Policy Routing Rule (ip rule)</text>
-      <text x="16" y="44" font-family="monospace" font-size="11" font-weight="700" fill="#1d4ed8">fwmark 0x100 =&gt; lookup table 100</text>
-      <text x="16" y="62" font-family="monospace" font-size="11" font-weight="500" fill="#475569">default =&gt; lookup table main</text>
+    <g transform="translate(20, 320)">
+      <rect width="355" height="90" rx="10" fill="#eff6ff" stroke="#bfdbfe" stroke-width="2" />
+      <text x="18" y="26" font-family="system-ui, sans-serif" font-size="15" font-weight="800" fill="#1e40af">3. Policy Routing Rule (ip rule)</text>
+      <text x="18" y="50" font-family="monospace" font-size="13" font-weight="800" fill="#1d4ed8">fwmark 0x100 =&gt; table 100</text>
+      <text x="18" y="72" font-family="monospace" font-size="13" font-weight="600" fill="#475569">default =&gt; table main</text>
     </g>
   </g>
 
   <!-- Output Paths Right -->
   <!-- Upper Path: Default WAN -->
-  <path d="M 650 120 L 715 120" fill="none" stroke="#10b981" stroke-width="2.5" marker-end="url(#pArrowGreen)" />
-  <g transform="translate(725, 60)">
-    <rect width="195" height="120" rx="10" fill="#FFFFFF" stroke="#86efac" stroke-width="1.5" filter="url(#pbrShadow)" />
-    <rect x="14" y="12" width="75" height="18" rx="9" fill="#ecfdf5" />
-    <text x="51" y="25" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#047857">DEFAULT</text>
-    <text x="14" y="52" font-family="system-ui, sans-serif" font-size="14" font-weight="800" fill="#0f172a">FIB Table main</text>
-    <text x="14" y="70" font-family="monospace" font-size="11" fill="#047857">dev pppoe-wan</text>
-    <text x="14" y="94" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#475569">Physical WAN ISP</text>
+  <path d="M 675 125 L 725 125" fill="none" stroke="#10b981" stroke-width="3" marker-end="url(#pArrowGreen)" />
+  <g transform="translate(735, 55)">
+    <rect width="190" height="140" rx="12" fill="#FFFFFF" stroke="#86efac" stroke-width="2" filter="url(#pbrShadow)" />
+    <rect x="16" y="14" width="90" height="22" rx="11" fill="#ecfdf5" />
+    <text x="61" y="29" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#047857">DEFAULT</text>
+    <text x="16" y="60" font-family="system-ui, sans-serif" font-size="17" font-weight="900" fill="#0f172a">FIB Table main</text>
+    <text x="16" y="84" font-family="monospace" font-size="14" font-weight="700" fill="#047857">dev pppoe-wan</text>
+    <text x="16" y="112" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#334155">Physical WAN ISP</text>
   </g>
 
   <!-- Lower Path: Policy VPN -->
-  <path d="M 650 350 L 715 350" fill="none" stroke="#8b5cf6" stroke-width="2.5" marker-end="url(#pArrowPurple)" />
-  <g transform="translate(725, 290)">
-    <rect width="195" height="120" rx="10" fill="#FFFFFF" stroke="#c4b5fd" stroke-width="1.5" filter="url(#pbrShadow)" />
-    <rect x="14" y="12" width="90" height="18" rx="9" fill="#f5f3ff" />
-    <text x="59" y="25" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#6d28d9">POLICY 0x100</text>
-    <text x="14" y="52" font-family="system-ui, sans-serif" font-size="14" font-weight="800" fill="#0f172a">FIB Table 100</text>
-    <text x="14" y="70" font-family="monospace" font-size="11" fill="#7c3aed">dev tun0</text>
-    <text x="14" y="94" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#475569">Secure VPN Tunnel</text>
+  <path d="M 675 355 L 725 355" fill="none" stroke="#8b5cf6" stroke-width="3" marker-end="url(#pArrowPurple)" />
+  <g transform="translate(735, 285)">
+    <rect width="190" height="140" rx="12" fill="#FFFFFF" stroke="#c4b5fd" stroke-width="2" filter="url(#pbrShadow)" />
+    <rect x="16" y="14" width="115" height="22" rx="11" fill="#f5f3ff" />
+    <text x="73" y="29" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#6d28d9">POLICY 0x100</text>
+    <text x="16" y="60" font-family="system-ui, sans-serif" font-size="17" font-weight="900" fill="#0f172a">FIB Table 100</text>
+    <text x="16" y="84" font-family="monospace" font-size="14" font-weight="700" fill="#7c3aed">dev tun0</text>
+    <text x="16" y="112" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#334155">Secure VPN Tunnel</text>
   </g>
 </svg>

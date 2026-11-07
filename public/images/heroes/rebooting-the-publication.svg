@@ -8,7 +8,7 @@
 
     <!-- Drop Shadows -->
     <filter id="cardShadow" x="-10%" y="-10%" width="125%" height="125%">
-      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#0f172a" flood-opacity="0.06" />
+      <feDropShadow dx="0" dy="8" stdDeviation="14" flood-color="#0f172a" flood-opacity="0.07" />
       <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#0f172a" flood-opacity="0.04" />
     </filter>
 
@@ -24,138 +24,138 @@
   <rect width="1200" height="675" fill="url(#bgGrad)" />
 
   <!-- Architectural Background Grid -->
-  <g opacity="0.25">
-    <line x1="80" y1="80" x2="1120" y2="80" stroke="#d5cbbe" stroke-dasharray="4,6" stroke-width="1" />
-    <line x1="80" y1="595" x2="1120" y2="595" stroke="#d5cbbe" stroke-dasharray="4,6" stroke-width="1" />
-    <line x1="80" y1="80" x2="80" y2="595" stroke="#d5cbbe" stroke-dasharray="4,6" stroke-width="1" />
-    <line x1="1120" y1="80" x2="1120" y2="595" stroke="#d5cbbe" stroke-dasharray="4,6" stroke-width="1" />
-    <circle cx="80" cy="80" r="3" fill="#b0a291" />
-    <circle cx="1120" cy="80" r="3" fill="#b0a291" />
-    <circle cx="80" cy="595" r="3" fill="#b0a291" />
-    <circle cx="1120" cy="595" r="3" fill="#b0a291" />
+  <g opacity="0.3">
+    <line x1="60" y1="50" x2="1140" y2="50" stroke="#d5cbbe" stroke-dasharray="4,6" stroke-width="1.5" />
+    <line x1="60" y1="625" x2="1140" y2="625" stroke="#d5cbbe" stroke-dasharray="4,6" stroke-width="1.5" />
+    <line x1="60" y1="50" x2="60" y2="625" stroke="#d5cbbe" stroke-dasharray="4,6" stroke-width="1.5" />
+    <line x1="1140" y1="50" x2="1140" y2="625" stroke="#d5cbbe" stroke-dasharray="4,6" stroke-width="1.5" />
+    <circle cx="60" cy="50" r="4" fill="#a89985" />
+    <circle cx="1140" cy="50" r="4" fill="#a89985" />
+    <circle cx="60" cy="625" r="4" fill="#a89985" />
+    <circle cx="1140" cy="625" r="4" fill="#a89985" />
   </g>
 
   <!-- Publication Header Badge -->
-  <g transform="translate(100, 75)">
-    <rect x="0" y="0" width="1000" height="42" rx="8" fill="#FFFFFF" stroke="#e6ded3" stroke-width="1" filter="url(#cardShadow)" />
-    <circle cx="24" cy="21" r="6" fill="#10b981" />
-    <text x="40" y="26" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="700" fill="#0f172a" letter-spacing="1.5">LEOW KAH MAN • EDITORIAL ARCHITECTURE &amp; HARNESS</text>
-    <text x="965" y="26" text-anchor="end" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="600" fill="#64748b">VOL. 2026.1</text>
+  <g transform="translate(70, 55)">
+    <rect x="0" y="0" width="1060" height="48" rx="10" fill="#FFFFFF" stroke="#e0d6c8" stroke-width="1.5" filter="url(#cardShadow)" />
+    <circle cx="28" cy="24" r="7" fill="#10b981" />
+    <text x="48" y="30" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="800" fill="#0f172a" letter-spacing="1.5">LEOW KAH MAN • EDITORIAL ARCHITECTURE &amp; HARNESS</text>
+    <text x="1030" y="30" text-anchor="end" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="700" fill="#64748b">VOL. 2026.1</text>
   </g>
 
   <!-- MAIN TOPOLOGY DIAGRAM -->
-  <g transform="translate(100, 150)">
+  <g transform="translate(70, 125)">
     
     <!-- CARD 1: Human Architectural Ideation -->
-    <g transform="translate(0, 40)">
-      <rect width="280" height="340" rx="16" fill="#FFFFFF" stroke="#e2d8cc" stroke-width="1.5" filter="url(#cardShadow)" />
+    <g transform="translate(0, 20)">
+      <rect width="320" height="390" rx="18" fill="#FFFFFF" stroke="#cbd5e1" stroke-width="2" filter="url(#cardShadow)" />
       
       <!-- Top Accent Pill -->
-      <rect x="24" y="24" width="130" height="26" rx="13" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1" />
-      <text x="89" y="41" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="700" fill="#1d4ed8">100% HUMAN</text>
+      <rect x="24" y="24" width="150" height="32" rx="16" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.5" />
+      <text x="99" y="45" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="800" fill="#1d4ed8">100% HUMAN</text>
 
-      <text x="24" y="86" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="800" fill="#0f172a">Engineering</text>
-      <text x="24" y="112" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="800" fill="#0f172a">Experience</text>
+      <text x="24" y="96" font-family="system-ui, -apple-system, sans-serif" font-size="26" font-weight="900" fill="#0f172a">Engineering</text>
+      <text x="24" y="128" font-family="system-ui, -apple-system, sans-serif" font-size="26" font-weight="900" fill="#0f172a">Experience</text>
 
-      <line x1="24" y1="130" x2="256" y2="130" stroke="#f1ede5" stroke-width="1.5" />
+      <line x1="24" y1="148" x2="296" y2="148" stroke="#f1ede5" stroke-width="2" />
 
       <!-- Feature Bullets -->
-      <g transform="translate(24, 155)">
-        <circle cx="6" cy="6" r="3" fill="#2563eb" />
-        <text x="18" y="10" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#334155">20 Years Battle Scars</text>
-        <text x="18" y="28" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="400" fill="#64748b">Real-world production trade-offs</text>
+      <g transform="translate(24, 178)">
+        <circle cx="7" cy="8" r="4" fill="#2563eb" />
+        <text x="22" y="13" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="700" fill="#1e293b">20 Years War Stories</text>
+        <text x="22" y="34" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="500" fill="#64748b">Real-world production trade-offs</text>
       </g>
 
-      <g transform="translate(24, 210)">
-        <circle cx="6" cy="6" r="3" fill="#2563eb" />
-        <text x="18" y="10" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#334155">Human Ideation &amp; Thesis</text>
-        <text x="18" y="28" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="400" fill="#64748b">Core engineering stance</text>
+      <g transform="translate(24, 246)">
+        <circle cx="7" cy="8" r="4" fill="#2563eb" />
+        <text x="22" y="13" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="700" fill="#1e293b">Human Ideation</text>
+        <text x="22" y="34" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="500" fill="#64748b">Core engineering stance</text>
       </g>
 
-      <g transform="translate(24, 265)">
-        <circle cx="6" cy="6" r="3" fill="#2563eb" />
-        <text x="18" y="10" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#334155">Architectural Stance</text>
-        <text x="18" y="28" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="400" fill="#64748b">Engineering pragmatism</text>
+      <g transform="translate(24, 314)">
+        <circle cx="7" cy="8" r="4" fill="#2563eb" />
+        <text x="22" y="13" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="700" fill="#1e293b">Pragmatic Focus</text>
+        <text x="22" y="34" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="500" fill="#64748b">Maintainable primitives over hype</text>
       </g>
     </g>
 
     <!-- CONNECTOR 1 -->
-    <path d="M 285 210 L 350 210" fill="none" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrow)" />
+    <path d="M 325 215 L 365 215" fill="none" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow)" />
 
     <!-- CARD 2: AI Execution Harness -->
-    <g transform="translate(360, 40)">
-      <rect width="280" height="340" rx="16" fill="#FFFFFF" stroke="#d97706" stroke-width="2" filter="url(#cardShadow)" />
+    <g transform="translate(370, 20)">
+      <rect width="320" height="390" rx="18" fill="#FFFFFF" stroke="#f59e0b" stroke-width="2.5" filter="url(#cardShadow)" />
       
       <!-- Top Accent Pill -->
-      <rect x="24" y="24" width="130" height="26" rx="13" fill="#fef3c7" stroke="#fde68a" stroke-width="1" />
-      <text x="89" y="41" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="700" fill="#b45309">DRAFTING ENGINE</text>
+      <rect x="24" y="24" width="165" height="32" rx="16" fill="#fef3c7" stroke="#fde68a" stroke-width="1.5" />
+      <text x="106" y="45" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="800" fill="#b45309">DRAFTING ENGINE</text>
 
-      <text x="24" y="86" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="800" fill="#0f172a">Autonomous</text>
-      <text x="24" y="112" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="800" fill="#0f172a">AI Harness</text>
+      <text x="24" y="96" font-family="system-ui, -apple-system, sans-serif" font-size="26" font-weight="900" fill="#0f172a">Autonomous</text>
+      <text x="24" y="128" font-family="system-ui, -apple-system, sans-serif" font-size="26" font-weight="900" fill="#0f172a">AI Harness</text>
 
-      <line x1="24" y1="130" x2="256" y2="130" stroke="#fef3c7" stroke-width="1.5" />
+      <line x1="24" y1="148" x2="296" y2="148" stroke="#fef3c7" stroke-width="2" />
 
       <!-- Feature Bullets -->
-      <g transform="translate(24, 155)">
-        <circle cx="6" cy="6" r="3" fill="#d97706" />
-        <text x="18" y="10" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#334155">Drafting Velocity</text>
-        <text x="18" y="28" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="400" fill="#64748b">Zero time-sink friction</text>
+      <g transform="translate(24, 178)">
+        <circle cx="7" cy="8" r="4" fill="#d97706" />
+        <text x="22" y="13" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="700" fill="#1e293b">Drafting Velocity</text>
+        <text x="22" y="34" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="500" fill="#64748b">Eliminating time-sink friction</text>
       </g>
 
-      <g transform="translate(24, 210)">
-        <circle cx="6" cy="6" r="3" fill="#d97706" />
-        <text x="18" y="10" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#334155">Prose Synthesis</text>
-        <text x="18" y="28" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="400" fill="#64748b">Polished technical flow</text>
+      <g transform="translate(24, 246)">
+        <circle cx="7" cy="8" r="4" fill="#d97706" />
+        <text x="22" y="13" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="700" fill="#1e293b">Prose Synthesis</text>
+        <text x="22" y="34" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="500" fill="#64748b">Disciplined technical flow</text>
       </g>
 
-      <g transform="translate(24, 265)">
-        <circle cx="6" cy="6" r="3" fill="#d97706" />
-        <text x="18" y="10" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#334155">Automated Formatting</text>
-        <text x="18" y="28" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="400" fill="#64748b">Vector schematics &amp; schemas</text>
+      <g transform="translate(24, 314)">
+        <circle cx="7" cy="8" r="4" fill="#d97706" />
+        <text x="22" y="13" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="700" fill="#1e293b">Vector Graphics</text>
+        <text x="22" y="34" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="500" fill="#64748b">Responsive SVG schematics</text>
       </g>
     </g>
 
     <!-- CONNECTOR 2 -->
-    <path d="M 645 210 L 710 210" fill="none" stroke="#d97706" stroke-width="2.5" marker-end="url(#arrowAmber)" />
+    <path d="M 695 215 L 735 215" fill="none" stroke="#d97706" stroke-width="3" marker-end="url(#arrowAmber)" />
 
     <!-- CARD 3: Modern High-Signal Publication -->
-    <g transform="translate(720, 40)">
-      <rect width="280" height="340" rx="16" fill="#FFFFFF" stroke="#e2d8cc" stroke-width="1.5" filter="url(#cardShadow)" />
+    <g transform="translate(740, 20)">
+      <rect width="320" height="390" rx="18" fill="#FFFFFF" stroke="#cbd5e1" stroke-width="2" filter="url(#cardShadow)" />
       
       <!-- Top Accent Pill -->
-      <rect x="24" y="24" width="130" height="26" rx="13" fill="#ecfdf5" stroke="#a7f3d0" stroke-width="1" />
-      <text x="89" y="41" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="700" fill="#047857">HIGH SIGNAL</text>
+      <rect x="24" y="24" width="150" height="32" rx="16" fill="#ecfdf5" stroke="#a7f3d0" stroke-width="1.5" />
+      <text x="99" y="45" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="800" fill="#047857">HIGH SIGNAL</text>
 
-      <text x="24" y="86" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="800" fill="#0f172a">Minimalist</text>
-      <text x="24" y="112" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="800" fill="#0f172a">Publication</text>
+      <text x="24" y="96" font-family="system-ui, -apple-system, sans-serif" font-size="26" font-weight="900" fill="#0f172a">Minimalist</text>
+      <text x="24" y="128" font-family="system-ui, -apple-system, sans-serif" font-size="26" font-weight="900" fill="#0f172a">Publication</text>
 
-      <line x1="24" y1="130" x2="256" y2="130" stroke="#f1ede5" stroke-width="1.5" />
+      <line x1="24" y1="148" x2="296" y2="148" stroke="#f1ede5" stroke-width="2" />
 
       <!-- Feature Bullets -->
-      <g transform="translate(24, 155)">
-        <circle cx="6" cy="6" r="3" fill="#10b981" />
-        <text x="18" y="10" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#334155">Astro 5 &amp; Tailwind</text>
-        <text x="18" y="28" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="400" fill="#64748b">Instant static delivery</text>
+      <g transform="translate(24, 178)">
+        <circle cx="7" cy="8" r="4" fill="#10b981" />
+        <text x="22" y="13" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="700" fill="#1e293b">Astro 5 &amp; Tailwind</text>
+        <text x="22" y="34" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="500" fill="#64748b">Instant static delivery</text>
       </g>
 
-      <g transform="translate(24, 210)">
-        <circle cx="6" cy="6" r="3" fill="#10b981" />
-        <text x="18" y="10" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#334155">Zero Bloat / Trackers</text>
-        <text x="18" y="28" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="400" fill="#64748b">Purged 49 obsolete posts</text>
+      <g transform="translate(24, 246)">
+        <circle cx="7" cy="8" r="4" fill="#10b981" />
+        <text x="22" y="13" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="700" fill="#1e293b">Zero Bloat</text>
+        <text x="22" y="34" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="500" fill="#64748b">Purged 49 obsolete posts</text>
       </g>
 
-      <g transform="translate(24, 265)">
-        <circle cx="6" cy="6" r="3" fill="#10b981" />
-        <text x="18" y="10" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#334155">LinkedIn Discussions</text>
-        <text x="18" y="28" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="400" fill="#64748b">High-context peer network</text>
+      <g transform="translate(24, 314)">
+        <circle cx="7" cy="8" r="4" fill="#10b981" />
+        <text x="22" y="13" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="700" fill="#1e293b">LinkedIn Channels</text>
+        <text x="22" y="34" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="500" fill="#64748b">High-context peer discussions</text>
       </g>
     </g>
   </g>
 
   <!-- Bottom Subtitle Bar -->
-  <g transform="translate(100, 560)">
-    <rect width="1000" height="48" rx="10" fill="#FFFFFF" stroke="#e2d8cc" stroke-width="1" filter="url(#cardShadow)" />
-    <text x="500" y="30" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="#475569">
+  <g transform="translate(70, 560)">
+    <rect width="1060" height="52" rx="12" fill="#FFFFFF" stroke="#e0d6c8" stroke-width="1.5" filter="url(#cardShadow)" />
+    <text x="530" y="33" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="17" font-weight="800" fill="#334155" letter-spacing="0.5">
       HUMAN ARCHITECTURAL OPINION • AI EXECUTION VELOCITY • MINIMALIST STATIC DELIVERY
     </text>
   </g>

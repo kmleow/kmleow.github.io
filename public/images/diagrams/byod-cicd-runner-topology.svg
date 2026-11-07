@@ -1,11 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 460" width="100%" height="auto">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 480" width="100%" height="auto">
   <defs>
     <linearGradient id="cicdGrad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#FAF7F2" />
       <stop offset="100%" stop-color="#F5EFE6" />
     </linearGradient>
     <filter id="cicdShadow" x="-5%" y="-5%" width="115%" height="115%">
-      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.06" />
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#0f172a" flood-opacity="0.06" />
     </filter>
     <marker id="cArrowBlue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
       <path d="M 0 1 L 10 5 L 0 9 z" fill="#2563eb" />
@@ -15,70 +15,70 @@
     </marker>
   </defs>
 
-  <rect width="960" height="460" rx="16" fill="url(#cicdGrad)" stroke="#e5ded4" stroke-width="1.5" />
+  <rect width="960" height="480" rx="16" fill="url(#cicdGrad)" stroke="#e5ded4" stroke-width="1.5" />
 
   <!-- TIER 1: External Cloud (SaaS) -->
-  <g transform="translate(60, 30)">
-    <rect width="840" height="90" rx="12" fill="#FFFFFF" stroke="#cbd5e1" stroke-width="1.5" filter="url(#cicdShadow)" />
-    <rect x="20" y="14" width="130" height="22" rx="11" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
-    <text x="85" y="29" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#475569">EXTERNAL CLOUD</text>
+  <g transform="translate(40, 25)">
+    <rect width="880" height="95" rx="14" fill="#FFFFFF" stroke="#cbd5e1" stroke-width="2" filter="url(#cicdShadow)" />
+    <rect x="20" y="14" width="150" height="26" rx="13" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
+    <text x="95" y="32" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="800" fill="#475569">EXTERNAL CLOUD</text>
 
     <!-- Sub-nodes -->
-    <g transform="translate(180, 20)">
-      <rect width="260" height="50" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" />
-      <text x="130" y="30" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#0f172a">GitLab / GitHub Repositories</text>
+    <g transform="translate(190, 20)">
+      <rect width="300" height="55" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5" />
+      <text x="150" y="34" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="800" fill="#0f172a">GitLab / GitHub Repositories</text>
     </g>
-    <path d="M 445 45 L 485 45" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#cArrowBlue)" />
-    <g transform="translate(495, 20)">
-      <rect width="280" height="50" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1" />
-      <text x="140" y="30" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#1d4ed8">Pipeline Job Queue (Buffered)</text>
+    <path d="M 495 48 L 535 48" fill="none" stroke="#2563eb" stroke-width="2.5" marker-end="url(#cArrowBlue)" />
+    <g transform="translate(545, 20)">
+      <rect width="315" height="55" rx="10" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.5" />
+      <text x="157" y="34" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="800" fill="#1d4ed8">Pipeline Job Queue (Buffered)</text>
     </g>
   </g>
 
   <!-- Middle Ingress Security Arrow -->
   <g transform="translate(480, 120)">
-    <path d="M 0 0 L 0 45" fill="none" stroke="#2563eb" stroke-width="2.5" stroke-dasharray="5,4" marker-end="url(#cArrowBlue)" />
-    <rect x="15" y="8" width="280" height="30" rx="6" fill="#ecfdf5" stroke="#a7f3d0" stroke-width="1" />
-    <text x="25" y="28" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#065f46">HTTPS Outbound Polling (0 Inbound Ports)</text>
+    <path d="M 0 0 L 0 50" fill="none" stroke="#2563eb" stroke-width="3" stroke-dasharray="6,4" marker-end="url(#cArrowBlue)" />
+    <rect x="18" y="10" width="310" height="34" rx="8" fill="#ecfdf5" stroke="#a7f3d0" stroke-width="1.5" />
+    <text x="32" y="32" font-family="system-ui, sans-serif" font-size="13" font-weight="800" fill="#065f46">HTTPS Outbound Polling (0 Inbound Ports)</text>
   </g>
 
   <!-- TIER 2: On-Premises / Homelab Build Host -->
-  <g transform="translate(60, 175)">
-    <rect width="840" height="255" rx="12" fill="#FFFFFF" stroke="#0f172a" stroke-width="1.5" filter="url(#cicdShadow)" />
-    <rect x="20" y="14" width="165" height="22" rx="11" fill="#f8fafc" stroke="#94a3b8" stroke-width="1" />
-    <text x="102" y="29" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#0f172a">ON-PREM / HOMELAB HOST</text>
+  <g transform="translate(40, 180)">
+    <rect width="880" height="275" rx="14" fill="#FFFFFF" stroke="#0f172a" stroke-width="2" filter="url(#cicdShadow)" />
+    <rect x="20" y="14" width="190" height="26" rx="13" fill="#f8fafc" stroke="#94a3b8" stroke-width="1" />
+    <text x="115" y="32" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="800" fill="#0f172a">ON-PREM / HOMELAB HOST</text>
 
     <!-- Runner Host Daemon -->
-    <g transform="translate(200, 20)">
-      <rect width="440" height="45" rx="8" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
-      <text x="220" y="28" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#0f172a">GitLab / GitHub Runner Host Daemon (Supervisor)</text>
+    <g transform="translate(225, 18)">
+      <rect width="500" height="48" rx="10" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.5" />
+      <text x="250" y="31" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="800" fill="#0f172a">GitLab / GitHub Runner Host Daemon (Supervisor)</text>
     </g>
 
     <!-- Daemon to Docker Arrow -->
-    <path d="M 420 65 L 420 90" fill="none" stroke="#475569" stroke-width="2" marker-end="url(#cArrowDark)" />
-    <text x="430" y="82" font-family="monospace" font-size="11" fill="#64748b">/var/run/docker.sock</text>
+    <path d="M 475 68 L 475 95" fill="none" stroke="#0f172a" stroke-width="2.5" marker-end="url(#cArrowDark)" />
+    <text x="490" y="86" font-family="monospace" font-size="13" font-weight="700" fill="#475569">/var/run/docker.sock</text>
 
     <!-- Docker Engine Sandbox -->
-    <g transform="translate(60, 100)">
-      <rect width="720" height="135" rx="10" fill="#f8fafc" stroke="#94a3b8" stroke-dasharray="4,4" stroke-width="1.5" />
-      <text x="20" y="24" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#475569">LOCAL DOCKER ENGINE (EPHEMERAL EXECUTION CONTEXT)</text>
+    <g transform="translate(40, 102)">
+      <rect width="800" height="155" rx="12" fill="#f8fafc" stroke="#94a3b8" stroke-dasharray="5,5" stroke-width="2" />
+      <text x="24" y="28" font-family="system-ui, sans-serif" font-size="14" font-weight="800" fill="#334155">LOCAL DOCKER ENGINE (EPHEMERAL EXECUTION CONTEXT)</text>
 
       <!-- Container 1 -->
-      <g transform="translate(30, 40)">
-        <rect width="310" height="75" rx="8" fill="#FFFFFF" stroke="#3b82f6" stroke-width="1.5" />
-        <rect x="12" y="10" width="80" height="18" rx="9" fill="#eff6ff" />
-        <text x="52" y="23" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#2563eb">SANDBOX 1</text>
-        <text x="12" y="46" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#0f172a">Ephemeral Job Container</text>
-        <text x="12" y="64" font-family="system-ui, sans-serif" font-size="11" font-weight="500" fill="#64748b">Build Hugo / Node.js • Cache Layered</text>
+      <g transform="translate(30, 42)">
+        <rect width="350" height="92" rx="10" fill="#FFFFFF" stroke="#3b82f6" stroke-width="2" />
+        <rect x="16" y="12" width="95" height="22" rx="11" fill="#eff6ff" />
+        <text x="63" y="27" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#2563eb">SANDBOX 1</text>
+        <text x="16" y="55" font-family="system-ui, sans-serif" font-size="16" font-weight="800" fill="#0f172a">Ephemeral Job Container</text>
+        <text x="16" y="76" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#475569">Build Hugo / Node.js • Layer Caching</text>
       </g>
 
       <!-- Container 2 -->
-      <g transform="translate(380, 40)">
-        <rect width="310" height="75" rx="8" fill="#FFFFFF" stroke="#10b981" stroke-width="1.5" />
-        <rect x="12" y="10" width="80" height="18" rx="9" fill="#ecfdf5" />
-        <text x="52" y="23" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#059669">SANDBOX 2</text>
-        <text x="12" y="46" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#0f172a">Ephemeral Job Container</text>
-        <text x="12" y="64" font-family="system-ui, sans-serif" font-size="11" font-weight="500" fill="#64748b">Compile Go / .NET • Disposable Image</text>
+      <g transform="translate(420, 42)">
+        <rect width="350" height="92" rx="10" fill="#FFFFFF" stroke="#10b981" stroke-width="2" />
+        <rect x="16" y="12" width="95" height="22" rx="11" fill="#ecfdf5" />
+        <text x="63" y="27" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#059669">SANDBOX 2</text>
+        <text x="16" y="55" font-family="system-ui, sans-serif" font-size="16" font-weight="800" fill="#0f172a">Ephemeral Job Container</text>
+        <text x="16" y="76" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#475569">Compile Go / .NET • Disposable Image</text>
       </g>
     </g>
   </g>
