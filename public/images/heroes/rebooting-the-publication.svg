@@ -1,137 +1,157 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
   <defs>
+    <!-- Background Gradient -->
     <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#FAF7F2" />
-      <stop offset="100%" stop-color="#F2EBE0" />
+      <stop offset="50%" stop-color="#F5EFE6" />
+      <stop offset="100%" stop-color="#ECE2D0" />
     </linearGradient>
 
-    <filter id="cardShadow" x="-10%" y="-10%" width="125%" height="125%">
-      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#0f172a" flood-opacity="0.06" />
+    <!-- Prism & Shard Gradients -->
+    <linearGradient id="coreFacetLeft" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+
+    <linearGradient id="coreFacetTop" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3B82F6" />
+      <stop offset="100%" stop-color="#1D4ED8" />
+    </linearGradient>
+
+    <linearGradient id="coreFacetRight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563EB" />
+      <stop offset="100%" stop-color="#1E40AF" />
+    </linearGradient>
+
+    <linearGradient id="goldBeam" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#D97706" stop-opacity="0.2" />
+    </linearGradient>
+
+    <linearGradient id="emeraldBeam" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#059669" stop-opacity="0.1" />
+    </linearGradient>
+
+    <linearGradient id="glowPulse" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#60A5FA" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#3B82F6" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- Precision Shadows -->
+    <filter id="motifShadow" x="-20%" y="-20%" width="150%" height="150%">
+      <feDropShadow dx="0" dy="24" stdDeviation="32" flood-color="#0f172a" flood-opacity="0.12" />
+      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#0f172a" flood-opacity="0.08" />
     </filter>
 
-    <marker id="arrowBlue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M 0 1 L 10 5 L 0 9 z" fill="#2563eb" />
-    </marker>
-    <marker id="arrowEmerald" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M 0 1 L 10 5 L 0 9 z" fill="#059669" />
-    </marker>
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="40" result="blur" />
+    </filter>
   </defs>
 
-  <!-- Background -->
+  <!-- Background Base -->
   <rect width="1200" height="675" fill="url(#bgGrad)" />
 
-  <!-- Subtle Blueprint Grid -->
-  <g opacity="0.35">
-    <line x1="60" y1="45" x2="1140" y2="45" stroke="#d5cbbe" stroke-dasharray="4,6" stroke-width="1.5" />
-    <line x1="60" y1="630" x2="1140" y2="630" stroke="#d5cbbe" stroke-dasharray="4,6" stroke-width="1.5" />
-    <line x1="60" y1="45" x2="60" y2="630" stroke="#d5cbbe" stroke-dasharray="4,6" stroke-width="1.5" />
-    <line x1="1140" y1="45" x2="1140" y2="630" stroke="#d5cbbe" stroke-dasharray="4,6" stroke-width="1.5" />
+  <!-- Ambient Light Blooms -->
+  <circle cx="600" cy="337" r="320" fill="url(#glowPulse)" filter="url(#softGlow)" />
+  <circle cx="380" cy="240" r="180" fill="#FDE68A" opacity="0.3" filter="url(#softGlow)" />
+  <circle cx="820" cy="400" r="200" fill="#A7F3D0" opacity="0.25" filter="url(#softGlow)" />
+
+  <!-- Architectural Coordinate Grid & Blueprint Reticles -->
+  <g opacity="0.45" stroke="#CBD5E1" stroke-width="1">
+    <!-- Concentric Calibration Rings -->
+    <circle cx="600" cy="337" r="260" fill="none" stroke-dasharray="3,6" />
+    <circle cx="600" cy="337" r="380" fill="none" stroke-dasharray="2,8" opacity="0.6" />
+    <circle cx="600" cy="337" r="140" fill="none" stroke="#94A3B8" stroke-width="1.2" stroke-dasharray="6,6" />
+
+    <!-- Crosshair Axes -->
+    <line x1="120" y1="337" x2="1080" y2="337" stroke-dasharray="4,8" />
+    <line x1="600" y1="60" x2="600" y2="615" stroke-dasharray="4,8" />
+
+    <!-- 30° / 60° Isometric Ray Guides -->
+    <line x1="200" y1="106" x2="1000" y2="568" stroke-dasharray="2,8" opacity="0.5" />
+    <line x1="200" y1="568" x2="1000" y2="106" stroke-dasharray="2,8" opacity="0.5" />
+
+    <!-- Subtle Tick Crosses -->
+    <path d="M 590 197 L 610 197 M 600 187 L 600 207" stroke="#64748B" stroke-width="1.5" />
+    <path d="M 590 477 L 610 477 M 600 467 L 600 487" stroke="#64748B" stroke-width="1.5" />
+    <path d="M 330 337 L 350 337 M 340 327 L 340 347" stroke="#64748B" stroke-width="1.5" />
+    <path d="M 850 337 L 870 337 M 860 327 L 860 347" stroke="#64748B" stroke-width="1.5" />
   </g>
 
-  <!-- Top Publication Header -->
-  <g transform="translate(60, 48)">
-    <text x="0" y="32" font-family="system-ui, -apple-system, sans-serif" font-size="38" font-weight="900" fill="#0f172a" letter-spacing="-0.5">Editorial Architecture &amp; Autonomous Harness</text>
-    <text x="0" y="66" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="600" fill="#64748b">Human engineering stances powered by an agentic delivery pipeline</text>
-  </g>
+  <!-- DYNAMIC ABSTRACT COMPOSITION -->
+  <g filter="url(#motifShadow)">
 
-  <!-- 3 Major Pipeline Pillars -->
-  <g transform="translate(60, 150)">
+    <!-- Background Sweeping Plane 1 (Gold/Amber Vector Sheet) -->
+    <path d="M 420 180 L 820 140 L 740 460 L 360 380 Z" fill="url(#goldBeam)" opacity="0.45" />
+
+    <!-- Background Sweeping Plane 2 (Emerald Velocity Vector) -->
+    <path d="M 280 440 L 760 520 L 880 260 L 520 220 Z" fill="url(#emeraldBeam)" opacity="0.4" />
+
+    <!-- Precision Isometric Prism Nexus (Human-AI Synthesis Motif) -->
+    <!-- Center Point: (600, 330) -->
+    <!-- Outer Orbiting Polyhedral Nodes -->
     
-    <!-- CARD 1: Human Stance -->
-    <g transform="translate(0, 0)">
-      <rect width="335" height="440" rx="20" fill="#FFFFFF" stroke="#cbd5e1" stroke-width="2.5" filter="url(#cardShadow)" />
-      
-      <!-- Pill Badge -->
-      <rect x="26" y="26" width="160" height="38" rx="19" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.5" />
-      <text x="106" y="51" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="800" fill="#1d4ed8">100% HUMAN</text>
-
-      <text x="26" y="112" font-family="system-ui, -apple-system, sans-serif" font-size="30" font-weight="900" fill="#0f172a">Engineering</text>
-      <text x="26" y="148" font-family="system-ui, -apple-system, sans-serif" font-size="30" font-weight="900" fill="#0f172a">Leadership</text>
-
-      <line x1="26" y1="172" x2="309" y2="172" stroke="#f1ede5" stroke-width="2" />
-
-      <!-- High-impact Points -->
-      <g transform="translate(26, 212)">
-        <circle cx="8" cy="10" r="5" fill="#2563eb" />
-        <text x="26" y="17" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="800" fill="#0f172a">20 Years Experience</text>
-      </g>
-      
-      <g transform="translate(26, 280)">
-        <circle cx="8" cy="10" r="5" fill="#2563eb" />
-        <text x="26" y="17" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="800" fill="#0f172a">Production Stance</text>
-      </g>
-
-      <g transform="translate(26, 348)">
-        <circle cx="8" cy="10" r="5" fill="#2563eb" />
-        <text x="26" y="17" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="800" fill="#0f172a">Architectural Opinion</text>
-      </g>
+    <!-- Top-Left Satellite Node -->
+    <g transform="translate(340, 210) scale(0.65)">
+      <polygon points="60,0 120,35 120,105 60,140 0,105 0,35" fill="#FFFFFF" stroke="#3B82F6" stroke-width="3" />
+      <polygon points="60,0 120,35 60,70 0,35" fill="#60A5FA" opacity="0.8" />
+      <polygon points="0,35 60,70 60,140 0,105" fill="#1E293B" />
+      <polygon points="60,70 120,35 120,105 60,140" fill="#2563EB" />
     </g>
 
-    <!-- Connector 1 -->
-    <path d="M 345 220 L 368 220" fill="none" stroke="#2563eb" stroke-width="4" marker-end="url(#arrowBlue)" />
-
-    <!-- CARD 2: AI Harness -->
-    <g transform="translate(372, 0)">
-      <rect width="335" height="440" rx="20" fill="#FFFFFF" stroke="#f59e0b" stroke-width="3" filter="url(#cardShadow)" />
-      
-      <!-- Pill Badge -->
-      <rect x="26" y="26" width="165" height="38" rx="19" fill="#fef3c7" stroke="#fde68a" stroke-width="1.5" />
-      <text x="108" y="51" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="800" fill="#b45309">AGENTIC HARNESS</text>
-
-      <text x="26" y="112" font-family="system-ui, -apple-system, sans-serif" font-size="30" font-weight="900" fill="#0f172a">Autonomous</text>
-      <text x="26" y="148" font-family="system-ui, -apple-system, sans-serif" font-size="30" font-weight="900" fill="#0f172a">Execution</text>
-
-      <line x1="26" y1="172" x2="309" y2="172" stroke="#fef3c7" stroke-width="2" />
-
-      <!-- High-impact Points -->
-      <g transform="translate(26, 212)">
-        <circle cx="8" cy="10" r="5" fill="#d97706" />
-        <text x="26" y="17" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="800" fill="#0f172a">Architectural Interview</text>
-      </g>
-      
-      <g transform="translate(26, 280)">
-        <circle cx="8" cy="10" r="5" fill="#d97706" />
-        <text x="26" y="17" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="800" fill="#0f172a">7-Stage Waterfall</text>
-      </g>
-
-      <g transform="translate(26, 348)">
-        <circle cx="8" cy="10" r="5" fill="#d97706" />
-        <text x="26" y="17" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="800" fill="#0f172a">Zero Hallucination</text>
-      </g>
+    <!-- Bottom-Right Satellite Node -->
+    <g transform="translate(800, 390) scale(0.55)">
+      <polygon points="60,0 120,35 120,105 60,140 0,105 0,35" fill="#FFFFFF" stroke="#10B981" stroke-width="3" />
+      <polygon points="60,0 120,35 60,70 0,35" fill="#34D399" opacity="0.8" />
+      <polygon points="0,35 60,70 60,140 0,105" fill="#0F172A" />
+      <polygon points="60,70 120,35 120,105 60,140" fill="#059669" />
     </g>
 
-    <!-- Connector 2 -->
-    <path d="M 718 220 L 740 220" fill="none" stroke="#059669" stroke-width="4" marker-end="url(#arrowEmerald)" />
+    <!-- Intersecting Laser Vector Beams Connecting Nodes -->
+    <line x1="380" y1="245" x2="600" y2="330" stroke="#3B82F6" stroke-width="2.5" stroke-dasharray="6,6" />
+    <line x1="835" y1="425" x2="600" y2="330" stroke="#10B981" stroke-width="2.5" stroke-dasharray="6,6" />
 
-    <!-- CARD 3: Modern Delivery -->
-    <g transform="translate(745, 0)">
-      <rect width="335" height="440" rx="20" fill="#FFFFFF" stroke="#10b981" stroke-width="2.5" filter="url(#cardShadow)" />
-      
-      <!-- Pill Badge -->
-      <rect x="26" y="26" width="165" height="38" rx="19" fill="#ecfdf5" stroke="#a7f3d0" stroke-width="1.5" />
-      <text x="108" y="51" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="800" fill="#047857">STATIC ENGINE</text>
+    <!-- FLOATING ISOMETRIC ARCHITECTURAL NUCLEUS -->
+    <!-- Facet 1: Top Diamond (Sky Blue to Royal Blue) -->
+    <polygon points="600,160 760,250 600,335 440,250" fill="url(#coreFacetTop)" stroke="#93C5FD" stroke-width="2" />
 
-      <text x="26" y="112" font-family="system-ui, -apple-system, sans-serif" font-size="30" font-weight="900" fill="#0f172a">High-Speed</text>
-      <text x="26" y="148" font-family="system-ui, -apple-system, sans-serif" font-size="30" font-weight="900" fill="#0f172a">Delivery</text>
+    <!-- Facet 2: Left Body (Deep Midnight Slate) -->
+    <polygon points="440,250 600,335 600,515 440,425" fill="url(#coreFacetLeft)" stroke="#334155" stroke-width="2" />
 
-      <line x1="26" y1="172" x2="309" y2="172" stroke="#e6f4ea" stroke-width="2" />
+    <!-- Facet 3: Right Body (Cobalt Blue Gradient) -->
+    <polygon points="600,335 760,250 760,425 600,515" fill="url(#coreFacetRight)" stroke="#60A5FA" stroke-width="2" />
 
-      <!-- High-impact Points -->
-      <g transform="translate(26, 212)">
-        <circle cx="8" cy="10" r="5" fill="#059669" />
-        <text x="26" y="17" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="800" fill="#0f172a">Astro 5 Architecture</text>
-      </g>
-      
-      <g transform="translate(26, 280)">
-        <circle cx="8" cy="10" r="5" fill="#059669" />
-        <text x="26" y="17" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="800" fill="#0f172a">Zero Client Runtime</text>
-      </g>
+    <!-- Inner Core Crystalline Cutouts (Reflecting Inner Architecture) -->
+    <!-- Top Cutout -->
+    <polygon points="600,205 700,260 600,315 500,260" fill="#FFFFFF" opacity="0.35" />
 
-      <g transform="translate(26, 348)">
-        <circle cx="8" cy="10" r="5" fill="#059669" />
-        <text x="26" y="17" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="800" fill="#0f172a">Independent Platform</text>
-      </g>
+    <!-- Left Cutout Shard -->
+    <polygon points="470,280 575,340 575,470 470,410" fill="#38BDF8" opacity="0.25" />
+
+    <!-- Right Cutout Shard -->
+    <polygon points="625,340 730,280 730,410 625,470" fill="#FFFFFF" opacity="0.2" />
+
+    <!-- Center Radiant Focus Pin -->
+    <circle cx="600" cy="335" r="7" fill="#FFFFFF" stroke="#2563EB" stroke-width="3" />
+    <circle cx="600" cy="335" r="3" fill="#60A5FA" />
+
+    <!-- Dynamic Architectural Framing Lines -->
+    <path d="M 440 250 L 380 215 M 760 250 L 820 215 M 600 515 L 600 575" stroke="#0F172A" stroke-width="2.5" stroke-linecap="round" />
+
+    <!-- Precision Corner Accent Brackets -->
+    <g stroke="#0F172A" stroke-width="2.5" fill="none">
+      <path d="M 160 120 L 140 120 L 140 140" />
+      <path d="M 1040 120 L 1060 120 L 1060 140" />
+      <path d="M 160 555 L 140 555 L 140 535" />
+      <path d="M 1040 555 L 1060 555 L 1060 535" />
     </g>
+
+    <!-- Calibration Tickmarks at Perimeter -->
+    <line x1="600" y1="40" x2="600" y2="55" stroke="#0F172A" stroke-width="2" />
+    <line x1="600" y1="620" x2="600" y2="635" stroke="#0F172A" stroke-width="2" />
+    <line x1="70" y1="337" x2="85" y2="337" stroke="#0F172A" stroke-width="2" />
+    <line x1="1115" y1="337" x2="1130" y2="337" stroke="#0F172A" stroke-width="2" />
 
   </g>
 </svg>
