@@ -73,7 +73,7 @@ npm run preview
 ## 5. Deployment & CI/CD
 
 Deployments are automated via **GitHub Actions** (`.github/workflows/deploy.yml`):
-* Pushing to `master` triggers a clean build on Node.js 22.
+* Pushing to `main` triggers a clean build on Node.js 24 (Active LTS).
 * Astro generates the static distribution to `./dist`.
 * The build artifact is uploaded and deployed to GitHub Pages with zero downtime.
 * Legacy URLs from 2016–2020 are automatically redirected to canonical root slugs via build-time redirect stubs.
