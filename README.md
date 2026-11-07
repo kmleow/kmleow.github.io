@@ -1,4 +1,4 @@
-# kmleow.github.io — Architectural Systems & Engineering Leadership
+# Leow Kah Man — Engineering Leadership & Systems Architecture
 
 The official technical publication and systems architecture journal of **Leow Kah Man** ([www.leowkahman.com](https://www.leowkahman.com)).
 
