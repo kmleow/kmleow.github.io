@@ -27,7 +27,7 @@ The emergence of capable LLMs and agentic coding harnesses has transformed how I
 
 To be clear: **AI does not originate architectural opinions**. It cannot experience a brutal cascading failover during a migration, it cannot feel the operational cost of premature microservice decoupling, and it cannot invent genuine engineering battle scars. 
 
-The ideation, technical stances, trade-off analyses, and architectural judgments across this publication remain **100% human—originating directly from myself**.
+The ideation, technical stances, trade-off analyses, and architectural judgments across this publication remain **100% human—originating directly from myself**. Every writeup published here is an individual personal expression of my own engineering experience, and does not represent the views, positions, or strategies of my employer.
 
 ![Human Experience and AI Drafting Pipeline](/images/diagrams/human-ai-authorship-pipeline.svg)
 

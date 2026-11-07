@@ -18,7 +18,9 @@ This skill guides agents through drafting, illustrating, testing, and publishing
 - **Executive Persona**: Authoritative, analytical, disciplined. Positioned for CTO, Head of Engineering, and Software Architect audiences.
 - **Language Standard**: **International English** (British/Commonwealth spelling: *optimise*, *prioritise*, *decoupling*, *orchestration*, *fibre*, *defence*, *synchronised*). **Strict exception**: never alter code, CLI flags, API schemas, or variable names.
 - **Human Opinion, AI-Augmented Authorship**: AI assists in structuring, formatting, and drafting, but all core technical opinions, trade-offs, and architectural stances originate directly from human author Leow Kah Man.
+- **Editorial Independence & Employer Disclaimer**: Every publication is an individual personal expression of Leow Kah Man and does not represent the views, strategies, or opinions of his employer.
 - **Tone Guardrails**: Avoid novice phrases ("Today I will show you..."). Avoid boastful claims. Ground claims in pragmatic systems engineering.
+- **CDN Edge & Asset Caching (GitHub Pages)**: The site is fronted by GitHub Pages Fastly CDN edge. When modifying or replacing static assets in `public/` (heroes, diagrams, favicons), agents must be mindful of CDN edge cache retention. Use cache busting (e.g. `?v=...`) or distinct filenames when immediate cache invalidation is required.
 
 ---
 

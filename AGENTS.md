@@ -12,6 +12,7 @@ Every publication in this repository must project executive technical leadership
 - **Tone & Voice**: Authoritative, analytical, disciplined, and concise. Avoid novice tutorial phrasing ("Today I will show you how to..."). Frame problems through architectural trade-offs, performance ceilings, cost implications, and production reliability.
 - **Language Standard**: **International English** (British/Commonwealth spelling: e.g. *optimise*, *prioritise*, *decoupling*, *orchestration*, *fibre*, *defence*, *synchronised*, *behaviour*) for all article prose, headings, and descriptions. **Strict exception**: never alter code syntax, CLI parameters, API schemas, language keywords, or variable names.
 - **Human Opinion, AI-Augmented Authorship**: While post drafting, formatting, diagrams, and prose synthesis are assisted by AI, **all core architectural opinions, engineering stances, problem contexts, and technical decisions originate directly from human author Leow Kah Man**. AI serves as an execution harness to articulate the author's real-world systems engineering experience.
+- **Editorial Independence & Employer Disclaimer**: Every publication, writeup, and architectural analysis across this repository is an **individual personal expression of Leow Kah Man**, independent of and not representing the views, positions, or strategies of his employer.
 - **Core Philosophies**:
   - **Pragmatic Technology Choices**: Prioritising boring, high-efficiency, maintainable stacks (Go, Astro, Svelte, robust primitives) over short-lived hype.
   - **Defence in Depth**: Zero Trust ingress, origin cloaking, netfilter packet filtering, and mutual TLS (mTLS).
@@ -24,7 +25,11 @@ Every publication in this repository must project executive technical leadership
 
 - **Engine**: Astro 5.x with Content Layer (`glob` loader in `src/content.config.ts`).
 - **Styling**: Tailwind CSS with custom `brand` palette and news-card container queries (`modern-web-guidance`).
-- **Hosting**: GitHub Pages (statically generated to `dist/`, zero server runtime, zero JS execution required for content delivery).
+- **Hosting & Edge Delivery**: GitHub Pages (statically generated to `dist/`, zero server runtime, zero JS execution required for content delivery).
+- **CDN Caching & Static Asset Invalidation**: The site is fronted by **GitHub Pages CDN (Fastly edge network)**. Because the CDN edge and browsers cache static assets in `public/` (e.g. `/images/heroes/`, `/images/diagrams/`, icons, XML files):
+  - Agents must be mindful when modifying or replacing existing static assets in `public/`.
+  - While Astro hashes bundled JS/CSS in `_astro/` automatically, raw files in `public/` retain their exact path.
+  - When updating critical images or assets where immediate edge cache busting is needed, use cache-busting query strings (e.g., `?v=YYYYMMDD`) or distinct asset filenames to prevent visitors from seeing stale cached copies.
 - **SEO & Feeds**: `@astrojs/sitemap` (filtered), `@astrojs/rss` (Google News-compliant RSS 2.0 at `/rss.xml`), JSON-LD `TechArticle` structured data.
 - **Analytics & Monetisation**: Google Analytics 4 (`G-96D364YPM0`) with privacy anonymisation, Google AdSense (`ca-pub-8585963436723502`) with fixed containers, dynamic content-length density tiers, and strict policy compliance.
 
