@@ -1,0 +1,31 @@
+---
+const currentPath = Astro.url.pathname;
+const isAbout = currentPath === '/about/' || currentPath.startsWith('/about');
+---
+
+<header class="sticky top-0 z-40 w-full border-b border-slate-200/80 dark:border-slate-800/80 bg-white/95 dark:bg-slate-950/95 backdrop-blur-md transition-colors">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 md:h-20">
+      <!-- Brand Logo / Name -->
+      <a href="/" class="focus:outline-none">
+        <span class="text-xl md:text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white hover:text-brand-600 dark:hover:text-brand-400 transition-colors">
+          LEOW KAH MAN
+        </span>
+      </a>
+
+      <!-- Navigation -->
+      <nav class="flex items-center">
+        <a
+          href="/about/"
+          class={`px-4 py-2 rounded-lg text-sm font-semibold transition-colors ${
+            isAbout
+              ? 'text-brand-600 dark:text-brand-400 bg-brand-50 dark:bg-brand-950/50'
+              : 'text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800/60'
+          }`}
+        >
+          About
+        </a>
+      </nav>
+    </div>
+  </div>
+</header>

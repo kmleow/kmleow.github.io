@@ -1,0 +1,45 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostCard from '../../components/PostCard.astro';
+import Pagination from '../../components/Pagination.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths({ paginate }: any) {
+  const posts = await getCollection('blog');
+  posts.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+  return paginate(posts, { pageSize: 6 });
+}
+
+const { page } = Astro.props as any;
+---
+
+<BaseLayout
+  title={`Page ${page.currentPage} | Articles | Leow Kah Man`}
+  description="Archive of technical publications and architectural deep dives by Leow Kah Man."
+>
+  <div class="space-y-10">
+    <header class="border-b border-slate-200 dark:border-slate-800 pb-6">
+      <h1 class="text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-2">
+        Articles Archive &mdash; Page {page.currentPage}
+      </h1>
+      <p class="text-sm text-slate-600 dark:text-slate-400">
+        Showing articles {page.start + 1} to {page.end + 1} of {page.total} publications.
+      </p>
+    </header>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+      {page.data.map((post: any) => (
+        <PostCard post={post} />
+      ))}
+    </div>
+
+    <Pagination
+      currentPage={page.currentPage}
+      lastPage={page.lastPage}
+      url={{
+        prev: page.url.prev,
+        next: page.url.next,
+      }}
+    />
+  </div>
+</BaseLayout>

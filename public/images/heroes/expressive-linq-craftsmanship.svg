@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <defs>
+    <linearGradient id="bg-cream5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FAF7F2" />
+      <stop offset="100%" stop-color="#F4EFE6" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg-cream5)" />
+  <g opacity="0.04">
+    <pattern id="grid-linq" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="1" />
+    </pattern>
+    <rect width="1200" height="675" fill="url(#grid-linq)" />
+  </g>
+  <text x="100" y="145" font-family="system-ui, sans-serif" font-weight="800" font-size="42" fill="#0f172a">Expressive Code Craftsmanship: LINQ in Production</text>
+  <text x="100" y="195" font-family="system-ui, sans-serif" font-weight="600" font-size="22" fill="#0284c7">Cognitive Load Reduction &amp; Composable Functional Pipelines</text>
+  
+  <g transform="translate(100, 260)">
+    <rect x="0" y="0" width="1000" height="310" rx="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" />
+    <text x="40" y="45" font-family="system-ui, sans-serif" font-weight="700" font-size="19" fill="#0f172a">Declarative, Self-Documenting Data Pipelines</text>
+    
+    <!-- Bad Code -->
+    <rect x="40" y="70" width="445" height="210" rx="10" fill="#fff1f2" stroke="#fca5a5" stroke-width="1" />
+    <text x="60" y="102" font-family="system-ui, sans-serif" font-weight="700" font-size="14" fill="#991b1b">❌ High Cognitive Load (Nested Lambdas)</text>
+    <text x="60" y="132" font-family="ui-monospace, monospace" font-size="12" fill="#475569">var list = items.Where(x =&gt; (x.Age &gt; 18 &amp;&amp;</text>
+    <text x="60" y="152" font-family="ui-monospace, monospace" font-size="12" fill="#475569">x.Status == 2 || x.IsSpecial) &amp;&amp; x.Score &gt;= 90)</text>
+    <text x="60" y="172" font-family="ui-monospace, monospace" font-size="12" fill="#475569">.OrderByDescending(x =&gt; x.Score).Take(10)</text>
+    <text x="60" y="192" font-family="ui-monospace, monospace" font-size="12" fill="#475569">.Select(x =&gt; new { N = x.Name, S = x.Score });</text>
+    <text x="60" y="230" font-family="system-ui, sans-serif" font-size="12" fill="#dc2626" font-weight="600">Tangled logic, magic numbers, poor testability</text>
+    
+    <!-- Clean Code -->
+    <rect x="515" y="70" width="445" height="210" rx="10" fill="#f0fdf4" stroke="#86efac" stroke-width="1" />
+    <text x="535" y="102" font-family="system-ui, sans-serif" font-weight="700" font-size="14" fill="#065f46">✓ Clean Functional Composition</text>
+    <text x="535" y="132" font-family="ui-monospace, monospace" font-size="12" fill="#0369a1">var topPerformers = students</text>
+    <text x="535" y="152" font-family="ui-monospace, monospace" font-size="12" fill="#0369a1">    .Where(IsEligibleJurisdiction)</text>
+    <text x="535" y="172" font-family="ui-monospace, monospace" font-size="12" fill="#0369a1">    .Where(HasHonorGradeScore)</text>
+    <text x="535" y="192" font-family="ui-monospace, monospace" font-size="12" fill="#0369a1">    .Take(QuotaLimit)</text>
+    <text x="535" y="212" font-family="ui-monospace, monospace" font-size="12" fill="#0369a1">    .Select(AnonymizeRecord);</text>
+    <text x="535" y="248" font-family="system-ui, sans-serif" font-size="12" fill="#059669" font-weight="600">Self-documenting, testable, zero mental friction</text>
+  </g>
+</svg>

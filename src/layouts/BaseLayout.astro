@@ -1,0 +1,144 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Analytics from '../components/Analytics.astro';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  article?: {
+    publishedTime: string;
+    modifiedTime?: string;
+    author: string;
+    tags: string[];
+    category: string;
+  };
+}
+
+const {
+  title = 'Leow Kah Man | Engineering Leadership & Systems Tech Blog',
+  description = 'Engineering leadership, scalable distributed systems, resilient cloud infrastructure, and software craftsmanship by Leow Kah Man.',
+  image = '/favicon-192x192.png',
+  article,
+} = Astro.props;
+
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site).toString();
+const absoluteImageUrl = new URL(image, Astro.site).toString();
+
+const jsonLd = article
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'TechArticle',
+      headline: title,
+      description: description,
+      image: [absoluteImageUrl],
+      datePublished: article.publishedTime,
+      dateModified: article.modifiedTime || article.publishedTime,
+      author: {
+        '@type': 'Person',
+        name: article.author || 'Leow Kah Man',
+        url: 'https://www.leowkahman.com/about/',
+        sameAs: [
+          'https://www.linkedin.com/in/kmleow',
+          'https://github.com/kmleow',
+        ],
+      },
+      publisher: {
+        '@type': 'Person',
+        name: 'Leow Kah Man',
+        logo: {
+          '@type': 'ImageObject',
+          url: 'https://www.leowkahman.com/favicon-192x192.png',
+        },
+      },
+      mainEntityOfPage: {
+        '@type': 'WebPage',
+        '@id': canonicalUrl,
+      },
+    }
+  : {
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      name: 'Leow Kah Man - Tech Blog',
+      url: 'https://www.leowkahman.com/',
+      description: description,
+      author: {
+        '@type': 'Person',
+        name: 'Leow Kah Man',
+        url: 'https://www.leowkahman.com/about/',
+      },
+    };
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Security Meta Directives -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <!-- Framebusting / Anti-Clickjack Protection -->
+    <script is:inline>
+      if (top !== self) {
+        top.location.replace(self.location.href);
+      }
+    </script>
+
+    <!-- Search Engine Verifications (Preserved from legacy blog) -->
+    <meta name="google-site-verification" content="in8GfCIv-CYlwD5AxO0jVMlrUy1s42a_-cxlOWdv4U0" />
+    <meta name="msvalidate.01" content="009F12474AB330989749B979B5868A7F" />
+    <meta name="yandex-verification" content="c29e9c1084b24e1d" />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180x180.png" />
+
+    <!-- RSS Syndication -->
+    <link rel="alternate" type="application/rss+xml" title="Leow Kah Man - Tech Blog" href="/rss.xml" />
+
+    <!-- Open Graph & Twitter Cards -->
+    <meta property="og:site_name" content="Leow Kah Man - Tech Blog" />
+    <meta property="og:type" content={article ? 'article' : 'website'} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={absoluteImageUrl} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={absoluteImageUrl} />
+
+    <!-- Google AdSense (Only loads on production domain to prevent invalid traffic policy strikes) -->
+    <script is:inline>
+      if (window.location.hostname === 'www.leowkahman.com' || window.location.hostname === 'leowkahman.com') {
+        const adScript = document.createElement('script');
+        adScript.async = true;
+        adScript.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8585963436723502';
+        adScript.crossOrigin = 'anonymous';
+        document.head.appendChild(adScript);
+      }
+    </script>
+
+    <!-- Structured Data JSON-LD -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+    <!-- Google Analytics 4 -->
+    <Analytics />
+  </head>
+  <body class="min-h-dvh flex flex-col bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100">
+    <Header />
+    <main class="flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

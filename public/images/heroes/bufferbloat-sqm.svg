@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <defs>
+    <linearGradient id="bg-cream" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FAF7F2" />
+      <stop offset="100%" stop-color="#F4EFE6" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg-cream)" />
+  <g opacity="0.04">
+    <pattern id="grid-sqm" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="1" />
+    </pattern>
+    <rect width="1200" height="675" fill="url(#grid-sqm)" />
+  </g>
+  
+  <!-- Header Text -->
+  <text x="100" y="145" font-family="system-ui, sans-serif" font-weight="800" font-size="44" fill="#0f172a">Taming Bufferbloat with SQM</text>
+  <text x="100" y="195" font-family="system-ui, sans-serif" font-weight="600" font-size="22" fill="#64748b">Active Queue Management &amp; Fair Queuing in Network Engineering</text>
+  
+  <!-- Diagram Comparison -->
+  <g transform="translate(100, 260)">
+    <!-- Unmanaged FIFO -->
+    <rect x="0" y="0" width="475" height="320" rx="16" fill="#ffffff" stroke="#fca5a5" stroke-width="2" filter="drop-shadow(0 4px 6px rgba(0,0,0,0.03))" />
+    <rect x="25" y="25" width="12" height="12" rx="6" fill="#ef4444" />
+    <text x="48" y="37" font-family="system-ui, sans-serif" font-weight="700" font-size="20" fill="#991b1b">Tail-Drop FIFO Queue</text>
+    <text x="25" y="72" font-family="system-ui, sans-serif" font-size="14" fill="#64748b">Unmanaged buffers under saturation</text>
+    
+    <!-- Latency Spike Bar -->
+    <rect x="25" y="98" width="425" height="36" rx="8" fill="#f1f5f9" />
+    <rect x="25" y="98" width="385" height="36" rx="8" fill="#ef4444" />
+    <text x="40" y="122" font-family="system-ui, sans-serif" font-weight="700" font-size="14" fill="#ffffff">Latency: 120ms - 450ms (Interactive Lag)</text>
+    
+    <text x="25" y="175" font-family="system-ui, sans-serif" font-size="14" fill="#334155">• Large bottleneck buffers delay ACKs and DNS packets</text>
+    <text x="25" y="210" font-family="system-ui, sans-serif" font-size="14" fill="#334155">• TCP congestion windows inflate unchecked</text>
+    <text x="25" y="245" font-family="system-ui, sans-serif" font-size="14" fill="#334155">• Head-of-line blocking degrades real-time traffic</text>
+    <text x="25" y="280" font-family="system-ui, sans-serif" font-size="14" fill="#dc2626" font-weight="600">Outcome: Severe packet delay under load</text>
+    
+    <!-- Smart Queue (CAKE / fq_codel) -->
+    <rect x="525" y="0" width="475" height="320" rx="16" fill="#ffffff" stroke="#86efac" stroke-width="2" filter="drop-shadow(0 4px 6px rgba(0,0,0,0.03))" />
+    <rect x="550" y="25" width="12" height="12" rx="6" fill="#10b981" />
+    <!-- Split title onto two lines to prevent overflow -->
+    <text x="573" y="37" font-family="system-ui, sans-serif" font-weight="700" font-size="19" fill="#065f46">Smart Queue Management</text>
+    <text x="550" y="72" font-family="system-ui, sans-serif" font-size="14" fill="#64748b">Fair queuing &amp; CoDel pacing (CAKE / fq_codel)</text>
+    
+    <!-- Low Latency Bar -->
+    <rect x="550" y="98" width="425" height="36" rx="8" fill="#f1f5f9" />
+    <rect x="550" y="98" width="65" height="36" rx="8" fill="#10b981" />
+    <text x="630" y="122" font-family="system-ui, sans-serif" font-weight="700" font-size="14" fill="#047857">Latency: 4ms - 11ms (Deterministic)</text>
+    
+    <text x="550" y="175" font-family="system-ui, sans-serif" font-size="14" fill="#334155">• Flow isolation prevents bulk flows from starving DNS</text>
+    <text x="550" y="210" font-family="system-ui, sans-serif" font-size="14" fill="#334155">• Proactive early drops signal TCP senders to pace</text>
+    <text x="550" y="245" font-family="system-ui, sans-serif" font-size="14" fill="#334155">• Sub-15ms round-trip time under 100% saturation</text>
+    <text x="550" y="280" font-family="system-ui, sans-serif" font-size="14" fill="#059669" font-weight="600">Outcome: Pristine responsiveness under load</text>
+  </g>
+</svg>

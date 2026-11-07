@@ -1,0 +1,47 @@
+---
+interface Props {
+  slot?: string;
+  format?: 'auto' | 'rectangle' | 'horizontal';
+  className?: string;
+}
+
+const {
+  slot = 'default-slot',
+  format = 'auto',
+  className = '',
+} = Astro.props;
+
+const AD_CLIENT = 'ca-pub-8585963436723502';
+const isProd = import.meta.env.PROD;
+---
+
+<div class={`adsense-wrapper my-8 text-center overflow-hidden ${className}`}>
+  <div class="text-[10px] uppercase tracking-wider text-slate-400 dark:text-slate-500 font-medium mb-1.5">
+    Advertisement
+  </div>
+  <div class="ad-container min-h-[90px] flex items-center justify-center bg-slate-100/50 dark:bg-slate-900/30 border border-dashed border-slate-200 dark:border-slate-800 rounded-lg p-2">
+    {isProd ? (
+      <>
+        <ins
+          class="adsbygoogle"
+          style="display:block"
+          data-ad-client={AD_CLIENT}
+          data-ad-slot={slot}
+          data-ad-format={format}
+          data-full-width-responsive="true"
+        ></ins>
+        <script is:inline>
+          if (window.location.hostname === 'www.leowkahman.com' || window.location.hostname === 'leowkahman.com') {
+            try {
+              (adsbygoogle = window.adsbygoogle || []).push({});
+            } catch (e) {}
+          }
+        </script>
+      </>
+    ) : (
+      <span class="text-xs text-slate-400 dark:text-slate-600 font-mono">
+        AdSense Slot ({slot}) &bull; Active in Production
+      </span>
+    )}
+  </div>
+</div>

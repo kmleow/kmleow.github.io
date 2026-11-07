@@ -1,0 +1,31 @@
+{
+  "name": "kmleow.github.io",
+  "version": "1.0.0",
+  "description": "A [Tech Blog](https://www.leowkahman.com) by Leow Kah Man.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kmleow/kmleow.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/kmleow/kmleow.github.io/issues"
+  },
+  "homepage": "https://github.com/kmleow/kmleow.github.io#readme",
+  "dependencies": {
+    "@astrojs/rss": "^4.0.19",
+    "@astrojs/sitemap": "^3.7.4",
+    "@astrojs/tailwind": "^6.0.2",
+    "astro": "^7.4.7",
+    "tailwindcss": "^3.4.19"
+  }
+}

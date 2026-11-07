@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+  }
+
+  body {
+    @apply bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 antialiased min-h-dvh flex flex-col font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply tracking-tight font-semibold text-slate-900 dark:text-white;
+  }
+}
+
+/* Card Interaction Model per Modern Web Guidance */
+.news-card {
+  container-type: inline-size;
+  position: relative;
+  @apply transition-all duration-200 bg-white dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden hover:shadow-md hover:border-slate-300 dark:hover:border-slate-700;
+}
+
+.news-card:has(a.card-link) {
+  position: relative;
+}
+
+.news-card a.card-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.news-card a:not(.card-link),
+.news-card button,
+.news-card span.badge {
+  position: relative;
+  z-index: 1;
+}
+
+.news-card a.card-link:focus-visible {
+  outline: none;
+}
+
+.news-card:has(a.card-link:focus-visible) {
+  @apply ring-2 ring-brand-500 ring-offset-2 dark:ring-offset-slate-950;
+}
+
+/* Article Prose styling */
+.prose-tech {
+  @apply text-slate-800 dark:text-slate-200 leading-relaxed text-base md:text-lg;
+}
+
+.prose-tech p {
+  @apply mb-6 text-slate-700 dark:text-slate-300 leading-relaxed;
+}
+
+.prose-tech h2 {
+  @apply text-2xl md:text-3xl font-bold mt-12 mb-5 pb-2 border-b border-slate-200 dark:border-slate-800 text-slate-900 dark:text-slate-50;
+}
+
+.prose-tech h3 {
+  @apply text-xl md:text-2xl font-semibold mt-8 mb-4 text-slate-900 dark:text-slate-100;
+}
+
+.prose-tech ul {
+  @apply list-disc list-outside ml-6 mb-6 space-y-2 text-slate-700 dark:text-slate-300;
+}
+
+.prose-tech ol {
+  @apply list-decimal list-outside ml-6 mb-6 space-y-2 text-slate-700 dark:text-slate-300;
+}
+
+.prose-tech li {
+  @apply leading-relaxed;
+}
+
+.prose-tech blockquote {
+  @apply border-l-4 border-brand-500 pl-4 py-1 my-6 italic text-slate-600 dark:text-slate-400 bg-slate-100 dark:bg-slate-900/60 rounded-r-lg;
+}
+
+.prose-tech pre {
+  @apply bg-slate-900 text-slate-100 p-5 rounded-xl overflow-x-auto my-6 font-mono text-sm border border-slate-800 leading-relaxed shadow-sm;
+}
+
+.prose-tech code:not(pre code) {
+  @apply bg-slate-100 dark:bg-slate-800 text-brand-700 dark:text-brand-300 px-1.5 py-0.5 rounded font-mono text-sm font-medium border border-slate-200 dark:border-slate-700;
+}
+
+.prose-tech img {
+  @apply rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm max-w-full h-auto my-8 mx-auto;
+}
+
+.prose-tech hr {
+  @apply my-10 border-slate-200 dark:border-slate-800;
+}

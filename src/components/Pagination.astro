@@ -1,0 +1,73 @@
+---
+interface Props {
+  currentPage: number;
+  lastPage: number;
+  url: {
+    prev?: string;
+    next?: string;
+  };
+}
+
+const { currentPage, lastPage, url } = Astro.props;
+
+if (lastPage <= 1) {
+  // If there's only 1 page, don't show pagination controls
+  return null;
+}
+
+const pages = Array.from({ length: lastPage }, (_, i) => i + 1);
+---
+
+<nav aria-label="Pagination Navigation" class="flex items-center justify-center space-x-2 my-12">
+  <!-- Previous Button -->
+  {url.prev ? (
+    <a
+      href={url.prev}
+      class="px-3.5 py-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+      rel="prev"
+    >
+      &larr; Prev
+    </a>
+  ) : (
+    <span class="px-3.5 py-2 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-950 text-sm font-medium text-slate-400 dark:text-slate-600 cursor-not-allowed">
+      &larr; Prev
+    </span>
+  )}
+
+  <!-- Numbered Pages -->
+  <div class="flex items-center space-x-1">
+    {pages.map((p) => {
+      const isCurrent = p === currentPage;
+      const targetUrl = p === 1 ? '/' : `/page/${p}/`;
+
+      return (
+        <a
+          href={targetUrl}
+          aria-current={isCurrent ? 'page' : undefined}
+          class={`w-10 h-10 flex items-center justify-center rounded-lg text-sm font-medium transition-colors ${
+            isCurrent
+              ? 'bg-brand-600 text-white shadow-sm'
+              : 'border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800'
+          }`}
+        >
+          {p}
+        </a>
+      );
+    })}
+  </div>
+
+  <!-- Next Button -->
+  {url.next ? (
+    <a
+      href={url.next}
+      class="px-3.5 py-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+      rel="next"
+    >
+      Next &rarr;
+    </a>
+  ) : (
+    <span class="px-3.5 py-2 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-950 text-sm font-medium text-slate-400 dark:text-slate-600 cursor-not-allowed">
+      Next &rarr;
+    </span>
+  )}
+</nav>

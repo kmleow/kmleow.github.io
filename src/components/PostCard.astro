@@ -1,0 +1,116 @@
+---
+interface Props {
+  post: {
+    id?: string;
+    slug?: string;
+    data: {
+      title: string;
+      description: string;
+      pubDate: Date;
+      heroImage: string;
+      heroAlt: string;
+      category: string;
+      tags: string[];
+      author: string;
+    };
+    body?: string;
+  };
+  featured?: boolean;
+}
+
+const { post, featured = false } = Astro.props;
+const slug = post.id || post.slug;
+const { title, description, pubDate, heroImage, heroAlt, category } = post.data;
+
+const formattedDate = new Intl.DateTimeFormat('en-US', {
+  year: 'numeric',
+  month: 'short',
+  day: 'numeric',
+}).format(pubDate);
+
+// Calculate reading time (avg 200 wpm)
+const wordCount = post.body ? post.body.split(/\s+/).length : 500;
+const readingMinutes = Math.max(1, Math.round(wordCount / 200));
+---
+
+{featured ? (
+  <article class="news-card group grid grid-cols-1 lg:grid-cols-12 gap-0 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300">
+    <div class="lg:col-span-7 overflow-hidden bg-[#FAF7F2] dark:bg-slate-950 flex items-center justify-center border-b lg:border-b-0 lg:border-r border-slate-200/80 dark:border-slate-800">
+      <img
+        src={heroImage}
+        alt={heroAlt}
+        loading="eager"
+        decoding="async"
+        class="w-full aspect-[16/9] object-cover group-hover:scale-[1.02] transition-transform duration-500"
+      />
+    </div>
+
+    <div class="lg:col-span-5 p-6 sm:p-8 flex flex-col justify-between">
+      <div>
+        <div class="flex items-center space-x-3 mb-4">
+          <span class="badge inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-brand-50 text-brand-700 dark:bg-brand-950 dark:text-brand-300 border border-brand-200/60 dark:border-brand-800/60">
+            {category}
+          </span>
+          <span class="text-xs text-slate-500 dark:text-slate-400 font-medium">
+            Lead Story
+          </span>
+        </div>
+
+        <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors leading-tight mb-4">
+          <a href={`/${slug}/`} class="card-link">
+            {title}
+          </a>
+        </h2>
+
+        <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed line-clamp-3 mb-6">
+          {description}
+        </p>
+      </div>
+
+      <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 font-medium">
+        <time datetime={pubDate.toISOString()}>{formattedDate}</time>
+        <span>{readingMinutes} min read</span>
+      </div>
+    </div>
+  </article>
+) : (
+  <article class="news-card group flex flex-col h-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl shadow-sm hover:shadow-md transition-all duration-300">
+    <!-- Image Region -->
+    <div class="overflow-hidden bg-[#FAF7F2] dark:bg-slate-950 rounded-t-xl aspect-[16/9] border-b border-slate-200/80 dark:border-slate-800">
+      <img
+        src={heroImage}
+        alt={heroAlt}
+        loading="lazy"
+        decoding="async"
+        class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
+      />
+    </div>
+
+    <!-- Body Region -->
+    <div class="p-5 sm:p-6 flex flex-col flex-1 justify-between">
+      <div>
+        <div class="flex items-center justify-between text-xs mb-3">
+          <span class="badge inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-brand-50 text-brand-700 dark:bg-brand-950 dark:text-brand-300 border border-brand-200/50 dark:border-brand-800/50">
+            {category}
+          </span>
+        </div>
+
+        <h3 class="text-lg sm:text-xl font-bold tracking-tight text-slate-900 dark:text-white group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors line-clamp-2 leading-snug mb-2.5">
+          <a href={`/${slug}/`} class="card-link">
+            {title}
+          </a>
+        </h3>
+
+        <p class="text-slate-600 dark:text-slate-300 text-sm line-clamp-2 leading-relaxed mb-4">
+          {description}
+        </p>
+      </div>
+
+      <!-- Footer Region -->
+      <div class="pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 font-medium">
+        <time datetime={pubDate.toISOString()}>{formattedDate}</time>
+        <span>{readingMinutes} min read</span>
+      </div>
+    </div>
+  </article>
+)}

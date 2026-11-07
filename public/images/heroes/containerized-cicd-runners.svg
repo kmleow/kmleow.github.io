@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <defs>
+    <linearGradient id="bg-cream4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FAF7F2" />
+      <stop offset="100%" stop-color="#F4EFE6" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg-cream4)" />
+  <g opacity="0.04">
+    <pattern id="grid-cicd" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="1" />
+    </pattern>
+    <rect width="1200" height="675" fill="url(#grid-cicd)" />
+  </g>
+  <text x="100" y="145" font-family="system-ui, sans-serif" font-weight="800" font-size="42" fill="#0f172a">Platform Engineering: Ephemeral CI/CD Runners</text>
+  <text x="100" y="195" font-family="system-ui, sans-serif" font-weight="600" font-size="22" fill="#7c3aed">Containerized Sandboxing &amp; Cost-Optimized Build Infrastructure</text>
+  
+  <g transform="translate(100, 260)">
+    <!-- Git Trigger -->
+    <rect x="0" y="30" width="250" height="220" rx="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" />
+    <text x="30" y="72" font-family="system-ui, sans-serif" font-weight="700" font-size="18" fill="#0f172a">Git Commit &amp; Webhook</text>
+    <text x="30" y="108" font-family="system-ui, sans-serif" font-size="14" fill="#475569">• Pipeline job queued</text>
+    <text x="30" y="135" font-family="system-ui, sans-serif" font-size="14" fill="#475569">• Ephemeral auth token</text>
+    <text x="30" y="162" font-family="system-ui, sans-serif" font-size="14" fill="#475569">• Zero public queue latency</text>
+    <text x="30" y="200" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#7c3aed">Instant Dispatch</text>
+    
+    <!-- Runner Daemon -->
+    <rect x="330" y="30" width="320" height="220" rx="16" fill="#ffffff" stroke="#a78bfa" stroke-width="2" />
+    <text x="360" y="72" font-family="system-ui, sans-serif" font-weight="700" font-size="18" fill="#5b21b6">Hybrid Runner Daemon</text>
+    <text x="360" y="108" font-family="system-ui, sans-serif" font-size="14" fill="#475569">• Outbound HTTPS polling (443)</text>
+    <text x="360" y="135" font-family="system-ui, sans-serif" font-size="14" fill="#475569">• Inbound ports: 100% closed</text>
+    <text x="360" y="162" font-family="system-ui, sans-serif" font-size="14" fill="#475569">• Spawns isolated Docker task</text>
+    <text x="360" y="200" font-family="system-ui, sans-serif" font-size="13" font-weight="600" fill="#059669">Zero Ingress Exposure</text>
+    
+    <!-- Ephemeral Container -->
+    <rect x="730" y="15" width="270" height="250" rx="16" fill="#ffffff" stroke="#c084fc" stroke-width="2" />
+    <text x="755" y="58" font-family="system-ui, sans-serif" font-weight="700" font-size="18" fill="#6b21a8">Ephemeral Container</text>
+    <text x="755" y="95" font-family="system-ui, sans-serif" font-size="14" fill="#475569">• Clean build sandbox</text>
+    <text x="755" y="122" font-family="system-ui, sans-serif" font-size="14" fill="#475569">• Local layer cache reuse</text>
+    <text x="755" y="150" font-family="system-ui, sans-serif" font-size="14" fill="#475569">• Auto-destruct on completion</text>
+    <rect x="755" y="182" width="220" height="50" rx="8" fill="#f3e8ff" />
+    <text x="775" y="213" font-family="system-ui, sans-serif" font-weight="700" font-size="13" fill="#6b21a8">Deterministic Execution</text>
+  </g>
+</svg>

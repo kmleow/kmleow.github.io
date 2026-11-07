@@ -1,0 +1,134 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import AdSense from '../components/AdSense.astro';
+
+interface Props {
+  post: {
+    slug: string;
+    data: {
+      title: string;
+      description: string;
+      pubDate: Date;
+      updatedDate?: Date;
+      heroImage: string;
+      heroAlt: string;
+      category: string;
+      tags: string[];
+      author: string;
+    };
+    body?: string;
+  };
+}
+
+const { post } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, heroAlt, category, tags, author } = post.data;
+
+const formattedPubDate = new Intl.DateTimeFormat('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+}).format(pubDate);
+
+const formattedUpdatedDate = updatedDate
+  ? new Intl.DateTimeFormat('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    }).format(updatedDate)
+  : null;
+
+// Estimate reading time
+const wordCount = post.body ? post.body.split(/\s+/).length : 600;
+const readingMinutes = Math.max(1, Math.round(wordCount / 200));
+
+const articleData = {
+  publishedTime: pubDate.toISOString(),
+  modifiedTime: updatedDate ? updatedDate.toISOString() : undefined,
+  author: author,
+  tags: tags,
+  category: category,
+};
+---
+
+<BaseLayout
+  title={`${title} | Leow Kah Man`}
+  description={description}
+  image={heroImage}
+  article={articleData}
+>
+  <article class="max-w-4xl mx-auto">
+    <!-- Breadcrumb -->
+    <nav class="flex items-center space-x-2 text-xs text-slate-500 dark:text-slate-400 mb-6 font-medium">
+      <a href="/" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Home</a>
+      <span>/</span>
+      <span class="text-slate-700 dark:text-slate-300">{category}</span>
+    </nav>
+
+    <!-- Header Meta -->
+    <header class="mb-8 sm:mb-10">
+      <div class="flex flex-wrap items-center gap-2 mb-4">
+        <span class="inline-flex items-center px-3 py-0.5 rounded-full text-xs font-semibold bg-brand-50 text-brand-700 dark:bg-brand-950 dark:text-brand-300 border border-brand-200/60 dark:border-brand-800/60">
+          {category}
+        </span>
+        <span class="text-xs text-slate-500 dark:text-slate-400 font-medium">
+          &bull; {readingMinutes} min read
+        </span>
+      </div>
+
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-tight mb-5">
+        {title}
+      </h1>
+
+      <p class="text-lg sm:text-xl text-slate-600 dark:text-slate-300 leading-relaxed font-normal mb-6">
+        {description}
+      </p>
+
+      <div class="flex flex-wrap items-center justify-between gap-4 py-3 border-y border-slate-200/80 dark:border-slate-800/80 text-xs text-slate-500 dark:text-slate-400 font-medium">
+        <div>
+          Published <time datetime={pubDate.toISOString()}>{formattedPubDate}</time>
+          {formattedUpdatedDate && (
+            <span> &bull; Updated <time datetime={updatedDate?.toISOString()}>{formattedUpdatedDate}</time></span>
+          )}
+        </div>
+        <div>
+          {readingMinutes} min read
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Image Region -->
+    <div class="mb-10 overflow-hidden rounded-2xl bg-[#FAF7F2] dark:bg-slate-950 border border-slate-200 dark:border-slate-800 shadow-sm aspect-[16/9]">
+      <img
+        src={heroImage}
+        alt={heroAlt}
+        loading="eager"
+        decoding="async"
+        class="w-full h-full object-cover"
+      />
+    </div>
+
+    <!-- Article Body -->
+    <div class="prose-tech">
+      <slot />
+    </div>
+
+    <!-- Compliant In-Article AdSense Unit -->
+    <AdSense slot="article-bottom" className="my-12" />
+
+    <!-- Tags Region -->
+    {tags.length > 0 && (
+      <div class="my-10 pt-6 border-t border-slate-200 dark:border-slate-800">
+        <h4 class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-3">
+          Topics &amp; Technologies
+        </h4>
+        <div class="flex flex-wrap gap-2">
+          {tags.map((tag) => (
+            <span class="inline-flex items-center px-3 py-1 rounded-md text-xs font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">
+              #{tag}
+            </span>
+          ))}
+        </div>
+      </div>
+    )}
+  </article>
+</BaseLayout>

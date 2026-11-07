@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Page Not Found (404) | Leow Kah Man Tech Blog"
+  description="The requested page could not be found or has been retired."
+>
+  <div class="max-w-2xl mx-auto py-16 text-center space-y-6">
+    <div class="text-brand-600 dark:text-brand-400 font-extrabold text-6xl tracking-tight">
+      404
+    </div>
+    <h1 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">
+      Page Not Found
+    </h1>
+    <p class="text-slate-600 dark:text-slate-400 text-base leading-relaxed max-w-md mx-auto">
+      The requested page does not exist or has been retired as part of our engineering archive modernization.
+    </p>
+
+    <!-- Client-side Smart Redirection Script for Legacy Inbound Links -->
+    <script is:inline>
+      const legacyRedirects = {
+        'speedtest-openwrt-with-flow-offloading': '/speedtest-openwrt-with-flow-offloading/',
+        'reduce-internet-lag-on-openwrt': '/reduce-internet-lag-on-openwrt/',
+        'conditional-multiple-openvpn-routing-hostname-ip': '/conditional-multiple-openvpn-routing-hostname-ip/',
+        'using-iptables-port-forward-to-web-server-only-if-source-is-cloudflare': '/zero-trust-ingress-origin-cloaking-mtls/',
+        'apache-cloudflare-authenticated-origin-pulls-configuration': '/zero-trust-ingress-origin-cloaking-mtls/',
+        'byod-ci-cd-build-machine-to-run-pipelines-using-docker': '/byod-ci-cd-build-machine-to-run-pipelines-using-docker/',
+        'writing-readable-linq-code-in-csharp': '/writing-readable-linq-code-in-csharp/',
+      };
+
+      const path = window.location.pathname;
+
+      // Handle legacy contact page redirect
+      if (path.includes('/contact')) {
+        window.location.replace('/about/');
+      }
+
+      // Check for legacy date URLs: /YYYY/MM/DD/slug/
+      for (const [slug, newUrl] of Object.entries(legacyRedirects)) {
+        if (path.includes(slug)) {
+          window.location.replace(newUrl);
+          break;
+        }
+      }
+    </script>
+
+    <div class="pt-6">
+      <a
+        href="/"
+        class="inline-flex items-center px-6 py-3 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-semibold text-sm transition-colors shadow-sm"
+      >
+        &larr; Return to Homepage
+      </a>
+    </div>
+  </div>
+</BaseLayout>
