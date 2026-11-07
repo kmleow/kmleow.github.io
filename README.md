@@ -26,7 +26,7 @@ This repository is a **pure source repository** (the published HTML is generated
   * **Hero Banners** (`public/images/heroes/`): Pure abstract architectural vector art (16:9 SVG), zero embedded text, optimized for responsive news cards and mobile viewports.
   * **In-Article Diagrams** (`public/images/diagrams/`): High-contrast, responsive SVGs with prominent typography (`16px`–`24px`) matching article prose.
 * **SEO & Metadata**: JSON-LD `TechArticle` structured data, Google News-compliant RSS 2.0 (`/rss.xml`), and XML sitemaps (`/sitemap-index.xml`).
-* **Monetisation & Telemetry**: Content-length-aware Google AdSense integration (<600w: 1 ad; 600–1400w: 2 ads; >1400w: 3 ads) with strict CLS safeguards, and anonymised Google Analytics 4.
+* **Monetisation & Telemetry**: Google AdSense Auto Ads (`ca-pub-8585963436723502`) with verified `ads.txt` authorization, and anonymised Google Analytics 4.
 
 ---
 

@@ -31,22 +31,18 @@ Every publication in this repository must project executive technical leadership
   - While Astro hashes bundled JS/CSS in `_astro/` automatically, raw files in `public/` retain their exact path.
   - When updating critical images or assets where immediate edge cache busting is needed, use cache-busting query strings (e.g., `?v=YYYYMMDD`) or distinct asset filenames to prevent visitors from seeing stale cached copies.
 - **SEO & Feeds**: `@astrojs/sitemap` (filtered), `@astrojs/rss` (Google News-compliant RSS 2.0 at `/rss.xml`), JSON-LD `TechArticle` structured data.
-- **Analytics & Monetisation**: Google Analytics 4 (`G-96D364YPM0`) with privacy anonymisation, Google AdSense (`ca-pub-8585963436723502`) with fixed containers, dynamic content-length density tiers, and strict policy compliance.
+- **Analytics & Monetisation**: Google Analytics 4 (`G-96D364YPM0`) with privacy anonymisation, and Google AdSense Auto Ads (`ca-pub-8585963436723502`) loaded globally in `<head>` with `ads.txt` authorization.
 
 ---
 
 ## 3. Monetisation & AdSense Compliance Policy
 
-To maximise revenue opportunities while strictly maintaining Google AdSense policy compliance, the site uses a **content-length-aware dynamic ad density model**:
+The publication relies on **Google AdSense Auto Ads** (`ca-pub-8585963436723502`):
 
-- **Policy Compliance (Valuable Inventory)**: Advertising must never exceed content substance. Ads are strictly forbidden on utility pages (`/about/`, `/privacy-policy/`, `404.html`) and above the fold before the main article headline.
-- **Length-Based Density Tiers**:
-  - **Short Articles (< 600 words)**: **1 Ad Unit** (at bottom of article, above tags).
-  - **Standard Articles (600 – 1,400 words)**: **2 Ad Units** (1 mid-article inserted at ~40% depth between major sections, 1 at bottom).
-  - **Comprehensive Pillar Guides (> 1,400 words)**: **3 Ad Units** (1 at ~35% depth, 1 at ~70% depth, 1 at bottom).
-- **Safe Insertion Points**: Mid-article ads must only insert between clean top-level paragraphs or preceding `<h2>` headings. Ads must **never** bisect code blocks (`<pre><code>`), syntax snippets, Mermaid diagrams, or data tables.
-- **Layout & CLS Safeguards**: Every ad container reserves a minimum height (`min-h-[90px]`) and displays the mandatory `"ADVERTISEMENT"` disclosure tag.
-- **Localhost Guard**: All AdSense scripts and `(adsbygoogle = window.adsbygoogle || []).push({})` calls are conditionally executed only on `www.leowkahman.com` and `leowkahman.com`, completely preventing invalid traffic policy strikes during development and preview.
+- **Auto Ads Model**: AdSense script is injected globally in `<head>`, allowing Google's machine learning engine to place and optimize non-intrusive responsive ad units dynamically without layout shift.
+- **Verification & Ownership**: Authorized via `public/ads.txt` (`pub-8585963436723502`).
+- **Policy Compliance (Valuable Inventory)**: Advertising is managed automatically by Google AdSense according to policy exclusions configured in the AdSense console.
+- **Clean Article Layout**: No synthetic or broken manual slot wrappers pollute article reading flows.
 
 ---
 

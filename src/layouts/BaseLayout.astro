@@ -216,16 +216,12 @@ if (article) {
     <meta name="twitter:image" content={absoluteImageUrl} />
     {imageAlt && <meta name="twitter:image:alt" content={imageAlt} />}
 
-    <!-- Google AdSense (Only loads on production domain to prevent invalid traffic policy strikes) -->
-    <script is:inline>
-      if (window.location.hostname === 'www.leowkahman.com' || window.location.hostname === 'leowkahman.com') {
-        const adScript = document.createElement('script');
-        adScript.async = true;
-        adScript.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8585963436723502';
-        adScript.crossOrigin = 'anonymous';
-        document.head.appendChild(adScript);
-      }
-    </script>
+    <!-- Google AdSense Auto Ads -->
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8585963436723502"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- Structured Data JSON-LD (Search Rich Results, TechArticle, ProfilePage, BreadcrumbList) -->
     {jsonLdGraph.map((schema) => (
