@@ -1,14 +1,24 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
   <defs>
-    <linearGradient id="bg-slate" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0f172a" />
-      <stop offset="100%" stop-color="#1e293b" />
+    <linearGradient id="bgCube" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1b36" />
+      <stop offset="100%" stop-color="#060e1c" />
     </linearGradient>
   </defs>
-  <!-- Background rounded squircle -->
-  <rect width="512" height="512" rx="116" fill="url(#bg-slate)" />
-  <rect x="8" y="8" width="496" height="496" rx="108" fill="none" stroke="#38bdf8" stroke-width="8" stroke-opacity="0.35" />
+  <!-- Midnight Navy squircle -->
+  <rect width="512" height="512" rx="116" fill="url(#bgCube)" />
+  <rect x="8" y="8" width="496" height="496" rx="108" fill="none" stroke="#38bdf8" stroke-width="8" stroke-opacity="0.25" />
   
-  <!-- Perfectly Centered Architectural 'L' -->
-  <path d="M 161 116 L 241 116 L 241 324 L 351 324 L 351 396 L 161 396 Z" fill="#ffffff" />
+  <!-- Architectural Isometric Hexagon / Distributed Node Prism -->
+  <!-- Top Face (Warm Imperial Gold - Vitality, Achievement) -->
+  <polygon points="256,120 376,190 256,260 136,190" fill="#f59e0b" />
+  
+  <!-- Left Face (Royal Sapphire Blue - Systems Depth, Governance) -->
+  <polygon points="136,190 256,260 256,400 136,330" fill="#2563eb" />
+  
+  <!-- Right Face (Electric Sky Cyan - Cloud, AI Velocity) -->
+  <polygon points="256,260 376,190 376,330 256,400" fill="#38bdf8" />
+  
+  <!-- Central Core Gateway Node -->
+  <circle cx="256" cy="260" r="16" fill="#ffffff" />
 </svg>
