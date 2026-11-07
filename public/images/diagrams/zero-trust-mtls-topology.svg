@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 420" width="100%" height="auto">
+  <defs>
+    <linearGradient id="ztGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FAF7F2" />
+      <stop offset="100%" stop-color="#F5EFE6" />
+    </linearGradient>
+    <filter id="ztShadow" x="-5%" y="-5%" width="115%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.06" />
+    </filter>
+    <marker id="zArrowRed" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#ef4444" />
+    </marker>
+    <marker id="zArrowGreen" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#10b981" />
+    </marker>
+  </defs>
+
+  <rect width="960" height="420" rx="16" fill="url(#ztGrad)" stroke="#e5ded4" stroke-width="1.5" />
+
+  <!-- ATTACK VECTOR FLOW (TOP) -->
+  <g transform="translate(40, 40)">
+    <!-- Attacker Node -->
+    <rect width="210" height="120" rx="10" fill="#FFFFFF" stroke="#fca5a5" stroke-width="1.5" filter="url(#ztShadow)" />
+    <rect x="16" y="14" width="80" height="20" rx="10" fill="#fee2e2" />
+    <text x="56" y="28" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#dc2626">THREAT</text>
+    <text x="16" y="58" font-family="system-ui, sans-serif" font-size="15" font-weight="800" fill="#991b1b">Direct Scanner</text>
+    <text x="16" y="78" font-family="system-ui, sans-serif" font-size="12" font-weight="500" fill="#64748b">• Shodan / Censys / Botnets</text>
+    <text x="16" y="96" font-family="system-ui, sans-serif" font-size="12" font-weight="500" fill="#64748b">• Probes raw IP:443</text>
+
+    <!-- Path Red to Firewall -->
+    <path d="M 215 60 L 480 60" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-dasharray="6,4" marker-end="url(#zArrowRed)" />
+    <text x="350" y="50" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#dc2626">Direct IP Bypass Attempt</text>
+  </g>
+
+  <!-- LEGITIMATE FLOW (BOTTOM) -->
+  <g transform="translate(40, 220)">
+    <!-- User Node -->
+    <rect width="180" height="150" rx="10" fill="#FFFFFF" stroke="#cbd5e1" stroke-width="1.5" filter="url(#ztShadow)" />
+    <rect x="16" y="14" width="85" height="20" rx="10" fill="#f1f5f9" />
+    <text x="58" y="28" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#475569">CLIENT</text>
+    <text x="16" y="58" font-family="system-ui, sans-serif" font-size="15" font-weight="800" fill="#0f172a">Public User</text>
+    <text x="16" y="80" font-family="system-ui, sans-serif" font-size="12" font-weight="500" fill="#64748b">• Resolves public DNS</text>
+    <text x="16" y="100" font-family="system-ui, sans-serif" font-size="12" font-weight="500" fill="#64748b">• HTTPS to Edge Anycast</text>
+
+    <!-- Arrow User -> CDN -->
+    <path d="M 185 85 L 245 85" fill="none" stroke="#10b981" stroke-width="2.5" marker-end="url(#zArrowGreen)" />
+
+    <!-- CDN Edge Node -->
+    <g transform="translate(255, 0)">
+      <rect width="200" height="150" rx="10" fill="#FFFFFF" stroke="#f59e0b" stroke-width="2" filter="url(#ztShadow)" />
+      <rect x="16" y="14" width="105" height="20" rx="10" fill="#fef3c7" />
+      <text x="68" y="28" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#b45309">EDGE SECURITY</text>
+      <text x="16" y="58" font-family="system-ui, sans-serif" font-size="15" font-weight="800" fill="#0f172a">CDN / WAF Edge</text>
+      <text x="16" y="80" font-family="system-ui, sans-serif" font-size="12" font-weight="500" fill="#64748b">• DDoS Mitigation</text>
+      <text x="16" y="98" font-family="system-ui, sans-serif" font-size="12" font-weight="500" fill="#64748b">• WAF Rule Inspection</text>
+      <text x="16" y="116" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#b45309">• Injects Client Cert (mTLS)</text>
+    </g>
+
+    <!-- Arrow CDN -> Origin -->
+    <path d="M 460 85 L 520 85" fill="none" stroke="#10b981" stroke-width="2.5" marker-end="url(#zArrowGreen)" />
+    <text x="490" y="75" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#059669">mTLS PULL</text>
+  </g>
+
+  <!-- HARDENED ORIGIN HOST CONTAINER -->
+  <g transform="translate(530, 40)">
+    <rect width="390" height="330" rx="12" fill="#FFFFFF" stroke="#0f172a" stroke-width="2" filter="url(#ztShadow)" />
+    <rect x="20" y="16" width="160" height="22" rx="11" fill="#f8fafc" stroke="#94a3b8" stroke-width="1" />
+    <text x="100" y="31" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#0f172a">HARDENED ORIGIN SERVER</text>
+
+    <!-- Firewall Sub-node (Layer 3/4) -->
+    <g transform="translate(24, 55)">
+      <rect width="342" height="95" rx="8" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5" />
+      <text x="16" y="24" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#991b1b">Layer 3/4: Netfilter Ingress Whitelist</text>
+      <text x="16" y="44" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#dc2626">Direct Attacker: DROPPED AT KERNEL</text>
+      <text x="16" y="62" font-family="system-ui, sans-serif" font-size="11" font-weight="500" fill="#475569">Matches verified CDN IPv4/IPv6 prefixes only</text>
+      <text x="16" y="80" font-family="system-ui, sans-serif" font-size="11" font-weight="500" fill="#475569">Socket connection refused to untrusted CIDRs</text>
+    </g>
+
+    <!-- Internal Arrow inside Origin -->
+    <path d="M 195 155 L 195 180" fill="none" stroke="#10b981" stroke-width="2" marker-end="url(#zArrowGreen)" />
+
+    <!-- Web Server Sub-node (Layer 7) -->
+    <g transform="translate(24, 185)">
+      <rect width="342" height="115" rx="8" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5" />
+      <text x="16" y="24" font-family="system-ui, sans-serif" font-size="13" font-weight="700" fill="#166534">Layer 7: Mutual TLS (mTLS) Verification</text>
+      <text x="16" y="44" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#15803d">Authenticated Origin Pulls Enforced</text>
+      <text x="16" y="64" font-family="system-ui, sans-serif" font-size="11" font-weight="500" fill="#475569">• Requires Cloudflare Root CA client certificate</text>
+      <text x="16" y="82" font-family="system-ui, sans-serif" font-size="11" font-weight="500" fill="#475569">• Rejects direct HTTP requests missing client cert</text>
+      <text x="16" y="100" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#047857">Result: Origin completely cloaked from direct IP probes</text>
+    </g>
+  </g>
+</svg>

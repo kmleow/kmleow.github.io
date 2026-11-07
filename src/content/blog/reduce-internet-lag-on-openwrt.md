@@ -54,14 +54,7 @@ Modern Smart Queue Management (SQM) solves this through two complementary techni
 1. **Fair Queuing (FQ)**: Divides incoming and outgoing traffic into independent flow queues using hash buckets. Light, sparse flows (like DNS queries, SSH keystrokes, and gaming packets) are isolated from dense, heavy flows (like torrents or video streams) and forwarded immediately without waiting behind bulk buffers.
 2. **Controlled Delay (CoDel) / AQM**: Actively monitors the persistent standing queue time. When packets linger in the buffer longer than a target duration (typically 5 ms), the queue proactively drops a packet or marks it with Explicit Congestion Notification (ECN). This signals the TCP sender's congestion window to scale back *before* the buffer overflows.
 
-```
-Unmanaged Tail-Drop Buffer (FIFO):
-[ Bulk Pkt ][ Bulk Pkt ][ Bulk Pkt ][ Bulk Pkt ][ Bulk Pkt ][ DNS Query ] ──> Huge Latency Spike
-
-Smart Queue Management (CAKE / FQ-CoDel):
-Flow 1 (Bulk)  : [ Bulk Pkt ][ Bulk Pkt ][ Bulk Pkt ] ──> Throttled & Paced
-Flow 2 (Sparse): [ DNS Query ]                        ──> Emitted Immediately (Zero Wait)
-```
+![Unmanaged FIFO Tail-Drop vs Smart Queue Management Architecture](/images/diagrams/fair-queuing-codel.svg)
 
 ### Choosing the Queue Discipline: CAKE vs. fq_codel
 

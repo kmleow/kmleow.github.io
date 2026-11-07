@@ -22,14 +22,7 @@ To achieve true **Zero Trust Ingress** on self-hosted or cloud origins without p
 
 ## Threat Model: The Edge Bypass Vulnerability
 
-```
-Bypass Attack Vector:
-[ Attacker / Botnet ] ──(Direct to Origin IP: 203.0.113.50:443)──> [ Unprotected Origin Server ]
-                                                                       ▲
-                                                                       │ (Bypasses WAF, DDoS, & Auth!)
-Legitimate Zero Trust Flow:
-[ User ] ──> [ Cloudflare CDN / WAF Edge ] ──(mTLS + Strict IP Ingress)──┘
-```
+![Zero Trust Origin Cloaking and Ingress Filtering Topology](/images/diagrams/zero-trust-mtls-topology.svg)
 
 1. **Direct-to-IP Scanning**: Attackers probe IP blocks requesting HTTPS handshakes with random or missing SNI headers.
 2. **Virtual Host Exploitation**: If the web server responds to direct IP requests with a default SSL certificate containing your domain name in the Common Name (CN) or Subject Alternative Name (SAN), your origin IP is irrevocably exposed.

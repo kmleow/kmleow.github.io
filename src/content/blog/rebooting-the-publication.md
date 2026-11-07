@@ -29,12 +29,7 @@ To be clear: **AI does not originate architectural opinions**. It cannot experie
 
 The ideation, technical stances, trade-off analyses, and architectural judgments across this publication remain **100% human—originating directly from myself**.
 
-```
-[ Human Experience & Battle Scars ] ──► [ Core Architectural Thesis ]
-                                                │
-                                                ▼
-[ Publication: High-Signal Insights ] ◄── [ AI Synthesis & Drafting Harness ]
-```
+![Human Experience and AI Drafting Pipeline](/images/diagrams/human-ai-authorship-pipeline.svg)
 
 What AI solves is the drafting bottleneck. It serves as a tireless execution harness—taking my structural outlines, technical diagrams, and engineering stances, and rapidly synthesising them into clean, polished prose. What previously required multiple weekends of mechanical drafting can now be composed and refined in a fraction of the time, allowing me to share practical insights without sacrificing operational focus.
 
@@ -61,18 +56,7 @@ Each of these remaining pillars was thoroughly rewritten and polished. The objec
 
 In redesigning the publication, the goal was to keep the architecture clean, fast, and disciplined. 
 
-```
-┌────────────────────────────────────────────────────────┐
-│                      kmleow.com                        │
-│   Astro 5 Static Build  •  Tailwind CSS  •  No Bloat   │
-└────────────────────────────────────────────────────────┘
-                           │
-         ┌─────────────────┴─────────────────┐
-         ▼                                   ▼
-[ Clean Architecture ]              [ LinkedIn Channels ]
-• Zero third-party trackers         • Peer engineering dialogue
-• No intrusive comment bloat        • High-context discussion
-```
+![Minimalist Architecture and Peer Discussion Channel](/images/diagrams/minimalist-publishing-stack.svg)
 
 I rebuilt the publication on Astro 5 and Tailwind CSS. The stack is straightforward, predictable, and maintainable. 
 

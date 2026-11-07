@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 280" width="100%" height="auto">
+  <defs>
+    <linearGradient id="msGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FAF7F2" />
+      <stop offset="100%" stop-color="#F5EFE6" />
+    </linearGradient>
+    <filter id="msShadow" x="-5%" y="-5%" width="115%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.05" />
+    </filter>
+    <marker id="msArrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#475569" />
+    </marker>
+  </defs>
+
+  <rect width="900" height="280" rx="16" fill="url(#msGrad)" stroke="#e5ded4" stroke-width="1.5" />
+
+  <!-- Root Core Node: kmleow.com -->
+  <g transform="translate(250, 30)">
+    <rect width="400" height="75" rx="12" fill="#FFFFFF" stroke="#0f172a" stroke-width="2" filter="url(#msShadow)" />
+    <circle cx="28" cy="38" r="8" fill="#10b981" />
+    <text x="50" y="34" font-family="system-ui, sans-serif" font-size="16" font-weight="800" fill="#0f172a">www.leowkahman.com</text>
+    <text x="50" y="54" font-family="system-ui, sans-serif" font-size="12" font-weight="500" fill="#64748b">Astro 5 Static Generator • Tailwind CSS • Zero Client Runtime Bloat</text>
+  </g>
+
+  <!-- Connectors from Root to Pillars -->
+  <path d="M 350 105 L 350 135 L 235 135 L 235 155" fill="none" stroke="#475569" stroke-width="2" marker-end="url(#msArrow)" />
+  <path d="M 550 105 L 550 135 L 665 135 L 665 155" fill="none" stroke="#475569" stroke-width="2" marker-end="url(#msArrow)" />
+
+  <!-- Pillar 1: Clean Architecture -->
+  <g transform="translate(60, 160)">
+    <rect width="350" height="95" rx="12" fill="#FFFFFF" stroke="#e2d8cc" stroke-width="1.5" filter="url(#msShadow)" />
+    <text x="24" y="34" font-family="system-ui, sans-serif" font-size="15" font-weight="700" fill="#0f172a">Disciplined Architecture</text>
+    <text x="24" y="58" font-family="system-ui, sans-serif" font-size="12" font-weight="500" fill="#475569">• Zero third-party trackers &amp; bloated scripts</text>
+    <text x="24" y="78" font-family="system-ui, sans-serif" font-size="12" font-weight="500" fill="#475569">• Fast static pages with semantic HTML &amp; JSON-LD</text>
+  </g>
+
+  <!-- Pillar 2: Professional Channel -->
+  <g transform="translate(490, 160)">
+    <rect width="350" height="95" rx="12" fill="#FFFFFF" stroke="#e2d8cc" stroke-width="1.5" filter="url(#msShadow)" />
+    <text x="24" y="34" font-family="system-ui, sans-serif" font-size="15" font-weight="700" fill="#0f172a">LinkedIn Engagement Channel</text>
+    <text x="24" y="58" font-family="system-ui, sans-serif" font-size="12" font-weight="500" fill="#475569">• No spammy on-site comment widgets (Disqus purged)</text>
+    <text x="24" y="78" font-family="system-ui, sans-serif" font-size="12" font-weight="500" fill="#475569">• Peer discussions with fellow directors &amp; architects</text>
+  </g>
+</svg>

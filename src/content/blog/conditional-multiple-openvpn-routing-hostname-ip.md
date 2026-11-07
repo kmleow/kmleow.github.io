@@ -21,27 +21,7 @@ This guide demonstrates how to architect a deterministic multi-gateway policy ro
 
 ## Architectural Topology
 
-```
-                  ┌────────────────────────────────────────────────────────┐
-                  │                 Linux Kernel Netfilter                 │
-                  │                                                        │
-[ Ingress LAN ] ──┼──> [ dnsmasq-full ] ──> [ ipset: usvpn ]               │
-                  │           │                                            │
-                  │           └──> [ iptables -t mangle PREROUTING ]       │
-                  │                      │                                 │
-                  │                      ├──> fwmark 0x100 ─────────────┐  │
-                  │                      └──> Default (No Mark) ──────┐ │  │
-                  └───────────────────────────────────────────────────┼─┼──┘
-                                                                      │ │
-                      ┌───────────────────────────────────────────────┘ │
-                      │                                                 │
-                      ▼                                                 ▼
-             [ FIB Table: main ]                             [ FIB Table: 100 ]
-             default dev pppoe-wan                           default dev tun0
-                      │                                                 │
-                      ▼                                                 ▼
-             [ Physical WAN ISP ]                            [ Secure OpenVPN Tunnel ]
-```
+![Policy-Based Multi-Tunnel Split Routing Architecture](/images/diagrams/pbr-routing-topology.svg)
 
 ---
 

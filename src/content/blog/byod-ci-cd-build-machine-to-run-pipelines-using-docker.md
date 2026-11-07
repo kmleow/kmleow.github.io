@@ -21,32 +21,7 @@ By orchestrating the GitLab/GitHub runner daemon with the local Docker engine, t
 
 ## Architectural Topology
 
-```
-                  ┌────────────────────────────────────────────────────────┐
-                  │                 External Cloud (SaaS)                  │
-                  │                                                        │
-                  │  [ GitLab / GitHub Repo ] ──> [ Pipeline Job Queue ]   │
-                  └───────────────────────────────────┬────────────────────┘
-                                                      │ HTTPS Polling
-                                                      │ (Outbound Only - No Ingress Ports)
-                  ┌───────────────────────────────────▼────────────────────┐
-                  │            On-Premises / Homelab Build Host            │
-                  │                                                        │
-                  │  ┌──────────────────────────────────────────────────┐  │
-                  │  │          GitLab Runner Host Daemon               │  │
-                  │  └──────────────────────┬───────────────────────────┘  │
-                  │                         │ /var/run/docker.sock         │
-                  │                         ▼                              │
-                  │  ┌──────────────────────────────────────────────────┐  │
-                  │  │           Local Docker Engine Daemon             │  │
-                  │  │  ┌────────────────────┐  ┌────────────────────┐  │  │
-                  │  │  │ Ephemeral Job 1    │  │ Ephemeral Job 2    │  │  │
-                  │  │  │ Container          │  │ Container          │  │  │
-                  │  │  │ (Hugo / Node.js)   │  │ (Go / Dotnet Core) │  │  │
-                  │  │  └────────────────────┘  └────────────────────┘  │  │
-                  │  └──────────────────────────────────────────────────┘  │
-                  └────────────────────────────────────────────────────────┘
-```
+![Architecture Topology of Ephemeral Containerised CI/CD Runners](/images/diagrams/byod-cicd-runner-topology.svg)
 
 ---
 

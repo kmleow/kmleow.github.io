@@ -33,17 +33,7 @@ In a conventional Linux routing environment, every single ingress packet must tr
 
 For long-lived, high-throughput bidirectional streams (such as multi-hundred-megabit file transfers, steam downloads, or raw speed tests), running every 1500-byte MTU frame through this entire gamut consumes excessive CPU instruction cycles. On an Atheros QCA9558 single-core MIPS processor clocked at 720 MHz (the backbone of the TP-Link Archer C7 v2), the CPU hits 100% software interrupt (`si`) saturation well before reaching line rate.
 
-```
-Conventional Path:
-[ Ingress Packet ] ──> [ PREROUTING ] ──> [ Conntrack ] ──> [ Routing Table ] ──> [ FORWARD ] ──> [ POSTROUTING ] ──> [ Egress ]
-                             │                  │                                    │                  │
-                             └──────────── Evaluated for EVERY single frame ─────────┴──────────────────┘
-
-Flow Offloading Fastpath:
-[ Ingress Packet ] ──> [ Flowtable Cache Lookup ] ─────────(Match: Fast Forward)─────────> [ Egress (L2/L3 Rewritten) ]
-                             │ (Miss)
-                             └──> [ Fall back to slowpath netfilter stack ]
-```
+![Netfilter Slowpath vs Flowtable Fastpath Architecture](/images/diagrams/flow-offloading-fastpath.svg)
 
 ---
 
