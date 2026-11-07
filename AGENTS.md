@@ -26,7 +26,22 @@ Every publication in this repository must project executive technical leadership
 - **Styling**: Tailwind CSS with custom `brand` palette and news-card container queries (`modern-web-guidance`).
 - **Hosting**: GitHub Pages (statically generated to `dist/`, zero server runtime, zero JS execution required for content delivery).
 - **SEO & Feeds**: `@astrojs/sitemap` (filtered), `@astrojs/rss` (Google News-compliant RSS 2.0 at `/rss.xml`), JSON-LD `TechArticle` structured data.
-- **Analytics & Monetisation**: Google Analytics 4 (`G-96D364YPM0`) with privacy anonymisation, Google AdSense (`ca-pub-8585963436723502`) with fixed containers and strict policy compliance.
+- **Analytics & Monetisation**: Google Analytics 4 (`G-96D364YPM0`) with privacy anonymisation, Google AdSense (`ca-pub-8585963436723502`) with fixed containers, dynamic content-length density tiers, and strict policy compliance.
+
+---
+
+## 3. Monetisation & AdSense Compliance Policy
+
+To maximise revenue opportunities while strictly maintaining Google AdSense policy compliance, the site uses a **content-length-aware dynamic ad density model**:
+
+- **Policy Compliance (Valuable Inventory)**: Advertising must never exceed content substance. Ads are strictly forbidden on utility pages (`/about/`, `/privacy-policy/`, `404.html`) and above the fold before the main article headline.
+- **Length-Based Density Tiers**:
+  - **Short Articles (< 600 words)**: **1 Ad Unit** (at bottom of article, above tags).
+  - **Standard Articles (600 – 1,400 words)**: **2 Ad Units** (1 mid-article inserted at ~40% depth between major sections, 1 at bottom).
+  - **Comprehensive Pillar Guides (> 1,400 words)**: **3 Ad Units** (1 at ~35% depth, 1 at ~70% depth, 1 at bottom).
+- **Safe Insertion Points**: Mid-article ads must only insert between clean top-level paragraphs or preceding `<h2>` headings. Ads must **never** bisect code blocks (`<pre><code>`), syntax snippets, Mermaid diagrams, or data tables.
+- **Layout & CLS Safeguards**: Every ad container reserves a minimum height (`min-h-[90px]`) and displays the mandatory `"ADVERTISEMENT"` disclosure tag.
+- **Localhost Guard**: All AdSense scripts and `(adsbygoogle = window.adsbygoogle || []).push({})` calls are conditionally executed only on `www.leowkahman.com` and `leowkahman.com`, completely preventing invalid traffic policy strikes during development and preview.
 
 ---
 

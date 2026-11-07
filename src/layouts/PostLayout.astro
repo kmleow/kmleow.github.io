@@ -112,7 +112,74 @@ const articleData = {
       <slot />
     </div>
 
-    <!-- Compliant In-Article AdSense Unit -->
+    <!-- Dynamic Content-Length-Aware In-Article AdSense Inserter -->
+    <script is:inline>
+      (function () {
+        const article = document.querySelector('.prose-tech');
+        if (!article) return;
+
+        const children = Array.from(article.children);
+        const text = article.innerText || '';
+        const words = text.trim().split(/\s+/).length;
+
+        // Content Length Tiers for Policy-Compliant Ad Density:
+        // Tier 1: Short posts (<600 words) -> 0 mid-article ads (only bottom ad renders).
+        // Tier 2: Standard posts (600 - 1400 words) -> 1 mid-article ad at ~40% depth.
+        // Tier 3: Long deep-dives (>1400 words) -> 2 mid-article ads (at ~35% and ~70% depth).
+
+        const insertAd = function (targetIndex, slotId) {
+          if (targetIndex <= 0 || targetIndex >= children.length) return;
+          const targetEl = children[targetIndex];
+
+          const wrapper = document.createElement('div');
+          wrapper.className = 'adsense-wrapper my-10 text-center overflow-hidden not-prose';
+          wrapper.innerHTML = `
+            <div class="text-[10px] uppercase tracking-wider text-slate-400 dark:text-slate-500 font-medium mb-1.5">Advertisement</div>
+            <div class="ad-container min-h-[90px] flex items-center justify-center bg-slate-100/50 dark:bg-slate-900/30 border border-dashed border-slate-200 dark:border-slate-800 rounded-lg p-2">
+              <ins class="adsbygoogle"
+                   style="display:block; text-align:center;"
+                   data-ad-layout="in-article"
+                   data-ad-format="fluid"
+                   data-ad-client="ca-pub-8585963436723502"
+                   data-ad-slot="${slotId}"></ins>
+            </div>
+          `;
+
+          targetEl.parentNode.insertBefore(wrapper, targetEl);
+
+          if (window.location.hostname === 'www.leowkahman.com' || window.location.hostname === 'leowkahman.com') {
+            try {
+              (window.adsbygoogle = window.adsbygoogle || []).push({});
+            } catch (e) {}
+          }
+        };
+
+        const findSafeIndex = function (ratio) {
+          const target = Math.floor(children.length * ratio);
+          for (let i = target; i < children.length - 2; i++) {
+            const tag = children[i].tagName.toLowerCase();
+            if (tag === 'h2' || tag === 'h3') return i;
+          }
+          for (let i = target; i > 2; i--) {
+            const tag = children[i].tagName.toLowerCase();
+            if (tag === 'p') return i + 1;
+          }
+          return target;
+        };
+
+        if (words >= 1400 && children.length >= 12) {
+          const idx2 = findSafeIndex(0.7);
+          insertAd(idx2, 'article-mid-2');
+          const idx1 = findSafeIndex(0.35);
+          insertAd(idx1, 'article-mid-1');
+        } else if (words >= 600 && children.length >= 6) {
+          const idx = findSafeIndex(0.4);
+          insertAd(idx, 'article-mid-1');
+        }
+      })();
+    </script>
+
+    <!-- Compliant Bottom-of-Article AdSense Unit -->
     <AdSense slot="article-bottom" className="my-12" />
 
     <!-- Tags Region -->
