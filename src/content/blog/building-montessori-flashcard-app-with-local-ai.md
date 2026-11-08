@@ -60,6 +60,9 @@ Diffusion models excel at landscapes and abstract art, but child anatomy remains
 * Grotesque hand anatomy—predominantly hands depicting **four fingers** (one thumb and three elongated digits) instead of five.
 * Inconsistent artistic styles: without strict prompt constraints, one card looked like a 3D Pixar render, the next like an oil painting, and the third like an ink sketch.
 
+![Raw AI image generation defect showing 4 fingers](/images/posts/ovms-generated-four-finger-child.webp)
+*Figure: A live test render produced directly on my Intel Arc A770M using OpenVINO Model Server (Prompt: "children storybook kid waving hand", inference latency: 10.77s). Notice the waving hand has exactly four digits (one thumb and three fingers), alongside surreal background artifacts—the exact failure mode that forced an 80% discard rate on early batch runs.*
+
 ![Diffusion Anatomical Defect and Systematic Mitigation Architecture](/images/diagrams/diffusion-anatomy-four-fingers.svg)
 
 To manage this, I had my AI pair-programmer build a local **Visual Vetting Studio** (a lightweight browser gallery). This allowed me to rapidly review batches of 32 cards, hit `[F]` to flag anatomical mutants for deletion, and trigger automated regeneration.
