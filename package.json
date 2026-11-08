@@ -14,8 +14,8 @@
     "url": "git+https://github.com/kmleow/kmleow.github.io.git"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Leow Kah Man",
+  "license": "(CC-BY-SA-4.0 AND MIT)",
   "type": "module",
   "bugs": {
     "url": "https://github.com/kmleow/kmleow.github.io/issues"
