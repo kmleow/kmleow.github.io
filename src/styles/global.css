@@ -84,7 +84,16 @@
 }
 
 .prose-tech pre {
-  @apply bg-slate-900 text-slate-100 p-5 rounded-xl overflow-x-auto my-6 font-mono text-sm border border-slate-800 leading-relaxed shadow-sm;
+  background-color: #0f172a !important;
+  border: 1px solid #334155 !important;
+  @apply relative text-slate-100 pt-9 pb-5 px-5 rounded-xl overflow-x-auto my-6 font-mono text-sm leading-relaxed shadow-sm;
+}
+
+.prose-tech pre[data-language]::before {
+  content: attr(data-language);
+  background-color: #1e293b !important;
+  border: 1px solid #475569 !important;
+  @apply absolute top-2.5 right-3 text-[11px] font-mono font-semibold uppercase tracking-wider text-slate-300 px-2.5 py-0.5 rounded select-none pointer-events-none shadow-sm;
 }
 
 .prose-tech code:not(pre code) {
