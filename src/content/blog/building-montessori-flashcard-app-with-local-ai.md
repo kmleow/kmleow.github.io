@@ -13,7 +13,7 @@ A curious reality unfolds when you hand a modern screen to a toddler: within min
 
 As a father and lifelong backend specialist, I wanted something specific: a clean, zero-ad, distraction-free flashcard platform built strictly around the **Montessori 3-part nomenclature** (Concrete Object ↔ Word ↔ Pronunciation). 
 
-Commercially, buying an app or paying a subscription is unquestionably cheaper than sinking dozens of engineering hours into building one. But the true return on investment in systems engineering is rarely measured in subscription savings; it is measured in **hands-on competence**. By taking on this project end-to-end, I wanted to test the contemporary frontier: how far can a seasoned backend specialist go when leveraging modern AI as a cross-functional execution engine?
+Commercially, buying an app or paying a subscription is unquestionably cheaper than sinking dozens of engineering hours into building one. But the true return on investment in systems engineering is rarely measured in subscription savings; it is measured in **hands-on competence**. By taking on this project end-to-end, I wanted to answer a practical question: how far can a backend specialist realistically go today when using modern AI to bridge unfamiliar frontend and mobile domains?
 
 Here is the operational architecture, the hardware bottlenecks, and the lessons learned from engineering and battle-testing the platform in my living room.
 
@@ -27,29 +27,27 @@ Rather than treating AI as a black-box chat interface, I treated it as a distrib
 
 ---
 
-## 2. Hardware Bottlenecks: The 16GB VRAM Constraint
+## 2. The Limits of Local Models: Why Quantized LLMs Hallucinate Simple Realities
 
-In an ideal commercial setup, one would simply wire high-concurrency cloud APIs to batch-process thousands of images. However, running inference locally on bare-metal hardware reveals the exact latency, thermal, and memory boundaries that whitepapers gloss over.
+In homelab and self-hosting circles, running the entire AI lifecycle 100% locally and offline on bare-metal hardware is the holy grail. My daily driver workstation features a dedicated **Intel Arc A770M with 16GB VRAM**, paired with the **Intel OpenVINO Model Server (OVMS)**.
 
-My daily driver workstation features a dedicated **Intel Arc A770M with 16GB VRAM**, paired with the **Intel OpenVINO Model Server (OVMS)**. My initial design attempted to keep the entire generation pipeline local:
-1. Run a local 9B parameter LLM (`Qwen 3.5 9B INT4`) inside an `ovms-text` container to generate Montessori scene prompts.
+Naturally, my initial design attempted to keep the entire generation pipeline local:
+1. Run a quantized local LLM (`Qwen 3.5 9B INT4`) inside an `ovms-text` container to generate Montessori scene prompts.
 2. Feed those prompts into an `ovms-image` container serving a local diffusion model on the GPU.
 
-This design hit an immediate physical wall: **GPU VRAM collision**.
+Beyond the obvious hardware reality that attempting to co-locate active text inference alongside a 1024×1024 diffusion model on a single 16GB consumer card creates immediate VRAM contention and OpenCL allocation crashes, the deeper bottleneck was far more frustrating: **subpar prompt quality from small local models**.
 
-```text
-[OpenCL Error]: CL_MEM_OBJECT_ALLOCATION_FAILURE
-Failed to allocate 8.2 GB buffer on device /dev/dri/renderD129: Out of Device Memory
-```
+When tasked with generating visual scene descriptions for preschool vocabulary, smaller quantized models repeatedly failed at basic physical commonsense and spatial relationships:
+* **Physical Implausibility**: When asked to describe a child wearing a shirt, the model outputted prompts describing *a toddler sitting trapped inside a t-shirt*.
+* **Disembodied Anatomy**: When asked to illustrate body parts (e.g. *foot* or *ear*), it struggled to comprehend bodily context, producing surreal prompts of isolated limbs floating in mid-air rather than a child touching or pointing to the corresponding anatomy.
+* **Instruction Drift**: Quantized 9B models frequently ignored negative formatting constraints, leaking quotation marks, explanatory preamble, and stylistic keywords that threw the downstream image model into confusion.
 
-The text model consumed approximately 5.2 GB of VRAM, while the image diffusion pipeline demanded between 7.5 GB and 11.3 GB during active 1024×1024 latent generation. Attempting to run both concurrently resulted in immediate OpenCL out-of-memory crashes.
-
-To circumvent this, I initially wrote orchestration scripts to swap containers on the dGPU sequentially: boot `ovms-text`, generate a batch of text, stop the container, release VRAM, boot `ovms-image`, and generate images. But this swapping overhead introduced significant latency and thermal churn. 
-
-Worse, smaller local 9B models frequently hallucinated nonsensical physical interactions for simple words. For example, when tasked with illustrating a child wearing a shirt, the model outputted prompts describing *a child sitting trapped inside a t-shirt*. 
+Even when running containers sequentially via orchestration scripts (spinning up `ovms-text` to generate a batch, unloading it from VRAM, and then launching `ovms-image`), the generation latency, container swap overhead, and constant manual cleanup of garbage prompts defeated the entire premise of an automated pipeline.
 
 **The Architectural Pivot**:  
-I decoupled the pipeline. I offloaded text curation to **Gemini Flash**, which eliminated hallucinations and provided toddler-safe, pedagogical scenarios with near-zero failure rates. This left the local Intel Arc A770M **100% dedicated to image diffusion**, running continuously and uninterrupted at roughly **11 seconds per image**.
+I stopped forcing an underpowered local LLM to do semantic heavy lifting. I decoupled the pipeline and offloaded pedagogical nomenclature and prompt curation to **Gemini Flash**. At fractions of a cent per batch, it possessed the nuanced common sense required for toddler-safe scenarios with near-zero failure rates. 
+
+This freed the local Intel Arc A770M to focus entirely on its true strength: continuous, unmetered image diffusion, running uninterrupted at roughly **11 seconds per image**.
 
 ---
 
@@ -123,6 +121,12 @@ This bounded DOM memory usage to a flat `O(1)` ceiling, allowing hours of uninte
 }} />
 ```
 
+<div class="max-w-xs mx-auto my-8 overflow-hidden rounded-3xl border-2 border-slate-300 dark:border-slate-700 shadow-lg">
+  <img src="/images/posts/montessori-mobile-app-preview.webp" alt="ToddlerCards mobile flashcard interface running on Android" class="w-full h-auto block m-0" loading="lazy" />
+</div>
+
+*Figure: The responsive Montessori nomenclature client in mobile portrait orientation. The interface strictly isolates the visual subject, phonics audio prompt, and sight-word typography without commercial banners, navigation chrome, or algorithmically injected distractions.*
+
 ---
 
 ## 5. Deployment and the Solo Publisher Barrier
@@ -131,7 +135,7 @@ The resulting application was packaged in two distinct formats:
 1. **Docker Container**: Running an Nginx Alpine static server on my homelab, hooked up via HDMI/network to the living room TV with full D-Pad remote control navigation (`ArrowLeft`, `ArrowRight`, `Enter`, `Space`).
 2. **Native Android APK**: Built via **Capacitor 8**, bundling all 498 compressed WebP illustrations and MP3 audio clips into a self-contained **sub-15 MB standalone package** that runs entirely offline.
 
-Once the English application was complete, the decoupled architecture allowed me to port the entire platform to **Chinese (Mandarin), Malay, Cantonese, Japanese, and Tamil** with minimal effort.
+Once the English application was complete, the decoupled data layer made porting the pipeline to **Chinese (Mandarin), Malay, Cantonese, Japanese, and Tamil** straightforward, requiring localized nomenclature sets and audio assets rather than architectural rewrites.
 
 ### Why It Isn't on the Google Play Store
 A natural question is: why not publish this to the Google Play Store for other parents?
@@ -162,7 +166,7 @@ Reflecting on this build yields three core perspectives for engineering director
 ### 1. The Collapse of Siloed Engineering Roles
 Historically, building this product would have required a multi-disciplinary team: a product manager for scoping, a UX designer for wireframes, a frontend engineer for Svelte, a mobile dev for Android packaging, and a QA engineer for regression testing. 
 
-With AI orchestration, a single engineer with strong systems architectural fundamentals can comfortably execute the entire lifecycle. The primary differentiator for technical talent is no longer narrow domain syntax, but **the ability to orchestrate autonomous tools, evaluate trade-offs, and enforce architectural constraints**.
+With AI orchestration, a single engineer with solid systems fundamentals can credibly navigate the entire lifecycle—not by replacing specialist craft, but by unblocking execution across domains where they would previously have hit a wall. The primary differentiator for technical talent is no longer narrow domain syntax, but **the ability to orchestrate autonomous tools, evaluate trade-offs, and enforce architectural constraints**.
 
 ### 2. Quota Management vs Bare-Metal Infrastructure
 Modern AI development requires understanding the financial and technical trade-offs between managed APIs and self-hosted open models:
@@ -171,6 +175,6 @@ Modern AI development requires understanding the financial and technical trade-o
 * Knowing when to hybridize the two is the hallmark of practical systems architecture.
 
 ### 3. Real Competence Comes From Hands-On Scars
-It is easy to hold high-level opinions on AI and modern web stacks when reading vendor whitepapers. But until you have debugged OpenCL memory allocation faults on a local dGPU, managed DOM memory leaks on an Android TV WebView, and filtered out hundreds of four-fingered cartoon children, your understanding remains purely academic.
+It is easy to form opinions on AI and modern web stacks from vendor benchmarks and marketing slides. But wrestling with OpenCL allocation faults on a local dGPU, managing DOM leaks on an underpowered TV, and vetting hundreds of deformed diffusion hands reinforces a simple truth: production realities always puncture paper architectures.
 
 The highest return on investment in technology is the continuous willingness to build, break, and master real systems.
