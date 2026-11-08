@@ -9,7 +9,7 @@ tags: ["AI", "Architecture", "Svelte", "OpenVINO", "Mobile", "Engineering Leader
 author: "Leow Kah Man"
 ---
 
-A curious reality unfolds when you hand a modern screen to a toddler: within minutes of playing what claims to be educational content on YouTube, the algorithm will quietly queue a 45-minute or one-hour unskippable commercial. Even dedicated children's applications on mobile app stores tend to fall into two traps: they either obsess over rote alphabet chanting while ignoring broader pedagogical vocabularies, or lock basic word cards behind perpetual monthly subscriptions.
+A curious reality unfolds when you hand a modern screen to a toddler: within minutes of playing what claims to be educational content on YouTube, the algorithm will quietly queue unskippable commercials. Even dedicated children's applications on mobile app stores tend to fall into two traps: they either obsess over rote alphabet chanting while ignoring broader pedagogical vocabularies, or lock basic word cards behind perpetual monthly subscriptions.
 
 As a father and lifelong backend specialist, I wanted something specific: a clean, zero-ad, distraction-free flashcard platform built strictly around the **Montessori 3-part nomenclature** (Concrete Object $\leftrightarrow$ Word $\leftrightarrow$ Pronunciation). 
 
@@ -143,7 +143,7 @@ For an engineering leader building software for his family, navigating that admi
 
 Deploying software to production is straightforward; deploying software to your own children is humbling.
 
-When I booted the app on the living room TV, the immediate victory was the total absence of commercial exploitation. There were no 60-minute unskippable ads, no subscription banners, and no frantic visual clutter. The Montessori nomenclature did its job: clear image, clear spoken word, repeated calmly.
+When I booted the app on the living room TV, the immediate victory was the total absence of commercial exploitation. There were no unskippable ads, no subscription banners, and no frantic visual clutter. The Montessori nomenclature did its job: clear image, clear spoken word, repeated calmly.
 
 However, young children quickly provide a reality check on attention economics:
 * While engaging, their focused attention span naturally peaks around **10 to 15 minutes**.
