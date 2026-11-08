@@ -30,8 +30,8 @@
   <g transform="translate(40, 24)">
     <rect width="880" height="105" rx="14" fill="#FFFFFF" stroke="#93c5fd" stroke-width="2" filter="url(#diagShadow)" />
     <!-- Section Badge -->
-    <rect x="20" y="12" width="220" height="24" rx="12" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1" />
-    <text x="130" y="28" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#1d4ed8" letter-spacing="0.5">PHASE 1: FRONTIER CLOUD LLM</text>
+    <rect x="20" y="12" width="250" height="26" rx="13" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1" />
+    <text x="145" y="29" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#1d4ed8" letter-spacing="0.5">PHASE 1: FRONTIER CLOUD LLM</text>
 
     <!-- Sub-nodes -->
     <g transform="translate(20, 44)">
@@ -65,8 +65,8 @@
   <g transform="translate(40, 168)">
     <rect width="880" height="110" rx="14" fill="#FFFFFF" stroke="#f59e0b" stroke-width="2" filter="url(#diagShadow)" />
     <!-- Section Badge -->
-    <rect x="20" y="12" width="240" height="24" rx="12" fill="#fffbeb" stroke="#fde68a" stroke-width="1" />
-    <text x="140" y="28" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#b45309" letter-spacing="0.5">PHASE 2: LOCAL dGPU INFERENCE</text>
+    <rect x="20" y="12" width="260" height="26" rx="13" fill="#fffbeb" stroke="#fde68a" stroke-width="1" />
+    <text x="150" y="29" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#b45309" letter-spacing="0.5">PHASE 2: LOCAL dGPU INFERENCE</text>
 
     <!-- Sub-nodes -->
     <g transform="translate(20, 44)">
@@ -101,8 +101,8 @@
   <g transform="translate(40, 314)">
     <rect width="880" height="120" rx="14" fill="#FFFFFF" stroke="#0f172a" stroke-width="2" filter="url(#diagShadow)" />
     <!-- Section Badge -->
-    <rect x="20" y="12" width="270" height="24" rx="12" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
-    <text x="155" y="28" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#0f172a" letter-spacing="0.5">PHASE 3: VETTING &amp; ASSET PACKAGING</text>
+    <rect x="20" y="12" width="300" height="26" rx="13" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1" />
+    <text x="170" y="29" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="800" fill="#0f172a" letter-spacing="0.5">PHASE 3: VETTING &amp; ASSET PACKAGING</text>
 
     <!-- Sub-nodes -->
     <g transform="translate(20, 48)">

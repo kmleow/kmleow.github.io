@@ -11,6 +11,10 @@ Every publication in this repository must project executive technical leadership
 
 - **Tone & Voice**: Authoritative, analytical, disciplined, and concise. Avoid novice tutorial phrasing ("Today I will show you how to..."). Frame problems through architectural trade-offs, performance ceilings, cost implications, and production reliability.
 - **Language Standard**: **International English** (British/Commonwealth spelling: e.g. *optimise*, *prioritise*, *decoupling*, *orchestration*, *fibre*, *defence*, *synchronised*, *behaviour*) for all article prose, headings, and descriptions. **Strict exception**: never alter code syntax, CLI parameters, API schemas, language keywords, or variable names.
+- **Typography & Symbol Standard (Zero Raw LaTeX in Prose)**: Never use LaTeX math syntax (e.g. `$ ... $`, `\leftrightarrow`, `\rightarrow`, `\approx`, `\le`, `\ge`) in article prose. Because the site relies on pure Markdown/HTML without a client-side KaTeX engine, raw LaTeX commands render as broken plaintext. Always use universal native Unicode characters:
+  - Arrows: `↔`, `→`, `←` (never `\leftrightarrow`, `\rightarrow`).
+  - Relational operators: `≈`, `≤`, `≥`, `×`, `·` (never `\approx`, `\le`, `\ge`).
+  - Big-O / Complexity: Use backticked code spans (e.g. `` `O(1)` ``, `` `O(n)` ``), never math mode (`$O(1)$`).
 - **Human Opinion, AI-Augmented Authorship**: While post drafting, formatting, diagrams, and prose synthesis are assisted by AI, **all core architectural opinions, engineering stances, problem contexts, and technical decisions originate directly from human author Leow Kah Man**. AI serves as an execution harness to articulate the author's real-world systems engineering experience.
 - **Editorial Independence & Employer Disclaimer**: Every publication, writeup, and architectural analysis across this repository is an **individual personal expression of Leow Kah Man**, independent of and not representing the views, positions, or strategies of his employer.
 - **Core Philosophies**:
@@ -125,6 +129,11 @@ Every publication uses a strict separation between **abstract hero graphics** an
 ### 2. In-Article Diagrams (`public/images/diagrams/[slug].svg`)
 - **Purpose**: Dedicated place for technical schematics, packet flow paths, kernel routing topologies, sequence diagrams, and subsystem architectures.
 - **Typography Scale**: Must be bold, high-contrast slate (`#0F172A`), and sized between **`16px` and `24px`** to maintain parity with article prose (`max-w-4xl` / 896px container).
+- **SVG Typography & Bounding Box Constraints (Zero Overflow Rule)**:
+  - Text inside SVG does not wrap automatically. Every container pill or bounding box (`<rect>`) enclosing text MUST be calculated with generous visual margins to prevent text overflow:
+    - Minimum safe pill width: `(characters * font_size * 0.72) + 36px` of horizontal padding.
+    - Always center text within its enclosing rectangle using `text-anchor="middle"` at `x = rect_x + (rect_width / 2)`.
+    - Every newly authored SVG schematic must be visually verified via browser inspection/screenshot to ensure zero text touches or spills past rectangle boundaries.
 - **Performance**: Zero client JavaScript, lightweight SVG markup, responsive viewBox.
 
 ---

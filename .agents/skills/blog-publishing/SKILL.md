@@ -50,6 +50,8 @@ Draft the article in `src/content/blog/[slug].md` following the 5-part structure
 > **Stage 3 Review Gate & Diagram Standard**:
 > - Present the draft directly to the author for critique. Iterate on prose until completely approved. Do not generate hero graphics or commit to git during this stage.
 > - **Zero Raw Mermaid/ASCII Blocks**: All technical schematics, packet flow paths, and topologies must be authored as standalone responsive vector SVGs in `public/images/diagrams/[slug].svg` with bold typography (16px–24px) and zero client JavaScript.
+> - **Zero SVG Text Overflow Rule**: Every badge, pill, or bounding box (`<rect>`) enclosing SVG text must be sized with safe margins: `rect_width >= (characters * font_size * 0.72) + 36px`. Always center with `text-anchor="middle"` at `x = rect_x + (rect_width / 2)` and visually audit via browser screenshot before publishing.
+> - **Zero Raw LaTeX in Prose Rule**: Never use LaTeX math syntax (e.g. `$ ... $`, `\leftrightarrow`, `\rightarrow`, `\approx`, `\le`, `\ge`) in article prose. Use universal native Unicode characters (`↔`, `→`, `←`, `≈`, `≤`, `≥`, `×`) and backticks for algorithmic complexity (`` `O(1)` ``). Astro does not bundle a KaTeX runtime; raw LaTeX renders as unparsed plaintext.
 
 ### Stage 4: Abstract Hero Graphic Generation & Visual Review
 Once text is approved:

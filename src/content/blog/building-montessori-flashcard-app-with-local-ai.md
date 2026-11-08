@@ -11,7 +11,7 @@ author: "Leow Kah Man"
 
 A curious reality unfolds when you hand a modern screen to a toddler: within minutes of playing what claims to be educational content on YouTube, the algorithm will quietly queue unskippable commercials. Even dedicated children's applications on mobile app stores tend to fall into two traps: they either obsess over rote alphabet chanting while ignoring broader pedagogical vocabularies, or lock basic word cards behind perpetual monthly subscriptions.
 
-As a father and lifelong backend specialist, I wanted something specific: a clean, zero-ad, distraction-free flashcard platform built strictly around the **Montessori 3-part nomenclature** (Concrete Object $\leftrightarrow$ Word $\leftrightarrow$ Pronunciation). 
+As a father and lifelong backend specialist, I wanted something specific: a clean, zero-ad, distraction-free flashcard platform built strictly around the **Montessori 3-part nomenclature** (Concrete Object ↔ Word ↔ Pronunciation). 
 
 Commercially, buying an app or paying a subscription is unquestionably cheaper than sinking dozens of engineering hours into building one. But the true return on investment in systems engineering is rarely measured in subscription savings; it is measured in **hands-on competence**. By taking on this project end-to-end, I wanted to test the contemporary frontier: how far can a seasoned backend specialist go when leveraging modern AI as a cross-functional execution engine?
 
@@ -101,7 +101,7 @@ I implemented a **rolling 3-image virtual window**:
 * The next card preloaded silently in memory for instantaneous zero-latency navigation.
 * The previous card explicitly dereferenced and purged from DOM memory.
 
-This bounded DOM memory usage to a flat $O(1)$ ceiling, allowing hours of uninterrupted playback on budget TV hardware.
+This bounded DOM memory usage to a flat `O(1)` ceiling, allowing hours of uninterrupted playback on budget TV hardware.
 
 ```svelte
 <!-- Svelte 5 Rune-based Navigation Engine -->
