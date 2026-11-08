@@ -23,32 +23,7 @@ Here is the operational architecture, the hardware bottlenecks, and the lessons 
 
 Rather than treating AI as a black-box chat interface, I treated it as a distributed production pipeline. The platform needed to generate pedagogical datasets, synthesize consistent visual assets, package deterministic audio, and deliver a fluid client across native mobile and big-screen TV displays.
 
-```mermaid
-flowchart TD
-    subgraph "Phase 1: Dataset & Prompt Curation"
-        A[Frontier LLM: Gemini Flash] -->|Curated Nomenclature| B[Structured JSON Schema]
-        B -->|Strict Prompt Anchors| C[Prompt Catalog: 498 Words]
-    end
-
-    subgraph "Phase 2: Local Hardware Inference (Daily Driver dGPU)"
-        C -->|Batch Inference REST| D[Intel OpenVINO Model Server]
-        D -->|dGPU Execution| E["Intel Arc A770M (16GB VRAM)"]
-        E -->|FLUX.1 Schnell INT8 / SDXL| F[Raw 1024x1024 Renders]
-    end
-
-    subgraph "Phase 3: Visual Vetting & Asset Normalisation"
-        F --> G[Custom Web Review Studio]
-        G -->|Flag Low Quality / Four Fingers| C
-        G -->|Approved Assets| H[WebP 1024x1024 @ 82q]
-        I[Pre-rendered Deterministic MP3s] --> J[Optimised App Bundle <15MB]
-        H --> J
-    end
-
-    subgraph "Phase 4: Multi-Target Edge Delivery"
-        J --> K[Capacitor 8 -> Native Android APK]
-        J --> L[Homelab Docker + Nginx -> Living Room TV]
-    end
-```
+![Multi-Tier AI Orchestration and Edge Delivery Pipeline](/images/diagrams/montessori-flashcard-pipeline.svg)
 
 ---
 
@@ -85,21 +60,7 @@ Diffusion models excel at landscapes and abstract art, but child anatomy remains
 * Grotesque hand anatomy—predominantly hands depicting **four fingers** (one thumb and three elongated digits) instead of five.
 * Inconsistent artistic styles: without strict prompt constraints, one card looked like a 3D Pixar render, the next like an oil painting, and the third like an ink sketch.
 
-```
-       Generated Image (Observed Anatomy Flaw)
-   ┌──────────────────────────────────────────────┐
-   │                                              │
-   │           \ | /   (Waving Hand)              │
-   │          ┌─────┐                             │
-   │          │  │  │  <-- 3 Fingers + 1 Thumb    │
-   │          │  │  │      (Missing 5th digit)    │
-   │          └──┴──┘                             │
-   │                                              │
-   │  "Children storybook kid waving hand"        │
-   │  Model: FLUX.1 Schnell / SDXL on OVMS        │
-   │  Inference Latency: 10.77s on Arc A770M      │
-   └──────────────────────────────────────────────┘
-```
+![Diffusion Anatomical Defect and Systematic Mitigation Architecture](/images/diagrams/diffusion-anatomy-four-fingers.svg)
 
 To manage this, I had my AI pair-programmer build a local **Visual Vetting Studio** (a lightweight browser gallery). This allowed me to rapidly review batches of 32 cards, hit `[F]` to flag anatomical mutants for deletion, and trigger automated regeneration.
 

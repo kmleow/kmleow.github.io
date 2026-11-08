@@ -168,11 +168,12 @@ The agent interviews author Leow Kah Man with 2–3 targeted questions to extrac
 ### Stage 3: Post Drafting & Textual Review
 - The agent drafts the complete article in `src/content/blog/[slug].md` following the 5-part structure:
   1. **Executive Summary / Problem Statement**: Engineering stakes and reliability/cost impact.
-  2. **Architecture & Topology**: ASCII or Mermaid diagram of the subsystem.
+  2. **Architecture & Topology**: Dedicated responsive vector SVG schematic in `public/images/diagrams/`.
   3. **Deep Technical Implementation**: Exact configuration directives, kernel commands, or code patterns.
   4. **Verification & Telemetry**: Empirical benchmarks, ping logs, or profiling results.
   5. **Architectural Takeaways**: Strategic insights for engineering leadership.
 - **Review Gate**: Present the draft directly to the author for critique. Refine and iterate on prose until the author is completely satisfied. **Do not generate hero images or run git push during this stage.**
+- **Diagram Standard**: Never insert raw Mermaid or ASCII block diagrams in article prose. All technical schematics, topologies, and workflows must be authored as dedicated, responsive vector SVGs placed in `public/images/diagrams/[slug].svg` with bold, high-contrast typography (16px–24px) for zero-JS native rendering.
 
 ### Stage 4: Abstract Hero Image Generation & Visual Review
 - Once the post text is approved:

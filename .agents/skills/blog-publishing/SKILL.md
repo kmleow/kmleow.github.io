@@ -41,13 +41,15 @@ Ask author Leow Kah Man 2–3 targeted questions:
 ### Stage 3: Post Drafting & Textual Review
 Draft the article in `src/content/blog/[slug].md` following the 5-part structure:
 1. **Executive Summary / Problem Statement**: Stakes, failure modes, and reliability impact.
-2. **Architecture & Topology**: ASCII or Mermaid diagram of the subsystem.
+2. **Architecture & Topology**: Dedicated responsive vector SVG schematic in `public/images/diagrams/[slug].svg` (never raw Mermaid or ASCII blocks).
 3. **Deep Technical Implementation**: Exact configuration directives, kernel commands, or code patterns.
 4. **Verification & Telemetry**: Empirical benchmarks, logs, or profiling results.
 5. **Architectural Takeaways**: Strategic insights for engineering leadership.
 
 > [!IMPORTANT]
-> **Stage 3 Review Gate**: Present the draft directly to the author for critique. Iterate on prose until completely approved. Do not generate hero graphics or commit to git during this stage.
+> **Stage 3 Review Gate & Diagram Standard**:
+> - Present the draft directly to the author for critique. Iterate on prose until completely approved. Do not generate hero graphics or commit to git during this stage.
+> - **Zero Raw Mermaid/ASCII Blocks**: All technical schematics, packet flow paths, and topologies must be authored as standalone responsive vector SVGs in `public/images/diagrams/[slug].svg` with bold typography (16px–24px) and zero client JavaScript.
 
 ### Stage 4: Abstract Hero Graphic Generation & Visual Review
 Once text is approved:
