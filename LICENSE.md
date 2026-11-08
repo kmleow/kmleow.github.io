@@ -1,6 +1,6 @@
 # Intellectual Property & Licensing
 
-Copyright (c) 2016–2026 Leow Kah Man. Some rights reserved.
+Copyright (c) 2016–2026 Leow Kah Man.
 
 ---
 
