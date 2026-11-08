@@ -132,8 +132,8 @@ This bounded DOM memory usage to a flat `O(1)` ceiling, allowing hours of uninte
 ## 5. Deployment and the Solo Publisher Barrier
 
 The resulting application was packaged in two distinct formats:
-1. **Docker Container**: Running an Nginx Alpine static server on my homelab, hooked up via HDMI/network to the living room TV with full D-Pad remote control navigation (`ArrowLeft`, `ArrowRight`, `Enter`, `Space`).
-2. **Native Android APK**: Built via **Capacitor 8**, bundling all 498 compressed WebP illustrations and MP3 audio clips into a self-contained **sub-15 MB standalone package** that runs entirely offline.
+1. **Docker Container**: Served via an Nginx Alpine static container on my local homelab, loaded in a browser on a living-room PC connected via HDMI to the television with simple keyboard navigation (`ArrowLeft`, `ArrowRight`, `Enter`, `Space`).
+2. **Native Android APK**: Built via **Capacitor 8**, bundling all 498 compressed WebP illustrations and MP3 audio clips into a self-contained **sub-15 MB standalone package** that runs entirely offline, with full support for touchscreen interactions as well as Android TV remote controls (mapping the physical directional D-Pad directly to card navigation).
 
 Once the English application was complete, the decoupled data layer made porting the pipeline to **Chinese (Mandarin), Malay, Cantonese, Japanese, and Tamil** straightforward, requiring localized nomenclature sets and audio assets rather than architectural rewrites.
 
