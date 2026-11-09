@@ -22,10 +22,10 @@
   <!-- Left: Bold Headline Anchor (Zero microtext) -->
   <g transform="translate(100, 290)">
     <text x="0" y="0" font-family="system-ui, -apple-system, sans-serif" font-size="64" font-weight="900" fill="#0F172A" letter-spacing="-2">
-      MONTESSORI AI
+      MONTESSORI
     </text>
-    <text x="0" y="60" font-family="system-ui, -apple-system, sans-serif" font-size="40" font-weight="800" fill="#2563EB" letter-spacing="-1">
-      SVELTE 5
+    <text x="0" y="60" font-family="system-ui, -apple-system, sans-serif" font-size="48" font-weight="800" fill="#2563EB" letter-spacing="-1.5">
+      FLASHCARDS
     </text>
   </g>
 
