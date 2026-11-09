@@ -90,4 +90,4 @@ Prioritising boring, battle-tested technologies over short-lived industry hype. 
 
 Engineering leadership is about continuous learning and disciplined execution. With a modern, minimalist platform and an AI-augmented drafting harness in place, the barrier to sharing these lessons has finally been removed.
 
-If you are an engineering director, CTO, or software architect tackling similar transformations, I look forward to connecting and exchanging ideas on LinkedIn. Let's build systems that endure.
+If you are an engineering director, CTO, or software architect tackling similar transformations, follow along on LinkedIn as I share ongoing lessons and architectural deep dives. Let's build systems that endure.
