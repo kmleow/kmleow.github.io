@@ -1,111 +1,104 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
   <defs>
-    <linearGradient id="bgGradPbr" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#FAF7F2" />
       <stop offset="50%" stop-color="#F5EFE6" />
       <stop offset="100%" stop-color="#ECE2D0" />
     </linearGradient>
 
-    <linearGradient id="ingressBeamGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.1" />
-      <stop offset="100%" stop-color="#2563EB" stop-opacity="0.9" />
+    <linearGradient id="policyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B" />
+      <stop offset="100%" stop-color="#0F172A" />
     </linearGradient>
 
-    <linearGradient id="wanBeamGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#10B981" stop-opacity="0.9" />
-      <stop offset="100%" stop-color="#059669" stop-opacity="0.2" />
-    </linearGradient>
-
-    <linearGradient id="vpnBeamGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.9" />
-      <stop offset="100%" stop-color="#D97706" stop-opacity="0.2" />
-    </linearGradient>
-
-    <filter id="pbrShadow" x="-20%" y="-20%" width="150%" height="150%">
-      <feDropShadow dx="0" dy="24" stdDeviation="30" flood-color="#0f172a" flood-opacity="0.12" />
-      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#0f172a" flood-opacity="0.06" />
+    <filter id="cardShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#0F172A" flood-opacity="0.1" />
     </filter>
 
-    <filter id="softGlowPbr" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="36" result="blur" />
-    </filter>
+    <marker id="wanArrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#2563EB" />
+    </marker>
+    <marker id="vpnArrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#059669" />
+    </marker>
   </defs>
 
-  <!-- Background -->
-  <rect width="1200" height="675" fill="url(#bgGradPbr)" />
+  <rect width="1200" height="675" fill="url(#bgGrad)" />
 
-  <!-- Ambient Blooms -->
-  <circle cx="520" cy="337" r="260" fill="#93C5FD" opacity="0.3" filter="url(#softGlowPbr)" />
-  <circle cx="860" cy="220" r="180" fill="#A7F3D0" opacity="0.25" filter="url(#softGlowPbr)" />
-  <circle cx="860" cy="460" r="180" fill="#FDE68A" opacity="0.25" filter="url(#softGlowPbr)" />
-
-  <!-- Coordinate Drafting Grid & FIB Matrix Guides -->
-  <g opacity="0.45" stroke="#CBD5E1" stroke-width="1">
-    <line x1="80" y1="337" x2="1120" y2="337" stroke-dasharray="4,8" />
-    <line x1="520" y1="60" x2="520" y2="615" stroke-dasharray="4,8" />
-    <circle cx="520" cy="337" r="240" fill="none" stroke-dasharray="3,6" />
-    <circle cx="520" cy="337" r="360" fill="none" stroke-dasharray="2,8" opacity="0.6" />
-
-    <!-- Split Angle Alignment Vectors (30° Egress Channels) -->
-    <line x1="520" y1="337" x2="1080" y2="120" stroke-dasharray="3,8" opacity="0.6" />
-    <line x1="520" y1="337" x2="1080" y2="554" stroke-dasharray="3,8" opacity="0.6" />
+  <g opacity="0.35" stroke="#CBD5E1" stroke-width="1">
+    <line x1="60" y1="50" x2="1140" y2="50" stroke-dasharray="4,8" />
+    <line x1="60" y1="625" x2="1140" y2="625" stroke-dasharray="4,8" />
   </g>
 
-  <!-- MULTI-PATH STEERING COMPOSITION MOTIF -->
-  <g filter="url(#pbrShadow)">
+  <!-- Title -->
+  <g transform="translate(60, 100)">
+    <text x="0" y="0" font-family="system-ui, -apple-system, sans-serif" font-size="56" font-weight="900" fill="#0F172A" letter-spacing="-2">
+      POLICY-BASED ROUTING
+    </text>
+  </g>
 
-    <!-- INCOMING INGRESS TRAFFIC (Left Plane) -->
-    <polygon points="100,320 500,320 500,354 100,354" fill="url(#ingressBeamGrad)" opacity="0.4" />
-    <line x1="80" y1="337" x2="480" y2="337" stroke="#2563EB" stroke-width="6" stroke-linecap="round" />
-    <line x1="120" y1="315" x2="480" y2="315" stroke="#60A5FA" stroke-width="2.5" stroke-dasharray="8,6" />
-    <line x1="120" y1="359" x2="480" y2="359" stroke="#60A5FA" stroke-width="2.5" stroke-dasharray="8,6" />
-
-    <!-- Ingress Packet Nodes -->
-    <circle cx="160" cy="337" r="7" fill="#2563EB" stroke="#FFFFFF" stroke-width="2" />
-    <circle cx="280" cy="337" r="7" fill="#2563EB" stroke="#FFFFFF" stroke-width="2" />
-    <circle cx="400" cy="337" r="8" fill="#1D4ED8" stroke="#FFFFFF" stroke-width="2.5" />
-
-    <!-- CENTRAL POLICY ROUTING PRISM (Classifier Nucleus) -->
-    <!-- Center (520, 337) -->
-    <g transform="translate(520, 337)">
-      <!-- Top Apex Facet (Sky Blue) -->
-      <polygon points="0,-140 120,-60 0,20 -120,-60" fill="#3B82F6" stroke="#93C5FD" stroke-width="2" />
-
-      <!-- Left Entrance Facet (Midnight Slate Core) -->
-      <polygon points="-120,-60 0,20 0,140 -120,60" fill="#0F172A" stroke="#334155" stroke-width="2" />
-
-      <!-- Right Exit Refraction Facet (Royal Cobalt) -->
-      <polygon points="0,20 120,-60 120,60 0,140" fill="#1D4ED8" stroke="#60A5FA" stroke-width="2" />
-
-      <!-- Inner Holographic Classification Cutout -->
-      <polygon points="0,-70 60,-30 0,10 -60,-30" fill="#FFFFFF" opacity="0.35" />
-      <polygon points="0,10 60,-30 60,30 0,70" fill="#38BDF8" opacity="0.25" />
-
-      <!-- Classifier Pin -->
-      <circle cx="0" cy="0" r="9" fill="#FFFFFF" stroke="#0284C7" stroke-width="3" />
-      <circle cx="0" cy="0" r="20" fill="none" stroke="#BAE6FD" stroke-width="2" stroke-dasharray="4,4" />
+  <!-- Split Routing Flow -->
+  <g transform="translate(60, 180)">
+    
+    <!-- Step 1: Ingress Traffic -->
+    <g filter="url(#cardShadow)">
+      <rect width="300" height="380" rx="20" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2" />
+      <text x="150" y="160" font-family="system-ui, sans-serif" font-size="36" font-weight="900" fill="#0F172A" text-anchor="middle">
+        INGRESS
+      </text>
+      <text x="150" y="215" font-family="system-ui, sans-serif" font-size="32" font-weight="800" fill="#64748B" text-anchor="middle">
+        TRAFFIC
+      </text>
     </g>
 
-    <!-- UPPER EGRESS: FIB TABLE MAIN (Direct WAN Path) -->
-    <polygon points="560,320 1080,120 1080,160 560,340" fill="url(#wanBeamGrad)" opacity="0.3" />
-    <path d="M 560 320 Q 700 240 840 200 T 1100 140" fill="none" stroke="#10B981" stroke-width="5" stroke-linecap="round" />
-    <line x1="570" y1="300" x2="1080" y2="120" stroke="#34D399" stroke-width="2.5" stroke-dasharray="8,6" opacity="0.8" />
-    <circle cx="840" cy="200" r="8" fill="#10B981" stroke="#FFFFFF" stroke-width="2.5" />
-    <circle cx="1020" cy="155" r="9" fill="#059669" stroke="#FFFFFF" stroke-width="3" />
+    <!-- Conduit to Kernel Policy Engine -->
+    <path d="M 300 280 L 400 280" fill="none" stroke="#0F172A" stroke-width="6" />
 
-    <!-- LOWER EGRESS: FIB TABLE 100 (Encrypted VPN Tunnel) -->
-    <polygon points="560,340 1080,500 1080,540 560,360" fill="url(#vpnBeamGrad)" opacity="0.3" />
-    <path d="M 560 354 Q 700 430 840 470 T 1100 534" fill="none" stroke="#F59E0B" stroke-width="5" stroke-linecap="round" />
-    <line x1="570" y1="374" x2="1080" y2="554" stroke="#FBBF24" stroke-width="2.5" stroke-dasharray="8,6" opacity="0.8" />
-    <circle cx="840" cy="470" r="8" fill="#F59E0B" stroke="#FFFFFF" stroke-width="2.5" />
-    <circle cx="1020" cy="515" r="9" fill="#D97706" stroke="#FFFFFF" stroke-width="3" />
-
-    <!-- Corner Framing Reticles -->
-    <g stroke="#0F172A" stroke-width="2.5" fill="none">
-      <path d="M 140 100 L 120 100 L 120 120" />
-      <path d="M 1060 100 L 1080 100 L 1080 120" />
-      <path d="M 140 575 L 120 575 L 120 555" />
-      <path d="M 1060 575 L 1080 575 L 1080 555" />
+    <!-- Step 2: Policy Steering (fwmark / ipset) -->
+    <g transform="translate(400, 0)" filter="url(#cardShadow)">
+      <rect width="320" height="380" rx="20" fill="url(#policyGrad)" stroke="#475569" stroke-width="2" />
+      <text x="160" y="140" font-family="system-ui, sans-serif" font-size="34" font-weight="900" fill="#F8FAFC" text-anchor="middle">
+        KERNEL
+      </text>
+      <text x="160" y="190" font-family="system-ui, sans-serif" font-size="34" font-weight="900" fill="#F8FAFC" text-anchor="middle">
+        POLICY
+      </text>
+      <g transform="translate(35, 230)">
+        <rect width="250" height="70" rx="14" fill="#334155" />
+        <text x="125" y="46" font-family="ui-monospace, monospace" font-size="24" font-weight="800" fill="#F59E0B" text-anchor="middle">
+          FWMARK / IPSET
+        </text>
+      </g>
     </g>
+
+    <!-- Split Conduits (Upper WAN vs Lower VPN) -->
+    <!-- Direct WAN -->
+    <path d="M 720 230 L 780 230 L 780 140 L 830 140" fill="none" stroke="#2563EB" stroke-width="6" marker-end="url(#wanArrow)" />
+    
+    <!-- VPN Tunnel -->
+    <path d="M 720 330 L 780 330 L 780 420 L 830 420" fill="none" stroke="#059669" stroke-width="6" marker-end="url(#vpnArrow)" />
+
+    <!-- Step 3A: Direct WAN Gateway -->
+    <g transform="translate(840, 50)" filter="url(#cardShadow)">
+      <rect width="240" height="180" rx="18" fill="#EFF6FF" stroke="#3B82F6" stroke-width="3" />
+      <text x="120" y="90" font-family="system-ui, sans-serif" font-size="32" font-weight="900" fill="#1E40AF" text-anchor="middle">
+        DIRECT
+      </text>
+      <text x="120" y="130" font-family="system-ui, sans-serif" font-size="32" font-weight="900" fill="#1E40AF" text-anchor="middle">
+        WAN
+      </text>
+    </g>
+
+    <!-- Step 3B: VPN Tunnel Gateway -->
+    <g transform="translate(840, 330)" filter="url(#cardShadow)">
+      <rect width="240" height="180" rx="18" fill="#ECFDF5" stroke="#10B981" stroke-width="3" />
+      <text x="120" y="90" font-family="system-ui, sans-serif" font-size="32" font-weight="900" fill="#065F46" text-anchor="middle">
+        VPN
+      </text>
+      <text x="120" y="130" font-family="system-ui, sans-serif" font-size="32" font-weight="900" fill="#065F46" text-anchor="middle">
+        TUNNEL
+      </text>
+    </g>
+
   </g>
 </svg>

@@ -122,13 +122,39 @@ legacyUrls: # Optional: maps old /YYYY/MM/DD/slug/ paths to auto-generate 301 re
 
 ## 5. Hero Graphics & In-Article Diagram Standard
 
-Every publication uses a strict separation between **abstract hero graphics** and **in-article technical diagrams**:
+Every publication uses a strict separation between **content-driven hero banners** and **in-article technical diagrams**:
 
-### 1. Hero Images (`public/images/heroes/[slug].svg` or `.webp`)
+### 1. Content-Driven Hero Banners (`public/images/heroes/[slug].svg` or `.webp`)
 - **Aspect Ratio**: 16:9 (1200x675 canvas).
-- **Strict Zero-Text Policy**: Hero banners must **never contain English text, headlines, subtitles, micro-boxes, or flowcharts**. Because banners shrink to 300px–380px on homepage news cards and mobile screens, embedded text becomes unreadable and conflicts with the native HTML title.
-- **Aesthetic**: Pure **abstract architectural vector art** using the publication's signature soft cream palette (`#FAF7F2` to `#ECE2D0`), slate structural geometry (`#0F172A`), precision blueprint reticles/crosshairs, and chromatic vector beams (cobalt blue, amber, emerald, violet) embodying the engineering theme.
-- **Author-Supplied Image**: If the author supplies a photo or asset, crop to 16:9 and save as WebP or SVG.
+- **The 4 Content-Driven Banner Archetypes** (No one-size-fits-all):
+  1. **Empirical Benchmark & Performance Tuning** (e.g. Bufferbloat, Flow Offloading):
+     - High-contrast **Before vs After Delta**.
+     - Real numbers only (e.g. `54 ms` vs `9 ms`).
+     - Dual waveform curves (erratic latency spike vs flatline baseline).
+  2. **Architecture Pipeline & Multi-Step Flow** (e.g. Zero Trust, CI/CD Runners, Multi-WAN):
+     - Exactly **3 macro-step boxes** showing the state transition or network flow.
+     - Thick conduits (4–6px), bold direction arrows, high-contrast badges (e.g. `DROP` vs `mTLS ALLOW`).
+  3. **Real Software Build & UI Delivery** (e.g. Montessori Flashcard App, Mobile Tools):
+     - The **actual, genuine screenshot from the article** (never a synthetic/fake drawing).
+     - Centered inside a clean, modern device/viewport chassis with soft drop shadow.
+     - Paired *only* with the bold 1–2 word project title (56px+).
+  4. **Code Craftsmanship & Refactoring** (e.g. LINQ, Functional Pipelines):
+     - High-contrast **Spaghetti vs Fluent Code Diff**.
+     - Left: 3 lines of imperative/nested loop code (dimmed/strikethrough red).
+     - Right: 3 lines of clean declarative code (crisp syntax highlighted emerald).
+- **The Strict Hard Rules (The 380px Thumbnail & Canvas Safety Rules)**:
+  - **Zero Micro-Text**: Never include subtitles, descriptive sentences, axis labels, micro-badges, or explanatory captions. If text drops below 11px at 380px thumbnail width, it is strictly forbidden.
+  - **Font Size Floors**: Headlines must be **48px–56px+**, metrics and delta numbers must be **64px–96px+**, code diff tokens must be **28px+**.
+  - **Zero Fake Data or Synthetic Illustrations**: Every number, metric, benchmark curve, code snippet, or UI screen must be extracted verbatim from authentic article evidence.
+  - **Canvas Boundary & Safe Margin (Zero Canvas Overflow Rule)**:
+    - Canvas is strictly 1200×675 (`viewBox="0 0 1200 675"`).
+    - All elements, bounding boxes, and drop shadows MUST stay within the **Safe Zone**: `X ∈ [60, 1140]` (preserving at least 60px side margin) and `Y ∈ [50, 625]`.
+    - **Multi-Box Horizontal Constraint**: For $N$ horizontal boxes with outer margin $X_{margin}$ and gap $G$:
+      $X_{margin} + (N \times W_{box}) + ((N - 1) \times G) \le 1140\text{px}$.
+      *(e.g., for 3 boxes with $X_{margin} = 60\text{px}$ and $G = 75\text{px}$, each box must be $W_{box} \le 310\text{px}$)*.
+    - Every newly authored banner MUST be rendered to PNG and checked to guarantee zero elements or shadows clip past the canvas boundary.
+  - **Color Palette Consistency**: Maintain the signature soft cream gradient background (`#FAF7F2` to `#ECE2D0`), midnight slate structure (`#0F172A`), and clear semantic indicators (emerald green `#059669` for wins/after, red `#DC2626` for bottlenecks/before).
+- **Author-Supplied Image**: If the author supplies a photo or screenshot, frame it into 16:9 with clean elevation and save as WebP or SVG.
 
 ### 2. In-Article Diagrams (`public/images/diagrams/[slug].svg`)
 - **Purpose**: Dedicated place for technical schematics, packet flow paths, kernel routing topologies, sequence diagrams, and subsystem architectures.

@@ -53,15 +53,20 @@ Draft the article in `src/content/blog/[slug].md` following the 5-part structure
 > - **Zero SVG Text Overflow Rule**: Every badge, pill, or bounding box (`<rect>`) enclosing SVG text must be sized with safe margins: `rect_width >= (characters * font_size * 0.72) + 36px`. Always center with `text-anchor="middle"` at `x = rect_x + (rect_width / 2)` and visually audit via browser screenshot before publishing.
 > - **Zero Raw LaTeX in Prose Rule**: Never use LaTeX math syntax (e.g. `$ ... $`, `\leftrightarrow`, `\rightarrow`, `\approx`, `\le`, `\ge`) in article prose. Use universal native Unicode characters (`↔`, `→`, `←`, `≈`, `≤`, `≥`, `×`) and backticks for algorithmic complexity (`` `O(1)` ``). Astro does not bundle a KaTeX runtime; raw LaTeX renders as unparsed plaintext.
 
-### Stage 4: Abstract Hero Graphic Generation & Visual Review
+### Stage 4: Content-Driven Hero Banner Generation & Visual Review
 Once text is approved:
-- If author provides an image, crop to 16:9 and save to `public/images/heroes/[slug].webp`.
-- If generated, create a pure **abstract architectural vector graphic (SVG)** into `public/images/heroes/[slug].svg` with:
-  - 16:9 aspect ratio (1200x675).
-  - Soft cream gradient background: `#FAF7F2` to `#ECE2D0`.
-  - Precision geometric motifs (isometric prisms, vector planes, reticles, coordinate ticks).
-  - **Strict Zero-Text Policy**: Never include English text, titles, subtitles, labels, or flowcharts inside hero graphics. All technical diagrams belong exclusively inside the article body (`public/images/diagrams/`).
-- **Stage 4 Review Gate**: Present the hero graphic to the author for visual approval.
+- Classify the post into one of the **4 Content-Driven Banner Archetypes**:
+  1. **Empirical Benchmark**: High-contrast Before vs After (real metrics like `54 ms` vs `9 ms`, spike vs flatline curves).
+  2. **Architecture Flow**: Exactly 3 macro-steps (min 32px text, 4–6px conduits, e.g. `[ Edge ] ──► [ WAF ] ══► [ Origin ]`).
+  3. **Real Software Build**: Authentic screenshot from the post framed inside a modern 16:9 viewport (zero fake illustrations).
+  4. **Code Craftsmanship**: Spaghetti vs Fluent Code Diff (28px+ monospace, imperative red vs declarative emerald).
+- **Strict Hard Rules**:
+  - **Zero Micro-Text**: No subtitles, descriptions, axis labels, or small badges. If text drops below 11px rendered size at 380px thumbnail width, it is strictly forbidden.
+  - **Font Size Floors**: Headline 48px–56px+, metrics 64px–96px+, code 28px+.
+  - **Zero Fake Data**: All numbers, UI screens, benchmarks, and code must come directly from authentic article evidence.
+  - **Zero Canvas Overflow Rule**: All containers, drop shadows, and conduits must stay strictly within the **Safe Zone** (`X ∈ [60, 1140]`, `Y ∈ [50, 625]`). For 3-box flows: `3 * width + 2 * gap <= 1080px` (e.g. `width = 310px`, `gap = 75px`).
+  - **Signature Palette**: Warm cream background (`#FAF7F2` to `#ECE2D0`), structural slate (`#0F172A`), emerald `#059669`, and red `#DC2626`.
+- Render and verify at both 1200x675 and 380x214 thumbnail scale before presenting for author approval.
 
 ### Stage 5: Local Build & Quality Verification
 Run build verification:

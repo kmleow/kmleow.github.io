@@ -1,115 +1,185 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
   <defs>
-    <linearGradient id="bgGradSqm" x1="0%" y1="0%" x2="100%" y2="100%">
+    <!-- Background Gradient (Signature Warm Cream) -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#FAF7F2" />
       <stop offset="50%" stop-color="#F5EFE6" />
       <stop offset="100%" stop-color="#ECE2D0" />
     </linearGradient>
 
-    <linearGradient id="turbulentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#EF4444" stop-opacity="0.9" />
-      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.8" />
+    <!-- Card Backgrounds -->
+    <linearGradient id="cardRedGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#FEF2F2" />
     </linearGradient>
 
-    <linearGradient id="harmonicGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#10B981" stop-opacity="0.9" />
-      <stop offset="100%" stop-color="#06B6D4" stop-opacity="0.9" />
+    <linearGradient id="cardGreenGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#F0FDF4" />
     </linearGradient>
 
-    <linearGradient id="filterPrismGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#1E293B" />
-      <stop offset="100%" stop-color="#0F172A" />
+    <!-- Waveform Area Fills -->
+    <linearGradient id="redAreaGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#EF4444" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#EF4444" stop-opacity="0.02" />
     </linearGradient>
 
-    <filter id="sqmShadow" x="-20%" y="-20%" width="150%" height="150%">
-      <feDropShadow dx="0" dy="20" stdDeviation="28" flood-color="#0f172a" flood-opacity="0.1" />
-      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#0f172a" flood-opacity="0.06" />
-    </filter>
+    <linearGradient id="greenAreaGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#10B981" stop-opacity="0.02" />
+    </linearGradient>
 
-    <filter id="softGlowSqm" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="36" result="blur" />
+    <!-- Panel Drop Shadow -->
+    <filter id="panelShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="16" stdDeviation="24" flood-color="#0F172A" flood-opacity="0.08" />
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#0F172A" flood-opacity="0.04" />
     </filter>
   </defs>
 
-  <!-- Background -->
-  <rect width="1200" height="675" fill="url(#bgGradSqm)" />
+  <!-- Background Base -->
+  <rect width="1200" height="675" fill="url(#bgGrad)" />
 
-  <!-- Ambient Blooms -->
-  <circle cx="340" cy="337" r="220" fill="#FCA5A5" opacity="0.25" filter="url(#softGlowSqm)" />
-  <circle cx="860" cy="337" r="240" fill="#A7F3D0" opacity="0.3" filter="url(#softGlowSqm)" />
-  <circle cx="600" cy="337" r="180" fill="#93C5FD" opacity="0.2" filter="url(#softGlowSqm)" />
-
-  <!-- Blueprint & Oscilloscope Grid -->
-  <g opacity="0.45" stroke="#CBD5E1" stroke-width="1">
-    <line x1="80" y1="337" x2="1120" y2="337" stroke-dasharray="4,8" />
-    <line x1="600" y1="60" x2="600" y2="615" stroke-dasharray="4,8" />
-    <circle cx="600" cy="337" r="280" fill="none" stroke-dasharray="3,6" />
-    <circle cx="600" cy="337" r="160" fill="none" stroke-dasharray="4,8" />
-
-    <!-- Wave Frequency Graticules -->
-    <line x1="80" y1="180" x2="1120" y2="180" stroke-dasharray="2,10" opacity="0.6" />
-    <line x1="80" y1="495" x2="1120" y2="495" stroke-dasharray="2,10" opacity="0.6" />
-    <line x1="240" y1="60" x2="240" y2="615" stroke-dasharray="2,10" opacity="0.5" />
-    <line x1="960" y1="60" x2="960" y2="615" stroke-dasharray="2,10" opacity="0.5" />
+  <!-- Subtle Blueprint Calibration Grid Lines -->
+  <g opacity="0.35" stroke="#CBD5E1" stroke-width="1">
+    <line x1="60" y1="50" x2="1140" y2="50" stroke-dasharray="4,8" />
+    <line x1="60" y1="625" x2="1140" y2="625" stroke-dasharray="4,8" />
+    <line x1="600" y1="50" x2="600" y2="625" stroke-dasharray="2,6" />
+    <!-- Reticles -->
+    <path d="M 50 50 L 70 50 M 60 40 L 60 60" stroke="#94A3B8" stroke-width="1.5" />
+    <path d="M 1130 50 L 1150 50 M 1140 40 L 1140 60" stroke="#94A3B8" stroke-width="1.5" />
   </g>
 
-  <!-- WAVE TRANSFORMATION MOTIF -->
-  <g filter="url(#sqmShadow)">
+  <!-- ============================================================== -->
+  <!-- TOP HEADLINE: THE ONLY PRIMARY TEXT (HUGE & CRISP)              -->
+  <!-- ============================================================== -->
+  <g transform="translate(60, 100)">
+    <text x="0" y="0" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="56" font-weight="900" fill="#0F172A" letter-spacing="-2">
+      BUFFERBLOAT BENCHMARK
+    </text>
+  </g>
+
+  <!-- ============================================================== -->
+  <!-- SIDE-BY-SIDE PANELS: STRICTLY THE BIG NUMBERS & CLEAN GRAPHS    -->
+  <!-- ============================================================== -->
+
+  <!-- 1. LEFT PANEL: BEFORE (54 ms SPIKE) -->
+  <g transform="translate(60, 150)" filter="url(#panelShadow)">
+    <!-- Outer Card -->
+    <rect width="520" height="460" rx="20" fill="url(#cardRedGrad)" stroke="#FCA5A5" stroke-width="2.5" />
     
-    <!-- LEFT: Chaotic / Bloated Packet Bursts (Unmanaged Queue) -->
-    <!-- Wave 1 (Turbulent Red) -->
-    <path d="M 100 337 Q 160 120 220 337 T 340 160 T 440 480 T 520 250 L 520 337 Z" fill="url(#turbulentGrad)" opacity="0.35" />
-    <path d="M 100 337 Q 160 120 220 337 T 340 160 T 440 480 T 520 250 L 580 337" fill="none" stroke="#EF4444" stroke-width="4.5" stroke-linecap="round" />
+    <!-- Big Number Metric -->
+    <text x="40" y="115" font-family="system-ui, -apple-system, sans-serif" font-size="96" font-weight="900" fill="#DC2626" letter-spacing="-3">
+      54 ms
+    </text>
 
-    <!-- Wave 2 (Desynchronized TCP Burst) -->
-    <path d="M 120 370 Q 190 490 260 310 T 380 460 T 480 190 L 580 337" fill="none" stroke="#F59E0B" stroke-width="3" stroke-dasharray="8,6" opacity="0.8" />
-
-    <!-- Distorted Packet Bloat Nodes -->
-    <circle cx="220" cy="337" r="7" fill="#EF4444" stroke="#FFFFFF" stroke-width="2.5" />
-    <circle cx="340" cy="160" r="9" fill="#DC2626" stroke="#FFFFFF" stroke-width="2.5" />
-    <circle cx="440" cy="480" r="11" fill="#B91c1c" stroke="#FFFFFF" stroke-width="3" />
-
-    <!-- CENTER: The Active Queue Management Filter Nexus (CAKE/FQ Crystalline Prism) -->
-    <g transform="translate(600, 337)">
-      <!-- Outer Hexagonal Shroud -->
-      <polygon points="0,-140 120,-70 120,70 0,140 -120,70 -120,-70" fill="url(#filterPrismGrad)" stroke="#334155" stroke-width="2.5" />
+    <!-- Waveform Graph Container -->
+    <g transform="translate(40, 160)">
+      <rect width="440" height="250" rx="14" fill="#FFFFFF" stroke="#FECACA" stroke-width="1.5" />
       
-      <!-- Faceted Isometric Crystal Layers -->
-      <polygon points="0,-140 120,-70 0,0 -120,-70" fill="#3B82F6" opacity="0.85" />
-      <polygon points="-120,-70 0,0 0,140 -120,70" fill="#0F172A" />
-      <polygon points="0,0 120,-70 120,70 0,140" fill="#1D4ED8" />
+      <!-- Baseline Reference Guide -->
+      <line x1="0" y1="200" x2="440" y2="200" stroke="#FEE2E2" stroke-width="1.5" stroke-dasharray="4,4" />
+      <line x1="0" y1="50" x2="440" y2="50" stroke="#FEE2E2" stroke-width="1.5" stroke-dasharray="4,4" />
 
-      <!-- Inner Translucent Aperture -->
-      <polygon points="0,-80 70,-40 70,40 0,80 -70,40 -70,-40" fill="#FFFFFF" opacity="0.25" stroke="#93C5FD" stroke-width="1.5" />
+      <!-- Shaded Latency Spike Area -->
+      <path d="M 0 200 
+               L 80 200 
+               L 110 90 
+               L 145 115 
+               L 190 35 
+               L 230 40 
+               L 270 55 
+               L 310 75 
+               L 350 30 
+               L 385 85 
+               L 415 195 
+               L 440 195 
+               L 440 240 
+               L 0 240 Z" 
+            fill="url(#redAreaGrad)" />
 
-      <!-- Center Quantum Focal Point -->
-      <circle cx="0" cy="0" r="8" fill="#10B981" stroke="#FFFFFF" stroke-width="3" />
-      <circle cx="0" cy="0" r="18" fill="none" stroke="#34D399" stroke-width="2" stroke-dasharray="4,4" />
+      <!-- High-Latency Curve Stroke -->
+      <path d="M 0 200 
+               L 80 200 
+               L 110 90 
+               L 145 115 
+               L 190 35 
+               L 230 40 
+               L 270 55 
+               L 310 75 
+               L 350 30 
+               L 385 85 
+               L 415 195 
+               L 440 195" 
+            fill="none" 
+            stroke="#DC2626" 
+            stroke-width="5" 
+            stroke-linecap="round" 
+            stroke-linejoin="round" />
+
+      <!-- Spike Peak Node -->
+      <circle cx="190" cy="35" r="7" fill="#DC2626" stroke="#FFFFFF" stroke-width="2.5" />
+      <circle cx="350" cy="30" r="7" fill="#DC2626" stroke="#FFFFFF" stroke-width="2.5" />
     </g>
-
-    <!-- RIGHT: Coherent Harmonic Laminar Flows (Fair Queuing & CoDel) -->
-    <!-- Harmonic Stream 1 (Emerald Primary Sine) -->
-    <path d="M 620 337 Q 690 220 760 337 T 900 337 T 1040 337 L 1100 337" fill="none" stroke="#10B981" stroke-width="5" stroke-linecap="round" />
-    <path d="M 620 337 Q 690 220 760 337 T 900 337 T 1040 337 L 1100 337 L 1100 400 L 620 400 Z" fill="url(#harmonicGrad)" opacity="0.2" />
-
-    <!-- Harmonic Stream 2 (Cyan Synchronized Flow) -->
-    <path d="M 620 315 Q 690 198 760 315 T 900 315 T 1040 315 L 1100 315" fill="none" stroke="#06B6D4" stroke-width="3" stroke-linecap="round" opacity="0.9" />
-
-    <!-- Harmonic Stream 3 (Parallel Low-Latency Pacing Flow) -->
-    <path d="M 620 360 Q 690 242 760 360 T 900 360 T 1040 360 L 1100 360" fill="none" stroke="#34D399" stroke-width="2.5" stroke-dasharray="6,6" opacity="0.8" />
-
-    <!-- Quantized Balanced Nodes -->
-    <circle cx="760" cy="337" r="7" fill="#10B981" stroke="#FFFFFF" stroke-width="2.5" />
-    <circle cx="900" cy="337" r="7" fill="#06B6D4" stroke="#FFFFFF" stroke-width="2.5" />
-    <circle cx="1040" cy="337" r="7" fill="#10B981" stroke="#FFFFFF" stroke-width="2.5" />
-
-    <!-- Perimeter Framing Reticles -->
-    <g stroke="#0F172A" stroke-width="2.5" fill="none">
-      <path d="M 140 100 L 120 100 L 120 120" />
-      <path d="M 1060 100 L 1080 100 L 1080 120" />
-      <path d="M 140 575 L 120 575 L 120 555" />
-      <path d="M 1060 575 L 1080 575 L 1080 555" />
-    </g>
-
   </g>
+
+  <!-- 2. RIGHT PANEL: AFTER (9 ms FLATLINE) -->
+  <g transform="translate(620, 150)" filter="url(#panelShadow)">
+    <!-- Outer Card -->
+    <rect width="520" height="460" rx="20" fill="url(#cardGreenGrad)" stroke="#86EFAC" stroke-width="2.5" />
+    
+    <!-- Big Number Metric -->
+    <text x="40" y="115" font-family="system-ui, -apple-system, sans-serif" font-size="96" font-weight="900" fill="#059669" letter-spacing="-3">
+      9 ms
+    </text>
+
+    <!-- Waveform Graph Container -->
+    <g transform="translate(40, 160)">
+      <rect width="440" height="250" rx="14" fill="#FFFFFF" stroke="#BBF7D0" stroke-width="1.5" />
+      
+      <!-- Baseline Reference Guide (Same scale as left) -->
+      <line x1="0" y1="200" x2="440" y2="200" stroke="#F0FDF4" stroke-width="1.5" stroke-dasharray="4,4" />
+      <line x1="0" y1="50" x2="440" y2="50" stroke="#F0FDF4" stroke-width="1.5" stroke-dasharray="4,4" />
+
+      <!-- Shaded Flatline Area -->
+      <path d="M 0 200 
+               L 80 200 
+               L 110 185 
+               L 150 178 
+               L 190 168 
+               L 230 174 
+               L 270 165 
+               L 310 175 
+               L 350 165 
+               L 390 175 
+               L 415 198 
+               L 440 198 
+               L 440 240 
+               L 0 240 Z" 
+            fill="url(#greenAreaGrad)" />
+
+      <!-- Controlled Latency Flatline Curve Stroke -->
+      <path d="M 0 200 
+               L 80 200 
+               L 110 185 
+               L 150 178 
+               L 190 168 
+               L 230 174 
+               L 270 165 
+               L 310 175 
+               L 350 165 
+               L 390 175 
+               L 415 198 
+               L 440 198" 
+            fill="none" 
+            stroke="#059669" 
+            stroke-width="5" 
+            stroke-linecap="round" 
+            stroke-linejoin="round" />
+
+      <!-- Controlled Ceiling Peak Node -->
+      <circle cx="270" cy="165" r="6" fill="#059669" stroke="#FFFFFF" stroke-width="2.5" />
+      <circle cx="350" cy="165" r="6" fill="#059669" stroke="#FFFFFF" stroke-width="2.5" />
+    </g>
+  </g>
+
 </svg>
