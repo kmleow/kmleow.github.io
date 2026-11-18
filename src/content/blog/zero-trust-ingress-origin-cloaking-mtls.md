@@ -101,17 +101,7 @@ While netfilter IP filtering blocks casual scanners, determined adversaries oper
 
 To guarantee that traffic entering your web server was generated **exclusively by your designated CDN zone**, we enforce **Mutual TLS (mTLS)**. Under mTLS, the web server acts not only as a TLS host but also demands that the client (the CDN edge) present a cryptographically signed client certificate issued by the CDN's Origin Certificate Authority.
 
-```
-Client (CDN Edge)                          Origin Server (Apache/Nginx)
-        │                                                │
-        │ ─── 1. ClientHello ──────────────────────────> │
-        │ <── 2. ServerHello + Origin Cert + CertRequest ─ │ (Demands Client Certificate)
-        │ ─── 3. Client Certificate (Cloudflare CA) ────> │
-        │ ─── 4. Finished ─────────────────────────────> │
-        │                                                │ (Validates against CA Root)
-        ▼                                                ▼
-   [ Session Encrypted and Cryptographically Authenticated ]
-```
+![Mutual TLS (mTLS) Authenticated Origin Pulls Handshake Sequence](/images/diagrams/zero-trust-mtls-handshake.svg)
 
 ### 1. Origin Server Configuration (Apache)
 

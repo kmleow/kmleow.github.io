@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 460" width="100%" height="auto">
+  <defs>
+    <linearGradient id="mtlsGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FAF7F2" />
+      <stop offset="100%" stop-color="#F5EFE6" />
+    </linearGradient>
+    <filter id="mtlsShadow" x="-5%" y="-5%" width="115%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#0f172a" flood-opacity="0.06" />
+    </filter>
+    <marker id="mArrowSlate" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#334155" />
+    </marker>
+    <marker id="mArrowAmber" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#d97706" />
+    </marker>
+    <marker id="mArrowGreen" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#059669" />
+    </marker>
+  </defs>
+
+  <rect width="960" height="460" rx="16" fill="url(#mtlsGrad)" stroke="#e5ded4" stroke-width="1.5" />
+
+  <!-- Lifelines -->
+  <line x1="200" y1="96" x2="200" y2="376" stroke="#94a3b8" stroke-width="2.5" stroke-dasharray="6,6" />
+  <line x1="760" y1="96" x2="760" y2="376" stroke="#94a3b8" stroke-width="2.5" stroke-dasharray="6,6" />
+
+  <!-- Actor 1: Client (CDN Edge) -->
+  <g transform="translate(60, 28)">
+    <rect width="280" height="68" rx="12" fill="#FFFFFF" stroke="#f59e0b" stroke-width="2.5" filter="url(#mtlsShadow)" />
+    <text x="140" y="31" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" font-weight="900" fill="#0f172a">Client (CDN Edge)</text>
+    <text x="140" y="53" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#b45309">Cloudflare Anycast Proxy</text>
+  </g>
+
+  <!-- Actor 2: Origin Server -->
+  <g transform="translate(620, 28)">
+    <rect width="280" height="68" rx="12" fill="#FFFFFF" stroke="#0f172a" stroke-width="2.5" filter="url(#mtlsShadow)" />
+    <text x="140" y="31" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" font-weight="900" fill="#0f172a">Origin Server</text>
+    <text x="140" y="53" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#475569">Apache / Nginx (SSLVerifyClient)</text>
+  </g>
+
+  <!-- Step 1: ClientHello -->
+  <text x="480" y="128" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="800" fill="#0f172a">1. ClientHello (TLS 1.3 + SNI)</text>
+  <path d="M 208 142 L 748 142" fill="none" stroke="#334155" stroke-width="3" marker-end="url(#mArrowSlate)" />
+
+  <!-- Step 2: ServerHello + CertRequest -->
+  <text x="480" y="192" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="800" fill="#b45309">2. ServerHello + Origin Cert + CertificateRequest</text>
+  <path d="M 752 206 L 212 206" fill="none" stroke="#d97706" stroke-width="3" marker-end="url(#mArrowAmber)" />
+  <text x="480" y="227" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#64748b">Demands client certificate signed by Cloudflare Origin CA</text>
+
+  <!-- Step 3: Client Certificate -->
+  <text x="480" y="268" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="800" fill="#047857">3. Client Certificate (Cloudflare Origin CA)</text>
+  <path d="M 208 282 L 748 282" fill="none" stroke="#059669" stroke-width="3" marker-end="url(#mArrowGreen)" />
+
+  <!-- Step 4: Finished -->
+  <text x="480" y="328" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" font-weight="800" fill="#047857">4. Finished (CA Root Validated)</text>
+  <path d="M 208 342 L 748 342" fill="none" stroke="#059669" stroke-width="3" marker-end="url(#mArrowGreen)" />
+
+  <!-- Outcome Banner -->
+  <rect x="60" y="382" width="840" height="52" rx="10" fill="#f0fdf4" stroke="#86efac" stroke-width="2" filter="url(#mtlsShadow)" />
+  <text x="480" y="414" text-anchor="middle" font-family="system-ui, sans-serif" font-size="17" font-weight="800" fill="#166534">Session Encrypted &amp; Cryptographically Authenticated (Fail-Closed)</text>
+</svg>
