@@ -157,6 +157,7 @@ Every publication uses a strict separation between **content-driven hero banners
 - **Author-Supplied Image**: If the author supplies a photo or screenshot, frame it into 16:9 with clean elevation and save as WebP or SVG.
 
 ### 2. In-Article Diagrams (`public/images/diagrams/[slug].svg`)
+- **Always Vector SVG (Zero ASCII / Mermaid / Raster Diagrams)**: All in-article diagrams—including sequence diagrams, packet flows, topologies, and architecture schematics—MUST be authored as standalone vector SVG files in `public/images/diagrams/`. Never use ASCII art, box-drawing characters, raw Mermaid blocks, or raster images for diagrams.
 - **Purpose**: Dedicated place for technical schematics, packet flow paths, kernel routing topologies, sequence diagrams, and subsystem architectures.
 - **Typography Scale**: Must be bold, high-contrast slate (`#0F172A`), and sized between **`16px` and `24px`** to maintain parity with article prose (`max-w-4xl` / 896px container).
 - **SVG Typography & Bounding Box Constraints (Zero Overflow Rule)**:
